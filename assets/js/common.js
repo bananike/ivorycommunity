@@ -3,7 +3,7 @@ $(document).ready(function () {
         changeTop5VoteBtn($(this));
     });
 
-    $(document).on('click', '#categoryList a', function (e) {
+    $(document).on('click', '#categoryList button', function (e) {
         e.preventDefault();
         activeCategoryBtn($(this));
     });
@@ -32,7 +32,7 @@ function changeTop5VoteBtn(_this) {
 
 // 002. 카테고리 버튼 활성화
 function activeCategoryBtn(_this) {
-    $('#categoryList li').removeClass('active');
+    $('#categoryList li.active').removeClass('active');
     _this.closest('li').addClass('active clicking');
 
     setTimeout(function () {
