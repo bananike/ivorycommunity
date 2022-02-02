@@ -1,0 +1,71 @@
+@import 'variable';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: mgothic, sans-serif;
+    // outline: 1px solid rgba(255, 0, s0, 0.1);
+}
+body {
+    color: $color_black;
+}
+
+input,
+button {
+    border: 0;
+    outline: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+a {
+    text-decoration: none;
+}
+button,
+a {
+    cursor: pointer;
+}
+.button {
+    height: cal($e: 60);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: cal($e: 25);
+    line-height: cal($e: 35);
+    letter-spacing: cal($e: -1.5);
+    padding: 0 cal($e: 25);
+    border-radius: cal($e: 30);
+
+    [class^='ivoryIcon-'] {
+        margin-left: cal($e: 15);
+    }
+
+    &.fill {
+        border: 0 !important;
+    }
+    &.outline {
+        border-width: 1px;
+        border-style: solid;
+        background-color: transparent !important;
+    }
+}
+img {
+    display: block;
+}
+.hidden,
+*[hidden] {
+    display: none !important;
+}
+.hr {
+    width: 100%;
+    height: cal($e: 44);
+    background-color: $color_whitegray;
+}
+.mgothic {
+    font-family: mgothic !important;
+}
+.gotham {
+    font-family: gotham !important;
+}

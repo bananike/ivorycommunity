@@ -1,0 +1,82 @@
+@font-face { font-family: mgothic; src: url("../fonts/mgothic010.ttf"); font-weight: 100; font-style: normal; }
+@font-face { font-family: mgothic; src: url("../fonts/mgothic020.ttf"); font-weight: 200; font-style: normal; }
+@font-face { font-family: mgothic; src: url("../fonts/mgothic030.ttf"); font-weight: 300; font-style: normal; }
+@font-face { font-family: mgothic; src: url("../fonts/mgothic040.ttf"); font-weight: 400; font-style: normal; }
+@font-face { font-family: mgothic; src: url("../fonts/mgothic050.ttf"); font-weight: 500; font-style: normal; }
+@font-face { font-family: mgothic; src: url("../fonts/mgothic060.ttf"); font-weight: 600; font-style: normal; }
+@font-face { font-family: mgothic; src: url("../fonts/mgothic070.ttf"); font-weight: 700; font-style: normal; }
+@font-face { font-family: mgothic; src: url("../fonts/mgothic080.ttf"); font-weight: 800; font-style: normal; }
+@font-face { font-family: mgothic; src: url("../fonts/mgothic090.ttf"); font-weight: 900; font-style: normal; }
+@font-face { font-family: mgothic; src: url("../fonts/mgothic100.ttf"); font-weight: 1000; font-style: normal; }
+@font-face { font-family: gotham; src: url("../fonts/Gotham-Medium.ttf"); font-weight: normal; font-style: normal; }
+@font-face { font-family: gotham; src: url("../fonts/Gotham-Bold.ttf"); font-weight: bold; font-style: normal; }
+@font-face { font-family: ivoryIcon; src: url("../fonts/ivoryIcon.eot?1eiddz"); src: url("../fonts/ivoryIcon.eot?1eiddz#iefix") format("embedded-opentype"), url("../fonts/ivoryIcon.ttf?1eiddz") format("truetype"), url("../fonts/ivoryIcon.woff?1eiddz") format("woff"), url("../fonts/ivoryIcon.svg?1eiddz#ivoryIcon") format("svg"); font-weight: normal; font-style: normal; font-display: block; }
+[class^='ivoryIcon-'], [class*=' ivoryIcon-'] { /* use !important to prevent issues with browser extensions that change fonts */ font-family: 'ivoryIcon' !important; speak: never; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.ivoryIcon-heart_outline:before { content: '\e90f'; }
+
+.ivoryIcon-new:before { content: '\e914'; }
+
+.ivoryIcon-close:before { content: '\e900'; }
+
+.ivoryIcon-adult:before { content: '\e901'; }
+
+.ivoryIcon-arrow_right:before { content: '\e902'; }
+
+.ivoryIcon-baby:before { content: '\e903'; }
+
+.ivoryIcon-bell:before { content: '\e904'; }
+
+.ivoryIcon-vote:before { content: '\e905'; }
+
+.ivoryIcon-check:before { content: '\e906'; }
+
+.ivoryIcon-delete:before { content: '\e907'; }
+
+.ivoryIcon-education:before { content: '\e908'; }
+
+.ivoryIcon-fashion:before { content: '\e909'; }
+
+.ivoryIcon-finance:before { content: '\e90a'; }
+
+.ivoryIcon-filter:before { content: '\e90b'; }
+
+.ivoryIcon-food:before { content: '\e90c'; }
+
+.ivoryIcon-gossip:before { content: '\e90d'; }
+
+.ivoryIcon-heart:before { content: '\e90e'; }
+
+.ivoryIcon-interior:before { content: '\e910'; }
+
+.ivoryIcon-reply:before { content: '\e911'; }
+
+.ivoryIcon-more:before { content: '\e912'; }
+
+.ivoryIcon-movie:before { content: '\e913'; }
+
+.ivoryIcon-parenting:before { content: '\e915'; }
+
+.ivoryIcon-pet:before { content: '\e916'; }
+
+.ivoryIcon-plus:before { content: '\e917'; }
+
+.ivoryIcon-rectal:before { content: '\e918'; }
+
+.ivoryIcon-report:before { content: '\e919'; }
+
+.ivoryIcon-share:before { content: '\e91a'; }
+
+.ivoryIcon-shopping:before { content: '\e91b'; }
+
+.ivoryIcon-society:before { content: '\e91c'; }
+
+.ivoryIcon-travel:before { content: '\e91d'; }
+
+.ivoryIcon-view:before { content: '\e91e'; }
+
+.ivoryIcon-wedding:before { content: '\e91f'; }
+
+.ivoryIcon-write:before { content: '\e920'; }
+
+/*# sourceMappingURL=font.css.map */

@@ -1,0 +1,39 @@
+{
+    카테고리 아이콘 리스트:{
+        임신출산: ivoryIcon-baby,
+        육아: ivoryIcon-parenting,
+        연애결혼: ivoryIcon-wedding,
+        쇼핑: ivoryIcon-shopping,
+        패션뷰티: ivoryIcon-fashion,
+        인테리어: ivoryIcon-interior,
+        반려동물: ivoryIcon-pet,
+        경제제태크: ivoryIcon-finance,
+        영화드라마: ivoryIcon-movie,
+        연예가십: ivoryIcon-gossip,
+        요리맛집: ivoryIcon-food,
+        교육공부: ivoryIcon-education,
+        인간관계: ivoryIcon-society,
+        직장취업: ivoryIcon-rectal,
+        성생활: ivoryIcon-adult,
+        취미여행: ivoryIcon-travel
+    },
+    기타 아이콘:{
+        종모양알람: ivoryIcon-bell,
+        투표수: ivoryIcon-vote,
+        댓글수: ivoryIcon-reply,
+        완료체크: ivoryIcon-check,
+        닫기: ivoryIcon-close,
+        댓글에(N)표시: ivoryIcon-new,
+        우측삼각화살표: ivoryIcon-arrow_right,
+        휴지통: ivoryIcon-delete,
+        필터: ivoryIcon-filter,
+        하트: ivoryIcon-heart,
+        하트선: ivoryIcon-heart_outline,
+        쩜3개더보기: ivoryIcon-more,
+        투표등록플러스: ivoryIcon-plus,
+        공유하기: ivoryIcon-share,
+        신고하기: ivoryIcon-report,
+        조회수: ivoryIcon-view,
+        작성자표시: ivoryIcon-write
+    }
+}

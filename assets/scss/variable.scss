@@ -1,0 +1,72 @@
+$color_black: #000;
+$color_white: #fff;
+$color_primary: #68c0b5;
+$color_lightprimary: #ace3dd;
+$color_secondary: #a149db;
+$color_red: #f00;
+$color_pink: #f09;
+$color_blue: #07f;
+$color_lightgray: #d2d2d2;
+$color_whitegray: #efefef;
+$color_gray: #a8a8a8;
+$color_darkgray: #707070;
+$color_transparentprimary: rgba(104, 192, 181, 0.2);
+$color_transparentsecondary: rgba(161, 73, 219, 0.12);
+$color_disablesecondary: rgba(131, 75, 168, 0.12);
+
+$media_base: 640px;
+
+$base_url: '../images/';
+
+@mixin objectfit {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    @content;
+}
+
+@mixin ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    @content;
+}
+
+@mixin multi_ellipsis($line) {
+    display: -webkit-box;
+    word-wrap: break-word;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@function cal($e, $max: 640) {
+    @return calc(100vw * (#{$e}/#{$max}));
+}
+
+@keyframes add_btn_scale {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.95);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes add_btn_rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    70% {
+        transform: rotateZ(90deg);
+    }
+    100% {
+        transform: rotateZ(90deg);
+    }
+}
