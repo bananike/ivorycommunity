@@ -24,10 +24,16 @@ img { display: block; }
 
 .hidden, *[hidden] { display: none !important; }
 
+.container { position: relative; max-width: 640px; margin: 0 auto; }
+
 .hr { width: 100%; height: calc(100vw * (44/640)); background-color: #efefef; }
 
 .mgothic { font-family: mgothic !important; }
 
 .gotham { font-family: gotham !important; }
+
+@media (min-width: 640px) { .button { height: 60px; font-size: 25px; line-height: 35px; letter-spacing: -1.5px; padding: 0 25px; border-radius: 30px; }
+  .button [class^='ivoryIcon-'] { margin-left: 15px; }
+  .hr { height: 44px; } }
 
 /*# sourceMappingURL=common.css.map */

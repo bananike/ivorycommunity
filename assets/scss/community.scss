@@ -583,6 +583,8 @@
                 color: $color_white;
                 font-family: gotham;
                 font-weight: bold;
+                font-size: cal($e: 20);
+                letter-spacing: cal($e: -0.4);
 
                 &.vs {
                     background-color: $color_pink;
@@ -596,6 +598,7 @@
                 font-weight: 700;
                 font-size: cal($e: 20);
                 letter-spacing: cal($e: -0.4);
+                white-space: nowrap;
             }
         }
 
@@ -698,5 +701,329 @@
         span {
             animation: add_btn_rotate 0.3s;
         }
+    }
+}
+
+@media (min-width: $media_base) {
+    .header {
+        padding: 50px 40px 0;
+        height: 130px;
+
+        .logo_box h1 {
+            width: 224px;
+            height: 25.5px;
+        }
+
+        .header_alarm {
+            font-size: 32px;
+
+            &.isAlarm:after {
+                width: 11px;
+                height: 11px;
+            }
+        }
+    }
+
+    .community_wrapper {
+        padding-bottom: 150px;
+    }
+
+    .top_5_box {
+        padding: 130px 40px 45px;
+
+        .top_5_box_title {
+            font-size: 40px;
+            line-height: 40px;
+            letter-spacing: -2.4px;
+        }
+
+        .top_5_category_title {
+            margin-top: 45px;
+
+            .category_icon {
+                font-size: 54px;
+            }
+
+            > p {
+                max-width: 400px;
+                font-size: 30px;
+                line-height: 42px;
+                letter-spacing: -1.8px;
+            }
+        }
+        .top_5_swipe {
+            margin-top: 45px;
+            width: 450px;
+
+            .swiper-slide {
+                .top_5_item {
+                    height: 450px;
+                    border-radius: 30px;
+
+                    &.poll {
+                        padding: 40px 45px;
+                    }
+
+                    &.vs {
+                        [class^='vs_'] {
+                            border-radius: 30px;
+
+                            &.isImage {
+                                .text_box {
+                                    padding: 43px 33px;
+                                }
+                            }
+
+                            &:first-child {
+                                margin-right: 10px;
+                            }
+
+                            .img_box {
+                                height: 300px;
+                            }
+
+                            .text_box {
+                                flex: 1;
+                                padding: 43px 40px;
+
+                                p {
+                                    font-size: 20px;
+                                    line-height: 26px;
+                                    letter-spacing: -1.2px;
+                                }
+                            }
+                        }
+
+                        .icon_vs {
+                            width: 80px;
+                            height: 80px;
+                            font-size: 33px;
+                            letter-spacing: -1.98px;
+                        }
+                    }
+
+                    &:after {
+                        border-radius: 30px;
+                    }
+                }
+            }
+
+            .item_list li {
+                height: 58px;
+
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+
+                .item_index {
+                    width: 30px;
+                    height: 30px;
+                    font-size: 16px;
+                    letter-spacing: -0.96px;
+                    margin-right: 20px;
+                }
+
+                .item_text {
+                    font-size: 22px;
+                    letter-spacing: -1.32px;
+                }
+
+                .item_img {
+                    width: 58px;
+                    height: 58px;
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        .top_5_detail {
+            margin-top: 25px;
+
+            > *:not(:last-child) {
+                margin-right: 16px;
+            }
+
+            .count_vote,
+            .count_reply {
+                span {
+                    font-size: 18px;
+                    letter-spacing: -0.36px;
+
+                    &[class^='ivoryIcon-'] {
+                        margin-right: 5px;
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+
+        .swiper-pagination {
+            margin-top: 55px;
+
+            .swiper-pagination-bullet {
+                width: 9px;
+                height: 9px;
+
+                &:not(:last-child) {
+                    margin-right: 35px;
+                }
+            }
+        }
+    }
+
+    .category_box {
+        padding: 50px 0;
+
+        li {
+            width: 125px;
+            height: 125px;
+            margin-right: 20px;
+
+            button {
+                border-radius: 30px;
+
+                span {
+                    margin-top: 12.5px;
+                    font-size: 19px;
+                    letter-spacing: -1.14px;
+
+                    &[class^='ivoryIcon-'] {
+                        font-size: 50px;
+                    }
+                }
+            }
+        }
+    }
+
+    .vote_list_box {
+        padding: 70px 40px;
+
+        .filter_vote_type {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+
+            .button {
+                font-size: 22px;
+                letter-spacing: -1.32px;
+                width: 130px;
+                height: 50px;
+
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .filter_status_type {
+            .button {
+                font-size: 22px;
+                letter-spacing: -1.32px;
+                width: 130px;
+                height: 50px;
+
+                &:not(:last-child) {
+                    margin-right: 10px;
+                }
+
+                &.btn_call_filter {
+                    padding: 0 15px;
+
+                    [class^='ivoryIcon-'] {
+                        margin-right: 7px;
+                    }
+                }
+            }
+        }
+
+        .vote_list {
+            margin-top: 40px;
+            padding-right: 35px;
+
+            li {
+                height: 180px;
+                padding: 30px;
+                padding-right: 54px;
+                border-radius: 30px;
+
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+            }
+
+            .type_box {
+                min-width: 85px;
+                margin-right: 25px;
+
+                [class^='ivoryIcon-'] {
+                    font-size: 50px;
+                }
+
+                .type {
+                    border-radius: 30px;
+                    padding: 3px 9px;
+                    font-size: 20px;
+                    letter-spacing: -0.4px;
+                }
+
+                .remaining_date {
+                    font-size: 20px;
+                    letter-spacing: -0.4px;
+                }
+            }
+
+            .content_box {
+                .text {
+                    font-size: 22px;
+                    line-height: 33px;
+                    letter-spacing: -1.32px;
+                }
+
+                .count_box {
+                    .count_vote {
+                        margin-right: 19.5px;
+                    }
+
+                    .count_vote,
+                    .count_reply {
+                        span {
+                            font-size: 18px;
+                            letter-spacing: -0.36px;
+
+                            &[class^='ivoryIcon-'] {
+                                margin-right: 5px;
+                                font-size: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .btn_box {
+                right: -35px;
+
+                button {
+                    width: 74px;
+                    height: 74px;
+
+                    &.btn_ready {
+                        font-size: 24px;
+                        span {
+                            margin-left: 5px;
+                        }
+                    }
+                    &.btn_complete {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+    }
+
+    .btn_add_vote {
+        width: 150px;
+        height: 150px;
+        right: 40px;
+        bottom: 40px;
+        font-size: 70px;
     }
 }

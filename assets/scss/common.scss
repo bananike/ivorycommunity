@@ -58,6 +58,11 @@ img {
 *[hidden] {
     display: none !important;
 }
+.container {
+    position: relative;
+    max-width: $media_base;
+    margin: 0 auto;
+}
 .hr {
     width: 100%;
     height: cal($e: 44);
@@ -68,4 +73,22 @@ img {
 }
 .gotham {
     font-family: gotham !important;
+}
+
+@media (min-width: $media_base) {
+    .button {
+        height: 60px;
+        font-size: 25px;
+        line-height: 35px;
+        letter-spacing: -1.5px;
+        padding: 0 25px;
+        border-radius: 30px;
+
+        [class^='ivoryIcon-'] {
+            margin-left: 15px;
+        }
+    }
+    .hr {
+        height: 44px;
+    }
 }

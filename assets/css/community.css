@@ -97,10 +97,10 @@
 .vote_list_box .vote_list li.isAdult.isClose { background-color: rgba(131, 75, 168, 0.12); }
 .vote_list_box .vote_list .type_box { min-width: calc(100vw * (85/640)); margin-right: calc(100vw * (25/640)); height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: center; }
 .vote_list_box .vote_list .type_box [class^='ivoryIcon-'] { font-size: calc(100vw * (50/640)); color: #68c0b5; }
-.vote_list_box .vote_list .type_box .type { border-radius: calc(100vw * (30/640)); padding: calc(100vw * (3/640)) calc(100vw * (9/640)); color: #fff; font-family: gotham; font-weight: bold; }
+.vote_list_box .vote_list .type_box .type { border-radius: calc(100vw * (30/640)); padding: calc(100vw * (3/640)) calc(100vw * (9/640)); color: #fff; font-family: gotham; font-weight: bold; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-0.4/640)); }
 .vote_list_box .vote_list .type_box .type.vs { background-color: #f09; }
 .vote_list_box .vote_list .type_box .type.poll { background-color: #07f; }
-.vote_list_box .vote_list .type_box .remaining_date { font-weight: 700; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-0.4/640)); }
+.vote_list_box .vote_list .type_box .remaining_date { font-weight: 700; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-0.4/640)); white-space: nowrap; }
 .vote_list_box .vote_list .content_box { height: 100%; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; }
 .vote_list_box .vote_list .content_box .text { font-weight: 700; font-size: calc(100vw * (22/640)); line-height: calc(100vw * (33/640)); letter-spacing: calc(100vw * (-1.32/640)); display: -webkit-box; word-wrap: break-word; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
 .vote_list_box .vote_list .content_box .count_box { display: flex; flex-direction: row; flex-wrap: nowrap; }
@@ -117,5 +117,69 @@
 .btn_add_vote { position: fixed; z-index: 9999; width: calc(100vw * (150/640)); height: calc(100vw * (150/640)); border-radius: 50%; right: calc(100vw * (40/640)); bottom: calc(100vw * (40/640)); color: #fff; display: flex; justify-content: center; align-items: center; font-size: calc(100vw * (70/640)); background: linear-gradient(to bottom, #ace3dd, #68c0b5); }
 .btn_add_vote.clicking { animation: add_btn_scale 0.3s; }
 .btn_add_vote.clicking span { animation: add_btn_rotate 0.3s; }
+
+@media (min-width: 640px) { .header { padding: 50px 40px 0; height: 130px; }
+  .header .logo_box h1 { width: 224px; height: 25.5px; }
+  .header .header_alarm { font-size: 32px; }
+  .header .header_alarm.isAlarm:after { width: 11px; height: 11px; }
+  .community_wrapper { padding-bottom: 150px; }
+  .top_5_box { padding: 130px 40px 45px; }
+  .top_5_box .top_5_box_title { font-size: 40px; line-height: 40px; letter-spacing: -2.4px; }
+  .top_5_box .top_5_category_title { margin-top: 45px; }
+  .top_5_box .top_5_category_title .category_icon { font-size: 54px; }
+  .top_5_box .top_5_category_title > p { max-width: 400px; font-size: 30px; line-height: 42px; letter-spacing: -1.8px; }
+  .top_5_box .top_5_swipe { margin-top: 45px; width: 450px; }
+  .top_5_box .top_5_swipe .swiper-slide .top_5_item { height: 450px; border-radius: 30px; }
+  .top_5_box .top_5_swipe .swiper-slide .top_5_item.poll { padding: 40px 45px; }
+  .top_5_box .top_5_swipe .swiper-slide .top_5_item.vs [class^='vs_'] { border-radius: 30px; }
+  .top_5_box .top_5_swipe .swiper-slide .top_5_item.vs [class^='vs_'].isImage .text_box { padding: 43px 33px; }
+  .top_5_box .top_5_swipe .swiper-slide .top_5_item.vs [class^='vs_']:first-child { margin-right: 10px; }
+  .top_5_box .top_5_swipe .swiper-slide .top_5_item.vs [class^='vs_'] .img_box { height: 300px; }
+  .top_5_box .top_5_swipe .swiper-slide .top_5_item.vs [class^='vs_'] .text_box { flex: 1; padding: 43px 40px; }
+  .top_5_box .top_5_swipe .swiper-slide .top_5_item.vs [class^='vs_'] .text_box p { font-size: 20px; line-height: 26px; letter-spacing: -1.2px; }
+  .top_5_box .top_5_swipe .swiper-slide .top_5_item.vs .icon_vs { width: 80px; height: 80px; font-size: 33px; letter-spacing: -1.98px; }
+  .top_5_box .top_5_swipe .swiper-slide .top_5_item:after { border-radius: 30px; }
+  .top_5_box .top_5_swipe .item_list li { height: 58px; }
+  .top_5_box .top_5_swipe .item_list li:not(:last-child) { margin-bottom: 15px; }
+  .top_5_box .top_5_swipe .item_list li .item_index { width: 30px; height: 30px; font-size: 16px; letter-spacing: -0.96px; margin-right: 20px; }
+  .top_5_box .top_5_swipe .item_list li .item_text { font-size: 22px; letter-spacing: -1.32px; }
+  .top_5_box .top_5_swipe .item_list li .item_img { width: 58px; height: 58px; margin-left: 20px; }
+  .top_5_box .top_5_detail { margin-top: 25px; }
+  .top_5_box .top_5_detail > *:not(:last-child) { margin-right: 16px; }
+  .top_5_box .top_5_detail .count_vote span, .top_5_box .top_5_detail .count_reply span { font-size: 18px; letter-spacing: -0.36px; }
+  .top_5_box .top_5_detail .count_vote span[class^='ivoryIcon-'], .top_5_box .top_5_detail .count_reply span[class^='ivoryIcon-'] { margin-right: 5px; font-size: 30px; }
+  .top_5_box .swiper-pagination { margin-top: 55px; }
+  .top_5_box .swiper-pagination .swiper-pagination-bullet { width: 9px; height: 9px; }
+  .top_5_box .swiper-pagination .swiper-pagination-bullet:not(:last-child) { margin-right: 35px; }
+  .category_box { padding: 50px 0; }
+  .category_box li { width: 125px; height: 125px; margin-right: 20px; }
+  .category_box li button { border-radius: 30px; }
+  .category_box li button span { margin-top: 12.5px; font-size: 19px; letter-spacing: -1.14px; }
+  .category_box li button span[class^='ivoryIcon-'] { font-size: 50px; }
+  .vote_list_box { padding: 70px 40px; }
+  .vote_list_box .filter_vote_type { margin-bottom: 20px; padding-bottom: 20px; }
+  .vote_list_box .filter_vote_type .button { font-size: 22px; letter-spacing: -1.32px; width: 130px; height: 50px; }
+  .vote_list_box .filter_vote_type .button:not(:last-child) { margin-right: 10px; }
+  .vote_list_box .filter_status_type .button { font-size: 22px; letter-spacing: -1.32px; width: 130px; height: 50px; }
+  .vote_list_box .filter_status_type .button:not(:last-child) { margin-right: 10px; }
+  .vote_list_box .filter_status_type .button.btn_call_filter { padding: 0 15px; }
+  .vote_list_box .filter_status_type .button.btn_call_filter [class^='ivoryIcon-'] { margin-right: 7px; }
+  .vote_list_box .vote_list { margin-top: 40px; padding-right: 35px; }
+  .vote_list_box .vote_list li { height: 180px; padding: 30px; padding-right: 54px; border-radius: 30px; }
+  .vote_list_box .vote_list li:not(:last-child) { margin-bottom: 30px; }
+  .vote_list_box .vote_list .type_box { min-width: 85px; margin-right: 25px; }
+  .vote_list_box .vote_list .type_box [class^='ivoryIcon-'] { font-size: 50px; }
+  .vote_list_box .vote_list .type_box .type { border-radius: 30px; padding: 3px 9px; font-size: 20px; letter-spacing: -0.4px; }
+  .vote_list_box .vote_list .type_box .remaining_date { font-size: 20px; letter-spacing: -0.4px; }
+  .vote_list_box .vote_list .content_box .text { font-size: 22px; line-height: 33px; letter-spacing: -1.32px; }
+  .vote_list_box .vote_list .content_box .count_box .count_vote { margin-right: 19.5px; }
+  .vote_list_box .vote_list .content_box .count_box .count_vote span, .vote_list_box .vote_list .content_box .count_box .count_reply span { font-size: 18px; letter-spacing: -0.36px; }
+  .vote_list_box .vote_list .content_box .count_box .count_vote span[class^='ivoryIcon-'], .vote_list_box .vote_list .content_box .count_box .count_reply span[class^='ivoryIcon-'] { margin-right: 5px; font-size: 30px; }
+  .vote_list_box .vote_list .btn_box { right: -35px; }
+  .vote_list_box .vote_list .btn_box button { width: 74px; height: 74px; }
+  .vote_list_box .vote_list .btn_box button.btn_ready { font-size: 24px; }
+  .vote_list_box .vote_list .btn_box button.btn_ready span { margin-left: 5px; }
+  .vote_list_box .vote_list .btn_box button.btn_complete { font-size: 30px; }
+  .btn_add_vote { width: 150px; height: 150px; right: 40px; bottom: 40px; font-size: 70px; } }
 
 /*# sourceMappingURL=community.css.map */
