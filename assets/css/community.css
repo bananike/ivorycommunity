@@ -114,7 +114,7 @@
 .vote_list_box .vote_list .btn_box button.btn_ready span { margin-left: calc(100vw * (5/640)); }
 .vote_list_box .vote_list .btn_box button.btn_complete { background-color: #000; font-size: calc(100vw * (30/640)); }
 
-.btn_add_vote { position: fixed; z-index: 9999; width: calc(100vw * (150/640)); height: calc(100vw * (150/640)); border-radius: 50%; right: calc(100vw * (40/640)); bottom: calc(100vw * (40/640)); color: #fff; display: flex; justify-content: center; align-items: center; font-size: calc(100vw * (70/640)); background: linear-gradient(to bottom, #ace3dd, #68c0b5); }
+.btn_add_vote { position: fixed; z-index: 9999; width: calc(100vw * (150/640)); height: calc(100vw * (150/640)); border-radius: 50%; right: calc(100vw * (40/640)); bottom: calc(100vw * (40/640)); color: #fff; display: flex; justify-content: center; align-items: center; font-size: calc(100vw * (70/640)); background: linear-gradient(to bottom, #ace3dd, #68c0b5); box-shadow: 0 calc(100vw * (8/640)) calc(100vw * (15/640)) rgba(0, 0, 0, 0.25); }
 .btn_add_vote.clicking { animation: add_btn_scale 0.3s; }
 .btn_add_vote.clicking span { animation: add_btn_rotate 0.3s; }
 
@@ -180,6 +180,6 @@
   .vote_list_box .vote_list .btn_box button.btn_ready { font-size: 24px; }
   .vote_list_box .vote_list .btn_box button.btn_ready span { margin-left: 5px; }
   .vote_list_box .vote_list .btn_box button.btn_complete { font-size: 30px; }
-  .btn_add_vote { width: 150px; height: 150px; right: 40px; bottom: 40px; font-size: 70px; } }
+  .btn_add_vote { width: 150px; height: 150px; right: 40px; bottom: 40px; font-size: 70px; box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25); } }
 
 /*# sourceMappingURL=community.css.map */

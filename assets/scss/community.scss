@@ -694,6 +694,7 @@
     align-items: center;
     font-size: cal($e: 70);
     background: linear-gradient(to bottom, $color_lightprimary, $color_primary);
+    box-shadow: 0 cal($e: 8) cal($e: 15) rgba(0, 0, 0, 0.25);
 
     &.clicking {
         animation: add_btn_scale 0.3s;
@@ -1025,5 +1026,6 @@
         right: 40px;
         bottom: 40px;
         font-size: 70px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
     }
 }
