@@ -561,6 +561,48 @@
                     background-color: $color_disablesecondary;
                 }
             }
+
+            &.vote_dummy {
+                background-color: rgba(0, 0, 0, 0.1);
+
+                .dummy_item {
+                    background-color: $color_whitegray;
+                }
+                .type_box {
+                    div:nth-child(1) {
+                        width: cal($e: 50);
+                        height: cal($e: 50);
+                        border-radius: 50%;
+                    }
+                    div:nth-child(2),
+                    div:nth-child(3) {
+                        width: cal($e: 70);
+                        height: cal($e: 23);
+                        border-radius: cal($e: 30);
+                    }
+                }
+                .content_box {
+                    .text div:nth-child(1),
+                    .text div:nth-child(2) {
+                        width: cal($e: 330);
+                        height: cal($e: 23);
+                        border-radius: cal($e: 30);
+                    }
+                    .text div:nth-child(2) {
+                        margin-top: cal($e: 15);
+                    }
+                    .count_box .dummy_item {
+                        width: cal($e: 60);
+                        height: cal($e: 23);
+                        border-radius: cal($e: 30);
+                    }
+                }
+                .btn_box .dummy_item {
+                    width: cal($e: 74);
+                    height: cal($e: 74);
+                    border-radius: 50%;
+                }
+            }
         }
 
         .type_box {
@@ -948,6 +990,46 @@
 
                 &:not(:last-child) {
                     margin-bottom: 30px;
+                }
+
+                &.vote_dummy {
+                    background-color: rgba(0, 0, 0, 0.1);
+
+                    .dummy_item {
+                        background-color: $color_whitegray;
+                    }
+                    .type_box {
+                        div:nth-child(1) {
+                            width: 50px;
+                            height: 50px;
+                        }
+                        div:nth-child(2),
+                        div:nth-child(3) {
+                            width: 70px;
+                            height: 23px;
+                            border-radius: 30px;
+                        }
+                    }
+                    .content_box {
+                        .text div:nth-child(1),
+                        .text div:nth-child(2) {
+                            width: 330px;
+                            height: 23px;
+                            border-radius: 30px;
+                        }
+                        .text div:nth-child(2) {
+                            margin-top: 15px;
+                        }
+                        .count_box .dummy_item {
+                            width: 60px;
+                            height: 23px;
+                            border-radius: 30px;
+                        }
+                    }
+                    .btn_box .dummy_item {
+                        width: 74px;
+                        height: 74px;
+                    }
                 }
             }
 
