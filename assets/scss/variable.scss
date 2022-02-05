@@ -3,13 +3,16 @@ $color_white: #fff;
 $color_primary: #68c0b5;
 $color_lightprimary: #ace3dd;
 $color_secondary: #a149db;
+$color_warning: #fb8713;
 $color_red: #f00;
 $color_pink: #f09;
 $color_blue: #07f;
 $color_lightgray: #d2d2d2;
 $color_whitegray: #efefef;
+$color_hardgray: #a5a5a5;
 $color_gray: #a8a8a8;
 $color_darkgray: #707070;
+$color_lightblack: #5a5a5a;
 $color_transparentprimary: rgba(104, 192, 181, 0.2);
 $color_transparentsecondary: rgba(161, 73, 219, 0.12);
 $color_disablesecondary: rgba(131, 75, 168, 0.12);
@@ -43,30 +46,4 @@ $base_url: '../images/';
 
 @function cal($e, $max: 640) {
     @return calc(100vw * (#{$e}/#{$max}));
-}
-
-@keyframes add_btn_scale {
-    0% {
-        transform: scale(1);
-    }
-    25% {
-        transform: scale(0.95);
-    }
-    75% {
-        transform: scale(1.1);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-@keyframes add_btn_rotate {
-    0% {
-        transform: rotateZ(0deg);
-    }
-    70% {
-        transform: rotateZ(90deg);
-    }
-    100% {
-        transform: rotateZ(90deg);
-    }
 }

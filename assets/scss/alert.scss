@@ -1,0 +1,85 @@
+@import 'variable';
+
+.alert {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bgToneDown 0.3s forwards;
+}
+
+.alert_container {
+    width: cal($e: 400);
+    padding: cal($e: 80) cal($e: 40) cal($e: 60);
+    background-color: $color_white;
+    position: relative;
+    box-shadow: 0 0 cal($e: 10) rgba(0, 0, 0, 0.3);
+    animation: scaleUp 0.15s ease-in-out forwards;
+    z-index: 1;
+
+    .title {
+        font-weight: 700;
+        font-size: cal($e: 35);
+        line-height: cal($e: 35);
+        letter-spacing: cal($e: -2.1);
+        color: $color_black;
+        word-break: keep-all;
+        text-align: center;
+    }
+
+    .content {
+        font-weight: 500;
+        margin-top: cal($e: 25);
+        margin-bottom: cal($e: 60);
+        font-size: cal($e: 23);
+        line-height: cal($e: 37);
+        letter-spacing: cal($e: -1.38);
+        color: $color_black;
+        word-break: keep-all;
+        text-align: center;
+    }
+
+    .btn_group {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: cal($e: 60);
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            width: 100%;
+            background-color: $color_black;
+            color: $color_white;
+            font-weight: 300;
+            font-size: cal($e: 25);
+            line-height: cal($e: 25);
+            letter-spacing: cal($e: -0.25);
+
+            &:not(:last-child) {
+                border-right: 1px solid $color_white;
+            }
+        }
+    }
+
+    + .back {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

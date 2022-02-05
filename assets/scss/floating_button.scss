@@ -1,0 +1,237 @@
+@-webkit-keyframes come-in {
+    0% {
+        -webkit-transform: translatey(200%);
+        transform: translatey(200%);
+        opacity: 0;
+    }
+    30% {
+        -webkit-transform: translateX(0) scale(0.4);
+        transform: translateX(0) scale(0.4);
+    }
+    70% {
+        -webkit-transform: translateX(0px) scale(1.2);
+        transform: translateX(0px) scale(1.2);
+    }
+    100% {
+        -webkit-transform: translatey(0px) scale(1);
+        transform: translatey(0px) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes come-in {
+    0% {
+        -webkit-transform: translatey(200%);
+        transform: translatey(200%);
+        opacity: 0;
+    }
+    30% {
+        -webkit-transform: translateX(0) scale(0.4);
+        transform: translateX(0) scale(0.4);
+    }
+    70% {
+        -webkit-transform: translateX(0px) scale(1.2);
+        transform: translateX(0px) scale(1.2);
+    }
+    100% {
+        -webkit-transform: translatey(0px) scale(1);
+        transform: translatey(0px) scale(1);
+        opacity: 1;
+    }
+}
+
+.floating-container {
+    position: fixed;
+    width: calc(100vw * (150 / 640));
+    height: calc(100vw * (150 / 640));
+    bottom: 0;
+    right: 0;
+    margin: calc(100vw * (35 / 640)) calc(100vw * (25 / 640));
+    z-index: 110;
+
+    &.is-opened {
+        height: calc(100vw * (440 / 640));
+    }
+}
+
+.floating-container.is-opened .floating-button {
+    box-shadow: 0 calc(100vw * (10 / 640)) calc(100vw * (25 / 640))
+        rgba(44, 179, 240, 0.6);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.floating-container .element-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.floating-container .element-container a {
+    display: block;
+    width: calc(100vw * (100 / 640));
+    height: calc(100vw * (100 / 640));
+    pointer-events: none;
+    position: relative;
+    margin: calc(100vw * (15 / 640)) auto;
+}
+.floating-container.is-opened .element-container a {
+    pointer-events: visible;
+}
+
+.floating-container.is-opened .element-container .float-element:nth-child(1) {
+    -webkit-animation: come-in 0.4s forwards 0.2s;
+    animation: come-in 0.4s forwards 0.2s;
+}
+
+.floating-container.is-opened .element-container .float-element:nth-child(2) {
+    -webkit-animation: come-in 0.4s forwards 0.4s;
+    animation: come-in 0.4s forwards 0.4s;
+}
+
+.floating-container .floating-button {
+    position: absolute;
+    width: calc(100vw * (150 / 640));
+    height: calc(100vw * (150 / 640));
+    background: linear-gradient(to bottom, #ace3dd, #68c0b5);
+    bottom: 0;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    color: white;
+    line-height: calc(100vw * (65 / 640));
+    text-align: center;
+    z-index: 100;
+    // box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+    box-shadow: 0 calc(100vw * (8 / 640)) calc(100vw * (15 / 640))
+        rgba(0, 0, 0, 0.25);
+
+    cursor: pointer;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    transform: rotate(0deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(100vw * (70 / 640));
+}
+
+.floating-container.is-opened .floating-button {
+    transform: rotate(45deg);
+}
+
+.floating-container .float-element {
+    position: relative;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-weight: 500;
+    text-align: center;
+    line-height: calc(100vw * (50 / 640));
+    z-index: 0;
+    opacity: 0;
+    -webkit-transform: translateY(200%);
+    transform: translateY(200%);
+}
+
+.floating-container .float-element .material-icons {
+    vertical-align: middle;
+    font-size: calc(100vw * (16 / 640));
+}
+
+.floating-container .bg-color:nth-child(1) .float-element {
+    background: #0077ff;
+    box-shadow: 0 calc(100vw * (20 / 640)) calc(100vw * (20 / 640))
+        calc(100vw * (-10 / 640)) rgba(66, 165, 245, 0.5);
+}
+
+.floating-container .bg-color:nth-child(2) .float-element {
+    background: #ff0099;
+    box-shadow: 0 calc(100vw * (20 / 640)) calc(100vw * (20 / 640))
+        calc(100vw * (-10 / 640)) rgba(216, 94, 185, 0.5);
+}
+
+.a-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    span {
+        font-family: gotham;
+        font-weight: bold;
+        font-size: calc(100vw * (25 / 640));
+        letter-spacing: calc(100vw * (-0.54 / 640));
+    }
+}
+
+.is-blur {
+    .blur-bg {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 109;
+        opacity: 0.8;
+        background: black;
+    }
+}
+
+@media (min-width: 640px) {
+    .floating-container {
+        width: 150px;
+        height: 150px;
+        margin: 35px 25px;
+
+        &.is-opened {
+            height: 440px;
+        }
+    }
+
+    .floating-container.is-opened .floating-button {
+        box-shadow: 0 10px 25px rgba(44, 179, 240, 0.6);
+    }
+    .floating-container .element-container a {
+        width: 100px;
+        height: 100px;
+        margin: 15px auto;
+    }
+
+    .floating-container .floating-button {
+        width: 150px;
+        height: 150px;
+        line-height: 65px;
+        // box-shadow: 0 10px 25px -5px rgba(44, 179, 240, 0.6);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+
+        cursor: pointer;
+        font-size: 70px;
+    }
+
+    .floating-container .float-element {
+        line-height: 50px;
+    }
+
+    .floating-container .float-element .material-icons {
+        font-size: 16px;
+    }
+
+    .floating-container .bg-color:nth-child(1) .float-element {
+        box-shadow: 0 20px 20px -10px rgba(66, 165, 245, 0.5);
+    }
+
+    .floating-container .bg-color:nth-child(2) .float-element {
+        box-shadow: 0 20px 20px -10px rgba(216, 94, 185, 0.5);
+    }
+
+    .a-tag {
+        span {
+            font-size: 25px;
+            letter-spacing: -0.54px;
+        }
+    }
+}

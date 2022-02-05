@@ -1,4 +1,5 @@
 @import 'variable';
+@import 'animation';
 
 .header {
     padding: cal($e: 50) cal($e: 40) 0;
@@ -41,6 +42,7 @@
 
 .community_wrapper {
     padding-bottom: cal($e: 150);
+    background-color: $color_white;
 }
 
 .top_5_box {
@@ -722,30 +724,30 @@
     }
 }
 
-.btn_add_vote {
-    position: fixed;
-    z-index: 9999;
-    width: cal($e: 150);
-    height: cal($e: 150);
-    border-radius: 50%;
-    right: cal($e: 40);
-    bottom: cal($e: 40);
-    color: $color_white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: cal($e: 70);
-    background: linear-gradient(to bottom, $color_lightprimary, $color_primary);
-    box-shadow: 0 cal($e: 8) cal($e: 15) rgba(0, 0, 0, 0.25);
+// .btn_add_vote {
+//     position: fixed;
+//     z-index: 9999;
+//     width: cal($e: 150);
+//     height: cal($e: 150);
+//     border-radius: 50%;
+//     right: cal($e: 40);
+//     bottom: cal($e: 40);
+//     color: $color_white;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: cal($e: 70);
+//     background: linear-gradient(to bottom, $color_lightprimary, $color_primary);
+//     box-shadow: 0 cal($e: 8) cal($e: 15) rgba(0, 0, 0, 0.25);
 
-    &.clicking {
-        animation: add_btn_scale 0.3s;
+//     &.clicking {
+//         animation: add_btn_scale 0.3s;
 
-        span {
-            animation: add_btn_rotate 0.3s;
-        }
-    }
-}
+//         span {
+//             animation: add_btn_rotate 0.3s;
+//         }
+//     }
+// }
 
 @media (min-width: $media_base) {
     .header {
@@ -1102,12 +1104,12 @@
         }
     }
 
-    .btn_add_vote {
-        width: 150px;
-        height: 150px;
-        right: 40px;
-        bottom: 40px;
-        font-size: 70px;
-        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
-    }
+    // .btn_add_vote {
+    //     width: 150px;
+    //     height: 150px;
+    //     right: 40px;
+    //     bottom: 40px;
+    //     font-size: 70px;
+    //     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25);
+    // }
 }

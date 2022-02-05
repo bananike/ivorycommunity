@@ -1,0 +1,91 @@
+@keyframes add_btn_scale {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(0.95);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes add_btn_rotate {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    70% {
+        transform: rotateZ(90deg);
+    }
+    100% {
+        transform: rotateZ(90deg);
+    }
+}
+
+@keyframes modal_on {
+    0% {
+        left: 50%;
+        transform: translateY(100%) translateX(-50%);
+    }
+    100% {
+        left: 50%;
+        transform: translateY(0%) translateX(-50%);
+    }
+}
+@keyframes modal_off {
+    0% {
+        left: 50%;
+        transform: translateY(0%) translateX(-50%);
+    }
+    100% {
+        left: 50%;
+        transform: translateY(100%) translateX(-50%);
+    }
+}
+
+@keyframes backdrop_on {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes backdrop_off {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes bgToneDown {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+@keyframes scaleUp {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes scaleUpdown {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

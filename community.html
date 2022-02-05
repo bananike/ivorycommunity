@@ -13,9 +13,16 @@
         <link rel="stylesheet" href="assets/css/font.css" />
         <link rel="stylesheet" href="assets/css/common.css" />
         <link rel="stylesheet" href="assets/css/community.css" />
+        <link rel="stylesheet" href="assets/css/add_vote_container.css" />
+
+        <!-- alert -->
+        <link rel="stylesheet" href="assets/css/alert.css" />
 
         <!-- swipe -->
         <link rel="stylesheet" href="assets/css/swiper.css" />
+
+        <!-- floating button -->
+        <link rel="stylesheet" href="assets/css/floating_button.css" />
     </head>
     <body>
         <div class="container">
@@ -686,7 +693,8 @@
                         </div>
                     </div>
 
-                    <ul class="vote_list" id="voteList">
+                    <!-- list box -->
+                    <ul class="vote_list" id="voteList" hidden>
                         <!-- 
                             type_vs: vs타입
                             type_poll: poll타입
@@ -896,26 +904,583 @@
                         </li>
                         <!-- dummy -->
                     </ul>
+                    <!-- list box -->
+
+                    <!-- 게시글 없음 -->
+                    <div class="no_content">
+                        <div class="img_box">
+                            <img
+                                src="assets/images/no_content.svg"
+                                alt="게시글 없음"
+                            />
+                        </div>
+                        <div class="text_box">
+                            <p>
+                                게시글이 하나도 없어요.<br />새로운 글을
+                                올려주세요!
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 게시글 없음 -->
                 </div>
                 <!-- vote list -->
 
                 <!-- add btn -->
-                <button id="btnAddVote" class="btn_add_vote">
-                    <span class="ivoryIcon-plus"></span>
-                </button>
+                <div class="floating-container">
+                    <div class="floating-button" id="btnAddVote">
+                        <span class="ivoryIcon-plus"></span>
+                    </div>
+                    <div class="element-container">
+                        <a href="/" class="bg-color" id="btnAddVotePOLL">
+                            <span class="float-element a-tag">
+                                <span>POLL</span>
+                            </span>
+                        </a>
+                        <a href="/" class="bg-color" id="btnAddVoteVS">
+                            <span class="float-element a-tag">
+                                <span>VS</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="blur-bg"></div>
                 <!-- add btn -->
             </div>
             <!-- community main -->
         </div>
 
+        <!-- regist vote -->
+        <div id="addVoteContainer" class="modal_container add_vote_container">
+            <div class="modal_back"></div>
+            <div class="modal_box add_vote_box">
+                <!-- modal header -->
+                <div class="modal_header">
+                    <button type="button" class="close_btn">
+                        <span class="ivoryIcon-close"></span>
+                    </button>
+                    <h2>투표 올리기</h2>
+                    <button
+                        type="button"
+                        id="btnRegistVote"
+                        class="button fill btn_regist_vote disable"
+                    >
+                        등록하기
+                    </button>
+                </div>
+                <!-- modal header -->
+
+                <!-- modal content -->
+                <div class="modal_content">
+                    <form action="">
+                        <!-- input box -->
+                        <div class="add_vote_input_box">
+                            <div class="form_group input_linear">
+                                <label
+                                    id="btnRegistVoteCategory"
+                                    for="registVoteCategory"
+                                    class="label require btn_select_category"
+                                >
+                                    <span>카테고리를 선택해주세요.</span>
+                                    <span class="ivoryIcon-arrow_down"></span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form_control"
+                                    data-is-data="none"
+                                    readonly
+                                    id="registVoteCategory"
+                                />
+                            </div>
+                            <div class="form_group input_linear">
+                                <label
+                                    for="resgistVoteTitle"
+                                    class="label require"
+                                >
+                                    <span>투표 제목을 입력해주세요.</span>
+                                </label>
+                                <textarea
+                                    type="text"
+                                    class="form_control textarea_auto_line"
+                                    data-limit-line="2"
+                                    id="resgistVoteTitle"
+                                    placeholder="투표 제목 필수 입력"
+                                ></textarea>
+                            </div>
+
+                            <!-- image regist -->
+                            <div class="regist_image_box">
+                                <!-- base image input dom -->
+                                <li
+                                    class="img_item"
+                                    id="cloneRegistImgItem"
+                                    hidden
+                                >
+                                    <label class="preview_img_box" for="">
+                                        <button
+                                            type="button"
+                                            class="btn_delete_img"
+                                            hidden
+                                        >
+                                            <span
+                                                class="ivoryIcon-close"
+                                            ></span>
+                                        </button>
+
+                                        <div class="on_img_box" hidden>
+                                            <img
+                                                class="preview_img"
+                                                src="assets/images/dummy.png"
+                                                alt="이미지 미리보기"
+                                            />
+                                        </div>
+
+                                        <div class="none_img_box">
+                                            <span class="ivoryIcon-plus"></span>
+                                            <p>사진 올리기</p>
+                                        </div>
+                                        <input
+                                            type="file"
+                                            class="input_img_uploader"
+                                            id="imgUploader_ContentImg"
+                                            data-id="appendedImg_"
+                                        />
+                                    </label>
+                                </li>
+                                <!-- base image input dom -->
+                                <ul
+                                    class="img_item_list"
+                                    id="votePreviewImgList"
+                                ></ul>
+                            </div>
+                            <!-- image regist -->
+
+                            <!-- text box -->
+                            <div class="text_wrapper">
+                                <textarea
+                                    id="voteContentText"
+                                    class="textarea_auto_line"
+                                    data-limit-line="3"
+                                    placeholder="글 내용을 입력해주세요"
+                                ></textarea>
+                            </div>
+                            <!-- text box -->
+                        </div>
+                        <!-- input box -->
+
+                        <!-- setting box -->
+                        <div class="setting_box">
+                            <div class="delete_btn_box">
+                                <button
+                                    type="button"
+                                    class="btn_on_delete_mode"
+                                    id="btnOnDeleteMode"
+                                >
+                                    항목삭제
+                                </button>
+                            </div>
+
+                            <!-- clone item -->
+                            <li id="cloneRegistPollOption" hidden>
+                                <div class="form_group">
+                                    <textarea
+                                        type="text"
+                                        id=""
+                                        data-id="votePollOption_"
+                                        class="vote_poll_text textarea_auto_line"
+                                        data-limit-line="2"
+                                        placeholder="항목 1 입력"
+                                    ></textarea>
+                                    <label class="preview_img_box" for="">
+                                        <div class="on_img_box" hidden>
+                                            <img
+                                                class="preview_img"
+                                                src="assets/images/dummy.png"
+                                                alt="이미지 미리보기"
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            class="btn_delete_poll_option_img"
+                                            hidden
+                                        >
+                                            <span
+                                                class="ivoryIcon-close"
+                                            ></span>
+                                        </button>
+
+                                        <div class="none_img_box">
+                                            <span
+                                                class="ivoryIcon-camera"
+                                            ></span>
+                                        </div>
+
+                                        <input
+                                            type="file"
+                                            class="input_img_uploader"
+                                            id="imgUploader_PollOption"
+                                            data-id="pollOption_"
+                                        />
+                                    </label>
+                                </div>
+                                <div class="button_box">
+                                    <button
+                                        type="button"
+                                        class="btn_delete_option"
+                                    ></button>
+                                </div>
+                            </li>
+                            <!-- clone item -->
+
+                            <!-- poll opion list -->
+                            <ul
+                                id="votePollOpionList"
+                                class="vote_poll_option_list"
+                            ></ul>
+                            <!-- poll opion list -->
+
+                            <button
+                                class="btn_add_poll_option"
+                                id="btnAddPollOption"
+                                type="button"
+                            >
+                                <span class="ivoryIcon-plus"></span>
+                                <span class="strong">항목 추가</span>
+                                <span> (최대 30개)</span>
+                            </button>
+
+                            <!-- multi select -->
+                            <div class="setting_sub_wrapper multi_select_box">
+                                <div class="setting_sub_header">
+                                    <div class="title_box">
+                                        <span class="ivoryIcon-multi"></span>
+                                        <span>복수 선택 허용</span>
+                                    </div>
+                                    <div class="form_checkbox">
+                                        <input
+                                            type="checkbox"
+                                            id="checkVoteMultiSelect"
+                                            require
+                                        />
+                                        <label
+                                            for="checkVoteMultiSelect"
+                                            class="fake_box"
+                                        ></label>
+                                    </div>
+                                </div>
+                                <div class="hide_box">
+                                    <div class="setting_sub_content">
+                                        <div class="select_multi_count_box">
+                                            <button
+                                                type="button"
+                                                id="btnOnInputMultiCount"
+                                                class="btn_on_input_multi_count"
+                                            >
+                                                3
+                                            </button>
+                                            <span>개까지 선택</span>
+                                        </div>
+                                        <div
+                                            class="setting_sub_btn_box flex_end"
+                                        >
+                                            <div class="custom_checkbox">
+                                                <input
+                                                    type="checkbox"
+                                                    id="btnPollMultiSelectNoLimit"
+                                                />
+                                                <label
+                                                    for="btnPollMultiSelectNoLimit"
+                                                    class="fake_box"
+                                                    >갯수제한 없음</label
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- multi select -->
+
+                            <!-- limit time -->
+                            <div class="setting_sub_wrapper limit_time_box">
+                                <div class="setting_sub_header">
+                                    <div class="title_box">
+                                        <span class="ivoryIcon-clock"></span>
+                                        <span>마감시간 설정</span>
+                                    </div>
+                                    <div class="form_checkbox">
+                                        <input
+                                            type="checkbox"
+                                            id="checkVoteLimitTime"
+                                            require
+                                        />
+                                        <label
+                                            for="checkVoteLimitTime"
+                                            class="fake_box"
+                                        ></label>
+                                    </div>
+                                </div>
+                                <div class="hide_box">
+                                    <div class="setting_sub_content">
+                                        <div class="setting_sub_btn_box">
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitHour"
+                                                    name="radioVoteLimitTime"
+                                                    value="hour"
+                                                />
+                                                <label
+                                                    for="readioVoteLimitHour"
+                                                    class="fake_box"
+                                                    >1시간 내</label
+                                                >
+                                            </div>
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitToday"
+                                                    name="radioVoteLimitTime"
+                                                    value="today"
+                                                />
+                                                <label
+                                                    for="readioVoteLimitToday"
+                                                    class="fake_box"
+                                                    >오늘까지</label
+                                                >
+                                            </div>
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitTomorrow"
+                                                    name="radioVoteLimitTime"
+                                                    value="tomorrow"
+                                                />
+                                                <label
+                                                    for="readioVoteLimitTomorrow"
+                                                    class="fake_box"
+                                                    >내일까지</label
+                                                >
+                                            </div>
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitWeek"
+                                                    name="radioVoteLimitTime"
+                                                    value="week"
+                                                    checked
+                                                />
+                                                <label
+                                                    for="readioVoteLimitWeek"
+                                                    class="fake_box"
+                                                    >일주일 내</label
+                                                >
+                                            </div>
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitMonth"
+                                                    name="radioVoteLimitTime"
+                                                    value="month"
+                                                />
+                                                <label
+                                                    for="readioVoteLimitMonth"
+                                                    class="fake_box"
+                                                    >한달 이내</label
+                                                >
+                                            </div>
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitSeason"
+                                                    name="radioVoteLimitTime"
+                                                    value="season"
+                                                />
+                                                <label
+                                                    for="readioVoteLimitSeason"
+                                                    class="fake_box"
+                                                    >3달 이내</label
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- limit time -->
+                        </div>
+                        <!-- setting box -->
+                    </form>
+                </div>
+                <!-- modal content -->
+            </div>
+        </div>
+        <!-- 투표등록 -->
+
+        <!-- 카테고리 선택 패널 -->
+        <div
+            class="modal_container level_2 select_category_panel"
+            id="selectCategoryPanel"
+        >
+            <div class="modal_back"></div>
+            <div class="modal_box">
+                <div class="modal_header">
+                    <button type="button" class="close_btn"></button>
+                    <h2>카테고리 선택</h2>
+                </div>
+                <div class="modal_content">
+                    <div class="category_box">
+                        <ul id="categorySelectList">
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-baby"></span>
+                                    <span class="select_category_value"
+                                        >임신 · 출산</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-parenting"></span>
+                                    <span class="select_category_value"
+                                        >육아</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-wedding"></span>
+                                    <span class="select_category_value"
+                                        >연애 · 결혼</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-shopping"></span>
+                                    <span class="select_category_value"
+                                        >쇼핑</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-fashion"></span>
+                                    <span class="select_category_value"
+                                        >패션 · 뷰티</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-interior"></span>
+                                    <span class="select_category_value"
+                                        >인테리어</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-pet"></span>
+                                    <span class="select_category_value"
+                                        >반려동물</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-finance"></span>
+                                    <span class="select_category_value"
+                                        >경제 · 제테크</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-movie"></span>
+                                    <span class="select_category_value"
+                                        >영화 · 드라마</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-gossip"></span>
+                                    <span class="select_category_value"
+                                        >연예 · 가십</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-food"></span>
+                                    <span class="select_category_value"
+                                        >요리 · 맛집</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-education"></span>
+                                    <span class="select_category_value"
+                                        >교육 · 공부</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-society"></span>
+                                    <span class="select_category_value"
+                                        >인간관계</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-rectal"></span>
+                                    <span class="select_category_value"
+                                        >직장 · 취업</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-adult"></span>
+                                    <span class="select_category_value"
+                                        >성생활</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-travel"></span>
+                                    <span class="select_category_value"
+                                        >취미 · 여행</span
+                                    >
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 카테고리 선택 패널 -->
+
         <!-- jquery -->
         <script type="text/javascript" src="assets/js/jQuery.js"></script>
+
+        <!-- alert -->
+        <script type="text/javascript" src="assets/js/alert.js"></script>
 
         <!-- js -->
         <script type="text/javascript" src="assets/js/common.js"></script>
 
         <!-- swipe -->
         <script type="text/javascript" src="assets/js/swiper.js"></script>
+
+        <!-- floating button -->
+        <script
+            type="text/javascript"
+            src="assets/js/floating_button.js"
+        ></script>
         <script>
             const swiper = new Swiper('.swiper', {
                 effect: 'cards',
