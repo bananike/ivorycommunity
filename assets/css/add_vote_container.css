@@ -1,3 +1,6 @@
+.add_vote_container.on_poll .is_vs { display: none !important; }
+.add_vote_container.on_vs .is_poll { display: none !important; }
+
 .add_vote_box { background-color: #fff; }
 .add_vote_box .modal_header { height: calc(100vw * (110/640)); }
 .add_vote_box .modal_header h2 { font-weight: 700; font-size: calc(100vw * (32/640)); letter-spacing: calc(100vw * (-1.92/640)); }

@@ -13,7 +13,8 @@ body {
     background-color: $color_whitegray;
 
     &.modal_on,
-    &.alert_on {
+    &.alert_on,
+    &.slide_on {
         overflow: hidden;
     }
 }

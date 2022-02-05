@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="assets/css/common.css" />
         <link rel="stylesheet" href="assets/css/community.css" />
         <link rel="stylesheet" href="assets/css/add_vote_container.css" />
+        <link rel="stylesheet" href="assets/css/result.css" />
 
         <!-- alert -->
         <link rel="stylesheet" href="assets/css/alert.css" />
@@ -67,7 +68,7 @@
 
                         <!-- 탑5 스와이프박스 -->
                         <div class="top_5_swipe">
-                            <div class="swiper">
+                            <div class="swiper" id="top5Swiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="top_5_item poll">
@@ -694,7 +695,7 @@
                     </div>
 
                     <!-- list box -->
-                    <ul class="vote_list" id="voteList" hidden>
+                    <ul class="vote_list" id="voteList">
                         <!-- 
                             type_vs: vs타입
                             type_poll: poll타입
@@ -842,7 +843,7 @@
                                 </button>
                             </div>
                         </li>
-                        <li class="type_poll status_complete isAdult isClose">
+                        <li class="type_vs status_complete isAdult isClose">
                             <div class="type_box">
                                 <span class="ivoryIcon-adult"></span>
                                 <div class="type vs">VS</div>
@@ -907,7 +908,7 @@
                     <!-- list box -->
 
                     <!-- 게시글 없음 -->
-                    <div class="no_content">
+                    <div class="no_content" hidden>
                         <div class="img_box">
                             <img
                                 src="assets/images/no_content.svg"
@@ -949,7 +950,7 @@
             <!-- community main -->
         </div>
 
-        <!-- regist vote -->
+        <!-- 투표등록 -->
         <div id="addVoteContainer" class="modal_container add_vote_container">
             <div class="modal_back"></div>
             <div class="modal_box add_vote_box">
@@ -1069,7 +1070,7 @@
 
                         <!-- setting box -->
                         <div class="setting_box">
-                            <div class="delete_btn_box">
+                            <div class="delete_btn_box is_poll">
                                 <button
                                     type="button"
                                     class="btn_on_delete_mode"
@@ -1135,12 +1136,12 @@
                             <!-- poll opion list -->
                             <ul
                                 id="votePollOpionList"
-                                class="vote_poll_option_list"
+                                class="vote_poll_option_list is_poll"
                             ></ul>
                             <!-- poll opion list -->
 
                             <button
-                                class="btn_add_poll_option"
+                                class="btn_add_poll_option is_poll"
                                 id="btnAddPollOption"
                                 type="button"
                             >
@@ -1150,7 +1151,9 @@
                             </button>
 
                             <!-- multi select -->
-                            <div class="setting_sub_wrapper multi_select_box">
+                            <div
+                                class="setting_sub_wrapper multi_select_box is_poll"
+                            >
                                 <div class="setting_sub_header">
                                     <div class="title_box">
                                         <span class="ivoryIcon-multi"></span>
@@ -1464,34 +1467,418 @@
         </div>
         <!-- 카테고리 선택 패널 -->
 
+        <!-- 결과 슬라이드 -->
+        <div class="back_bg"></div>
+        <div id="sliderVoteResult" class="slide_popup vote_result_wrapper">
+            <div class="header_box">
+                <div class="btn_area">
+                    <button type="button" class="close_popup">
+                        <span class="ivoryIcon-arrow_left"></span>
+                    </button>
+                    <div class="btn_group">
+                        <button type="button" class="clicked">
+                            <span class="ivoryIcon-heart_outline"></span>
+                            <span class="ivoryIcon-heart"></span>
+                        </button>
+                        <button type="button">
+                            <span class="ivoryIcon-share"></span>
+                        </button>
+                        <button type="button">
+                            <span class="ivoryIcon-report"></span>
+                        </button>
+                        <button type="button">
+                            <span class="ivoryIcon-delete"></span>
+                        </button>
+                    </div>
+                </div>
+                <h2>투표 결과는?</h2>
+            </div>
+            <div class="content_box">
+                <!-- 투표 등록 정보 -->
+                <div class="vote_content">
+                    <div class="category_title">
+                        <span class="ivoryIcon-pet"></span>
+                        <p class="title">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. A perferendis blanditiis maxime.
+                        </p>
+                    </div>
+                    <div class="regist_date">
+                        <span>12:20</span>
+                        <span class="ivoryIcon-new"></span>
+                    </div>
+                    <div class="count_box">
+                        <div class="count_left">
+                            <div class="count_vote">
+                                <span class="ivoryIcon-vote"></span>
+                                <span>9,999</span>
+                            </div>
+                            <div class="count_view">
+                                <span class="ivoryIcon-view"></span>
+                                <span>9,999</span>
+                            </div>
+                            <div class="count_heart">
+                                <span class="ivoryIcon-heart"></span>
+                                <span>9,999</span>
+                            </div>
+                        </div>
+                        <div class="count_right remaining_date">20일 남음</div>
+                    </div>
+                    <div class="vote_img_swipe">
+                        <div class="swiper" id="resultSwipe">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img
+                                        src="https://placeimg.com/500/400/animals"
+                                        alt="임시사진1"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="https://placeimg.com/500/350/animals"
+                                        alt="임시사진2"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="https://placeimg.com/500/402/animals"
+                                        alt="임시사진3"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="https://placeimg.com/424/402/animals"
+                                        alt="임시사진4"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="https://placeimg.com/444/402/animals"
+                                        alt="임시사진5"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vote_text_box">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iure assumenda voluptatum esse laudantium sunt neque
+                        saepe atque? Libero, eum quae?
+                    </div>
+                </div>
+                <!-- 투표 등록 정보 -->
+
+                <!-- 투표 리스트 -->
+                <div class="vote_communication">
+                    <div class="total_voter">
+                        <span class="ivoryIcon-vote"></span>
+                        <p>
+                            총 <span class="total_voter_count">9,999명</span>이
+                            투표했습니다!
+                        </p>
+                    </div>
+                    <ul class="reason_for_choosing_list is_poll">
+                        <li>
+                            <div class="list_item my_pick">
+                                <div class="ranking">
+                                    <img
+                                        class="medal"
+                                        src="assets/images/medal_gold.png"
+                                        alt="1위"
+                                    />
+                                    <div class="my_pick">MY PICK</div>
+                                </div>
+                                <div class="reason_info">
+                                    <div class="title">아이보리 헤어샵</div>
+                                    <div class="choice_count_box">
+                                        <div
+                                            class="progress_box"
+                                            data-progress="50"
+                                        >
+                                            <div class="foreground"></div>
+                                            <div class="background"></div>
+                                        </div>
+                                        <div class="percentage">
+                                            <p>50%</p>
+                                            <p>(999명)</p>
+                                        </div>
+                                    </div>
+                                    <div class="show_reasons">
+                                        <button type="button">
+                                            <span> 선택한 이유 모아보기 </span>
+                                            <span
+                                                class="ivoryIcon-arrow_down"
+                                            ></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="img_box">
+                                    <img
+                                        src="https://placeimg.com/120/120/animals"
+                                        alt="임시-1"
+                                    />
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_item my_pick">
+                                <div class="ranking">
+                                    <img
+                                        class="medal"
+                                        src="assets/images/medal_silver.png"
+                                        alt="2위"
+                                    />
+                                    <div class="my_pick">MY PICK</div>
+                                </div>
+                                <div class="reason_info">
+                                    <div class="title">아이보리 헤어샵</div>
+                                    <div class="choice_count_box">
+                                        <div
+                                            class="progress_box"
+                                            data-progress="50"
+                                        >
+                                            <div class="foreground"></div>
+                                            <div class="background"></div>
+                                        </div>
+                                        <div class="percentage">
+                                            <p>50%</p>
+                                            <p>(999명)</p>
+                                        </div>
+                                    </div>
+                                    <div class="show_reasons">
+                                        <button type="button">
+                                            <span> 선택한 이유 모아보기 </span>
+                                            <span
+                                                class="ivoryIcon-arrow_down"
+                                            ></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="img_box">
+                                    <img
+                                        src="https://placeimg.com/122/120/animals"
+                                        alt="임시-1"
+                                    />
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_item my_pick">
+                                <div class="ranking">
+                                    <img
+                                        class="medal"
+                                        src="assets/images/medal_bronze.png"
+                                        alt="3위"
+                                    />
+                                    <div class="my_pick">MY PICK</div>
+                                </div>
+                                <div class="reason_info">
+                                    <div class="title">아이보리 헤어샵</div>
+                                    <div class="choice_count_box">
+                                        <div
+                                            class="progress_box"
+                                            data-progress="50"
+                                        >
+                                            <div class="foreground"></div>
+                                            <div class="background"></div>
+                                        </div>
+                                        <div class="percentage">
+                                            <p>50%</p>
+                                            <p>(999명)</p>
+                                        </div>
+                                    </div>
+                                    <div class="show_reasons">
+                                        <button type="button">
+                                            <span> 선택한 이유 모아보기 </span>
+                                            <span
+                                                class="ivoryIcon-arrow_down"
+                                            ></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="img_box">
+                                    <img
+                                        src="https://placeimg.com/123/120/animals"
+                                        alt="임시-1"
+                                    />
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="list_item">
+                                <div class="ranking">
+                                    <div class="ranking_number">4위</div>
+                                    <div class="my_pick">MY PICK</div>
+                                </div>
+                                <div class="reason_info">
+                                    <div class="title">아이보리 헤어샵</div>
+                                    <div class="choice_count_box">
+                                        <div
+                                            class="progress_box"
+                                            data-progress="50"
+                                        >
+                                            <div class="foreground"></div>
+                                            <div class="background"></div>
+                                        </div>
+                                        <div class="percentage">
+                                            <p>50%</p>
+                                            <p>(999명)</p>
+                                        </div>
+                                    </div>
+                                    <div class="show_reasons">
+                                        <button type="button">
+                                            <span> 선택한 이유 모아보기 </span>
+                                            <span
+                                                class="ivoryIcon-arrow_down"
+                                            ></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="img_box">
+                                    <img
+                                        src="https://placeimg.com/120/123/animals"
+                                        alt="임시-1"
+                                    />
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="reason_for_chooing_card is_vs">vs용</div>
+                    <button type="button" class="button fill">
+                        <span>재투표하기</span>
+                        <span class="ivoryIcon-arrow_right"></span>
+                    </button>
+                </div>
+                <!-- 투표 리스트 -->
+
+                <!-- 투표참여 현황 -->
+                <div class="vote_voter_info">
+                    <div class="voter_header">
+                        <span class="ivoryIcon-couple"></span>
+                        <p>투표 참여자 현황</p>
+                    </div>
+                    <div class="voter_content type_sex">
+                        <h4>성별</h4>
+                        <div class="type_box">
+                            <div class="female">
+                                <span class="ivoryIcon-femail"></span>
+                                <div class="percentage">
+                                    <p>70%</p>
+                                    <div
+                                        class="progress_box"
+                                        data-progress="70"
+                                    >
+                                        <div class="foreground"></div>
+                                        <div class="background"></div>
+                                    </div>
+                                    <p class="type">여성</p>
+                                    <p class="count">999,999명</p>
+                                </div>
+                            </div>
+                            <div class="male">
+                                <span class="ivoryIcon-mail"></span>
+                                <div class="percentage">
+                                    <p>30%</p>
+                                    <div
+                                        class="progress_box"
+                                        data-progress="30"
+                                    >
+                                        <div class="foreground"></div>
+                                        <div class="background"></div>
+                                    </div>
+                                    <p class="type">남성</p>
+                                    <p class="count">999,999명</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="voter_content type_generation">
+                        <h4>연령별</h4>
+                        <div class="type_box">
+                            <div class="gen_20">
+                                <div
+                                    class="progress_box vertical"
+                                    data-progress="30"
+                                >
+                                    <div class="foreground"></div>
+                                    <div class="background"></div>
+                                </div>
+                                <div class="percentage">
+                                    <p>50%</p>
+                                </div>
+                                <p class="count">(999,999명)</p>
+                                <div class="type">20대</div>
+                            </div>
+                            <div class="gen_30">
+                                <div
+                                    class="progress_box vertical"
+                                    data-progress="30"
+                                >
+                                    <div class="foreground"></div>
+                                    <div class="background"></div>
+                                </div>
+                                <div class="percentage">
+                                    <p>50%</p>
+                                </div>
+                                <p class="count">(999,999명)</p>
+                                <div class="type">30대</div>
+                            </div>
+                            <div class="gen_40">
+                                <div
+                                    class="progress_box vertical"
+                                    data-progress="30"
+                                >
+                                    <div class="foreground"></div>
+                                    <div class="background"></div>
+                                </div>
+                                <div class="percentage">
+                                    <p>50%</p>
+                                </div>
+                                <p class="count">(999,999명)</p>
+                                <div class="type">40대</div>
+                            </div>
+                            <div class="gen_50">
+                                <div
+                                    class="progress_box vertical"
+                                    data-progress="30"
+                                >
+                                    <div class="foreground"></div>
+                                    <div class="background"></div>
+                                </div>
+                                <div class="percentage">
+                                    <p>50%</p>
+                                </div>
+                                <p class="count">(999,999명)</p>
+                                <div class="type">50대</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 투표참여 현황 -->
+
+                <!-- 댓글 영역 -->
+                <div class="vote_reply_wrapper">댓글 휴...</div>
+                <!-- 댓글 영역 -->
+            </div>
+        </div>
+        <!-- 결과 슬라이드 -->
+
         <!-- jquery -->
         <script type="text/javascript" src="assets/js/jQuery.js"></script>
 
         <!-- alert -->
         <script type="text/javascript" src="assets/js/alert.js"></script>
 
-        <!-- js -->
-        <script type="text/javascript" src="assets/js/common.js"></script>
-
         <!-- swipe -->
         <script type="text/javascript" src="assets/js/swiper.js"></script>
+
+        <!-- js -->
+        <script type="text/javascript" src="assets/js/common.js"></script>
 
         <!-- floating button -->
         <script
             type="text/javascript"
             src="assets/js/floating_button.js"
         ></script>
-        <script>
-            const swiper = new Swiper('.swiper', {
-                effect: 'cards',
-                cardsEffect: {
-                    slideShadows: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-            });
-        </script>
     </body>
 </html>

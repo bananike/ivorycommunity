@@ -1,5 +1,18 @@
 @import 'variable';
 
+.add_vote_container {
+    &.on_poll {
+        .is_vs {
+            display: none !important;
+        }
+    }
+    &.on_vs {
+        .is_poll {
+            display: none !important;
+        }
+    }
+}
+
 .add_vote_box {
     background-color: $color_white;
 

@@ -1,4 +1,21 @@
 $(document).ready(function () {
+    // 스와이프
+    const swiperTop5 = new Swiper('#top5Swiper', {
+        effect: 'cards',
+        cardsEffect: {
+            slideShadows: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+
+    const swiperResult = new Swiper('#resultSwipe', {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+    });
+
     // 탑5 투표하기 클릭
     $(document).on('click', '#btnVoteReadyTop5', function () {
         changeTop5VoteBtn($(this));
@@ -127,8 +144,22 @@ $(document).ready(function () {
         activeCategoryBtn($(this), $('#categorySelectList'));
     });
 
+    // 투표완료버튼 클릭시 결과창 호출
+    $(document).on('click', '.btn_complete', function () {
+        callResultSlidePopup($(this));
+    });
+
+    // 결과창 닫기
+    $(document).on(
+        'click',
+        '.slide_on .back_bg, #sliderVoteResult .close_popup',
+        function () {
+            closeResultSlidePopup($(this));
+        }
+    );
+
     // test
-    modalOn($('#btnAddVotePOLL'), '#addVoteContainer');
+    // modalOn($('#btnAddVotePOLL'), '#addVoteContainer');
 });
 
 // --------------------------------------------
@@ -158,6 +189,7 @@ function activeCategoryBtn(_this, listWrapper) {
     _this.closest('li').addClass('active clicking');
     if (listWrapper.attr('id') == 'categorySelectList')
         selectCategoryInput(_this);
+    $('#registVoteCategory').removeClass('error');
 
     setTimeout(function () {
         _this.closest('li').removeClass('clicking');
@@ -193,7 +225,7 @@ function modalOff(_this) {
     container.addClass('closing');
     setTimeout(function () {
         container.css('display', 'none');
-        container.removeClass('closing');
+        container.removeClass('closing on_vs on_poll');
 
         if (!container.hasClass('level_2')) {
             $('body').removeClass('modal_on');
@@ -401,16 +433,22 @@ function onChangeMultiSelectNoLimit(_this) {
 
 // 019. 필수항목작성 ui출력
 function onValidateRequire() {
-    $('#registVoteCategory').addClass('error');
-    $('#resgistVoteTitle').addClass('error');
-    $('#voteContentText').addClass('error');
+    $('#registVoteCategory').val().trim() == ''
+        ? $('#registVoteCategory').addClass('error')
+        : null;
+    $('#resgistVoteTitle').val().trim() == ''
+        ? $('#resgistVoteTitle').addClass('error')
+        : null;
+    $('#voteContentText').val().trim() == ''
+        ? $('#voteContentText').addClass('error')
+        : null;
 
     var pollOptions = $('[id^="votePollOption_"]');
     var contents = 0;
 
     for (var i = 0; pollOptions.length > i; i++) {
         var item = $(pollOptions[i]);
-        if (item.val().trim() != '') contents + 1;
+        if (item.val().trim() != '') contents++;
     }
 
     if (contents < 3) {
@@ -435,13 +473,13 @@ function changeInputValues(_this) {
 
     for (var i = 0; pollOptions.length > i; i++) {
         var item = $(pollOptions[i]);
-        if (item.val().trim() != '') contents + 1;
+        if (item.val().trim() != '') contents++;
     }
 
     $('#registVoteCategory').val().trim() != '' &&
     $('#resgistVoteTitle').val().trim() != '' &&
     $('#voteContentText').val().trim() != '' &&
-    contents < 3
+    contents > 2
         ? $('#btnRegistVote').removeClass('disable')
         : $('#btnRegistVote').addClass('disable');
 }
@@ -455,4 +493,23 @@ function selectCategoryInput(_this) {
     setTimeout(function () {
         modalOff(_this);
     }, 300);
+}
+
+// 022. 결과창 호출
+function callResultSlidePopup(_this) {
+    var body = $('body');
+    var type = _this.closest('li').hasClass('type_poll') ? 'is_poll' : 'is_vs';
+    var target = $('#sliderVoteResult');
+
+    body.addClass('slide_on');
+    target.addClass(type);
+}
+
+// 023. 결과창 닫기
+function closeResultSlidePopup(_this) {
+    var body = $('body');
+    var target = $('#sliderVoteResult');
+
+    body.removeClass('slide_on');
+    target.removeClass('is_poll is_vs');
 }

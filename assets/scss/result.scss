@@ -1,0 +1,33 @@
+@import 'variable';
+
+body.slide_on {
+    .slide_popup {
+        transform: translateX(0);
+        transition: transform 0.3s;
+    }
+
+    .back_bg {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1999;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+.slide_popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2000;
+    background-color: $color_white;
+    overflow-y: auto;
+    height: 100vh;
+    width: 100vw;
+    transform-origin: right;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    max-width: $media_base;
+}
