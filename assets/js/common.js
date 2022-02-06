@@ -498,7 +498,7 @@ function selectCategoryInput(_this) {
 // 022. 결과창 호출
 function callResultSlidePopup(_this) {
     var body = $('body');
-    var type = _this.closest('li').hasClass('type_poll') ? 'is_poll' : 'is_vs';
+    var type = _this.closest('li').hasClass('type_poll') ? 'on_poll' : 'on_vs';
     var target = $('#sliderVoteResult');
 
     body.addClass('slide_on');

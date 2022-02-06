@@ -23,11 +23,517 @@ body.slide_on {
     right: 0;
     z-index: 2000;
     background-color: $color_white;
-    overflow-y: auto;
     height: 100vh;
     width: 100vw;
     transform-origin: right;
     transform: translateX(100%);
     transition: transform 0.3s;
     max-width: $media_base;
+}
+
+.vote_result_wrapper {
+    &.on_poll .is_vs {
+        display: none !important;
+    }
+
+    &.on_vs .is_poll {
+        display: none !important;
+    }
+
+    .header_box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: cal($e: 640);
+
+        .btn_area {
+            height: cal($e: 135);
+            background-color: $color_white;
+            padding: 0 cal($e: 40);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+
+            .close_popup span {
+                font-size: cal($e: 28);
+                color: $color_primary;
+            }
+
+            .btn_group {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+
+                button:not(:last-child) {
+                    margin-right: cal($e: 30);
+                }
+
+                .btn_heart {
+                    .ivoryIcon-heart_outline {
+                        display: block;
+                    }
+                    .ivoryIcon-heart {
+                        display: none;
+                    }
+                    &.clicked {
+                        .ivoryIcon-heart_outline {
+                            display: none;
+                        }
+                        .ivoryIcon-heart {
+                            display: block;
+                            color: $color_red;
+                        }
+                    }
+                }
+
+                [class^='ivoryIcon-'] {
+                    font-size: cal($e: 40);
+                }
+            }
+        }
+
+        h2 {
+            height: cal($e: 150);
+            background-color: $color_black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $color_white;
+            font-weight: 700;
+            font-size: cal($e: 45);
+            letter-spacing: cal($e: -2.7);
+        }
+    }
+
+    .content_box {
+        margin-top: cal($e: 285);
+        height: calc(100vh - #{cal($e: 285)});
+        overflow: auto;
+
+        .vote_content {
+            margin-top: cal($e: 60);
+
+            .category_type {
+                padding: 0 cal($e: 40);
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+
+                span {
+                    color: $color_primary;
+                    font-weight: 700;
+                    font-size: cal($e: 22);
+                    letter-spacing: cal($e: -1.32);
+
+                    &[class^='ivoryIcon-'] {
+                        font-weight: normal;
+                        font-size: cal($e: 31);
+                        margin-right: cal($e: 10);
+                    }
+                }
+            }
+
+            .category_title {
+                padding: 0 cal($e: 40);
+                margin-top: cal($e: 25);
+
+                .title {
+                    font-weight: 700;
+                    font-size: cal($e: 30);
+                    line-height: cal($e: 45);
+                    letter-spacing: cal($e: -1.8);
+                }
+            }
+
+            .regist_date {
+                padding: 0 cal($e: 40);
+                margin-top: cal($e: 25);
+                display: flex;
+                align-items: center;
+
+                span {
+                    font-weight: 700;
+                    font-size: cal($e: 22);
+                    letter-spacing: cal($e: -0.44);
+
+                    &[class^='ivoryIcon-'] {
+                        font-weight: normal;
+                        font-size: cal($e: 23);
+                        color: $color_red;
+                        margin-left: cal($e: 5);
+                        margin-top: cal($e: -4);
+                    }
+                }
+            }
+
+            .count_box {
+                margin: cal($e: 25) cal($e: 40) 0;
+                padding-bottom: cal($e: 30);
+                border-bottom: 0.5px solid $color_black;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+
+                .count_left {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    > div[class^='count_'] {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        align-items: center;
+
+                        &:not(:last-child) {
+                            margin-right: cal($e: 25);
+                        }
+
+                        span {
+                            font-weight: 700;
+                            font-size: cal($e: 18);
+                            letter-spacing: cal($e: -0.36);
+
+                            &[class^='ivoryIcon-'] {
+                                font-weight: normal;
+                                margin-right: cal($e: 5);
+                            }
+                        }
+                    }
+
+                    .count {
+                        &_vote {
+                            [class^='ivoryIcon-'] {
+                                color: $color_secondary;
+                                font-size: cal($e: 30);
+                            }
+                        }
+                        &_view {
+                            [class^='ivoryIcon-'] {
+                                color: $color_primary;
+                                font-size: cal($e: 35);
+                            }
+                        }
+                        &_heart {
+                            [class^='ivoryIcon-'] {
+                                color: $color_red;
+                                font-size: cal($e: 30);
+                            }
+                        }
+                    }
+                }
+
+                .count_right {
+                    height: cal($e: 40);
+                    border: 0.5px solid $color_black;
+                    font-size: cal($e: 20);
+                    letter-spacing: cal($e: -1.2);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: cal($e: 30);
+                    padding: 0 cal($e: 16);
+
+                    &.end {
+                        color: $color_white;
+                        border: 0;
+                        background-color: $color_red;
+                    }
+                }
+            }
+
+            .vote_img_swipe {
+                margin-top: cal($e: 60);
+                height: cal($e: 351);
+
+                .swiper {
+                    padding-left: cal($e: 40);
+                }
+
+                .swiper-slide {
+                    width: cal($e: 351);
+                    height: cal($e: 351);
+                    position: relative;
+                    border-radius: cal($e: 30);
+                    overflow: hidden;
+
+                    img {
+                        @include objectfit;
+                    }
+                }
+            }
+
+            .vote_text_box {
+                margin-top: cal($e: 50);
+                padding: 0 cal($e: 40);
+                font-weight: 300;
+                font-size: cal($e: 20);
+                line-height: cal($e: 33);
+                letter-spacing: cal($e: -1.2);
+            }
+        }
+
+        .vote_communication {
+            margin-top: cal($e: 60);
+            padding: cal($e: 60) cal($e: 40) cal($e: 50);
+            background-color: $color_transparentprimary;
+
+            .total_voter {
+                [class^='ivoryIcon-'] {
+                    font-size: cal($e: 45);
+                    color: $color_secondary;
+                }
+                p {
+                    margin-top: cal($e: 21);
+                    font-weight: 700;
+                    font-size: cal($e: 40);
+                    letter-spacing: cal($e: -2.4);
+
+                    .total_voter_count {
+                        color: $color_secondary;
+                    }
+                }
+            }
+
+            .reason_for_choosing_list {
+                margin-top: cal($e: 30);
+
+                li {
+                    &:nth-child(1) .medal img {
+                        margin-left: cal($e: -1);
+                    }
+                    &:nth-child(2) .medal img {
+                        margin-left: calc(-100% - #{cal($e: 2)});
+                    }
+                    &:nth-child(3) .medal img {
+                        margin-left: calc(-200% - #{cal($e: 2)});
+                    }
+
+                    &:nth-child(1),
+                    &:nth-child(2),
+                    &:nth-child(3) {
+                        .medal {
+                            display: block;
+                        }
+                        .rank_num {
+                            display: none !important;
+                        }
+                    }
+                }
+
+                .list_item {
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    padding: cal($e: 30) 0;
+                    border-bottom: 0.5px solid $color_black;
+
+                    .medal {
+                        display: none;
+                    }
+
+                    .ranking {
+                        width: cal($e: 40);
+
+                        .medal {
+                            position: relative;
+                            width: cal($e: 40);
+                            height: cal($e: 51);
+                            overflow: hidden;
+
+                            img {
+                                height: 100%;
+                                width: auto;
+                            }
+                        }
+                        .my_pick {
+                            display: none;
+                        }
+
+                        .rank_num {
+                            width: cal($e: 40);
+                            height: cal($e: 40);
+                            background-color: $color_gray;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            font-weight: 700;
+                            font-size: cal($e: 19);
+                            letter-spacing: cal($e: -1.14);
+                            color: $color_white;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    &.my_pick .ranking .my_pick {
+                        display: block;
+                        margin-top: cal($e: 10);
+                        border-top: 2px solid $color_secondary;
+                        padding-top: cal($e: 2.5);
+                        font-family: gotham;
+                        font-size: cal($e: 17);
+                        line-height: cal($e: 16);
+                        letter-spacing: cal($e: -1.02);
+                        color: $color_secondary;
+                        text-align: center;
+                    }
+
+                    .reason_info {
+                        margin-left: cal($e: 10);
+                        margin-top: cal($e: -5);
+                        flex: 1;
+
+                        .title {
+                            font-weight: 500;
+                            font-size: cal($e: 22);
+                            line-height: cal($e: 35);
+                            letter-spacing: cal($e: -1.32);
+                        }
+
+                        .choice_count_box {
+                            display: flex;
+                            flex-wrap: nowrap;
+                            flex-direction: row;
+                            align-items: center;
+                            margin-top: cal($e: 20);
+
+                            .progress_box {
+                                width: cal($e: 206);
+                            }
+
+                            .percentage {
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: nowrap;
+                                align-items: center;
+                                margin-left: cal($e: 11);
+
+                                .percent_value {
+                                    font-family: gotham;
+                                    font-weight: bold;
+                                    font-size: cal($e: 20);
+                                    letter-spacing: cal($e: -1.2);
+                                }
+
+                                .people_count {
+                                    margin-left: cal($e: 2);
+                                    font-weight: 300;
+                                    font-size: cal($e: 17);
+                                    letter-spacing: cal($e: -1.02);
+                                }
+                            }
+                        }
+
+                        .show_reasons {
+                            margin-top: cal($e: 20);
+
+                            .button {
+                                width: cal($e: 206);
+                                height: cal($e: 40);
+                                background-color: $color_lightblack;
+                                color: $color_white;
+                                padding: 0;
+
+                                span {
+                                    color: inherit;
+                                    font-weight: 500;
+                                    font-size: cal($e: 18);
+                                    letter-spacing: cal($e: -1.08);
+
+                                    &[class^='ivoryIcon-'] {
+                                        color: inherit;
+                                        font-size: cal($e: 15);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .img_box {
+                        width: cal($e: 120);
+                        height: cal($e: 120);
+                        border-radius: cal($e: 30);
+                        margin-left: cal($e: 30);
+                        overflow: hidden;
+
+                        img {
+                            @include objectfit;
+                        }
+                    }
+                }
+            }
+
+            .btn_vote_agin {
+                position: relative;
+                width: 100%;
+                height: cal($e: 80);
+                margin-top: cal($e: 60);
+                padding: 0;
+                background-color: $color_primary;
+                color: $color_white;
+
+                span {
+                    font-size: cal($e: 30);
+                    letter-spacing: cal($e: -1.8);
+                }
+
+                [class^='ivoryIcon-'] {
+                    position: absolute;
+                    font-size: cal($e: 20);
+                    top: 50%;
+                    right: cal($e: 32);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+
+        .vote_voter_info {
+            padding: cal($e: 80) cal($e: 40) cal($e: 50);
+
+            .voter_header {
+                [class^='ivoryIcon-'] {
+                    font-size: cal($e: 45);
+                }
+
+                p {
+                    margin-top: cal($e: 21);
+                    font-weight: 700;
+                    font-size: cal($e: 40);
+                    letter-spacing: cal($e: -2.4);
+                }
+            }
+
+            .voter_content {
+                margin-top: cal($e: 40);
+
+                h4 {
+                    position: relative;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+                    font-weight: 700;
+                    font-size: cal($e: 25);
+                    letter-spacing: cal($e: -1.5);
+                    white-space: nowrap;
+
+                    &:after {
+                        content: '';
+                        display: inline-block;
+                        width: 100%;
+                        margin-left: cal($e: 6.5);
+                        border-bottom: cal($e: 0.5) solid $color_black;
+                    }
+                }
+            }
+        }
+    }
 }

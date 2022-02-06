@@ -246,6 +246,34 @@ input[type='file'] {
     }
 }
 
+.progress_box {
+    position: relative;
+    height: cal($e: 24);
+    margin: cal($e: 1);
+
+    .background {
+        width: calc(100% + #{cal($e: 2)});
+        height: calc(100% + #{cal($e: 2)});
+        background-color: $color_white;
+        border-radius: cal($e: 100);
+        border: 0.5px solid $color_black;
+    }
+
+    .foreground {
+        position: absolute;
+        border: 1px solid $color_white;
+        // width: calc(100% - #{cal($e: 2)});
+        // height: calc(100% - #{cal($e: 2)});
+        width: 100%;
+        min-width: cal($e: 24);
+        height: 100%;
+        top: cal($e: 1);
+        left: cal($e: 1);
+        border-radius: cal($e: 100);
+        background-color: $color_secondary;
+    }
+}
+
 @media (min-width: $media_base) {
     .button {
         height: 60px;

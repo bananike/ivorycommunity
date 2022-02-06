@@ -56,6 +56,10 @@ input[type='file'] { display: none; }
 .form_checkbox input[type='checkbox']:checked ~ .fake_box { border-color: #68c0b5; background-color: #68c0b5; transition: border-color 0.3s, background-color 0.3s; }
 .form_checkbox input[type='checkbox']:checked ~ .fake_box:after { animation: scaleUpdown 0.3s ease-in-out forwards; }
 
+.progress_box { position: relative; height: calc(100vw * (24/640)); margin: calc(100vw * (1/640)); }
+.progress_box .background { width: calc(100% + calc(100vw * (2/640))); height: calc(100% + calc(100vw * (2/640))); background-color: #fff; border-radius: calc(100vw * (100/640)); border: 0.5px solid #000; }
+.progress_box .foreground { position: absolute; border: 1px solid #fff; width: 100%; min-width: calc(100vw * (24/640)); height: 100%; top: calc(100vw * (1/640)); left: calc(100vw * (1/640)); border-radius: calc(100vw * (100/640)); background-color: #a149db; }
+
 @media (min-width: 640px) { .button { height: 60px; font-size: 25px; line-height: 35px; letter-spacing: -1.5px; padding: 0 25px; border-radius: 30px; }
   .button [class^='ivoryIcon-'] { margin-left: 15px; }
   .hr { height: 44px; }
