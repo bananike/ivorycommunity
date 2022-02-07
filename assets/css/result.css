@@ -82,5 +82,34 @@ body.slide_on .back_bg { position: fixed; width: 100vw; height: 100vh; z-index: 
 .vote_result_wrapper .content_box .vote_voter_info .voter_content { margin-top: calc(100vw * (40/640)); }
 .vote_result_wrapper .content_box .vote_voter_info .voter_content h4 { position: relative; display: flex; flex-wrap: nowrap; flex-direction: row; font-weight: 700; font-size: calc(100vw * (25/640)); letter-spacing: calc(100vw * (-1.5/640)); white-space: nowrap; }
 .vote_result_wrapper .content_box .vote_voter_info .voter_content h4:after { content: ''; display: inline-block; width: 100%; margin-left: calc(100vw * (6.5/640)); border-bottom: calc(100vw * (0.5/640)) solid #000; }
+.vote_result_wrapper .content_box .vote_voter_info .voter_content .type_box .female { color: #ff97ba; }
+.vote_result_wrapper .content_box .vote_voter_info .voter_content .type_box .male { color: #80a9d8; }
+.vote_result_wrapper .content_box .vote_voter_info .voter_content .type_box .gen_20 { color: #68c0b5; }
+.vote_result_wrapper .content_box .vote_voter_info .voter_content .type_box .gen_30 { color: #c2a0e1; }
+.vote_result_wrapper .content_box .vote_voter_info .voter_content .type_box .gen_40 { color: #f6c88c; }
+.vote_result_wrapper .content_box .vote_voter_info .voter_content .type_box .gen_50 { color: #c9c496; }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: center; margin-top: calc(100vw * (60/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female { margin-right: calc(100vw * (40/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male { position: relative; display: flex; flex-direction: row; flex-wrap: nowrap; }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage { margin-left: calc(100vw * (13/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage .percentage_value, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage .percentage_value { font-family: gotham; font-weight: bold; font-size: calc(100vw * (50/640)); letter-spacing: calc(100vw * (-1/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage .type, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage .type { margin-top: calc(100vw * (12/640)); font-weight: 700; font-size: calc(100vw * (22/640)); line-height: calc(100vw * (22/640)); letter-spacing: calc(100vw * (-1.32/640)); color: #a8a8a8; }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage .count, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage .count { margin-top: calc(100vw * (5/640)); font-weight: 300; font-size: calc(100vw * (20/640)); line-height: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-0.4/640)); color: #a8a8a8; }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage .progress_box, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage .progress_box { width: calc(100vw * (120/640)); height: calc(100vw * (16/640)); margin-top: calc(100vw * (5/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage .progress_box .foreground, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage .progress_box .foreground { min-width: calc(100vw * (16/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-'] { font-size: calc(100vw * (132/640)); position: relative; overflow: hidden; height: calc(100vw * (132/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-'].ivoryIcon-female { width: calc(100vw * (74/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-'].ivoryIcon-female:before { left: calc(100vw * (-29.5/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-'].ivoryIcon-male { width: calc(100vw * (50/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-'].ivoryIcon-male:before { left: calc(100vw * (-41.5/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-']:before { position: relative; }
+.vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box { display: flex; flex-direction: row; justify-content: center; margin-top: calc(100vw * (50/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box [class^='gen_'] { position: relative; display: flex; flex-direction: column; align-items: center; margin-top: calc(100vw * (240/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box [class^='gen_']:not(:last-child) { margin-right: calc(100vw * (27/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .progress_box { position: absolute; width: calc(100vw * (240/640)); height: calc(100vw * (40/640)); top: 0; left: calc(100vw * (20/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .progress_box .foreground { min-width: calc(100vw * (40/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .percentage .percent_value { font-family: gotham; font-weight: bold; font-size: calc(100vw * (40/640)); line-height: calc(100vw * (40/640)); letter-spacing: calc(100vw * (-2.4/640)); }
+.vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .count { margin-top: calc(100vw * (10/640)); font-weight: 300; font-size: calc(100vw * (17/640)); line-height: calc(100vw * (17/640)); letter-spacing: calc(100vw * (-1.02/640)); color: #000; padding-bottom: calc(100vw * (15/640)); border-bottom: 1px solid #000; }
+.vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .type { margin-top: calc(100vw * (15/640)); font-weight: 500; font-size: calc(100vw * (25/640)); line-height: calc(100vw * (25/640)); letter-spacing: calc(100vw * (-1.5/640)); color: #000; }
 
 /*# sourceMappingURL=result.css.map */

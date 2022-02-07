@@ -158,6 +158,9 @@ $(document).ready(function () {
         }
     );
 
+    // 프로그레스 설정
+    progressBar($('.progress_box'), $('.content_box'));
+
     // test
     // modalOn($('#btnAddVotePOLL'), '#addVoteContainer');
 });
@@ -511,5 +514,42 @@ function closeResultSlidePopup(_this) {
     var target = $('#sliderVoteResult');
 
     body.removeClass('slide_on');
-    target.removeClass('is_poll is_vs');
+    target.removeClass('on_poll on_vs');
+}
+
+// 024. 프로그레스 바
+function progressBar(_this, container) {
+    var height = container.height();
+    initProgress(_this, height);
+
+    $(container).scroll(function () {
+        initProgress(_this, height);
+    });
+
+    // 반복문
+    function initProgress(_this, height) {
+        for (var i = 0; _this.length > i; i++) {
+            var progress = $(_this[i]);
+            var offset = progress.offset().top;
+            var progressdata = progress.attr('data-progress') * 1;
+            var foreground = progress.find('.foreground');
+
+            if (offset - 285 + progress.height() < height) {
+                foreground.css('width', progressdata + '%');
+                if (progressdata == 0) {
+                    foreground.css('opacity', 0);
+                } else {
+                    foreground.css('opacity', 1);
+                }
+                if (
+                    progress.height() >
+                    (progress.width() / 100) * progressdata
+                ) {
+                    foreground.css({ 'min-width': 0, 'border-radius': '50%' });
+                }
+            } else {
+                foreground.css('width', 0);
+            }
+        }
+    }
 }

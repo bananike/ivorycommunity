@@ -533,6 +533,163 @@ body.slide_on {
                         border-bottom: cal($e: 0.5) solid $color_black;
                     }
                 }
+
+                .type_box {
+                    $types: (
+                        'female': #ff97ba,
+                        'male': #80a9d8,
+                        'gen_20': #68c0b5,
+                        'gen_30': #c2a0e1,
+                        'gen_40': #f6c88c,
+                        'gen_50': #c9c496,
+                    );
+                    @each $key, $value in $types {
+                        .#{$key} {
+                            color: #{$value};
+                        }
+                    }
+                }
+            }
+
+            .type_gender .type_box {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: center;
+                margin-top: cal($e: 60);
+
+                .female {
+                    margin-right: cal($e: 40);
+                }
+
+                .female,
+                .male {
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+
+                    .percentage {
+                        margin-left: cal($e: 13);
+
+                        .percentage_value {
+                            font-family: gotham;
+                            font-weight: bold;
+                            font-size: cal($e: 50);
+                            letter-spacing: cal($e: -1);
+                        }
+
+                        .type {
+                            margin-top: cal($e: 12);
+                            font-weight: 700;
+                            font-size: cal($e: 22);
+                            line-height: cal($e: 22);
+                            letter-spacing: cal($e: -1.32);
+                            color: $color_gray;
+                        }
+
+                        .count {
+                            margin-top: cal($e: 5);
+                            font-weight: 300;
+                            font-size: cal($e: 20);
+                            line-height: cal($e: 20);
+                            letter-spacing: cal($e: -0.4);
+                            color: $color_gray;
+                        }
+
+                        .progress_box {
+                            width: cal($e: 120);
+                            height: cal($e: 16);
+                            margin-top: cal($e: 5);
+
+                            .foreground {
+                                min-width: cal($e: 16);
+                            }
+                        }
+                    }
+                }
+
+                [class^='ivoryIcon-'] {
+                    font-size: cal($e: 132);
+                    position: relative;
+                    overflow: hidden;
+                    height: cal($e: 132);
+                    &.ivoryIcon-female {
+                        width: cal($e: 74);
+                        &:before {
+                            left: cal($e: -29.5);
+                        }
+                    }
+                    &.ivoryIcon-male {
+                        width: cal($e: 50);
+                        &:before {
+                            left: cal($e: -41.5);
+                        }
+                    }
+
+                    &:before {
+                        position: relative;
+                    }
+                }
+            }
+
+            .type_generation .type_box {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-top: cal($e: 50);
+
+                [class^='gen_'] {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    margin-top: cal($e: 240);
+
+                    &:not(:last-child) {
+                        margin-right: cal($e: 27);
+                    }
+                }
+
+                .progress_box {
+                    position: absolute;
+                    width: cal($e: 240);
+                    height: cal($e: 40);
+                    top: 0;
+                    left: cal($e: 20);
+
+                    .foreground {
+                        min-width: cal($e: 40);
+                    }
+                }
+
+                .percentage .percent_value {
+                    font-family: gotham;
+                    font-weight: bold;
+                    font-size: cal($e: 40);
+                    line-height: cal($e: 40);
+                    letter-spacing: cal($e: -2.4);
+                }
+
+                .count {
+                    margin-top: cal($e: 10);
+                    font-weight: 300;
+                    font-size: cal($e: 17);
+                    line-height: cal($e: 17);
+                    letter-spacing: cal($e: -1.02);
+                    color: $color_black;
+                    padding-bottom: cal($e: 15);
+                    border-bottom: 1px solid $color_black;
+                }
+
+                .type {
+                    margin-top: cal($e: 15);
+                    font-weight: 500;
+                    font-size: cal($e: 25);
+                    line-height: cal($e: 25);
+                    letter-spacing: cal($e: -1.5);
+                    color: $color_black;
+                }
             }
         }
     }
