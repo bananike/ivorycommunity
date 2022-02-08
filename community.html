@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="assets/css/community.css" />
         <link rel="stylesheet" href="assets/css/add_vote_container.css" />
         <link rel="stylesheet" href="assets/css/result.css" />
+        <link rel="stylesheet" href="assets/css/reply.css" />
 
         <!-- alert -->
         <link rel="stylesheet" href="assets/css/alert.css" />
@@ -1492,7 +1493,7 @@
                 </div>
                 <h2>투표 결과는?</h2>
             </div>
-            <div class="content_box">
+            <div class="content_box progress_scroller">
                 <!-- 투표 등록 정보 -->
                 <div class="vote_content">
                     <div class="category_type">
@@ -1577,7 +1578,8 @@
                     <div class="total_voter">
                         <span class="ivoryIcon-vote"></span>
                         <p>
-                            총 <span class="total_voter_count">9,999명</span>이
+                            총
+                            <span class="total_voter_count">9,999명</span>이
                             투표했습니다!
                         </p>
                     </div>
@@ -1603,10 +1605,12 @@
                                     <div class="choice_count_box">
                                         <div
                                             class="progress_box"
-                                            data-progress="50"
+                                            data-progress="88"
                                         >
                                             <div class="background"></div>
-                                            <div class="foreground"></div>
+                                            <div class="foreground_wrapper">
+                                                <div class="foreground"></div>
+                                            </div>
                                         </div>
                                         <div class="percentage">
                                             <p class="percent_value">50%</p>
@@ -1650,10 +1654,12 @@
                                     <div class="choice_count_box">
                                         <div
                                             class="progress_box"
-                                            data-progress="50"
+                                            data-progress="30"
                                         >
                                             <div class="background"></div>
-                                            <div class="foreground"></div>
+                                            <div class="foreground_wrapper">
+                                                <div class="foreground"></div>
+                                            </div>
                                         </div>
                                         <div class="percentage">
                                             <p class="percent_value">50%</p>
@@ -1691,10 +1697,12 @@
                                     <div class="choice_count_box">
                                         <div
                                             class="progress_box"
-                                            data-progress="50"
+                                            data-progress="6"
                                         >
                                             <div class="background"></div>
-                                            <div class="foreground"></div>
+                                            <div class="foreground_wrapper">
+                                                <div class="foreground"></div>
+                                            </div>
                                         </div>
                                         <div class="percentage">
                                             <p class="percent_value">50%</p>
@@ -1743,10 +1751,12 @@
                                     <div class="choice_count_box">
                                         <div
                                             class="progress_box"
-                                            data-progress="50"
+                                            data-progress="10"
                                         >
                                             <div class="background"></div>
-                                            <div class="foreground"></div>
+                                            <div class="foreground_wrapper">
+                                                <div class="foreground"></div>
+                                            </div>
                                         </div>
                                         <div class="percentage">
                                             <p class="percent_value">50%</p>
@@ -1790,13 +1800,15 @@
                             <div class="female">
                                 <span class="ivoryIcon-female"></span>
                                 <div class="percentage">
-                                    <p>70%</p>
+                                    <p class="percentage_value">70%</p>
                                     <div
-                                        class="progress_box"
+                                        class="progress_box female"
                                         data-progress="70"
                                     >
                                         <div class="background"></div>
-                                        <div class="foreground"></div>
+                                        <div class="foreground_wrapper">
+                                            <div class="foreground"></div>
+                                        </div>
                                     </div>
                                     <p class="type">여성</p>
                                     <p class="count">999,999명</p>
@@ -1805,13 +1817,15 @@
                             <div class="male">
                                 <span class="ivoryIcon-male"></span>
                                 <div class="percentage">
-                                    <p>30%</p>
+                                    <p class="percentage_value">30%</p>
                                     <div
-                                        class="progress_box"
+                                        class="progress_box male"
                                         data-progress="30"
                                     >
                                         <div class="background"></div>
-                                        <div class="foreground"></div>
+                                        <div class="foreground_wrapper">
+                                            <div class="foreground"></div>
+                                        </div>
                                     </div>
                                     <p class="type">남성</p>
                                     <p class="count">999,999명</p>
@@ -1824,25 +1838,29 @@
                         <div class="type_box">
                             <div class="gen_20">
                                 <div
-                                    class="progress_box vertical"
-                                    data-progress="30"
+                                    class="progress_box vertical gen_20"
+                                    data-progress="100"
                                 >
                                     <div class="background"></div>
-                                    <div class="foreground"></div>
+                                    <div class="foreground_wrapper">
+                                        <div class="foreground"></div>
+                                    </div>
                                 </div>
                                 <div class="percentage">
-                                    <p class="percent_value">50%</p>
+                                    <p class="percent_value">100%</p>
                                 </div>
                                 <p class="count">(999,999명)</p>
                                 <div class="type">20대</div>
                             </div>
                             <div class="gen_30">
                                 <div
-                                    class="progress_box vertical"
-                                    data-progress="30"
+                                    class="progress_box vertical gen_30"
+                                    data-progress="70"
                                 >
                                     <div class="background"></div>
-                                    <div class="foreground"></div>
+                                    <div class="foreground_wrapper">
+                                        <div class="foreground"></div>
+                                    </div>
                                 </div>
                                 <div class="percentage">
                                     <p class="percent_value">50%</p>
@@ -1852,11 +1870,13 @@
                             </div>
                             <div class="gen_40">
                                 <div
-                                    class="progress_box vertical"
-                                    data-progress="30"
+                                    class="progress_box vertical gen_40"
+                                    data-progress="44"
                                 >
                                     <div class="background"></div>
-                                    <div class="foreground"></div>
+                                    <div class="foreground_wrapper">
+                                        <div class="foreground"></div>
+                                    </div>
                                 </div>
                                 <div class="percentage">
                                     <p class="percent_value">50%</p>
@@ -1866,11 +1886,13 @@
                             </div>
                             <div class="gen_50">
                                 <div
-                                    class="progress_box vertical"
-                                    data-progress="30"
+                                    class="progress_box vertical gen_50"
+                                    data-progress="0"
                                 >
                                     <div class="background"></div>
-                                    <div class="foreground"></div>
+                                    <div class="foreground_wrapper">
+                                        <div class="foreground"></div>
+                                    </div>
                                 </div>
                                 <div class="percentage">
                                     <p class="percent_value">50%</p>
@@ -1884,19 +1906,115 @@
                 <!-- 투표참여 현황 -->
 
                 <!-- 댓글 영역 -->
-                <div class="vote_reply_wrapper">
+                <div class="reply_wrapper">
                     <div class="reply_header">
                         <div class="reply_count">
                             <span>댓글</span>
                             <span class="num">999</span>
                         </div>
-                        <button type="button">
+                        <button type="button" class="btn_goto_lastreply">
                             <span>마지막 댓글로</span>
                             <span class="ivoryIcon-arrow_down"></span>
                         </button>
                     </div>
-                    <ul class="reply_content">
-                        <li class="reply_item">div.</li>
+                    <ul class="reply_content is_whiter">
+                        <li class="reply_container has_rereply">
+                            <div class="reply_item">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipisicing elit. Iusto, quod?
+                            </div>
+                            <div class="reply_footer">
+                                <div class="last_datetime is_new">
+                                    <span class="datetime">12:30</span>
+                                    <span class="ivoryIcon-new"></span>
+                                </div>
+                                <div class="btn_group">
+                                    <button
+                                        type="button"
+                                        class="btn_heart clicked"
+                                    >
+                                        <span class="ivoryIcon-heart"></span>
+                                        <span
+                                            class="ivoryIcon-heart_outline"
+                                        ></span>
+                                    </button>
+                                    <button type="button" class="btn_rereply">
+                                        <span class="ivoryIcon-reply"></span>
+                                    </button>
+                                    <button type="button" class="btn_more">
+                                        <span class="ivoryIcon-more"></span>
+                                    </button>
+                                </div>
+                                <!-- 대댓글 -->
+                                <div class="rereply_container has_more_reply">
+                                    <button
+                                        type="button"
+                                        class="view_more_rereply"
+                                    >
+                                        <span class="ivoryIcon-plus"></span>
+                                        <span class="text"
+                                            >이전 대댓글
+                                            <span class="count_rereply">18</span
+                                            >개 더 보기...</span
+                                        >
+                                    </button>
+                                    <ul class="rereply_list">
+                                        <li class="reply_container has_rereply">
+                                            <div class="reply_item">
+                                                Lorem, ipsum dolor sit amet
+                                                consectetur adipisicing elit.
+                                                Dicta laudantium recusandae
+                                                deserunt placeat maxime, rem
+                                                temporibus inventore ullam
+                                                quidem voluptates.
+                                            </div>
+                                            <div class="reply_footer">
+                                                <div
+                                                    class="last_datetime is_new"
+                                                >
+                                                    <span class="datetime"
+                                                        >12:30</span
+                                                    >
+                                                    <span
+                                                        class="ivoryIcon-new"
+                                                    ></span>
+                                                </div>
+                                                <div class="btn_group">
+                                                    <button
+                                                        type="button"
+                                                        class="btn_heart"
+                                                    >
+                                                        <span
+                                                            class="ivoryIcon-heart"
+                                                        ></span>
+                                                        <span
+                                                            class="ivoryIcon-heart_outline"
+                                                        ></span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn_rereply"
+                                                    >
+                                                        <span
+                                                            class="ivoryIcon-reply"
+                                                        ></span>
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="btn_more"
+                                                    >
+                                                        <span
+                                                            class="ivoryIcon-more"
+                                                        ></span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 대댓글 -->
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <!-- 댓글 영역 -->
@@ -1914,7 +2032,8 @@
             <!-- 댓글입력박스 -->
         </div>
         <!-- 결과 슬라이드 -->
-        
+        <!-- 결과 슬라이드 -->
+
         <div class="back_bg"></div>
 
         <!-- jquery -->

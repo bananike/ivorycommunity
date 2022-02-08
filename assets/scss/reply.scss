@@ -1,0 +1,320 @@
+@import 'variable';
+
+.reply_wrapper {
+    margin-top: cal($e: 60);
+}
+
+.reply_header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 cal($e: 40);
+
+    .reply_count {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        span {
+            font-weight: 700;
+            font-size: cal($e: 25);
+            letter-spacing: cal($e: -1.5);
+
+            &.num {
+                font-family: gotham;
+                font-weight: bold;
+                font-size: cal($e: 30);
+                letter-spacing: cal($e: -1.8);
+                margin-left: cal($e: 10);
+                margin-top: cal($e: -5);
+                color: $color_red;
+            }
+        }
+    }
+
+    .btn_goto_lastreply {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        span {
+            font-weight: 300;
+            font-size: cal($e: 22);
+            letter-spacing: cal($e: -1.32);
+
+            &[class^='ivoryIcon-'] {
+                font-weight: normal;
+                font-size: cal($e: 18);
+                margin-left: cal($e: 5);
+            }
+        }
+    }
+}
+
+.reply_content {
+    margin-top: cal($e: 27);
+    padding: 0 cal($e: 40) cal($e: 130);
+}
+
+.reply_container {
+    border-top: 1px solid $color_black;
+
+    > .reply_item.is_writer {
+        background-color: $color_transparentsecondary;
+    }
+
+    &.delete_reply {
+        &:after {
+            padding: cal($e: 30) cal($e: 20);
+            display: block;
+            content: '삭제된 댓글입니다';
+            font-weight: 500;
+            font-size: cal($e: 18);
+            letter-spacing: cal($e: -1.08);
+            color: $color_gray;
+        }
+
+        > * {
+            display: none !important;
+        }
+    }
+}
+
+.reply_item {
+    padding: cal($e: 30) cal($e: 20);
+
+    &.is_writer .reply_info .writer {
+        display: block;
+    }
+
+    .reply_info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        span {
+            font-weight: 700;
+            font-size: cal($e: 18);
+            letter-spacing: cal($e: -0.36);
+
+            &[class^='ivoryIcon-'] {
+                font-weight: normal;
+                font-size: cal($e: 17);
+            }
+        }
+
+        .writer {
+            display: none;
+            margin-right: cal($e: 10);
+        }
+    }
+
+    .reply_text {
+        margin-top: cal($e: 17);
+        font-weight: 300;
+        font-size: cal($e: 19);
+        line-height: cal($e: 30);
+        letter-spacing: cal($e: -1.14);
+    }
+
+    .reply_footer {
+        margin-top: cal($e: 30);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        > div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+
+        .last_datetime {
+            .ivoryIcon-new {
+                display: none;
+            }
+
+            &.is_new .ivoryIcon-new {
+                display: block;
+            }
+            span {
+                font-weight: 300;
+                font-size: cal($e: 20);
+                line-height: cal($e: 20);
+                letter-spacing: cal($e: -0.4);
+
+                &[class^='ivoryIcon-'] {
+                    margin-left: cal($e: 5);
+                    font-size: cal($e: 21);
+                    color: $color_red;
+                }
+            }
+        }
+
+        .btn_group {
+            .btn_heart {
+                .ivoryIcon-heart {
+                    display: block;
+                    color: $color_red;
+                }
+                .ivoryIcon-heart_outline,
+                .heart_count {
+                    display: none;
+                }
+                &.clicked {
+                    .ivoryIcon-heart {
+                        display: none;
+                    }
+                    .ivoryIcon-heart_outline,
+                    .heart_count {
+                        margin-left: cal($e: 5);
+                        display: block;
+                    }
+                }
+                [class^='ivoryIcon-heart'] {
+                    font-size: cal($e: 25);
+                }
+            }
+
+            button {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+
+                &:not(:last-child) {
+                    margin-right: cal($e: 15);
+                }
+            }
+
+            span {
+                font-weight: 300;
+                font-size: cal($e: 19);
+                letter-spacing: cal($e: -0.38);
+
+                &[class^='ivoryIcon-']:not(.ivoryIcon-more) {
+                    margin-right: cal($e: 5.5);
+                }
+
+                &.ivoryIcon-reply {
+                    font-size: cal($e: 21);
+                }
+
+                &.ivoryIcon-more {
+                    font-size: cal($e: 23);
+                }
+            }
+        }
+    }
+}
+
+.rereply_container {
+    border-top: 0.5px solid $color_gray;
+    background-color: #f6f6f6;
+
+    .view_more_rereply {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding: cal($e: 30) cal($e: 20);
+        border-bottom: 0.5px solid $color_gray;
+        font-weight: 500;
+        font-size: cal($e: 18);
+        letter-spacing: cal($e: -1.08);
+    }
+
+    .reply_item {
+        &:not(:last-child) {
+            border-bottom: 0.5px solid $color_gray;
+        }
+
+        &.delete_rereply {
+            &:after {
+                display: block;
+                content: '삭제된 댓글입니다';
+                font-weight: 500;
+                font-size: cal($e: 18);
+                letter-spacing: cal($e: -1.08);
+                color: $color_gray;
+            }
+
+            > * {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.reply_comment_input_box {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 20;
+    transform-origin: bottom;
+    transform: translateY(100%);
+    padding: cal($e: 30) cal($e: 40);
+    background-color: $color_black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    transition: transform 0.3s;
+
+    &.on_slide {
+        transform: translateY(0%);
+        transition: transform 0.3s;
+    }
+
+    .text_input_box {
+        position: relative;
+        padding: cal($e: 16.5) cal($e: 30);
+        border-radius: cal($e: 30);
+        margin-right: cal($e: 10);
+        background-color: $color_white;
+        flex: 1;
+        font-weight: 500;
+        font-size: cal($e: 23);
+        line-height: cal($e: 37);
+        letter-spacing: cal($e: -1.2);
+
+        > span {
+            outline: none !important;
+        }
+
+        &.is_focus:before {
+            display: none;
+        }
+
+        &:before {
+            position: absolute;
+            content: '댓글을 입력하세요';
+            color: $color_lightgray;
+            top: cal($e: 17);
+            left: cal($e: 30);
+        }
+
+        .target {
+            margin-right: cal($e: 10);
+        }
+    }
+
+    .btn_return_comment_text {
+        width: cal($e: 70);
+        min-height: cal($e: 70);
+        font-weight: 500;
+        font-size: cal($e: 20);
+        letter-spacing: cal($e: -1.2);
+        border-radius: cal($e: 30);
+        background-color: $color_primary;
+        color: $color_white;
+    }
+}

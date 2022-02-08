@@ -112,4 +112,116 @@ body.slide_on .back_bg { position: fixed; width: 100vw; height: 100vh; z-index: 
 .vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .count { margin-top: calc(100vw * (10/640)); font-weight: 300; font-size: calc(100vw * (17/640)); line-height: calc(100vw * (17/640)); letter-spacing: calc(100vw * (-1.02/640)); color: #000; padding-bottom: calc(100vw * (15/640)); border-bottom: 1px solid #000; }
 .vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .type { margin-top: calc(100vw * (15/640)); font-weight: 500; font-size: calc(100vw * (25/640)); line-height: calc(100vw * (25/640)); letter-spacing: calc(100vw * (-1.5/640)); color: #000; }
 
+.dummy_vote_container { position: fixed; padding: calc(100vw * (60/640)) 0 0; height: 100vh; width: 100%; z-index: 10; background-color: #fff; }
+.dummy_vote_container .dummy_title { margin: 0 calc(100vw * (40/640)); width: calc(100vw * (200/640)); height: calc(100vw * (35/640)); border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); margin-bottom: calc(100vw * (25/640)); }
+.dummy_vote_container .dummy_title_content { margin: 0 calc(100vw * (40/640)); height: calc(100vw * (30/640)); border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); }
+.dummy_vote_container .dummy_title_content:not(:last-child) { margin-bottom: calc(100vw * (15/640)); }
+.dummy_vote_container .dummy_icon_wrapper { margin: 0 calc(100vw * (40/640)); margin-top: calc(100vw * (75/640)); margin-bottom: calc(100vw * (60/640)); padding-bottom: calc(100vw * (30/640)); border-bottom: 1px solid rgba(0, 0, 0, 0.1); display: flex; flex-direction: row; justify-content: space-between; }
+.dummy_vote_container .dummy_icon_box { display: flex; flex-direction: row; justify-content: flex-start; }
+.dummy_vote_container .dummy_icon { width: calc(100vw * (80/640)); height: calc(100vw * (40/640)); border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); }
+.dummy_vote_container .dummy_icon:not(:last-child) { margin-right: calc(100vw * (25/640)); }
+.dummy_vote_container .dummy_date { width: calc(100vw * (120/640)); height: calc(100vw * (40/640)); border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); }
+.dummy_vote_container .dummy_swipe { padding: 0 0 0 calc(100vw * (40/640)); margin-bottom: calc(100vw * (50/640)); display: flex; flex-direction: row; flex-wrap: nowrap; overflow: hidden; }
+.dummy_vote_container .dummy_swipe_item { min-width: calc(100vw * (351/640)); height: calc(100vw * (351/640)); border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); }
+.dummy_vote_container .dummy_swipe_item:not(:last-child) { margin-right: calc(100vw * (25/640)); }
+.dummy_vote_container .dummy_content_text { margin: 0 calc(100vw * (40/640)); height: calc(100vw * (20/640)); border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); }
+.dummy_vote_container .dummy_content_text:not(:last-child) { margin-bottom: calc(100vw * (13/640)); }
+.dummy_vote_container .dummy_last_box { margin: 0 calc(100vw * (40/640)); height: 100vh; border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); }
+
+@media (min-width: 640px) { .vote_result_wrapper .header_box { width: 640px; }
+  .vote_result_wrapper .header_box .btn_area { height: 135px; padding: 0 40px; }
+  .vote_result_wrapper .header_box .btn_area .close_popup span { font-size: 28px; }
+  .vote_result_wrapper .header_box .btn_area .btn_group button:not(:last-child) { margin-right: 30px; }
+  .vote_result_wrapper .header_box .btn_area .btn_group [class^='ivoryIcon-'] { font-size: 40px; }
+  .vote_result_wrapper .header_box h2 { height: 150px; font-size: 45px; letter-spacing: -2.7px; }
+  .vote_result_wrapper .content_box { margin-top: 285px; height: calc(100vh - 285px); }
+  .vote_result_wrapper .content_box .vote_content { margin-top: 60px; }
+  .vote_result_wrapper .content_box .vote_content .category_type { padding: 0 40px; }
+  .vote_result_wrapper .content_box .vote_content .category_type span { font-size: 22px; letter-spacing: -1.32px; }
+  .vote_result_wrapper .content_box .vote_content .category_type span[class^='ivoryIcon-'] { font-size: 31px; margin-right: 10px; }
+  .vote_result_wrapper .content_box .vote_content .category_title { padding: 0 40px; margin-top: 25px; }
+  .vote_result_wrapper .content_box .vote_content .category_title .title { font-size: 30px; line-height: 45px; letter-spacing: -1.8px; }
+  .vote_result_wrapper .content_box .vote_content .regist_date { padding: 0 40px; margin-top: 25px; }
+  .vote_result_wrapper .content_box .vote_content .regist_date span { font-size: 22px; letter-spacing: -0.44px; }
+  .vote_result_wrapper .content_box .vote_content .regist_date span[class^='ivoryIcon-'] { font-size: 23px; margin-left: 5px; margin-top: -4px; }
+  .vote_result_wrapper .content_box .vote_content .count_box { margin: 25px 40px 0; padding-bottom: 30px; }
+  .vote_result_wrapper .content_box .vote_content .count_box .count_left > div[class^='count_']:not(:last-child) { margin-right: 25px; }
+  .vote_result_wrapper .content_box .vote_content .count_box .count_left > div[class^='count_'] span { font-size: 18px; letter-spacing: -0.36px; }
+  .vote_result_wrapper .content_box .vote_content .count_box .count_left .count_vote [class^='ivoryIcon-'] { font-size: 30px; }
+  .vote_result_wrapper .content_box .vote_content .count_box .count_left .count_view [class^='ivoryIcon-'] { font-size: 35px; }
+  .vote_result_wrapper .content_box .vote_content .count_box .count_left .count_heart [class^='ivoryIcon-'] { font-size: 30px; }
+  .vote_result_wrapper .content_box .vote_content .count_box .count_right { height: 40px; font-size: 20px; letter-spacing: -1.2px; border-radius: 30px; padding: 0 16px; }
+  .vote_result_wrapper .content_box .vote_content .vote_img_swipe { margin-top: 60px; height: 351px; }
+  .vote_result_wrapper .content_box .vote_content .vote_img_swipe .swiper { padding-left: 40px; }
+  .vote_result_wrapper .content_box .vote_content .vote_img_swipe .swiper-slide { width: 351px; height: 351px; border-radius: 30px; }
+  .vote_result_wrapper .content_box .vote_content .vote_text_box { margin-top: 50px; padding: 0 40px; font-size: 20px; line-height: 33px; letter-spacing: -1.2px; }
+  .vote_result_wrapper .content_box .vote_communication { margin-top: 60px; padding: 60px 40px 50px; }
+  .vote_result_wrapper .content_box .vote_communication .total_voter [class^='ivoryIcon-'] { font-size: 45px; }
+  .vote_result_wrapper .content_box .vote_communication .total_voter p { margin-top: 21px; font-size: 40px; letter-spacing: -2.4px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list { margin-top: 30px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list li:nth-child(1) .medal img { margin-left: -1px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list li:nth-child(2) .medal img { margin-left: calc(-100% - 2px); }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list li:nth-child(3) .medal img { margin-left: calc(-200% - 2px); }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item { padding: 30px 0; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .ranking { width: 40px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .ranking .medal { width: 40px; height: 51px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .ranking .rank_num { width: 40px; height: 40px; font-size: 19px; letter-spacing: -1.14px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item.my_pick .ranking .my_pick { margin-top: 10px; padding-top: 2.5px; font-size: 17px; line-height: 16px; letter-spacing: -1.02px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info { margin-left: 10px; margin-top: -5px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info .title { font-size: 22px; line-height: 35px; letter-spacing: -1.32px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info .choice_count_box { margin-top: 20px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info .choice_count_box .progress_box { width: 206px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info .choice_count_box .percentage { margin-left: 11px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info .choice_count_box .percentage .percent_value { font-size: 20px; letter-spacing: -1.2px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info .choice_count_box .percentage .people_count { margin-left: 2px; font-size: 17px; letter-spacing: -1.02px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info .show_reasons { margin-top: 20px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info .show_reasons .button { width: 206px; height: 40px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info .show_reasons .button span { font-size: 18px; letter-spacing: -1.08px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .reason_info .show_reasons .button span[class^='ivoryIcon-'] { font-size: 15px; }
+  .vote_result_wrapper .content_box .vote_communication .reason_for_choosing_list .list_item .img_box { width: 120px; height: 120px; border-radius: 30px; margin-left: 30px; }
+  .vote_result_wrapper .content_box .vote_communication .btn_vote_agin { height: 80px; margin-top: 60px; }
+  .vote_result_wrapper .content_box .vote_communication .btn_vote_agin span { font-size: 30px; letter-spacing: -1.8px; }
+  .vote_result_wrapper .content_box .vote_communication .btn_vote_agin [class^='ivoryIcon-'] { font-size: 20px; right: 32px; }
+  .vote_result_wrapper .content_box .vote_voter_info { padding: 80px 40px 50px; }
+  .vote_result_wrapper .content_box .vote_voter_info .voter_header [class^='ivoryIcon-'] { font-size: 45px; }
+  .vote_result_wrapper .content_box .vote_voter_info .voter_header p { margin-top: 21px; font-size: 40px; letter-spacing: -2.4px; }
+  .vote_result_wrapper .content_box .vote_voter_info .voter_content { margin-top: 40px; }
+  .vote_result_wrapper .content_box .vote_voter_info .voter_content h4 { font-size: 25px; letter-spacing: -1.5px; }
+  .vote_result_wrapper .content_box .vote_voter_info .voter_content h4:after { margin-left: 6.5px; border-bottom: 0.5px solid #000; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box { margin-top: 60px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female { margin-right: 40px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage { margin-left: 13px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage .percentage_value, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage .percentage_value { font-size: 50px; letter-spacing: -1px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage .type, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage .type { margin-top: 12px; font-size: 22px; line-height: 22px; letter-spacing: -1.32px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage .count, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage .count { margin-top: 5px; font-size: 20px; line-height: 20px; letter-spacing: -0.4px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage .progress_box, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage .progress_box { width: 120px; height: 16px; margin-top: 5px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .female .percentage .progress_box .foreground, .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box .male .percentage .progress_box .foreground { min-width: 16px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-'] { font-size: 132px; height: 132px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-'].ivoryIcon-female { width: 74px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-'].ivoryIcon-female:before { left: -29.5px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-'].ivoryIcon-male { width: 50px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_gender .type_box [class^='ivoryIcon-'].ivoryIcon-male:before { left: -41.5px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box { margin-top: 50px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box [class^='gen_'] { margin-top: 240px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box [class^='gen_']:not(:last-child) { margin-right: 27px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .progress_box { width: 240px; height: 40px; left: 20px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .progress_box .foreground { min-width: 40px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .percentage .percent_value { font-size: 40px; line-height: 40px; letter-spacing: -2.4px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .count { margin-top: 10px; font-size: 17px; line-height: 17px; letter-spacing: -1.02px; padding-bottom: 15px; }
+  .vote_result_wrapper .content_box .vote_voter_info .type_generation .type_box .type { margin-top: 15px; font-size: 25px; line-height: 25px; letter-spacing: -1.5px; }
+  .dummy_vote_container { padding: 60px 0 0; }
+  .dummy_vote_container .dummy_title { margin: 0 40px; width: 200px; height: 35px; border-radius: 30px; margin-bottom: 25px; }
+  .dummy_vote_container .dummy_title_content { margin: 0 40px; height: 30px; border-radius: 30px; }
+  .dummy_vote_container .dummy_title_content:not(:last-child) { margin-bottom: 15px; }
+  .dummy_vote_container .dummy_icon_wrapper { margin: 0 40px; margin-top: 75px; margin-bottom: 60px; padding-bottom: 30px; }
+  .dummy_vote_container .dummy_icon { width: 80px; height: 40px; border-radius: 30px; }
+  .dummy_vote_container .dummy_icon:not(:last-child) { margin-right: 25px; }
+  .dummy_vote_container .dummy_date { width: 120px; height: 40px; border-radius: 30px; }
+  .dummy_vote_container .dummy_swipe { padding: 0 0 0 40px; margin-bottom: 50px; }
+  .dummy_vote_container .dummy_swipe_item { min-width: 351px; height: 351px; border-radius: 30px; }
+  .dummy_vote_container .dummy_swipe_item:not(:last-child) { margin-right: 25px; }
+  .dummy_vote_container .dummy_content_text { margin: 0 40px; height: 20px; border-radius: 30px; }
+  .dummy_vote_container .dummy_content_text:not(:last-child) { margin-bottom: 13px; }
+  .dummy_vote_container .dummy_last_box { margin: 0 40px; border-radius: 30px; } }
+
 /*# sourceMappingURL=result.css.map */

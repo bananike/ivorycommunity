@@ -1,0 +1,59 @@
+@charset "UTF-8";
+.reply_wrapper { margin-top: calc(100vw * (60/640)); }
+
+.reply_header { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; padding: 0 calc(100vw * (40/640)); }
+.reply_header .reply_count { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; }
+.reply_header .reply_count span { font-weight: 700; font-size: calc(100vw * (25/640)); letter-spacing: calc(100vw * (-1.5/640)); }
+.reply_header .reply_count span.num { font-family: gotham; font-weight: bold; font-size: calc(100vw * (30/640)); letter-spacing: calc(100vw * (-1.8/640)); margin-left: calc(100vw * (10/640)); margin-top: calc(100vw * (-5/640)); color: #f00; }
+.reply_header .btn_goto_lastreply { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; }
+.reply_header .btn_goto_lastreply span { font-weight: 300; font-size: calc(100vw * (22/640)); letter-spacing: calc(100vw * (-1.32/640)); }
+.reply_header .btn_goto_lastreply span[class^='ivoryIcon-'] { font-weight: normal; font-size: calc(100vw * (18/640)); margin-left: calc(100vw * (5/640)); }
+
+.reply_content { margin-top: calc(100vw * (27/640)); padding: 0 calc(100vw * (40/640)) calc(100vw * (130/640)); }
+
+.reply_container { border-top: 1px solid #000; }
+.reply_container > .reply_item.is_writer { background-color: rgba(161, 73, 219, 0.12); }
+.reply_container.delete_reply:after { padding: calc(100vw * (30/640)) calc(100vw * (20/640)); display: block; content: '삭제된 댓글입니다'; font-weight: 500; font-size: calc(100vw * (18/640)); letter-spacing: calc(100vw * (-1.08/640)); color: #a8a8a8; }
+.reply_container.delete_reply > * { display: none !important; }
+
+.reply_item { padding: calc(100vw * (30/640)) calc(100vw * (20/640)); }
+.reply_item.is_writer .reply_info .writer { display: block; }
+.reply_item .reply_info { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; }
+.reply_item .reply_info span { font-weight: 700; font-size: calc(100vw * (18/640)); letter-spacing: calc(100vw * (-0.36/640)); }
+.reply_item .reply_info span[class^='ivoryIcon-'] { font-weight: normal; font-size: calc(100vw * (17/640)); }
+.reply_item .reply_info .writer { display: none; margin-right: calc(100vw * (10/640)); }
+.reply_item .reply_text { margin-top: calc(100vw * (17/640)); font-weight: 300; font-size: calc(100vw * (19/640)); line-height: calc(100vw * (30/640)); letter-spacing: calc(100vw * (-1.14/640)); }
+.reply_item .reply_footer { margin-top: calc(100vw * (30/640)); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; }
+.reply_item .reply_footer > div { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; }
+.reply_item .reply_footer .last_datetime .ivoryIcon-new { display: none; }
+.reply_item .reply_footer .last_datetime.is_new .ivoryIcon-new { display: block; }
+.reply_item .reply_footer .last_datetime span { font-weight: 300; font-size: calc(100vw * (20/640)); line-height: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-0.4/640)); }
+.reply_item .reply_footer .last_datetime span[class^='ivoryIcon-'] { margin-left: calc(100vw * (5/640)); font-size: calc(100vw * (21/640)); color: #f00; }
+.reply_item .reply_footer .btn_group .btn_heart .ivoryIcon-heart { display: block; color: #f00; }
+.reply_item .reply_footer .btn_group .btn_heart .ivoryIcon-heart_outline, .reply_item .reply_footer .btn_group .btn_heart .heart_count { display: none; }
+.reply_item .reply_footer .btn_group .btn_heart.clicked .ivoryIcon-heart { display: none; }
+.reply_item .reply_footer .btn_group .btn_heart.clicked .ivoryIcon-heart_outline, .reply_item .reply_footer .btn_group .btn_heart.clicked .heart_count { margin-left: calc(100vw * (5/640)); display: block; }
+.reply_item .reply_footer .btn_group .btn_heart [class^='ivoryIcon-heart'] { font-size: calc(100vw * (25/640)); }
+.reply_item .reply_footer .btn_group button { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; }
+.reply_item .reply_footer .btn_group button:not(:last-child) { margin-right: calc(100vw * (15/640)); }
+.reply_item .reply_footer .btn_group span { font-weight: 300; font-size: calc(100vw * (19/640)); letter-spacing: calc(100vw * (-0.38/640)); }
+.reply_item .reply_footer .btn_group span[class^='ivoryIcon-']:not(.ivoryIcon-more) { margin-right: calc(100vw * (5.5/640)); }
+.reply_item .reply_footer .btn_group span.ivoryIcon-reply { font-size: calc(100vw * (21/640)); }
+.reply_item .reply_footer .btn_group span.ivoryIcon-more { font-size: calc(100vw * (23/640)); }
+
+.rereply_container { border-top: 0.5px solid #a8a8a8; background-color: #f6f6f6; }
+.rereply_container .view_more_rereply { width: 100%; display: flex; justify-content: flex-start; padding: calc(100vw * (30/640)) calc(100vw * (20/640)); border-bottom: 0.5px solid #a8a8a8; font-weight: 500; font-size: calc(100vw * (18/640)); letter-spacing: calc(100vw * (-1.08/640)); }
+.rereply_container .reply_item:not(:last-child) { border-bottom: 0.5px solid #a8a8a8; }
+.rereply_container .reply_item.delete_rereply:after { display: block; content: '삭제된 댓글입니다'; font-weight: 500; font-size: calc(100vw * (18/640)); letter-spacing: calc(100vw * (-1.08/640)); color: #a8a8a8; }
+.rereply_container .reply_item.delete_rereply > * { display: none !important; }
+
+.reply_comment_input_box { position: fixed; right: 0; bottom: 0; width: 100%; z-index: 20; transform-origin: bottom; transform: translateY(100%); padding: calc(100vw * (30/640)) calc(100vw * (40/640)); background-color: #000; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; transition: transform 0.3s; }
+.reply_comment_input_box.on_slide { transform: translateY(0%); transition: transform 0.3s; }
+.reply_comment_input_box .text_input_box { position: relative; padding: calc(100vw * (16.5/640)) calc(100vw * (30/640)); border-radius: calc(100vw * (30/640)); margin-right: calc(100vw * (10/640)); background-color: #fff; flex: 1; font-weight: 500; font-size: calc(100vw * (23/640)); line-height: calc(100vw * (37/640)); letter-spacing: calc(100vw * (-1.2/640)); }
+.reply_comment_input_box .text_input_box > span { outline: none !important; }
+.reply_comment_input_box .text_input_box.is_focus:before { display: none; }
+.reply_comment_input_box .text_input_box:before { position: absolute; content: '댓글을 입력하세요'; color: #d2d2d2; top: calc(100vw * (17/640)); left: calc(100vw * (30/640)); }
+.reply_comment_input_box .text_input_box .target { margin-right: calc(100vw * (10/640)); }
+.reply_comment_input_box .btn_return_comment_text { width: calc(100vw * (70/640)); min-height: calc(100vw * (70/640)); font-weight: 500; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); border-radius: calc(100vw * (30/640)); background-color: #68c0b5; color: #fff; }
+
+/*# sourceMappingURL=reply.css.map */

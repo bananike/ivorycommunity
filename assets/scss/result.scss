@@ -694,3 +694,577 @@ body.slide_on {
         }
     }
 }
+
+.dummy_vote_container {
+    position: fixed;
+    padding: cal($e: 60) 0 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+    background-color: $color_white;
+
+    .dummy {
+        &_title {
+            margin: 0 cal($e: 40);
+            width: cal($e: 200);
+            height: cal($e: 35);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+            margin-bottom: cal($e: 25);
+        }
+        &_title_content {
+            margin: 0 cal($e: 40);
+            height: cal($e: 30);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+            &:not(:last-child) {
+                margin-bottom: cal($e: 15);
+            }
+        }
+        &_icon_wrapper {
+            margin: 0 cal($e: 40);
+            margin-top: cal($e: 75);
+            margin-bottom: cal($e: 60);
+            padding-bottom: cal($e: 30);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &_icon_box {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        &_icon {
+            width: cal($e: 80);
+            height: cal($e: 40);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+            &:not(:last-child) {
+                margin-right: cal($e: 25);
+            }
+        }
+        &_date {
+            width: cal($e: 120);
+            height: cal($e: 40);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        &_swipe {
+            padding: 0 0 0 cal($e: 40);
+            margin-bottom: cal($e: 50);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            overflow: hidden;
+        }
+        &_swipe_item {
+            min-width: cal($e: 351);
+            height: cal($e: 351);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+            &:not(:last-child) {
+                margin-right: cal($e: 25);
+            }
+        }
+        &_content_text {
+            margin: 0 cal($e: 40);
+            height: cal($e: 20);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+            &:not(:last-child) {
+                margin-bottom: cal($e: 13);
+            }
+        }
+        &_last_box {
+            margin: 0 cal($e: 40);
+            height: 100vh;
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+@media (min-width: $media_base) {
+    .vote_result_wrapper {
+        .header_box {
+            width: 640px;
+
+            .btn_area {
+                height: 135px;
+                padding: 0 40px;
+
+                .close_popup span {
+                    font-size: 28px;
+                }
+
+                .btn_group {
+                    button:not(:last-child) {
+                        margin-right: 30px;
+                    }
+
+                    [class^='ivoryIcon-'] {
+                        font-size: 40px;
+                    }
+                }
+            }
+
+            h2 {
+                height: 150px;
+                font-size: 45px;
+                letter-spacing: -2.7px;
+            }
+        }
+
+        .content_box {
+            margin-top: 285px;
+            height: calc(100vh - 285px);
+
+            .vote_content {
+                margin-top: 60px;
+
+                .category_type {
+                    padding: 0 40px;
+
+                    span {
+                        font-size: 22px;
+                        letter-spacing: -1.32px;
+
+                        &[class^='ivoryIcon-'] {
+                            font-size: 31px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                .category_title {
+                    padding: 0 40px;
+                    margin-top: 25px;
+
+                    .title {
+                        font-size: 30px;
+                        line-height: 45px;
+                        letter-spacing: -1.8px;
+                    }
+                }
+
+                .regist_date {
+                    padding: 0 40px;
+                    margin-top: 25px;
+
+                    span {
+                        font-size: 22px;
+                        letter-spacing: -0.44px;
+
+                        &[class^='ivoryIcon-'] {
+                            font-size: 23px;
+                            margin-left: 5px;
+                            margin-top: -4px;
+                        }
+                    }
+                }
+
+                .count_box {
+                    margin: 25px 40px 0;
+                    padding-bottom: 30px;
+
+                    .count_left {
+                        > div[class^='count_'] {
+                            &:not(:last-child) {
+                                margin-right: 25px;
+                            }
+
+                            span {
+                                font-size: 18px;
+                                letter-spacing: -0.36px;
+                            }
+                        }
+
+                        .count {
+                            &_vote {
+                                [class^='ivoryIcon-'] {
+                                    font-size: 30px;
+                                }
+                            }
+                            &_view {
+                                [class^='ivoryIcon-'] {
+                                    font-size: 35px;
+                                }
+                            }
+                            &_heart {
+                                [class^='ivoryIcon-'] {
+                                    font-size: 30px;
+                                }
+                            }
+                        }
+                    }
+
+                    .count_right {
+                        height: 40px;
+                        font-size: 20px;
+                        letter-spacing: -1.2px;
+                        border-radius: 30px;
+                        padding: 0 16px;
+                    }
+                }
+
+                .vote_img_swipe {
+                    margin-top: 60px;
+                    height: 351px;
+
+                    .swiper {
+                        padding-left: 40px;
+                    }
+
+                    .swiper-slide {
+                        width: 351px;
+                        height: 351px;
+                        border-radius: 30px;
+                    }
+                }
+
+                .vote_text_box {
+                    margin-top: 50px;
+                    padding: 0 40px;
+                    font-size: 20px;
+                    line-height: 33px;
+                    letter-spacing: -1.2px;
+                }
+            }
+
+            .vote_communication {
+                margin-top: 60px;
+                padding: 60px 40px 50px;
+
+                .total_voter {
+                    [class^='ivoryIcon-'] {
+                        font-size: 45px;
+                    }
+                    p {
+                        margin-top: 21px;
+                        font-size: 40px;
+                        letter-spacing: -2.4px;
+                    }
+                }
+
+                .reason_for_choosing_list {
+                    margin-top: 30px;
+
+                    li {
+                        &:nth-child(1) .medal img {
+                            margin-left: -1px;
+                        }
+                        &:nth-child(2) .medal img {
+                            margin-left: calc(-100% - 2px);
+                        }
+                        &:nth-child(3) .medal img {
+                            margin-left: calc(-200% - 2px);
+                        }
+                    }
+
+                    .list_item {
+                        padding: 30px 0;
+
+                        .ranking {
+                            width: 40px;
+
+                            .medal {
+                                width: 40px;
+                                height: 51px;
+                            }
+
+                            .rank_num {
+                                width: 40px;
+                                height: 40px;
+                                font-size: 19px;
+                                letter-spacing: -1.14px;
+                            }
+                        }
+
+                        &.my_pick .ranking .my_pick {
+                            margin-top: 10px;
+                            padding-top: 2.5px;
+                            font-size: 17px;
+                            line-height: 16px;
+                            letter-spacing: -1.02px;
+                        }
+
+                        .reason_info {
+                            margin-left: 10px;
+                            margin-top: -5px;
+
+                            .title {
+                                font-size: 22px;
+                                line-height: 35px;
+                                letter-spacing: -1.32px;
+                            }
+
+                            .choice_count_box {
+                                margin-top: 20px;
+
+                                .progress_box {
+                                    width: 206px;
+                                }
+
+                                .percentage {
+                                    margin-left: 11px;
+
+                                    .percent_value {
+                                        font-size: 20px;
+                                        letter-spacing: -1.2px;
+                                    }
+
+                                    .people_count {
+                                        margin-left: 2px;
+                                        font-size: 17px;
+                                        letter-spacing: -1.02px;
+                                    }
+                                }
+                            }
+
+                            .show_reasons {
+                                margin-top: 20px;
+
+                                .button {
+                                    width: 206px;
+                                    height: 40px;
+
+                                    span {
+                                        font-size: 18px;
+                                        letter-spacing: -1.08px;
+
+                                        &[class^='ivoryIcon-'] {
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .img_box {
+                            width: 120px;
+                            height: 120px;
+                            border-radius: 30px;
+                            margin-left: 30px;
+                        }
+                    }
+                }
+
+                .btn_vote_agin {
+                    height: 80px;
+                    margin-top: 60px;
+
+                    span {
+                        font-size: 30px;
+                        letter-spacing: -1.8px;
+                    }
+
+                    [class^='ivoryIcon-'] {
+                        font-size: 20px;
+                        right: 32px;
+                    }
+                }
+            }
+
+            .vote_voter_info {
+                padding: 80px 40px 50px;
+
+                .voter_header {
+                    [class^='ivoryIcon-'] {
+                        font-size: 45px;
+                    }
+
+                    p {
+                        margin-top: 21px;
+                        font-size: 40px;
+                        letter-spacing: -2.4px;
+                    }
+                }
+
+                .voter_content {
+                    margin-top: 40px;
+
+                    h4 {
+                        font-size: 25px;
+                        letter-spacing: -1.5px;
+
+                        &:after {
+                            margin-left: 6.5px;
+                            border-bottom: 0.5px solid $color_black;
+                        }
+                    }
+                }
+
+                .type_gender .type_box {
+                    margin-top: 60px;
+
+                    .female {
+                        margin-right: 40px;
+                    }
+
+                    .female,
+                    .male {
+                        .percentage {
+                            margin-left: 13px;
+
+                            .percentage_value {
+                                font-size: 50px;
+                                letter-spacing: -1px;
+                            }
+
+                            .type {
+                                margin-top: 12px;
+                                font-size: 22px;
+                                line-height: 22px;
+                                letter-spacing: -1.32px;
+                            }
+
+                            .count {
+                                margin-top: 5px;
+                                font-size: 20px;
+                                line-height: 20px;
+                                letter-spacing: -0.4px;
+                            }
+
+                            .progress_box {
+                                width: 120px;
+                                height: 16px;
+                                margin-top: 5px;
+
+                                .foreground {
+                                    min-width: 16px;
+                                }
+                            }
+                        }
+                    }
+
+                    [class^='ivoryIcon-'] {
+                        font-size: 132px;
+                        height: 132px;
+                        &.ivoryIcon-female {
+                            width: 74px;
+                            &:before {
+                                left: -29.5px;
+                            }
+                        }
+                        &.ivoryIcon-male {
+                            width: 50px;
+                            &:before {
+                                left: -41.5px;
+                            }
+                        }
+                    }
+                }
+
+                .type_generation .type_box {
+                    margin-top: 50px;
+
+                    [class^='gen_'] {
+                        margin-top: 240px;
+
+                        &:not(:last-child) {
+                            margin-right: 27px;
+                        }
+                    }
+
+                    .progress_box {
+                        width: 240px;
+                        height: 40px;
+                        left: 20px;
+
+                        .foreground {
+                            min-width: 40px;
+                        }
+                    }
+
+                    .percentage .percent_value {
+                        font-size: 40px;
+                        line-height: 40px;
+                        letter-spacing: -2.4px;
+                    }
+
+                    .count {
+                        margin-top: 10px;
+                        font-size: 17px;
+                        line-height: 17px;
+                        letter-spacing: -1.02px;
+                        padding-bottom: 15px;
+                    }
+
+                    .type {
+                        margin-top: 15px;
+                        font-size: 25px;
+                        line-height: 25px;
+                        letter-spacing: -1.5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .dummy_vote_container {
+        padding: 60px 0 0;
+
+        .dummy {
+            &_title {
+                margin: 0 40px;
+                width: 200px;
+                height: 35px;
+                border-radius: 30px;
+                margin-bottom: 25px;
+            }
+            &_title_content {
+                margin: 0 40px;
+                height: 30px;
+                border-radius: 30px;
+                &:not(:last-child) {
+                    margin-bottom: 15px;
+                }
+            }
+            &_icon_wrapper {
+                margin: 0 40px;
+                margin-top: 75px;
+                margin-bottom: 60px;
+                padding-bottom: 30px;
+            }
+            &_icon {
+                width: 80px;
+                height: 40px;
+                border-radius: 30px;
+                &:not(:last-child) {
+                    margin-right: 25px;
+                }
+            }
+            &_date {
+                width: 120px;
+                height: 40px;
+                border-radius: 30px;
+            }
+            &_swipe {
+                padding: 0 0 0 40px;
+                margin-bottom: 50px;
+            }
+            &_swipe_item {
+                min-width: 351px;
+                height: 351px;
+                border-radius: 30px;
+                &:not(:last-child) {
+                    margin-right: 25px;
+                }
+            }
+            &_content_text {
+                margin: 0 40px;
+                height: 20px;
+                border-radius: 30px;
+                &:not(:last-child) {
+                    margin-bottom: 13px;
+                }
+            }
+            &_last_box {
+                margin: 0 40px;
+                border-radius: 30px;
+            }
+        }
+    }
+}

@@ -159,15 +159,50 @@ $(document).ready(function () {
     );
 
     // 프로그레스 설정
-    progressBar($('.progress_box'), $('.content_box'));
+    progressBar(
+        $('.progress_box'),
+        $('.progress_scroller'),
+        $('.scroll_header')
+    );
 
-    // test
-    // modalOn($('#btnAddVotePOLL'), '#addVoteContainer');
+    // 하트클릭 ui 변경
+    $(document).on('click', '.btn_heart', function () {
+        clickHeart($(this));
+    });
+
+    // 코멘트 박스 보이기
+    onSlideCommentBox(
+        $('.reply_comment_input_box'),
+        $('.progress_scroller'),
+        $('.scroll_header')
+    );
+
+    // 댓글입력하면 플레이스홀더 가리기
+    $(document).on('input', '.text_input_box', function () {
+        commentPlaceholder($(this));
+    });
+
+    // 대댓글 클릭하면 댓글입력창에 번호 생성
+    $(document).on('click', '.btn_rereply', function () {
+        onClickRereply($(this));
+    });
+
+    // 입력창 댓글타겟 클릭해서 지우기
+    $(document).on('click', '.reply_comment_input_box .target', function () {
+        onClickDeleteReplyTarget($(this));
+    });
 });
 
 // --------------------------------------------
 //
 //
+// test
+// modalOn($('#btnAddVotePOLL'), '#addVoteContainer');
+
+// 결과슬라이드 더미 제거
+setTimeout(function () {
+    $('.dummy_vote_container').prop('hidden', true);
+}, 1000);
 //
 //
 //
@@ -518,23 +553,28 @@ function closeResultSlidePopup(_this) {
 }
 
 // 024. 프로그레스 바
-function progressBar(_this, container) {
+function progressBar(_this, container, header) {
     var height = container.height();
-    initProgress(_this, height);
+    var headerHeight = header.outerHeight();
+    initProgress(_this, height, headerHeight);
 
     $(container).scroll(function () {
-        initProgress(_this, height);
+        initProgress(_this, height, headerHeight);
     });
 
     // 반복문
-    function initProgress(_this, height) {
+    function initProgress(_this, height, headerHeight) {
         for (var i = 0; _this.length > i; i++) {
             var progress = $(_this[i]);
             var offset = progress.offset().top;
             var progressdata = progress.attr('data-progress') * 1;
             var foreground = progress.find('.foreground');
+            var startPosition = $(document).scrollTop();
 
-            if (offset - 285 + progress.height() < height) {
+            if (
+                offset - headerHeight - startPosition + progress.height() <
+                height
+            ) {
                 foreground.css('width', progressdata + '%');
                 if (progressdata == 0) {
                     foreground.css('opacity', 0);
@@ -552,4 +592,75 @@ function progressBar(_this, container) {
             }
         }
     }
+}
+
+// 025. 하트 클릭
+function clickHeart(_this) {
+    _this.toggleClass('clicked');
+}
+
+// 026. 코멘트 박스 보임
+function onSlideCommentBox(_this, container, header) {
+    var wrapper = $('.reply_wrapper');
+    var height = container.height();
+    var headerHeight = header.outerHeight();
+    var baseCommentItemHeight = 200;
+
+    $(container).scroll(function () {
+        if (
+            wrapper.offset().top -
+                headerHeight +
+                _this.outerHeight() +
+                baseCommentItemHeight <
+            height
+        ) {
+            _this.addClass('on_slide');
+        } else {
+            _this.removeClass('on_slide');
+        }
+    });
+}
+
+// 027. 댓글입력 플레이스홀더
+function commentPlaceholder(_this) {
+    var val = _this.html();
+
+    if (val.trim() != '') {
+        _this.addClass('is_focus');
+    } else {
+        _this.removeClass('is_focus');
+    }
+}
+
+// 028. 대댓글 클릭
+function onClickRereply(_this) {
+    var targetReply =
+        '@' +
+        _this
+            .closest('.reply_item')
+            .find('.reply_info .reply_count span:eq(0)')
+            .text() +
+        _this
+            .closest('.reply_item')
+            .find('.reply_info .reply_count .num')
+            .text();
+
+    var targetContainer = $('.reply_comment_input_box > .target').clone(true);
+
+    if ($('.text_input_box .target').length > 0) {
+        $('.text_input_box .target').text(targetReply);
+    } else {
+        targetContainer.text(targetReply);
+        targetContainer.prop('hidden', false);
+
+        $('.text_input_box').prepend(targetContainer);
+    }
+    $('.text_input_box').addClass('is_focus');
+
+    $('.text_input_box span').focus();
+}
+
+// 029. 댓글 타겟 지우기
+function onClickDeleteReplyTarget(_this) {
+    _this.remove();
 }

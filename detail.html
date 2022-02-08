@@ -7,7 +7,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
         />
-        <title>Community</title>
+        <title>Detail</title>
 
         <!-- css -->
         <link rel="stylesheet" href="assets/css/font.css" />
@@ -15,6 +15,7 @@
         <link rel="stylesheet" href="assets/css/community.css" />
         <link rel="stylesheet" href="assets/css/add_vote_container.css" />
         <link rel="stylesheet" href="assets/css/result.css" />
+        <link rel="stylesheet" href="assets/css/reply.css" />
 
         <!-- alert -->
         <link rel="stylesheet" href="assets/css/alert.css" />
@@ -29,9 +30,8 @@
         <div class="container"></div>
 
         <!-- 결과 슬라이드 -->
-        <div class="back_bg"></div>
         <div id="sliderVoteResult" class="slide_popup vote_result_wrapper">
-            <div class="header_box">
+            <div class="header_box scroll_header">
                 <div class="btn_area">
                     <button type="button" class="close_popup">
                         <span class="ivoryIcon-arrow_left"></span>
@@ -54,7 +54,33 @@
                 </div>
                 <h2>투표 결과는?</h2>
             </div>
-            <div class="content_box">
+            <div class="content_box progress_scroller">
+                <!-- dummy -->
+                <div class="dummy_vote_container">
+                    <div class="dummy_title"></div>
+                    <div class="dummy_title_content"></div>
+                    <div class="dummy_title_content"></div>
+                    <div class="dummy_title_content"></div>
+                    <div class="dummy_icon_wrapper">
+                        <div class="dummy_icon_box">
+                            <div class="dummy_icon"></div>
+                            <div class="dummy_icon"></div>
+                            <div class="dummy_icon"></div>
+                        </div>
+                        <div class="dummy_date"></div>
+                    </div>
+                    <div class="dummy_swipe">
+                        <div class="dummy_swipe_item"></div>
+                        <div class="dummy_swipe_item"></div>
+                    </div>
+                    <div class="dummy_content_text"></div>
+                    <div class="dummy_content_text"></div>
+                    <div class="dummy_content_text"></div>
+                    <div class="dummy_content_text"></div>
+                    <div class="dummy_last_box"></div>
+                </div>
+                <!-- dummy -->
+
                 <!-- 투표 등록 정보 -->
                 <div class="vote_content">
                     <div class="category_type">
@@ -166,7 +192,6 @@
                                     <div class="choice_count_box">
                                         <div
                                             class="progress_box"
-                                            id="qwe"
                                             data-progress="88"
                                         >
                                             <div class="background"></div>
@@ -468,151 +493,422 @@
                 <!-- 투표참여 현황 -->
 
                 <!-- 댓글 영역 -->
-                <div class="vote_reply_wrapper">
+                <div class="reply_wrapper">
                     <div class="reply_header">
                         <div class="reply_count">
                             <span>댓글</span>
-                            <span class="num">999</span>
+                            <span class="num">12</span>
                         </div>
-                        <button type="button">
+                        <button type="button" class="btn_goto_lastreply">
                             <span>마지막 댓글로</span>
                             <span class="ivoryIcon-arrow_down"></span>
                         </button>
                     </div>
                     <ul class="reply_content">
-                        <li class="reply_item">
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur
-                                adipisicing elit. Nemo omnis suscipit illum
-                                molestias dolorum quis in eius fuga voluptatibus
-                                autem.
-                            </p>
+                        <!-- 댓글 아이템 -->
+                        <li class="reply_container has_rereply">
+                            <!-- reply item -->
+                            <div class="reply_item">
+                                <div class="reply_info">
+                                    <div class="writer">
+                                        <span>투표 작성자</span>
+                                        <span class="ivoryIcon-write"></span>
+                                    </div>
+                                    <div class="reply_count">
+                                        <span>댓글</span>
+                                        <span class="num">44</span>
+                                    </div>
+                                </div>
+                                <div class="reply_text">
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Dolores, at quam dolor
+                                    obcaecati exercitationem nostrum.
+                                </div>
+                                <div class="reply_footer">
+                                    <div class="last_datetime is_new">
+                                        <span class="datetime">12:30</span>
+                                        <span class="ivoryIcon-new"></span>
+                                    </div>
+                                    <div class="btn_group">
+                                        <button
+                                            type="button"
+                                            class="btn_heart clicked"
+                                        >
+                                            <span
+                                                class="ivoryIcon-heart"
+                                            ></span>
+                                            <span
+                                                class="ivoryIcon-heart_outline"
+                                            ></span>
+                                            <span>좋아요</span>
+                                            <span class="heart_count">5</span>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_rereply"
+                                        >
+                                            <span
+                                                class="ivoryIcon-reply"
+                                            ></span>
+                                            <span>대댓글</span>
+                                        </button>
+                                        <button type="button" class="btn_more">
+                                            <span class="ivoryIcon-more"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- reply item -->
+
+                            <!-- 대댓글 -->
+                            <div class="rereply_container has_more_reply">
+                                <button type="button" class="view_more_rereply">
+                                    + 이전 대댓글
+                                    <span class="count_rereply">18</span>개 더
+                                    보기...
+                                </button>
+                                <ul class="rereply_list">
+                                    <!-- reply item -->
+                                    <li class="reply_item is_writer">
+                                        <div class="reply_info">
+                                            <div class="writer">
+                                                <span>투표 작성자</span>
+                                                <span
+                                                    class="ivoryIcon-write"
+                                                ></span>
+                                            </div>
+                                            <div class="reply_count">
+                                                <span>대댓글</span>
+                                                <span class="num">127</span>
+                                            </div>
+                                        </div>
+                                        <div class="reply_text">
+                                            Lorem ipsum, dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Dolores, at quam dolor obcaecati
+                                            exercitationem nostrum.
+                                        </div>
+                                        <div class="reply_footer">
+                                            <div class="last_datetime is_new">
+                                                <span class="datetime"
+                                                    >12:30</span
+                                                >
+                                                <span
+                                                    class="ivoryIcon-new"
+                                                ></span>
+                                            </div>
+                                            <div class="btn_group">
+                                                <button
+                                                    type="button"
+                                                    class="btn_heart clicked"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-heart"
+                                                    ></span>
+                                                    <span
+                                                        class="ivoryIcon-heart_outline"
+                                                    ></span>
+                                                    <span>좋아요</span>
+                                                    <span class="heart_count"
+                                                        >5</span
+                                                    >
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_rereply"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-reply"
+                                                    ></span>
+                                                    <span>대댓글</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_more"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-more"
+                                                    ></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- reply item -->
+
+                                    <!-- reply item -->
+                                    <li class="reply_item">
+                                        <div class="reply_info">
+                                            <div class="writer">
+                                                <span>투표 작성자</span>
+                                                <span
+                                                    class="ivoryIcon-write"
+                                                ></span>
+                                            </div>
+                                            <div class="reply_count">
+                                                <span>대댓글</span>
+                                                <span class="num">242</span>
+                                            </div>
+                                        </div>
+                                        <div class="reply_text">
+                                            Lorem ipsum, dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Dolores, at quam dolor obcaecati
+                                            exercitationem nostrum.
+                                        </div>
+                                        <div class="reply_footer">
+                                            <div class="last_datetime">
+                                                <span class="datetime"
+                                                    >2022.12.12</span
+                                                >
+                                                <span
+                                                    class="ivoryIcon-new"
+                                                ></span>
+                                            </div>
+                                            <div class="btn_group">
+                                                <button
+                                                    type="button"
+                                                    class="btn_heart"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-heart"
+                                                    ></span>
+                                                    <span
+                                                        class="ivoryIcon-heart_outline"
+                                                    ></span>
+                                                    <span>좋아요</span>
+                                                    <span class="heart_count"
+                                                        >5</span
+                                                    >
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_rereply"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-reply"
+                                                    ></span>
+                                                    <span>대댓글</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_more"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-more"
+                                                    ></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- reply item -->
+
+                                    <!-- reply item -->
+                                    <li class="reply_item delete_rereply">
+                                        <div class="reply_info">
+                                            <div class="writer">
+                                                <span>투표 작성자</span>
+                                                <span
+                                                    class="ivoryIcon-write"
+                                                ></span>
+                                            </div>
+                                            <div class="reply_count">
+                                                <span>대댓글</span>
+                                                <span class="num">354</span>
+                                            </div>
+                                        </div>
+                                        <div class="reply_text">
+                                            Lorem ipsum, dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Dolores, at quam dolor obcaecati
+                                            exercitationem nostrum.
+                                        </div>
+                                        <div class="reply_footer">
+                                            <div class="last_datetime is_new">
+                                                <span class="datetime"
+                                                    >12:30</span
+                                                >
+                                                <span
+                                                    class="ivoryIcon-new"
+                                                ></span>
+                                            </div>
+                                            <div class="btn_group">
+                                                <button
+                                                    type="button"
+                                                    class="btn_heart clicked"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-heart"
+                                                    ></span>
+                                                    <span
+                                                        class="ivoryIcon-heart_outline"
+                                                    ></span>
+                                                    <span>좋아요</span>
+                                                    <span class="heart_count"
+                                                        >5</span
+                                                    >
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_rereply"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-reply"
+                                                    ></span>
+                                                    <span>대댓글</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_more"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-more"
+                                                    ></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- reply item -->
+                                </ul>
+                            </div>
+                            <!-- 대댓글 -->
                         </li>
+                        <!-- 댓글 아이템 -->
+
+                        <!-- 댓글 아이템 -->
+                        <li class="reply_container">
+                            <!-- reply item -->
+                            <div class="reply_item is_writer">
+                                <div class="reply_info">
+                                    <div class="writer">
+                                        <span>투표 작성자</span>
+                                        <span class="ivoryIcon-write"></span>
+                                    </div>
+                                    <div class="reply_count">
+                                        <span>댓글</span>
+                                        <span class="num">477</span>
+                                    </div>
+                                </div>
+                                <div class="reply_text">
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Dolores, at quam dolor
+                                    obcaecati exercitationem nostrum.
+                                </div>
+                                <div class="reply_footer">
+                                    <div class="last_datetime is_new">
+                                        <span class="datetime">12:30</span>
+                                        <span class="ivoryIcon-new"></span>
+                                    </div>
+                                    <div class="btn_group">
+                                        <button
+                                            type="button"
+                                            class="btn_heart clicked"
+                                        >
+                                            <span
+                                                class="ivoryIcon-heart"
+                                            ></span>
+                                            <span
+                                                class="ivoryIcon-heart_outline"
+                                            ></span>
+                                            <span>좋아요</span>
+                                            <span class="heart_count">5</span>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_rereply"
+                                        >
+                                            <span
+                                                class="ivoryIcon-reply"
+                                            ></span>
+                                            <span>대댓글</span>
+                                        </button>
+                                        <button type="button" class="btn_more">
+                                            <span class="ivoryIcon-more"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- reply item -->
+                        </li>
+                        <!-- 댓글 아이템 -->
+
+                        <!-- 댓글 아이템 -->
+                        <li class="reply_container delete_reply">
+                            <!-- reply item -->
+                            <div class="reply_item">
+                                <div class="reply_info">
+                                    <div class="writer">
+                                        <span>투표 작성자</span>
+                                        <span class="ivoryIcon-write"></span>
+                                    </div>
+                                    <div class="reply_count">
+                                        <span>댓글</span>
+                                        <span class="num">563</span>
+                                    </div>
+                                </div>
+                                <div class="reply_text">
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Dolores, at quam dolor
+                                    obcaecati exercitationem nostrum.
+                                </div>
+                                <div class="reply_footer">
+                                    <div class="last_datetime is_new">
+                                        <span class="datetime">12:30</span>
+                                        <span class="ivoryIcon-new"></span>
+                                    </div>
+                                    <div class="btn_group">
+                                        <button type="button" class="btn_heart">
+                                            <span
+                                                class="ivoryIcon-heart"
+                                            ></span>
+                                            <span
+                                                class="ivoryIcon-heart_outline"
+                                            ></span>
+                                            <span>좋아요</span>
+                                            <span class="heart_count">5</span>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_rereply"
+                                        >
+                                            <span
+                                                class="ivoryIcon-reply"
+                                            ></span>
+                                            <span>대댓글</span>
+                                        </button>
+                                        <button type="button" class="btn_more">
+                                            <span class="ivoryIcon-more"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- reply item -->
+                        </li>
+                        <!-- 댓글 아이템 -->
                     </ul>
+
+                    <!-- 댓글 입력 폼 -->
+                    <div class="reply_comment_input_box">
+                        <span
+                            class="target"
+                            contenteditable="false"
+                            style="color: #68c0b5"
+                            hidden
+                        ></span>
+                        <div class="text_input_box">
+                            <span contenteditable="true"></span>
+                        </div>
+                        <button type="button" class="btn_return_comment_text">
+                            확인
+                        </button>
+                    </div>
+                    <!-- 댓글 입력 폼 -->
                 </div>
                 <!-- 댓글 영역 -->
             </div>
-
-            <!-- 댓글입력박스 -->
-            <div class="reply_input_box">
-                <textarea
-                    class="textarea_auto_line"
-                    data-limit-line="3"
-                    placeholder="댓글을 입력하세요"
-                ></textarea>
-                <button type="button" id="btnInsertReply">확인</button>
-            </div>
-            <!-- 댓글입력박스 -->
         </div>
         <!-- 결과 슬라이드 -->
+
+        <div class="back_bg"></div>
 
         <!-- jquery -->
         <script type="text/javascript" src="assets/js/jQuery.js"></script>
