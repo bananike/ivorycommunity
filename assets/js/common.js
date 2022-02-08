@@ -601,15 +601,17 @@ function clickHeart(_this) {
 
 // 026. 코멘트 박스 보임
 function onSlideCommentBox(_this, container, header) {
-    var wrapper = $('.reply_wrapper');
-    var height = container.height();
-    var headerHeight = header.outerHeight();
-    var baseCommentItemHeight = 200;
-
     $(container).scroll(function () {
+        var wrapper = $('.reply_wrapper');
+        var height = container.height();
+        var headerHeight = header.outerHeight();
+        var baseCommentItemHeight = 200;
+        var startPosition = $(document).scrollTop();
+
         if (
             wrapper.offset().top -
-                headerHeight +
+                headerHeight -
+                startPosition +
                 _this.outerHeight() +
                 baseCommentItemHeight <
             height

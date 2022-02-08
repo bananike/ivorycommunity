@@ -56,4 +56,35 @@
 .reply_comment_input_box .text_input_box .target { margin-right: calc(100vw * (10/640)); }
 .reply_comment_input_box .btn_return_comment_text { width: calc(100vw * (70/640)); min-height: calc(100vw * (70/640)); font-weight: 500; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); border-radius: calc(100vw * (30/640)); background-color: #68c0b5; color: #fff; }
 
+@media (min-width: 640px) { .reply_wrapper { margin-top: 60px; }
+  .reply_header { padding: 0 40px; }
+  .reply_header .reply_count span { font-size: 25px; letter-spacing: -1.5px; }
+  .reply_header .reply_count span.num { font-size: 30px; letter-spacing: -1.8px; margin-left: 10px; margin-top: -5px; }
+  .reply_header .btn_goto_lastreply span { font-size: 22px; letter-spacing: -1.32px; }
+  .reply_header .btn_goto_lastreply span[class^='ivoryIcon-'] { font-size: 18px; margin-left: 5px; }
+  .reply_content { margin-top: 27px; padding: 0 40px 130px; }
+  .reply_container.delete_reply:after { padding: 30px 20px; font-size: 18px; letter-spacing: -1.08px; }
+  .reply_item { padding: 30px 20px; }
+  .reply_item .reply_info span { font-size: 18px; letter-spacing: -0.36px; }
+  .reply_item .reply_info span[class^='ivoryIcon-'] { font-size: 17px; }
+  .reply_item .reply_info .writer { margin-right: 10px; }
+  .reply_item .reply_text { margin-top: 17px; font-size: 19px; line-height: 30px; letter-spacing: -1.14px; }
+  .reply_item .reply_footer { margin-top: 30px; }
+  .reply_item .reply_footer .last_datetime span { font-size: 20px; line-height: 20px; letter-spacing: -0.4px; }
+  .reply_item .reply_footer .last_datetime span[class^='ivoryIcon-'] { margin-left: 5px; font-size: 21px; }
+  .reply_item .reply_footer .btn_group .btn_heart.clicked .ivoryIcon-heart_outline, .reply_item .reply_footer .btn_group .btn_heart.clicked .heart_count { margin-left: 5px; }
+  .reply_item .reply_footer .btn_group .btn_heart [class^='ivoryIcon-heart'] { font-size: 25px; }
+  .reply_item .reply_footer .btn_group button:not(:last-child) { margin-right: 15px; }
+  .reply_item .reply_footer .btn_group span { font-size: 19px; letter-spacing: -0.38px; }
+  .reply_item .reply_footer .btn_group span[class^='ivoryIcon-']:not(.ivoryIcon-more) { margin-right: 5.5px; }
+  .reply_item .reply_footer .btn_group span.ivoryIcon-reply { font-size: 21px; }
+  .reply_item .reply_footer .btn_group span.ivoryIcon-more { font-size: 23px; }
+  .rereply_container .view_more_rereply { padding: 30px 20px; font-size: 18px; letter-spacing: -1.08px; }
+  .rereply_container .reply_item.delete_rereply:after { font-size: 18px; letter-spacing: -1.08px; }
+  .reply_comment_input_box { padding: 30px 40px; }
+  .reply_comment_input_box .text_input_box { padding: 16.5px 30px; border-radius: 30px; margin-right: 10px; font-size: 23px; line-height: 37px; letter-spacing: -1.2px; }
+  .reply_comment_input_box .text_input_box:before { top: 17px; left: 30px; }
+  .reply_comment_input_box .text_input_box .target { margin-right: 10px; }
+  .reply_comment_input_box .btn_return_comment_text { width: 70px; min-height: 70px; font-size: 20px; letter-spacing: -1.2px; border-radius: 30px; } }
+
 /*# sourceMappingURL=reply.css.map */

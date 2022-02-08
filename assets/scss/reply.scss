@@ -318,3 +318,181 @@
         color: $color_white;
     }
 }
+
+@media (min-width: $media_base) {
+    .reply_wrapper {
+        margin-top: 60px;
+    }
+
+    .reply_header {
+        padding: 0 40px;
+
+        .reply_count {
+            span {
+                font-size: 25px;
+                letter-spacing: -1.5px;
+
+                &.num {
+                    font-size: 30px;
+                    letter-spacing: -1.8px;
+                    margin-left: 10px;
+                    margin-top: -5px;
+                }
+            }
+        }
+
+        .btn_goto_lastreply {
+            span {
+                font-size: 22px;
+                letter-spacing: -1.32px;
+
+                &[class^='ivoryIcon-'] {
+                    font-size: 18px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+
+    .reply_content {
+        margin-top: 27px;
+        padding: 0 40px 130px;
+    }
+
+    .reply_container {
+        &.delete_reply {
+            &:after {
+                padding: 30px 20px;
+                font-size: 18px;
+                letter-spacing: -1.08px;
+            }
+        }
+    }
+
+    .reply_item {
+        padding: 30px 20px;
+
+        .reply_info {
+            span {
+                font-size: 18px;
+                letter-spacing: -0.36px;
+
+                &[class^='ivoryIcon-'] {
+                    font-size: 17px;
+                }
+            }
+
+            .writer {
+                margin-right: 10px;
+            }
+        }
+
+        .reply_text {
+            margin-top: 17px;
+            font-size: 19px;
+            line-height: 30px;
+            letter-spacing: -1.14px;
+        }
+
+        .reply_footer {
+            margin-top: 30px;
+
+            .last_datetime {
+                span {
+                    font-size: 20px;
+                    line-height: 20px;
+                    letter-spacing: -0.4px;
+
+                    &[class^='ivoryIcon-'] {
+                        margin-left: 5px;
+                        font-size: 21px;
+                    }
+                }
+            }
+
+            .btn_group {
+                .btn_heart {
+                    &.clicked {
+                        .ivoryIcon-heart_outline,
+                        .heart_count {
+                            margin-left: 5px;
+                        }
+                    }
+                    [class^='ivoryIcon-heart'] {
+                        font-size: 25px;
+                    }
+                }
+
+                button {
+                    &:not(:last-child) {
+                        margin-right: 15px;
+                    }
+                }
+
+                span {
+                    font-size: 19px;
+                    letter-spacing: -0.38px;
+
+                    &[class^='ivoryIcon-']:not(.ivoryIcon-more) {
+                        margin-right: 5.5px;
+                    }
+
+                    &.ivoryIcon-reply {
+                        font-size: 21px;
+                    }
+
+                    &.ivoryIcon-more {
+                        font-size: 23px;
+                    }
+                }
+            }
+        }
+    }
+
+    .rereply_container {
+        .view_more_rereply {
+            padding: 30px 20px;
+            font-size: 18px;
+            letter-spacing: -1.08px;
+        }
+
+        .reply_item {
+            &.delete_rereply {
+                &:after {
+                    font-size: 18px;
+                    letter-spacing: -1.08px;
+                }
+            }
+        }
+    }
+
+    .reply_comment_input_box {
+        padding: 30px 40px;
+
+        .text_input_box {
+            padding: 16.5px 30px;
+            border-radius: 30px;
+            margin-right: 10px;
+            font-size: 23px;
+            line-height: 37px;
+            letter-spacing: -1.2px;
+
+            &:before {
+                top: 17px;
+                left: 30px;
+            }
+
+            .target {
+                margin-right: 10px;
+            }
+        }
+
+        .btn_return_comment_text {
+            width: 70px;
+            min-height: 70px;
+            font-size: 20px;
+            letter-spacing: -1.2px;
+            border-radius: 30px;
+        }
+    }
+}
