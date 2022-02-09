@@ -43,6 +43,15 @@
 .add_vote_input_box {
     .btn_select_category {
         cursor: pointer;
+        border-bottom: 1px solid $color_black;
+
+        + .form_control {
+            display: none !important;
+        }
+
+        &.error {
+            border-bottom: 3px solid $color_warning;
+        }
     }
 
     > .form_group {
@@ -248,16 +257,33 @@
 .setting_box {
     margin-top: cal($e: 60);
     padding: cal($e: 35) cal($e: 40) cal($e: 100);
-    background-color: $color_transparentprimary;
 
     .delete_btn_box {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
+
+        .vote_guide {
+            position: relative;
+            font-weight: 500;
+            font-size: cal($e: 22);
+            letter-spacing: cal($e: -1.32);
+
+            &:after {
+                position: absolute;
+                content: '*';
+                color: $color_red;
+                font-weight: 300;
+                font-size: cal($e: 40);
+                letter-spacing: cal($e: -0.8);
+                top: cal($e: -8);
+            }
+        }
 
         .btn_on_delete_mode {
             font-weight: 500;
             font-size: cal($e: 23);
             letter-spacing: cal($e: -1.38);
+            color: $color_primary;
         }
     }
 }
@@ -267,7 +293,7 @@
 
     li {
         position: relative;
-        overflow-x: hidden;
+        overflow: hidden;
 
         &:not(:first-child) {
             margin-top: cal($e: 20);
@@ -276,6 +302,29 @@
         &.active {
             .form_group {
                 border: 3px solid $color_primary;
+            }
+        }
+
+        .error_message {
+            position: relative;
+            z-index: -1;
+            font-weight: 500;
+            font-size: cal($e: 20);
+            letter-spacing: cal($e: -1.2);
+            color: $color_warning;
+            margin-left: cal($e: 25);
+            margin-top: cal($e: -21);
+            opacity: 0;
+            transition: margin-top 0.3s, opacity 0.3s;
+
+            &:after {
+                position: absolute;
+                content: '*';
+                color: $color_red;
+                font-weight: 300;
+                font-size: cal($e: 40);
+                letter-spacing: cal($e: -0.8);
+                top: cal($e: -8);
             }
         }
     }
@@ -304,6 +353,20 @@
         border-radius: cal($e: 30);
         border: 0.5px solid $color_black;
         transition: width 0.3s;
+
+        &.error {
+            border: 3px solid $color_warning;
+
+            ~ .error_message {
+                opacity: 1;
+                margin-top: cal($e: 15);
+                transition: margin-top 0.3s, opacity 0.3s;
+            }
+        }
+
+        &.focusing {
+            border: 3px solid $color_primary;
+        }
 
         > label {
             position: relative;
@@ -379,7 +442,7 @@
 
     .button_box {
         position: absolute;
-        top: calc(50% - #{cal($e: 20)});
+        top: cal($e: 20);
         right: 0;
         opacity: 0;
         transform-origin: right;
@@ -433,6 +496,135 @@
         &[class^='ivoryIcon-'] {
             font-size: cal($e: 22);
         }
+    }
+}
+
+.vote_vs_card {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-bottom: cal($e: 60);
+
+    [class^='card_vs_'] {
+        position: relative;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: cal($e: 34) cal($e: 36);
+        height: cal($e: 377);
+        border-radius: cal($e: 30);
+        border: 0.5px solid $color_black;
+
+        &:first-child {
+            margin-right: cal($e: 10);
+        }
+
+        &.card_vs_a {
+            background-color: $color_vscarda;
+        }
+        &.card_vs_b {
+            background-color: $color_vscardb;
+        }
+
+        &.error {
+            border: 3px solid $color_warning;
+        }
+
+        &.focusing {
+            border: 3px solid $color_primary;
+        }
+
+        .card_title {
+            font-family: gotham;
+            font-weight: bold;
+            font-size: cal($e: 50);
+            letter-spacing: cal($e: -3);
+        }
+
+        .vs_card_text {
+            margin-top: cal($e: 24);
+            border: 0;
+            background-color: transparent;
+            font-weight: 300;
+            font-size: cal($e: 25);
+            line-height: cal($e: 35);
+            letter-spacing: cal($e: -1.5);
+            color: $color_black;
+
+            &::placeholder {
+                color: $color_white;
+            }
+        }
+
+        .img_box {
+            position: absolute;
+            width: cal($e: 86);
+            height: cal($e: 86);
+            bottom: cal($e: 34);
+            right: cal($e: 34);
+
+            .on_img_box {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                overflow: hidden;
+                border: 1px solid $color_black;
+
+                img {
+                    @include objectfit;
+                }
+            }
+
+            .btn_delete_vs_card_img {
+                position: absolute;
+                width: cal($e: 28);
+                height: cal($e: 28);
+                top: cal($e: -6);
+                right: cal($e: -6);
+                border-radius: 50%;
+                background-color: $color_lightblack;
+
+                [class^='ivoryIcon-'] {
+                    font-size: cal($e: 16);
+                    color: $color_white;
+                }
+            }
+
+            .none_img_box {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                background-color: $color_lightgray;
+
+                [class^='ivoryIcon-'] {
+                    font-size: cal($e: 40);
+                    color: $color_white;
+                }
+            }
+        }
+    }
+
+    .icon_vs {
+        position: absolute;
+        width: cal($e: 76);
+        height: cal($e: 76);
+        background-color: $color_black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: gotham;
+        font-weight: bold;
+        font-size: cal($e: 31);
+        letter-spacing: cal($e: -1.86);
+        color: $color_white;
+        border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 }
 
@@ -490,6 +682,91 @@
     }
 }
 
+.setting_sub_wrapper {
+    position: relative;
+
+    .option_box {
+        position: absolute;
+        z-index: 2;
+        width: cal($e: 70);
+        height: 0;
+        max-height: cal($e: 162);
+        top: cal($e: 110);
+        left: 0;
+        overflow: auto;
+        transition: height 0.3s;
+        background-color: $color_white;
+        box-shadow: 0 cal($e: 10) cal($e: 15) 0 rgba(0, 0, 0, 0.25);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        li {
+            &:first-child {
+                padding-top: cal($e: 10);
+            }
+            &:last-child {
+                padding-bottom: cal($e: 10);
+            }
+        }
+
+        .select_option {
+            position: relative;
+            width: 100%;
+            height: cal($e: 35);
+            font-family: gotham;
+            font-size: cal($e: 25);
+            letter-spacing: cal($e: -1.5);
+            color: $color_black;
+            transition: color 0.3s;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+                width: cal($e: 35);
+                height: cal($e: 35);
+                top: 0;
+                z-index: -1;
+                border-radius: 50%;
+                left: calc(50% - #{cal($e: 17.5)});
+                background-color: $color_primary;
+                opacity: 0;
+                transition: opacity 0.3s;
+            }
+
+            &.selecting {
+                color: $color_white;
+                transition: color 0.3s;
+
+                &:before {
+                    opacity: 1;
+                    transition: opacity 0.3s;
+                }
+            }
+        }
+
+        &.is_opened {
+            transition: height 0.3s;
+
+            ~ .backdrop {
+                display: block;
+            }
+        }
+    }
+
+    .backdrop {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+}
+
 .setting_sub_content {
     display: flex;
     flex-wrap: nowrap;
@@ -498,18 +775,26 @@
     margin-top: cal($e: 28);
 
     .select_multi_count_box {
+        position: relative;
         display: flex;
         align-items: center;
 
         .btn_on_input_multi_count {
-            width: cal($e: 49);
-            height: cal($e: 49);
+            width: cal($e: 70);
+            height: cal($e: 40);
             border: 2px solid $color_primary;
             background-color: $color_white;
-            border-radius: 50%;
+            border-radius: cal($e: 30);
+            color: $color_lightgray;
             font-family: gotham;
+            text-align: center;
             font-size: cal($e: 25);
             letter-spacing: cal($e: -1.5);
+            outline: none !important;
+
+            &.selected {
+                color: $color_black;
+            }
         }
 
         span {
@@ -542,7 +827,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background-color: $color_gray;
+                    background-color: $color_lightgray;
                     color: $color_white;
                     border-radius: cal($e: 30);
                     font-weight: 500;
@@ -732,6 +1017,16 @@
         padding: 35px 40px 100px;
 
         .delete_btn_box {
+            .vote_guide {
+                font-size: 22px;
+                letter-spacing: -1.32;
+
+                &:after {
+                    font-size: 40px;
+                    letter-spacing: -0.8px;
+                    top: -8px;
+                }
+            }
             .btn_on_delete_mode {
                 font-size: 23px;
                 letter-spacing: -1.38px;
@@ -746,6 +1041,19 @@
             &:not(:first-child) {
                 margin-top: 20px;
             }
+
+            .error_message {
+                font-size: 20px;
+                letter-spacing: -1.2px;
+                margin-left: 25px;
+                margin-top: -21px;
+
+                &:after {
+                    font-size: 40px;
+                    letter-spacing: -0.8px;
+                    top: -8px;
+                }
+            }
         }
 
         &.delete_mode {
@@ -757,6 +1065,12 @@
         .form_group {
             padding: 30px 25px;
             border-radius: 30px;
+
+            &.error {
+                ~ .error_message {
+                    margin-top: 15px;
+                }
+            }
 
             > label {
                 &.on {
@@ -801,7 +1115,7 @@
         }
 
         .button_box {
-            top: calc(50% - 20px);
+            top: 20px;
 
             button {
                 width: 40px;
@@ -832,6 +1146,62 @@
             &[class^='ivoryIcon-'] {
                 font-size: 22px;
             }
+        }
+    }
+
+    .vote_vs_card {
+        margin-bottom: 60px;
+
+        [class^='card_vs_'] {
+            padding: 34px 36px;
+            height: 377px;
+            border-radius: 30px;
+
+            &:first-child {
+                margin-right: 10px;
+            }
+
+            .card_title {
+                font-size: 50px;
+                letter-spacing: -3px;
+            }
+
+            .vs_card_text {
+                margin-top: 24px;
+                font-size: 25px;
+                line-height: 35px;
+                letter-spacing: -1.5px;
+            }
+            .img_box {
+                width: 86px;
+                height: 86px;
+                bottom: 34px;
+                right: 34px;
+
+                .btn_delete_vs_card_img {
+                    width: 28px;
+                    height: 28px;
+                    top: -6px;
+                    right: -6px;
+
+                    [class^='ivoryIcon-'] {
+                        font-size: 16px;
+                    }
+                }
+
+                .none_img_box {
+                    [class^='ivoryIcon-'] {
+                        font-size: 40px;
+                    }
+                }
+            }
+        }
+
+        .icon_vs {
+            width: 76px;
+            height: 76px;
+            font-size: 31px;
+            letter-spacing: -1.86px;
         }
     }
 
@@ -866,13 +1236,44 @@
         }
     }
 
+    .setting_sub_wrapper {
+        .option_box {
+            width: 70px;
+            max-height: 162px;
+            top: 110px;
+            box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.25);
+
+            li {
+                &:first-child {
+                    padding-top: 10px;
+                }
+                &:last-child {
+                    padding-bottom: 10px;
+                }
+            }
+
+            .select_option {
+                height: 35px;
+                font-size: 25px;
+                letter-spacing: -1.5px;
+
+                &:before {
+                    width: 35px;
+                    height: 35px;
+                    left: calc(50% - 17.5px);
+                }
+            }
+        }
+    }
+
     .setting_sub_content {
         margin-top: 28px;
 
         .select_multi_count_box {
             .btn_on_input_multi_count {
-                width: 49px;
-                height: 49px;
+                width: 70px;
+                height: 40px;
+                border-radius: 30px;
                 font-size: 25px;
                 letter-spacing: -1.5px;
             }

@@ -90,9 +90,13 @@ $(document).ready(function () {
     });
 
     // 폴 이미지 삭제 버튼
-    $(document).on('click', '.btn_delete_poll_option_img', function () {
-        deletePollOptionImg($(this));
-    });
+    $(document).on(
+        'click',
+        '.btn_delete_poll_option_img, .btn_delete_vs_card_img',
+        function () {
+            deleteVoteIOptionImg($(this));
+        }
+    );
 
     // 등록하기 버튼 클릭
     $(document).on('click', '#btnRegistVote', function () {
@@ -126,11 +130,19 @@ $(document).ready(function () {
     // 작성 항목 감지로 등록하기버튼, error 클래스 제거
     $(document).on(
         'change keyup',
-        '#registVoteCategory, #resgistVoteTitle, #voteContentText, [id^="votePollOption_"]',
+        '#registVoteCategory, #resgistVoteTitle, #voteContentText, [id^="votePollOption_"], [id^="textareaVsCard"]',
         function () {
             changeInputValues($(this));
         }
     );
+
+    $(document).on('focus', '[id^="votePollOption_"]', function () {
+        $(this).closest('.form_group').removeClass('error');
+        $(this).closest('.form_group').addClass('focusing');
+    });
+    $(document).on('blur', '[id^="votePollOption_"]', function () {
+        $(this).closest('.form_group').removeClass('focusing');
+    });
 
     // 카테고리선택 클릭(모달)
     $(document).on('click', '#btnRegistVoteCategory', function (e) {
@@ -215,6 +227,14 @@ $(document).ready(function () {
     $(document).on('click', '[name=selectVs]', function () {
         selectVSCard($(this));
     });
+
+    // vs카드 등록 textarea 포커싱
+    $(document).on('focus', '.vs_card_text', function () {
+        focusVoteRegistVSCard($(this), 'focus');
+    });
+    $(document).on('blur', '.vs_card_text', function () {
+        focusVoteRegistVSCard($(this), 'blur');
+    });
 });
 
 // --------------------------------------------
@@ -251,7 +271,7 @@ function activeCategoryBtn(_this, listWrapper) {
     _this.closest('li').addClass('active clicking');
     if (listWrapper.attr('id') == 'categorySelectList')
         selectCategoryInput(_this);
-    $('#registVoteCategory').removeClass('error');
+    $('#btnRegistVoteCategory').removeClass('error');
 
     setTimeout(function () {
         _this.closest('li').removeClass('clicking');
@@ -318,6 +338,7 @@ function onClickPreviewImageUpload(_this, e) {
         box.find('.on_img_box').prop('hidden', false);
         box.find('.btn_delete_img').prop('hidden', false);
         box.find('.btn_delete_poll_option_img').prop('hidden', false);
+        box.find('.btn_delete_vs_card_img').prop('hidden', false);
         box.find('.none_img_box').prop('hidden', true);
 
         if (
@@ -469,12 +490,13 @@ function cloneAddVotePollOption() {
 [...Array(3)].map(() => cloneAddVotePollOption());
 
 // 014. 폴 옵션 이미지 삭제
-function deletePollOptionImg(_this) {
+function deleteVoteIOptionImg(_this) {
     var box = _this.closest('.preview_img_box');
     box.removeClass('on');
     box.find('.input_img_uploader').val('');
     box.find('.on_img_box').prop('hidden', true);
     box.find('.btn_delete_poll_option_img').prop('hidden', true);
+    box.find('.btn_delete_vs_card_img').prop('hidden', true);
     box.find('.none_img_box').prop('hidden', false);
 }
 
@@ -498,7 +520,37 @@ function toggleSettingBox(_this) {
 
 // 017. 숫자입력 패널
 function onMultiSelectCountPanel() {
-    alert('없음');
+    $('#multiSelectOptionBox').addClass('is_opened');
+    $('#multiSelectOptionBox').css(
+        'height',
+        $('#multiSelectOptionBox').prop('scrollHeight')
+    );
+
+    $(document).on(
+        'click',
+        '#multiSelectOptionBox .select_option',
+        function () {
+            $(this).addClass('selecting');
+
+            var selectvalue = $(this).text().trim();
+
+            setTimeout(function () {
+                $('#btnOnInputMultiCount').html(selectvalue);
+                $('#btnOnInputMultiCount').addClass('selected');
+                $('#multiSelectOptionBox .select_option').removeClass(
+                    'selecting'
+                );
+
+                $('#multiSelectOptionBox').removeClass('is_opened');
+                $('#multiSelectOptionBox').css('height', 0);
+            }, 300);
+        }
+    );
+
+    $(document).on('click', '#multiSelectOptionBox ~ .backdrop', function () {
+        $('#multiSelectOptionBox').removeClass('is_opened');
+        $('#multiSelectOptionBox').css('height', 0);
+    });
 }
 
 // 018. 갯수제한 없음 선택
@@ -513,7 +565,7 @@ function onChangeMultiSelectNoLimit(_this) {
 // 019. 필수항목작성 ui출력
 function onValidateRequire() {
     $('#registVoteCategory').val().trim() == ''
-        ? $('#registVoteCategory').addClass('error')
+        ? $('#btnRegistVoteCategory').addClass('error')
         : null;
     $('#resgistVoteTitle').val().trim() == ''
         ? $('#resgistVoteTitle').addClass('error')
@@ -522,27 +574,55 @@ function onValidateRequire() {
         ? $('#voteContentText').addClass('error')
         : null;
 
-    var pollOptions = $('[id^="votePollOption_"]');
-    var contents = 0;
+    if ($('#addVoteContainer').hasClass('on_poll')) {
+        var pollOptions = $('[id^="votePollOption_"]');
+        var contents = 0;
 
-    for (var i = 0; pollOptions.length > i; i++) {
-        var item = $(pollOptions[i]);
-        if (item.val().trim() != '') contents++;
-    }
+        for (var i = 0; pollOptions.length > i; i++) {
+            var item = $(pollOptions[i]);
+            if (item.val().trim() == '')
+                item.closest('.form_group').addClass('error');
+            if (item.val().trim() != '') contents++;
+        }
+        if (contents < 3) {
+            callAlert({
+                title: '아이보리 알림',
+                content:
+                    'POLL은 <span style="color: #FB8713;">최소 3개 항목등록</span>이 필수입니다.',
+                btn: '확인',
+            });
+        }
+    } else if ($('#addVoteContainer').hasClass('on_vs')) {
+        var vsCards = $('[id^=textareaVsCard]');
 
-    if (contents < 3) {
-        callAlert({
-            title: '아이보리 알림',
-            content:
-                'POLL은 <span style="color: #FB8713;">최소 3개 항목등록</span>이 필수입니다.',
-            btn: '확인',
-        });
+        for (var i = 0; vsCards.length > i; i++) {
+            var item = $(vsCards[i]);
+            if (item.val().trim() == '')
+                item.closest('[class^=card_vs_]').addClass('error');
+        }
+        if (
+            $('#textareaVsCardA').val().trim() == '' ||
+            $('#textareaVsCardB').val().trim() == ''
+        ) {
+            callAlert({
+                title: '아이보리 알림',
+                content:
+                    '<span style="color: #FB8713;">VS의 두 항목</span>은 모두 필수입력입니다.',
+                btn: '확인',
+            });
+        }
     }
 }
 
 // 020. 투표등록 인풋 항목 감지
 function changeInputValues(_this) {
     _this.val().trim() != '' && _this.removeClass('error');
+
+    if (_this.attr('id') == 'registVoteCategory')
+        $('.btn_select_category').removeClass('error');
+
+    if (_this.hasClass('vs_card_text'))
+        _this.closest('[class^=card_vs_]').removeClass('error');
 
     var valid = false;
 
@@ -567,6 +647,7 @@ function changeInputValues(_this) {
 function selectCategoryInput(_this) {
     var value = _this.find('.select_category_value').text();
     $('#registVoteCategory').val(value);
+    $('#voteCategoryText').text(value);
     $('#registVoteCategory').attr('data-is-data', true);
 
     setTimeout(function () {
@@ -786,7 +867,7 @@ function reasonModfiy(_this) {
     });
 }
 
-// 034 vs 버튼클릭
+// 034. vs 버튼클릭
 function selectVSCard(_this) {
     var wrapper = _this.closest('.vs_wrapper');
     var reasonbox = wrapper.find('.voted_reason');
@@ -814,5 +895,16 @@ function selectVSCard(_this) {
             'margin-bottom': margin * 2.5,
         });
         target.addClass('is_opened');
+    }
+}
+
+// 035. vs등록 포커스 스타일
+function focusVoteRegistVSCard(_this, event) {
+    var card = _this.closest('[class^=card_vs_]');
+
+    if (event == 'focus') {
+        card.addClass('focusing');
+    } else if (event == 'blur') {
+        card.removeClass('focusing');
     }
 }

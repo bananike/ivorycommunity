@@ -1,0 +1,2686 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
+        <title>Regist</title>
+
+        <!-- css -->
+        <link rel="stylesheet" href="assets/css/font.css" />
+        <link rel="stylesheet" href="assets/css/common.css" />
+        <link rel="stylesheet" href="assets/css/community.css" />
+        <link rel="stylesheet" href="assets/css/add_vote_container.css" />
+        <link rel="stylesheet" href="assets/css/result.css" />
+        <link rel="stylesheet" href="assets/css/reply.css" />
+
+        <!-- alert -->
+        <link rel="stylesheet" href="assets/css/alert.css" />
+
+        <!-- swipe -->
+        <link rel="stylesheet" href="assets/css/swiper.css" />
+
+        <!-- floating button -->
+        <link rel="stylesheet" href="assets/css/floating_button.css" />
+    </head>
+    <body>
+        <div class="container">
+            <!-- header -->
+            <div class="header">
+                <div class="logo_box">
+                    <h1>
+                        <img
+                            src="assets/images/logo.png"
+                            alt="Ivory Community"
+                        />
+                    </h1>
+                </div>
+                <a href="/" class="header_alarm isAlarm">
+                    <span class="ivoryIcon-bell"></span>
+                </a>
+            </div>
+            <!-- header -->
+
+            <!-- community main -->
+            <div class="community_wrapper">
+                <!-- top5 -->
+                <div class="top_5_box">
+                    <!-- 콘텐츠영역 -->
+                    <div class="content_box">
+                        <h2 class="top_5_box_title">TODAY'S TOP 5</h2>
+                        <!-- 탑5 제목 -->
+                        <div class="top_5_category_title">
+                            <p id="currentCategoryText">남편과 주</p>
+                        </div>
+                        <!-- 탑5 제목 -->
+
+                        <!-- 탑5 스와이프박스 -->
+                        <div class="top_5_swipe">
+                            <div class="swiper" id="top5Swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="top_5_item poll">
+                                            <div class="category_icon">
+                                                <!-- 아이콘 클래스 변경으로 카테고리 표시 -->
+                                                <span
+                                                    id="currentCategoryIcon"
+                                                    class="ivoryIcon-baby"
+                                                ></span>
+                                                <span class="category_title">
+                                                    임신 · 출산
+                                                </span>
+                                            </div>
+                                            <ul class="item_list">
+                                                <li>
+                                                    <div class="item_index">
+                                                        1
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum dolor sit
+                                                        amet.
+                                                    </div>
+                                                    <div class="item_img">
+                                                        <img
+                                                            src="http://placeimg.com/58/58/any"
+                                                            alt="이미지"
+                                                        />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        2
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem, ipsum dolor.
+                                                    </div>
+                                                    <div class="item_img">
+                                                        <img
+                                                            src="http://placeimg.com/58/58/people"
+                                                            alt="이미지"
+                                                        />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        3
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem, ipsum dolor sit
+                                                        amet consectetur
+                                                        adipisicing elit.
+                                                        Architecto deleniti
+                                                        aperiam quam.
+                                                    </div>
+                                                    <div class="item_img">
+                                                        <img
+                                                            src="http://placeimg.com/58/58/tech"
+                                                            alt="이미지"
+                                                        />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        4
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem, ipsum dolor sit
+                                                        amet consectetur
+                                                        adipisicing elit.
+                                                        Architecto deleniti
+                                                        aperiam quam.
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        5
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum t.
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        6
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum dolor sit.
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        7
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="top_5_item vs">
+                                            <div class="vs_a">
+                                                <div class="card_title">A</div>
+                                                <div class="text_box">
+                                                    <p>
+                                                        Lorem ipsum dolor, sit
+                                                        amet consectetur
+                                                        adipisicing elit.
+                                                        Veritatis voluptatibus
+                                                        facilis et corporis
+                                                        placeat tempore, labore
+                                                        architecto possimus
+                                                        pariatur. Eos ad natus
+                                                        nihil dolor veniam
+                                                        dolores aut rerum
+                                                        aliquid delectus.
+                                                    </p>
+                                                </div>
+                                                <div class="img_box is_image">
+                                                    <img
+                                                        src="https://placeimg.com/220/220"
+                                                        alt="대표 이미지"
+                                                    />
+                                                    <!-- 클래스 수정으로 카테고리 변경 -->
+                                                    <span
+                                                        class="ivoryIcon-pet category_icon"
+                                                    ></span>
+                                                </div>
+                                            </div>
+                                            <div class="vs_b">
+                                                <div class="card_title">B</div>
+                                                <div class="text_box">
+                                                    <p>
+                                                        Lorem ipsum dolor, sit
+                                                        amet consectetur
+                                                        adipisicing elit.
+                                                        Veritatis voluptatibus
+                                                        facilis et corporis
+                                                        placeat tempore, labore
+                                                        architecto possimus
+                                                        pariatur. Eos ad natus
+                                                        nihil dolor veniam
+                                                        dolores aut rerum
+                                                        aliquid delectus.
+                                                    </p>
+                                                </div>
+                                                <div class="img_box">
+                                                    <img
+                                                        src="https://placeimg.com/220/221"
+                                                        alt="대표 이미지"
+                                                    />
+                                                    <!-- 클래스 수정으로 카테고리 변경 -->
+                                                    <span
+                                                        class="ivoryIcon-pet category_icon"
+                                                    ></span>
+                                                </div>
+                                            </div>
+                                            <div class="icon_vs">vs</div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="top_5_item poll">
+                                            <div class="category_icon">
+                                                <!-- 아이콘 클래스 변경으로 카테고리 표시 -->
+                                                <span
+                                                    id="currentCategoryIcon"
+                                                    class="ivoryIcon-baby"
+                                                ></span>
+                                                <span class="category_title">
+                                                    임신 · 출산
+                                                </span>
+                                            </div>
+                                            <ul class="item_list">
+                                                <li>
+                                                    <div class="item_index">
+                                                        1
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum dolor sit
+                                                        amet.
+                                                    </div>
+                                                    <div class="item_img">
+                                                        <img
+                                                            src="http://placeimg.com/58/58/any"
+                                                            alt="이미지"
+                                                        />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        2
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem, ipsum dolor.
+                                                    </div>
+                                                    <div class="item_img">
+                                                        <img
+                                                            src="http://placeimg.com/58/58/people"
+                                                            alt="이미지"
+                                                        />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        3
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem, ipsum dolor sit
+                                                        amet consectetur
+                                                        adipisicing elit.
+                                                        Architecto deleniti
+                                                        aperiam quam.
+                                                    </div>
+                                                    <div class="item_img">
+                                                        <img
+                                                            src="http://placeimg.com/58/58/tech"
+                                                            alt="이미지"
+                                                        />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        4
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem, ipsum dolor sit
+                                                        amet consectetur
+                                                        adipisicing elit.
+                                                        Architecto deleniti
+                                                        aperiam quam.
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        5
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum dolor sit.
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        6
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum dolor sit.
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        7
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum dolor sit.
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="top_5_item vs">
+                                            <div class="vs_a">
+                                                <div class="card_title">A</div>
+                                                <div class="text_box">
+                                                    <p>
+                                                        Lorem ipsum dolor, sit
+                                                        amet consectetur
+                                                        adipisicing elit.
+                                                        Veritatis voluptatibus
+                                                        facilis et corporis
+                                                        placeat tempore, labore
+                                                        architecto possimus
+                                                        pariatur. Eos ad natus
+                                                        nihil dolor veniam
+                                                        dolores aut rerum
+                                                        aliquid delectus.
+                                                    </p>
+                                                </div>
+                                                <div class="img_box is_image">
+                                                    <img
+                                                        src="https://placeimg.com/220/220"
+                                                        alt="대표 이미지"
+                                                    />
+                                                    <!-- 클래스 수정으로 카테고리 변경 -->
+                                                    <span
+                                                        class="ivoryIcon-pet category_icon"
+                                                    ></span>
+                                                </div>
+                                            </div>
+                                            <div class="vs_b">
+                                                <div class="card_title">B</div>
+                                                <div class="text_box">
+                                                    <p>
+                                                        Lorem ipsum dolor, sit
+                                                        amet consectetur
+                                                        adipisicing elit.
+                                                        Veritatis voluptatibus
+                                                        facilis et corporis
+                                                        placeat tempore, labore
+                                                        architecto possimus
+                                                        pariatur. Eos ad natus
+                                                        nihil dolor veniam
+                                                        dolores aut rerum
+                                                        aliquid delectus.
+                                                    </p>
+                                                </div>
+                                                <div class="img_box">
+                                                    <img
+                                                        src="https://placeimg.com/220/221"
+                                                        alt="대표 이미지"
+                                                    />
+                                                    <!-- 클래스 수정으로 카테고리 변경 -->
+                                                    <span
+                                                        class="ivoryIcon-pet category_icon"
+                                                    ></span>
+                                                </div>
+                                            </div>
+                                            <div class="icon_vs">vs</div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="top_5_item poll">
+                                            <div class="category_icon">
+                                                <!-- 아이콘 클래스 변경으로 카테고리 표시 -->
+                                                <span
+                                                    id="currentCategoryIcon"
+                                                    class="ivoryIcon-baby"
+                                                ></span>
+                                                <span class="category_title">
+                                                    임신 · 출산
+                                                </span>
+                                            </div>
+                                            <ul class="item_list">
+                                                <li>
+                                                    <div class="item_index">
+                                                        1
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum dolor sit
+                                                        amet.
+                                                    </div>
+                                                    <div class="item_img">
+                                                        <img
+                                                            src="http://placeimg.com/58/58/any"
+                                                            alt="이미지"
+                                                        />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        2
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem, ipsum dolor.
+                                                    </div>
+                                                    <div class="item_img">
+                                                        <img
+                                                            src="http://placeimg.com/58/58/people"
+                                                            alt="이미지"
+                                                        />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        3
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem, ipsum dolor sit
+                                                        amet consectetur
+                                                        adipisicing elit.
+                                                        Architecto deleniti
+                                                        aperiam quam.
+                                                    </div>
+                                                    <div class="item_img">
+                                                        <img
+                                                            src="http://placeimg.com/58/58/tech"
+                                                            alt="이미지"
+                                                        />
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        4
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem, ipsum dolor sit
+                                                        amet consectetur
+                                                        adipisicing elit.
+                                                        Architecto deleniti
+                                                        aperiam quam.
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        5
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum dolor sit.
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        6
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum dolor sit.
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="item_index">
+                                                        7
+                                                    </div>
+                                                    <div class="item_text">
+                                                        Lorem ipsum dolor sit.
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 탑5 스와이프박스 -->
+
+                        <!-- 탑5 투표,조회수 -->
+                        <div class="top_5_detail">
+                            <div class="count_vote">
+                                <span class="ivoryIcon-vote"></span>
+                                <span id="currentCountVote">9999</span>
+                            </div>
+                            <div class="count_reply">
+                                <span class="ivoryIcon-reply"></span>
+                                <span id="currentCountreply">9999</span>
+                            </div>
+
+                            <!-- 투표하기 -->
+                            <button
+                                type="button"
+                                id="btnVoteReadyTop5"
+                                class="vote_ready_btn_box button fill"
+                            >
+                                투표하기
+                                <span class="ivoryIcon-arrow_right"></span>
+                            </button>
+                            <!-- 투표하기 -->
+
+                            <!-- 투표완료 -->
+                            <button
+                                type="button"
+                                id="btnVoteCompleteTop5"
+                                class="vote_complete_btn_box button outline"
+                                hidden
+                            >
+                                투표하기
+                                <span class="ivoryIcon-check"></span>
+                            </button>
+                            <!-- 투표완료 -->
+                        </div>
+                        <!-- 탑5 투표,조회수 -->
+
+                        <!-- 스와이프 페이지네이션 -->
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <!-- 콘텐츠영역 -->
+                </div>
+                <!-- top5 -->
+
+                <!-- category list -->
+                <div class="category_box">
+                    <ul id="categoryList">
+                        <li class="active">
+                            <button type="button">
+                                <span class="ivoryIcon-all"></span>
+                                <span>전체</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-baby"></span>
+                                <span>임신 · 출산</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-parenting"></span>
+                                <span>육아</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-wedding"></span>
+                                <span>연애 · 결혼</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-shopping"></span>
+                                <span>쇼핑</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-fashion"></span>
+                                <span>패션 · 뷰티</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-interior"></span>
+                                <span>인테리어</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-pet"></span>
+                                <span>반려동물</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-finance"></span>
+                                <span>경제 · 제테크</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-movie"></span>
+                                <span>영화 · 드라마</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-gossip"></span>
+                                <span>연예 · 가십</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-food"></span>
+                                <span>요리 · 맛집</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-society"></span>
+                                <span>인간관계</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-rectal"></span>
+                                <span>직장 · 취업</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-adult"></span>
+                                <span>성생활</span>
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button">
+                                <span class="ivoryIcon-travel"></span>
+                                <span>취미 · 여행</span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <!-- category list -->
+
+                <!-- hr -->
+                <div class="hr"></div>
+                <!-- hr -->
+
+                <!-- vote list -->
+                <div class="vote_list_box">
+                    <div class="vote_filter" id="voteFilter">
+                        <div class="filter_vote_type">
+                            <button
+                                id="btnVoteFilterTypeAll"
+                                class="btn_votefilter_all button mgothic fill"
+                            >
+                                모든 투표
+                            </button>
+                            <button
+                                id="btnVoteFilterTypePOLL"
+                                class="btn_votefilter_poll button gotham outline"
+                            >
+                                POLL
+                            </button>
+                            <button
+                                id="btnVoteFilterTypeVS"
+                                class="btn_votefilter_vs button gotham outline"
+                            >
+                                VS
+                            </button>
+                        </div>
+                        <div class="filter_status_type">
+                            <button
+                                id="btnVoteFilterStatusNot"
+                                class="btn_votefilter_not button outline"
+                            >
+                                미참여
+                            </button>
+                            <button
+                                id="btnVoteFilterStatusComplete"
+                                class="btn_votefilter_complete button outline"
+                            >
+                                참여
+                            </button>
+                            <button
+                                id="btnVoteFilterStatusSoon"
+                                class="btn_votefilter_soon button outline"
+                            >
+                                마감임박
+                            </button>
+                            <button
+                                id="btnCallVoteFilter"
+                                class="btn_call_filter button fill"
+                            >
+                                <span class="ivoryIcon-filter"></span>
+                                필터
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- list box -->
+                    <ul class="vote_list" id="voteList">
+                        <!-- 
+                            type_vs: vs타입
+                            type_poll: poll타입
+
+                            status_ready: 미참여
+                            status_complete: 참여
+
+                            isClose: 기간종료
+                            
+                            isAdult: 19금
+                        -->
+                        <li class="type_vs status_ready">
+                            <div class="type_box">
+                                <span class="ivoryIcon-pet"></span>
+                                <div class="type vs">VS</div>
+                                <div class="type poll">POLL</div>
+                                <div class="remaining_date">99일 남음</div>
+                            </div>
+                            <div class="content_box">
+                                <div class="text">
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Aspernatur corrupti fugit
+                                    nisi quos sit rem et iure vero quibusdam!
+                                    Cupiditate!
+                                </div>
+                                <div class="count_box">
+                                    <div class="count_vote">
+                                        <span class="ivoryIcon-vote"></span>
+                                        <span>9999</span>
+                                    </div>
+                                    <div class="count_reply">
+                                        <span class="ivoryIcon-reply"></span>
+                                        <span>9999</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <button class="btn_ready">
+                                    <span class="ivoryIcon-arrow_right"></span>
+                                </button>
+                                <button class="btn_complete">
+                                    <span class="ivoryIcon-check"></span>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="type_vs status_ready isClose">
+                            <div class="type_box">
+                                <span class="ivoryIcon-gossip"></span>
+                                <div class="type vs">VS</div>
+                                <div class="type poll">POLL</div>
+                                <div class="remaining_date">99일 남음</div>
+                            </div>
+                            <div class="content_box">
+                                <div class="text">
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Aspernatur corrupti fugit
+                                    nisi quos sit rem et iure vero quibusdam!
+                                    Cupiditate!
+                                </div>
+                                <div class="count_box">
+                                    <div class="count_vote">
+                                        <span class="ivoryIcon-vote"></span>
+                                        <span>9999</span>
+                                    </div>
+                                    <div class="count_reply">
+                                        <span class="ivoryIcon-reply"></span>
+                                        <span>9999</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <button class="btn_ready">
+                                    <span class="ivoryIcon-arrow_right"></span>
+                                </button>
+                                <button class="btn_complete">
+                                    <span class="ivoryIcon-check"></span>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="type_poll status_complete">
+                            <div class="type_box">
+                                <span class="ivoryIcon-food"></span>
+                                <div class="type vs">VS</div>
+                                <div class="type poll">POLL</div>
+                                <div class="remaining_date">99일 남음</div>
+                            </div>
+                            <div class="content_box">
+                                <div class="text">
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Aspernatur corrupti fugit
+                                    nisi quos sit rem et iure vero quibusdam!
+                                    Cupiditate!
+                                </div>
+                                <div class="count_box">
+                                    <div class="count_vote">
+                                        <span class="ivoryIcon-vote"></span>
+                                        <span>9999</span>
+                                    </div>
+                                    <div class="count_reply">
+                                        <span class="ivoryIcon-reply"></span>
+                                        <span>9999</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <button class="btn_ready">
+                                    <span class="ivoryIcon-arrow_right"></span>
+                                </button>
+                                <button class="btn_complete">
+                                    <span class="ivoryIcon-check"></span>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="type_vs status_ready isAdult">
+                            <div class="type_box">
+                                <span class="ivoryIcon-adult"></span>
+                                <div class="type vs">VS</div>
+                                <div class="type poll">POLL</div>
+                                <div class="remaining_date">99일 남음</div>
+                            </div>
+                            <div class="content_box">
+                                <div class="text">
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Aspernatur corrupti fugit
+                                    nisi quos sit rem et iure vero quibusdam!
+                                    Cupiditate!
+                                </div>
+                                <div class="count_box">
+                                    <div class="count_vote">
+                                        <span class="ivoryIcon-vote"></span>
+                                        <span>9999</span>
+                                    </div>
+                                    <div class="count_reply">
+                                        <span class="ivoryIcon-reply"></span>
+                                        <span>9999</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <button class="btn_ready">
+                                    <span class="ivoryIcon-arrow_right"></span>
+                                </button>
+                                <button class="btn_complete">
+                                    <span class="ivoryIcon-check"></span>
+                                </button>
+                            </div>
+                        </li>
+                        <li class="type_vs status_complete isAdult isClose">
+                            <div class="type_box">
+                                <span class="ivoryIcon-adult"></span>
+                                <div class="type vs">VS</div>
+                                <div class="type poll">POLL</div>
+                                <div class="remaining_date">투표 종료</div>
+                            </div>
+                            <div class="content_box">
+                                <div class="text">
+                                    Lorem, ipsum dolor sit amet consectetur
+                                    adipisicing elit. Aspernatur corrupti fugit
+                                    nisi quos sit rem et iure vero quibusdam!
+                                    Cupiditate!
+                                </div>
+                                <div class="count_box">
+                                    <div class="count_vote">
+                                        <span class="ivoryIcon-vote"></span>
+                                        <span>9999</span>
+                                    </div>
+                                    <div class="count_reply">
+                                        <span class="ivoryIcon-reply"></span>
+                                        <span>9999</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <button class="btn_ready">
+                                    <span class="ivoryIcon-arrow_right"></span>
+                                </button>
+                                <button class="btn_complete">
+                                    <span class="ivoryIcon-check"></span>
+                                </button>
+                            </div>
+                        </li>
+
+                        <!-- dummy -->
+                        <li class="vote_dummy">
+                            <div class="type_box">
+                                <div class="dummy_item"></div>
+                                <div class="dummy_item"></div>
+                                <div class="dummy_item"></div>
+                            </div>
+                            <div class="content_box">
+                                <div class="text">
+                                    <div class="dummy_item"></div>
+                                    <div class="dummy_item"></div>
+                                </div>
+                                <div class="count_box">
+                                    <div class="count_vote">
+                                        <div class="dummy_item"></div>
+                                    </div>
+                                    <div class="count_reply">
+                                        <div class="dummy_item"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn_box">
+                                <div class="dummy_item"></div>
+                            </div>
+                        </li>
+                        <!-- dummy -->
+                    </ul>
+                    <!-- list box -->
+
+                    <!-- 게시글 없음 -->
+                    <div class="no_content" hidden>
+                        <div class="img_box">
+                            <img
+                                src="assets/images/no_content.svg"
+                                alt="게시글 없음"
+                            />
+                        </div>
+                        <div class="text_box">
+                            <p>
+                                게시글이 하나도 없어요.<br />새로운 글을
+                                올려주세요!
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 게시글 없음 -->
+                </div>
+                <!-- vote list -->
+
+                <!-- add btn -->
+                <div class="floating-container">
+                    <div class="floating-button" id="btnAddVote">
+                        <span class="ivoryIcon-plus"></span>
+                    </div>
+                    <div class="element-container">
+                        <a href="/" class="bg-color" id="btnAddVoteVS">
+                            <span class="float-element a-tag">
+                                <span class="ivoryIcon-vs"></span>
+                            </span>
+                            <div class="text_wrapper">
+                                <p class="regist_text">
+                                    <span>VS</span> 올리기
+                                </p>
+                            </div>
+                        </a>
+                        <a href="/" class="bg-color" id="btnAddVotePOLL">
+                            <span class="float-element a-tag">
+                                <span class="ivoryIcon-poll"></span>
+                            </span>
+                            <div class="text_wrapper">
+                                <p class="regist_text">
+                                    <span>POLL</span> 올리기
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="blur-bg"></div>
+                <!-- add btn -->
+            </div>
+            <!-- community main -->
+        </div>
+
+        <!-- 투표등록 -->
+        <div id="addVoteContainer" class="modal_container add_vote_container">
+            <div class="modal_back"></div>
+            <div class="modal_box add_vote_box">
+                <!-- modal header -->
+                <div class="modal_header">
+                    <button type="button" class="close_btn">
+                        <span class="ivoryIcon-close"></span>
+                    </button>
+                    <h2>투표 올리기</h2>
+                    <button
+                        type="button"
+                        id="btnRegistVote"
+                        class="button fill btn_regist_vote disable"
+                    >
+                        완료
+                    </button>
+                </div>
+                <!-- modal header -->
+
+                <!-- modal content -->
+                <div class="modal_content">
+                    <form action="">
+                        <!-- input box -->
+                        <div class="add_vote_input_box">
+                            <div class="form_group input_linear">
+                                <label
+                                    id="btnRegistVoteCategory"
+                                    for="registVoteCategory"
+                                    class="label require btn_select_category"
+                                >
+                                    <span id="voteCategoryText"
+                                        >카테고리를 선택해주세요.</span
+                                    >
+                                    <span class="ivoryIcon-arrow_down"></span>
+                                </label>
+                                <input
+                                    type="text"
+                                    class="form_control"
+                                    data-is-data="none"
+                                    readonly
+                                    id="registVoteCategory"
+                                />
+                            </div>
+                            <div class="form_group input_linear">
+                                <label
+                                    for="resgistVoteTitle"
+                                    class="label require"
+                                >
+                                    <span>투표 제목을 입력해주세요.</span>
+                                </label>
+                                <textarea
+                                    type="text"
+                                    class="form_control textarea_auto_line"
+                                    data-limit-line="2"
+                                    id="resgistVoteTitle"
+                                    placeholder="투표 제목 필수 입력"
+                                ></textarea>
+                            </div>
+
+                            <!-- image regist -->
+                            <div class="regist_image_box">
+                                <!-- base image input dom -->
+                                <li
+                                    class="img_item"
+                                    id="cloneRegistImgItem"
+                                    hidden
+                                >
+                                    <label class="preview_img_box" for="">
+                                        <button
+                                            type="button"
+                                            class="btn_delete_img"
+                                            hidden
+                                        >
+                                            <span
+                                                class="ivoryIcon-close"
+                                            ></span>
+                                        </button>
+
+                                        <div class="on_img_box" hidden>
+                                            <img
+                                                class="preview_img"
+                                                src="assets/images/dummy.png"
+                                                alt="이미지 미리보기"
+                                            />
+                                        </div>
+
+                                        <div class="none_img_box">
+                                            <span class="ivoryIcon-plus"></span>
+                                            <p>사진 올리기</p>
+                                        </div>
+                                        <input
+                                            type="file"
+                                            class="input_img_uploader"
+                                            id="imgUploader_ContentImg"
+                                            data-id="appendedImg_"
+                                        />
+                                    </label>
+                                </li>
+                                <!-- base image input dom -->
+                                <ul
+                                    class="img_item_list"
+                                    id="votePreviewImgList"
+                                ></ul>
+                            </div>
+                            <!-- image regist -->
+
+                            <!-- text box -->
+                            <div class="text_wrapper">
+                                <textarea
+                                    id="voteContentText"
+                                    class="textarea_auto_line"
+                                    data-limit-line="3"
+                                    placeholder="글 내용을 입력해주세요"
+                                ></textarea>
+                            </div>
+                            <!-- text box -->
+                        </div>
+                        <!-- input box -->
+
+                        <!-- setting box -->
+                        <div class="setting_box">
+                            <div class="delete_btn_box is_poll">
+                                <p class="vote_guide">
+                                    투표 항목을 입력해주세요.
+                                </p>
+                                <button
+                                    type="button"
+                                    class="btn_on_delete_mode"
+                                    id="btnOnDeleteMode"
+                                >
+                                    항목삭제
+                                </button>
+                            </div>
+
+                            <!-- clone item -->
+                            <li id="cloneRegistPollOption" hidden>
+                                <div class="form_group">
+                                    <textarea
+                                        type="text"
+                                        id=""
+                                        data-id="votePollOption_"
+                                        class="vote_poll_text textarea_auto_line"
+                                        data-limit-line="2"
+                                        placeholder="항목 1 입력"
+                                    ></textarea>
+                                    <label class="preview_img_box" for="">
+                                        <div class="on_img_box" hidden>
+                                            <img
+                                                class="preview_img"
+                                                src="assets/images/dummy.png"
+                                                alt="이미지 미리보기"
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            class="btn_delete_poll_option_img"
+                                            hidden
+                                        >
+                                            <span
+                                                class="ivoryIcon-close"
+                                            ></span>
+                                        </button>
+
+                                        <div class="none_img_box">
+                                            <span
+                                                class="ivoryIcon-camera"
+                                            ></span>
+                                        </div>
+
+                                        <input
+                                            type="file"
+                                            class="input_img_uploader"
+                                            id="imgUploader_PollOption"
+                                            data-id="pollOption_"
+                                        />
+                                    </label>
+                                </div>
+                                <div class="button_box">
+                                    <button
+                                        type="button"
+                                        class="btn_delete_option"
+                                    ></button>
+                                </div>
+                                <div class="error_message">
+                                    빈칸을 채워주세요.
+                                </div>
+                            </li>
+                            <!-- clone item -->
+
+                            <!-- poll opion list -->
+                            <ul
+                                id="votePollOpionList"
+                                class="vote_poll_option_list is_poll"
+                            ></ul>
+                            <!-- poll opion list -->
+
+                            <button
+                                class="btn_add_poll_option is_poll"
+                                id="btnAddPollOption"
+                                type="button"
+                            >
+                                <span class="ivoryIcon-plus"></span>
+                                <span class="strong">항목 추가</span>
+                                <span> (최대 30개)</span>
+                            </button>
+
+                            <!-- multi select -->
+                            <div
+                                class="setting_sub_wrapper multi_select_box is_poll"
+                            >
+                                <ul
+                                    id="multiSelectOptionBox"
+                                    class="option_box"
+                                >
+                                    <li>
+                                        <button
+                                            class="select_option"
+                                            type="button"
+                                        >
+                                            2
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            class="select_option"
+                                            type="button"
+                                        >
+                                            3
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            class="select_option"
+                                            type="button"
+                                        >
+                                            4
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            class="select_option"
+                                            type="button"
+                                        >
+                                            5
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button
+                                            class="select_option"
+                                            type="button"
+                                        >
+                                            6
+                                        </button>
+                                    </li>
+                                </ul>
+
+                                <div class="backdrop"></div>
+
+                                <div class="setting_sub_header">
+                                    <div class="title_box">
+                                        <span class="ivoryIcon-multi"></span>
+                                        <span>복수 선택 허용</span>
+                                    </div>
+                                    <div class="form_checkbox">
+                                        <input
+                                            type="checkbox"
+                                            id="checkVoteMultiSelect"
+                                            require
+                                        />
+                                        <label
+                                            for="checkVoteMultiSelect"
+                                            class="fake_box"
+                                        ></label>
+                                    </div>
+                                </div>
+                                <div class="hide_box">
+                                    <div class="setting_sub_content">
+                                        <div class="select_multi_count_box">
+                                            <button
+                                                type="button"
+                                                id="btnOnInputMultiCount"
+                                                class="btn_on_input_multi_count"
+                                            >
+                                                -
+                                            </button>
+
+                                            <span>개까지 선택</span>
+                                        </div>
+                                        <div
+                                            class="setting_sub_btn_box flex_end"
+                                        >
+                                            <div class="custom_checkbox">
+                                                <input
+                                                    type="checkbox"
+                                                    id="btnPollMultiSelectNoLimit"
+                                                />
+                                                <label
+                                                    for="btnPollMultiSelectNoLimit"
+                                                    class="fake_box"
+                                                    >갯수제한 없음</label
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- multi select -->
+
+                            <!-- vs select card -->
+                            <div class="vote_vs_card is_vs">
+                                <div class="card_vs_a">
+                                    <div class="card_title">A</div>
+                                    <textarea
+                                        class="vs_card_text"
+                                        rows="3"
+                                        placeholder="내용 입력"
+                                        id="textareaVsCardA"
+                                    ></textarea>
+                                    <div class="img_box">
+                                        <label
+                                            for="vsCardImg_a"
+                                            class="preview_img_box"
+                                        >
+                                            <div class="on_img_box" hidden>
+                                                <img
+                                                    class="preview_img"
+                                                    src="assets/images/dummy.png"
+                                                    alt="이미지 미리보기"
+                                                />
+                                            </div>
+                                            <button
+                                                type="button"
+                                                class="btn_delete_vs_card_img"
+                                                hidden
+                                            >
+                                                <span
+                                                    class="ivoryIcon-close"
+                                                ></span>
+                                            </button>
+                                            <div class="none_img_box">
+                                                <span
+                                                    class="ivoryIcon-camera"
+                                                ></span>
+                                            </div>
+                                            <input
+                                                type="file"
+                                                class="input_img_uploader"
+                                                id="vsCardImg_a"
+                                            />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="card_vs_b">
+                                    <div class="card_title">B</div>
+                                    <textarea
+                                        class="vs_card_text"
+                                        id="textareaVsCardB"
+                                        rows="3"
+                                        placeholder="내용 입력"
+                                    ></textarea>
+                                    <div class="img_box">
+                                        <label
+                                            for="vsCardImg_b"
+                                            class="preview_img_box"
+                                        >
+                                            <div class="on_img_box" hidden>
+                                                <img
+                                                    class="preview_img"
+                                                    src="assets/images/dummy.png"
+                                                    alt="이미지 미리보기"
+                                                />
+                                            </div>
+                                            <button
+                                                type="button"
+                                                class="btn_delete_vs_card_img"
+                                                hidden
+                                            >
+                                                <span
+                                                    class="ivoryIcon-close"
+                                                ></span>
+                                            </button>
+                                            <div class="none_img_box">
+                                                <span
+                                                    class="ivoryIcon-camera"
+                                                ></span>
+                                            </div>
+                                            <input
+                                                type="file"
+                                                class="input_img_uploader"
+                                                id="vsCardImg_b"
+                                            />
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="icon_vs">vs</div>
+                            </div>
+                            <!-- vs select card -->
+
+                            <!-- limit time -->
+                            <div class="setting_sub_wrapper limit_time_box">
+                                <div class="setting_sub_header">
+                                    <div class="title_box">
+                                        <span class="ivoryIcon-clock"></span>
+                                        <span>마감시간 설정</span>
+                                    </div>
+                                    <div class="form_checkbox">
+                                        <input
+                                            type="checkbox"
+                                            id="checkVoteLimitTime"
+                                            require
+                                        />
+                                        <label
+                                            for="checkVoteLimitTime"
+                                            class="fake_box"
+                                        ></label>
+                                    </div>
+                                </div>
+                                <div class="hide_box">
+                                    <div class="setting_sub_content">
+                                        <div class="setting_sub_btn_box">
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitHour"
+                                                    name="radioVoteLimitTime"
+                                                    value="hour"
+                                                />
+                                                <label
+                                                    for="readioVoteLimitHour"
+                                                    class="fake_box"
+                                                    >1시간 내</label
+                                                >
+                                            </div>
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitToday"
+                                                    name="radioVoteLimitTime"
+                                                    value="today"
+                                                />
+                                                <label
+                                                    for="readioVoteLimitToday"
+                                                    class="fake_box"
+                                                    >오늘까지</label
+                                                >
+                                            </div>
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitTomorrow"
+                                                    name="radioVoteLimitTime"
+                                                    value="tomorrow"
+                                                />
+                                                <label
+                                                    for="readioVoteLimitTomorrow"
+                                                    class="fake_box"
+                                                    >내일까지</label
+                                                >
+                                            </div>
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitWeek"
+                                                    name="radioVoteLimitTime"
+                                                    value="week"
+                                                    checked
+                                                />
+                                                <label
+                                                    for="readioVoteLimitWeek"
+                                                    class="fake_box"
+                                                    >일주일 내</label
+                                                >
+                                            </div>
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitMonth"
+                                                    name="radioVoteLimitTime"
+                                                    value="month"
+                                                />
+                                                <label
+                                                    for="readioVoteLimitMonth"
+                                                    class="fake_box"
+                                                    >한달 이내</label
+                                                >
+                                            </div>
+                                            <div class="custom_radio">
+                                                <input
+                                                    type="radio"
+                                                    id="readioVoteLimitSeason"
+                                                    name="radioVoteLimitTime"
+                                                    value="season"
+                                                />
+                                                <label
+                                                    for="readioVoteLimitSeason"
+                                                    class="fake_box"
+                                                    >3달 이내</label
+                                                >
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- limit time -->
+                        </div>
+                        <!-- setting box -->
+                    </form>
+                </div>
+                <!-- modal content -->
+            </div>
+        </div>
+        <!-- 투표등록 -->
+
+        <!-- 카테고리 선택 패널 -->
+        <div
+            class="modal_container level_2 select_category_panel"
+            id="selectCategoryPanel"
+        >
+            <div class="modal_back"></div>
+            <div class="modal_box">
+                <div class="modal_header">
+                    <button type="button" class="close_btn"></button>
+                    <h2>카테고리 선택</h2>
+                </div>
+                <div class="modal_content">
+                    <div class="category_box">
+                        <ul id="categorySelectList">
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-all"></span>
+                                    <span class="select_category_value"
+                                        >전체</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-baby"></span>
+                                    <span class="select_category_value"
+                                        >임신 · 출산</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-parenting"></span>
+                                    <span class="select_category_value"
+                                        >육아</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-wedding"></span>
+                                    <span class="select_category_value"
+                                        >연애 · 결혼</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-shopping"></span>
+                                    <span class="select_category_value"
+                                        >쇼핑</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-fashion"></span>
+                                    <span class="select_category_value"
+                                        >패션 · 뷰티</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-interior"></span>
+                                    <span class="select_category_value"
+                                        >인테리어</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-pet"></span>
+                                    <span class="select_category_value"
+                                        >반려동물</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-finance"></span>
+                                    <span class="select_category_value"
+                                        >경제 · 제테크</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-movie"></span>
+                                    <span class="select_category_value"
+                                        >영화 · 드라마</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-gossip"></span>
+                                    <span class="select_category_value"
+                                        >연예 · 가십</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-food"></span>
+                                    <span class="select_category_value"
+                                        >요리 · 맛집</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-society"></span>
+                                    <span class="select_category_value"
+                                        >인간관계</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-rectal"></span>
+                                    <span class="select_category_value"
+                                        >직장 · 취업</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-adult"></span>
+                                    <span class="select_category_value"
+                                        >성생활</span
+                                    >
+                                </button>
+                            </li>
+                            <li>
+                                <button type="button">
+                                    <span class="ivoryIcon-travel"></span>
+                                    <span class="select_category_value"
+                                        >취미 · 여행</span
+                                    >
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 카테고리 선택 패널 -->
+
+        <!-- 결과 슬라이드 -->
+        <div id="sliderVoteResult" class="slide_popup vote_result_wrapper">
+            <div class="header_box scroll_header">
+                <div class="btn_area">
+                    <button type="button" class="close_popup">
+                        <span class="ivoryIcon-arrow_left"></span>
+                    </button>
+                    <div class="btn_group">
+                        <button type="button" class="btn_heart clicked">
+                            <span class="ivoryIcon-heart_outline"></span>
+                            <span class="ivoryIcon-heart"></span>
+                        </button>
+                        <button type="button">
+                            <span class="ivoryIcon-share"></span>
+                        </button>
+                        <button type="button">
+                            <span class="ivoryIcon-report"></span>
+                        </button>
+                        <button type="button">
+                            <span class="ivoryIcon-delete"></span>
+                        </button>
+                    </div>
+                </div>
+                <h2>투표 결과는?</h2>
+            </div>
+            <div class="content_box srcoll_container">
+                <!-- dummy -->
+                <div class="dummy_vote_container">
+                    <div class="dummy_title"></div>
+                    <div class="dummy_title_content"></div>
+                    <div class="dummy_title_content"></div>
+                    <div class="dummy_title_content"></div>
+                    <div class="dummy_icon_wrapper">
+                        <div class="dummy_icon_box">
+                            <div class="dummy_icon"></div>
+                            <div class="dummy_icon"></div>
+                            <div class="dummy_icon"></div>
+                        </div>
+                        <div class="dummy_date"></div>
+                    </div>
+                    <div class="dummy_swipe">
+                        <div class="dummy_swipe_item"></div>
+                        <div class="dummy_swipe_item"></div>
+                    </div>
+                    <div class="dummy_content_text"></div>
+                    <div class="dummy_content_text"></div>
+                    <div class="dummy_content_text"></div>
+                    <div class="dummy_content_text"></div>
+                    <div class="dummy_last_box"></div>
+                </div>
+                <!-- dummy -->
+
+                <!-- 투표 등록 정보 -->
+                <div class="vote_content">
+                    <div class="category_type">
+                        <span class="ivoryIcon-pet"></span>
+                        <span>반려동물</span>
+                    </div>
+                    <div class="category_title">
+                        <p class="title">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing
+                            elit. A perferendis blanditiis maxime.
+                        </p>
+                    </div>
+                    <div class="regist_date">
+                        <span>12:20</span>
+                        <span class="ivoryIcon-new"></span>
+                    </div>
+                    <div class="count_box">
+                        <div class="count_left">
+                            <div class="count_vote">
+                                <span class="ivoryIcon-vote"></span>
+                                <span>9,999</span>
+                            </div>
+                            <div class="count_view">
+                                <span class="ivoryIcon-view"></span>
+                                <span>9,999</span>
+                            </div>
+                            <div class="count_heart">
+                                <span class="ivoryIcon-heart_outline"></span>
+                                <span>9,999</span>
+                            </div>
+                        </div>
+                        <div class="count_right remaining_date end">
+                            20일 남음
+                        </div>
+                    </div>
+                    <div class="vote_img_swipe">
+                        <div class="swiper" id="resultSwipe">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img
+                                        src="https://placeimg.com/500/400/animals"
+                                        alt="임시사진1"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="https://placeimg.com/500/350/animals"
+                                        alt="임시사진2"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="https://placeimg.com/500/402/animals"
+                                        alt="임시사진3"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="https://placeimg.com/424/402/animals"
+                                        alt="임시사진4"
+                                    />
+                                </div>
+                                <div class="swiper-slide">
+                                    <img
+                                        src="https://placeimg.com/444/402/animals"
+                                        alt="임시사진5"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vote_text_box">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Iure assumenda voluptatum esse laudantium sunt neque
+                        saepe atque? Libero, eum quae?
+                    </div>
+                </div>
+                <!-- 투표 등록 정보 -->
+
+                <!-- 투표 리스트 -->
+                <div class="vote_communication">
+                    <div class="vote_wrapper">
+                        <div class="total_voter">
+                            <span class="ivoryIcon-vote"></span>
+                            <p>
+                                총
+                                <span class="total_voter_count">9,999명</span>이
+                                투표했습니다!
+                            </p>
+                        </div>
+                        <ul class="reason_for_choosing_list is_poll">
+                            <li>
+                                <div class="list_item my_pick">
+                                    <div class="ranking">
+                                        <div class="medal">
+                                            <img
+                                                src="assets/images/medal.png"
+                                                alt="1위"
+                                            />
+                                        </div>
+                                        <div class="rank_num">1위</div>
+                                        <div class="my_pick">
+                                            <span
+                                                class="ivoryIcon-check"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="reason_info">
+                                        <div class="title">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur, adipisicing elit. Ipsa,
+                                            reiciendis nemo animi vel nihil
+                                            accusantium?
+                                        </div>
+                                        <div class="choice_count_box">
+                                            <div
+                                                class="progress_box"
+                                                data-progress="88"
+                                            >
+                                                <div class="background"></div>
+                                                <div class="foreground_wrapper">
+                                                    <div
+                                                        class="foreground"
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                            <div class="percentage">
+                                                <p class="percent_value">50%</p>
+                                                <p class="people_count">
+                                                    (999명)
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="show_reasons">
+                                            <button
+                                                type="button"
+                                                class="button outline"
+                                            >
+                                                <span
+                                                    >선택한 이유 모아보기</span
+                                                >
+                                                <span
+                                                    class="ivoryIcon-arrow_down"
+                                                ></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="img_box">
+                                        <img
+                                            src="https://placeimg.com/120/120/animals"
+                                            alt="임시-1"
+                                        />
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_item">
+                                    <div class="ranking">
+                                        <div class="medal">
+                                            <img
+                                                src="assets/images/medal.png"
+                                                alt="2위"
+                                            />
+                                        </div>
+                                        <div class="rank_num">2위</div>
+                                        <div class="my_pick">
+                                            <span
+                                                class="ivoryIcon-check"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="reason_info">
+                                        <div class="title">아이보리 헤어샵</div>
+                                        <div class="choice_count_box">
+                                            <div
+                                                class="progress_box"
+                                                data-progress="30"
+                                            >
+                                                <div class="background"></div>
+                                                <div class="foreground_wrapper">
+                                                    <div
+                                                        class="foreground"
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                            <div class="percentage">
+                                                <p class="percent_value">50%</p>
+                                                <p class="people_count">
+                                                    (999명)
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="show_reasons">
+                                            <button
+                                                type="button"
+                                                class="button outline"
+                                            >
+                                                <span
+                                                    >선택한 이유 모아보기</span
+                                                >
+                                                <span
+                                                    class="ivoryIcon-arrow_down"
+                                                ></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_item">
+                                    <div class="ranking">
+                                        <div class="medal">
+                                            <img
+                                                src="assets/images/medal.png"
+                                                alt="3위"
+                                            />
+                                        </div>
+                                        <div class="rank_num">3위</div>
+                                        <div class="my_pick">
+                                            <span
+                                                class="ivoryIcon-check"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="reason_info">
+                                        <div class="title">아이보리 헤어샵</div>
+                                        <div class="choice_count_box">
+                                            <div
+                                                class="progress_box"
+                                                data-progress="6"
+                                            >
+                                                <div class="background"></div>
+                                                <div class="foreground_wrapper">
+                                                    <div
+                                                        class="foreground"
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                            <div class="percentage">
+                                                <p class="percent_value">50%</p>
+                                                <p class="people_count">
+                                                    (999명)
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="show_reasons">
+                                            <button
+                                                type="button"
+                                                class="button outline"
+                                            >
+                                                <span
+                                                    >선택한 이유 모아보기</span
+                                                >
+                                                <span
+                                                    class="ivoryIcon-arrow_down"
+                                                ></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="img_box">
+                                        <img
+                                            src="https://placeimg.com/120/123/animals"
+                                            alt="임시-1"
+                                        />
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list_item">
+                                    <div class="ranking">
+                                        <div class="medal">
+                                            <img
+                                                src="assets/images/medal.png"
+                                                alt="4위"
+                                            />
+                                        </div>
+                                        <div class="rank_num">4위</div>
+                                        <div class="my_pick">
+                                            <span
+                                                class="ivoryIcon-check"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="reason_info">
+                                        <div class="title">
+                                            Lorem ipsum dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Veritatis sequi ipsam similique
+                                            blanditiis debitis eligendi a
+                                            accusamus! Modi, voluptatem
+                                            veritatis.
+                                        </div>
+                                        <div class="choice_count_box">
+                                            <div
+                                                class="progress_box"
+                                                data-progress="10"
+                                            >
+                                                <div class="background"></div>
+                                                <div class="foreground_wrapper">
+                                                    <div
+                                                        class="foreground"
+                                                    ></div>
+                                                </div>
+                                            </div>
+                                            <div class="percentage">
+                                                <p class="percent_value">50%</p>
+                                                <p class="people_count">
+                                                    (999명)
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="show_reasons">
+                                            <button
+                                                type="button"
+                                                class="button outline"
+                                            >
+                                                <span
+                                                    >선택한 이유 모아보기</span
+                                                >
+                                                <span
+                                                    class="ivoryIcon-arrow_down"
+                                                ></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="reason_for_chooing_card is_vs">
+                            <div class="vs_card">
+                                <div class="vs_container">
+                                    <div class="win_box medal">
+                                        <img
+                                            src="assets/images/medal_win.png"
+                                            alt="우승"
+                                        />
+                                    </div>
+                                    <div class="vs_a my_pick">
+                                        <div class="my_pick">
+                                            <span
+                                                class="ivoryIcon-check"
+                                            ></span>
+                                        </div>
+                                        <div class="card_title">A</div>
+                                        <div class="text_box">
+                                            <p>
+                                                ㅁㄴ애럼ㄴ애ㅔ러 ㅊㅁㅁㅇ러
+                                                ㅔㄻㅊ ㄹㅊㄹ ㅏㄹ 랖
+                                                ㅁㄿㅁㄴㅁㄴㅁ ㄹ
+                                            </p>
+                                        </div>
+                                        <div class="img_box is_image">
+                                            <img
+                                                src="https://placeimg.com/200/212"
+                                                alt="대표 이미지"
+                                            />
+                                            <span
+                                                class="ivoryIcon-baby category_icon"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="choice_count_box">
+                                        <div
+                                            class="progress_box"
+                                            data-progress="23"
+                                        >
+                                            <div class="background"></div>
+                                            <div class="foreground_wrapper">
+                                                <div class="foreground"></div>
+                                            </div>
+                                        </div>
+                                        <div class="percentage">
+                                            <p class="percent_value">50%</p>
+                                            <p class="people_count">(999명)</p>
+                                        </div>
+                                    </div>
+                                    <div class="show_reasons">
+                                        <button
+                                            type="button"
+                                            class="button outline"
+                                        >
+                                            <span>선택한 이유 모아보기</span>
+                                            <span
+                                                class="ivoryIcon-arrow_down"
+                                            ></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="vs_container is_win">
+                                    <div class="win_box medal">
+                                        <img
+                                            src="assets/images/medal_win.png"
+                                            alt="우승"
+                                        />
+                                    </div>
+                                    <div class="vs_b">
+                                        <div class="my_pick">
+                                            <span
+                                                class="ivoryIcon-check"
+                                            ></span>
+                                        </div>
+                                        <div class="card_title">B</div>
+                                        <div class="text_box">
+                                            <p>aaa</p>
+                                        </div>
+                                        <div class="img_box">
+                                            <img
+                                                src="https://placeimg.com/200/200"
+                                                alt="대표 이미지"
+                                            />
+                                            <span
+                                                class="ivoryIcon-baby category_icon"
+                                            ></span>
+                                        </div>
+                                    </div>
+                                    <div class="choice_count_box">
+                                        <div
+                                            class="progress_box"
+                                            data-progress="88"
+                                        >
+                                            <div class="background"></div>
+                                            <div class="foreground_wrapper">
+                                                <div class="foreground"></div>
+                                            </div>
+                                        </div>
+                                        <div class="percentage">
+                                            <p class="percent_value">50%</p>
+                                            <p class="people_count">(999명)</p>
+                                        </div>
+                                    </div>
+                                    <div class="show_reasons">
+                                        <button
+                                            type="button"
+                                            class="button outline"
+                                        >
+                                            <span>선택한 이유 모아보기</span>
+                                            <span
+                                                class="ivoryIcon-arrow_down"
+                                            ></span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="icon_vs">vs</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="button" class="button fill btn_vote_agin">
+                        <span>재투표하기</span>
+                        <span class="ivoryIcon-arrow_right"></span>
+                    </button>
+                </div>
+                <!-- 투표 리스트 -->
+
+                <!-- 투표참여 현황 -->
+                <div class="vote_voter_info">
+                    <div class="voter_header">
+                        <span class="ivoryIcon-couple"></span>
+                        <p>투표 참여자 현황</p>
+                    </div>
+                    <div class="voter_content type_gender">
+                        <h4>성별</h4>
+                        <div class="type_box">
+                            <div class="female">
+                                <span class="ivoryIcon-female"></span>
+                                <div class="percentage">
+                                    <p class="percentage_value">70%</p>
+                                    <div
+                                        class="progress_box female"
+                                        data-progress="70"
+                                    >
+                                        <div class="background"></div>
+                                        <div class="foreground_wrapper">
+                                            <div class="foreground"></div>
+                                        </div>
+                                    </div>
+                                    <p class="type">여성</p>
+                                    <p class="count">999,999명</p>
+                                </div>
+                            </div>
+                            <div class="male">
+                                <span class="ivoryIcon-male"></span>
+                                <div class="percentage">
+                                    <p class="percentage_value">30%</p>
+                                    <div
+                                        class="progress_box male"
+                                        data-progress="30"
+                                    >
+                                        <div class="background"></div>
+                                        <div class="foreground_wrapper">
+                                            <div class="foreground"></div>
+                                        </div>
+                                    </div>
+                                    <p class="type">남성</p>
+                                    <p class="count">999,999명</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="voter_content type_generation">
+                        <h4>연령별</h4>
+                        <div class="type_box">
+                            <div class="gen_20">
+                                <div
+                                    class="progress_box vertical gen_20"
+                                    data-progress="100"
+                                >
+                                    <div class="background"></div>
+                                    <div class="foreground_wrapper">
+                                        <div class="foreground"></div>
+                                    </div>
+                                </div>
+                                <div class="percentage">
+                                    <p class="percent_value">100%</p>
+                                </div>
+                                <p class="count">(999,999명)</p>
+                                <div class="type">20대</div>
+                            </div>
+                            <div class="gen_30">
+                                <div
+                                    class="progress_box vertical gen_30"
+                                    data-progress="70"
+                                >
+                                    <div class="background"></div>
+                                    <div class="foreground_wrapper">
+                                        <div class="foreground"></div>
+                                    </div>
+                                </div>
+                                <div class="percentage">
+                                    <p class="percent_value">50%</p>
+                                </div>
+                                <p class="count">(999,999명)</p>
+                                <div class="type">30대</div>
+                            </div>
+                            <div class="gen_40">
+                                <div
+                                    class="progress_box vertical gen_40"
+                                    data-progress="44"
+                                >
+                                    <div class="background"></div>
+                                    <div class="foreground_wrapper">
+                                        <div class="foreground"></div>
+                                    </div>
+                                </div>
+                                <div class="percentage">
+                                    <p class="percent_value">50%</p>
+                                </div>
+                                <p class="count">(999,999명)</p>
+                                <div class="type">40대</div>
+                            </div>
+                            <div class="gen_50">
+                                <div
+                                    class="progress_box vertical gen_50"
+                                    data-progress="0"
+                                >
+                                    <div class="background"></div>
+                                    <div class="foreground_wrapper">
+                                        <div class="foreground"></div>
+                                    </div>
+                                </div>
+                                <div class="percentage">
+                                    <p class="percent_value">50%</p>
+                                </div>
+                                <p class="count">(999,999명)</p>
+                                <div class="type">50대</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 투표참여 현황 -->
+
+                <!-- 댓글 영역 -->
+                <div class="reply_wrapper">
+                    <div class="reply_header">
+                        <div class="reply_count">
+                            <span>댓글</span>
+                            <span class="num">12</span>
+                        </div>
+                        <button type="button" class="btn_goto_lastreply">
+                            <span>마지막 댓글로</span>
+                            <span class="ivoryIcon-arrow_down"></span>
+                        </button>
+                    </div>
+                    <ul class="reply_content">
+                        <!-- 댓글 아이템 -->
+                        <li class="reply_container has_rereply">
+                            <!-- reply item -->
+                            <div class="reply_item">
+                                <div class="reply_info">
+                                    <div class="writer">
+                                        <span>투표 작성자</span>
+                                        <span class="ivoryIcon-write"></span>
+                                    </div>
+                                    <div class="reply_count">
+                                        <span>댓글</span>
+                                        <span class="num">44</span>
+                                    </div>
+                                </div>
+                                <div class="reply_text">
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Dolores, at quam dolor
+                                    obcaecati exercitationem nostrum.
+                                </div>
+                                <div class="reply_footer">
+                                    <div class="last_datetime is_new">
+                                        <span class="datetime">12:30</span>
+                                        <span class="ivoryIcon-new"></span>
+                                    </div>
+                                    <div class="btn_group">
+                                        <button
+                                            type="button"
+                                            class="btn_heart clicked"
+                                        >
+                                            <span
+                                                class="ivoryIcon-heart"
+                                            ></span>
+                                            <span
+                                                class="ivoryIcon-heart_outline"
+                                            ></span>
+                                            <span>좋아요</span>
+                                            <span class="heart_count">5</span>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_rereply"
+                                        >
+                                            <span
+                                                class="ivoryIcon-reply"
+                                            ></span>
+                                            <span>대댓글</span>
+                                        </button>
+                                        <button type="button" class="btn_more">
+                                            <span class="ivoryIcon-more"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- reply item -->
+
+                            <!-- 대댓글 -->
+                            <div class="rereply_container has_more_reply">
+                                <button type="button" class="view_more_rereply">
+                                    + 이전 대댓글
+                                    <span class="count_rereply">18</span>개 더
+                                    보기...
+                                </button>
+                                <ul class="rereply_list">
+                                    <!-- reply item -->
+                                    <li class="reply_item is_writer">
+                                        <div class="reply_info">
+                                            <div class="writer">
+                                                <span>투표 작성자</span>
+                                                <span
+                                                    class="ivoryIcon-write"
+                                                ></span>
+                                            </div>
+                                            <div class="reply_count">
+                                                <span>대댓글</span>
+                                                <span class="num">127</span>
+                                            </div>
+                                        </div>
+                                        <div class="reply_text">
+                                            Lorem ipsum, dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Dolores, at quam dolor obcaecati
+                                            exercitationem nostrum.
+                                        </div>
+                                        <div class="reply_footer">
+                                            <div class="last_datetime is_new">
+                                                <span class="datetime"
+                                                    >12:30</span
+                                                >
+                                                <span
+                                                    class="ivoryIcon-new"
+                                                ></span>
+                                            </div>
+                                            <div class="btn_group">
+                                                <button
+                                                    type="button"
+                                                    class="btn_heart clicked"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-heart"
+                                                    ></span>
+                                                    <span
+                                                        class="ivoryIcon-heart_outline"
+                                                    ></span>
+                                                    <span>좋아요</span>
+                                                    <span class="heart_count"
+                                                        >5</span
+                                                    >
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_rereply"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-reply"
+                                                    ></span>
+                                                    <span>대댓글</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_more"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-more"
+                                                    ></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- reply item -->
+
+                                    <!-- reply item -->
+                                    <li class="reply_item">
+                                        <div class="reply_info">
+                                            <div class="writer">
+                                                <span>투표 작성자</span>
+                                                <span
+                                                    class="ivoryIcon-write"
+                                                ></span>
+                                            </div>
+                                            <div class="reply_count">
+                                                <span>대댓글</span>
+                                                <span class="num">242</span>
+                                            </div>
+                                        </div>
+                                        <div class="reply_text">
+                                            Lorem ipsum, dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Dolores, at quam dolor obcaecati
+                                            exercitationem nostrum.
+                                        </div>
+                                        <div class="reply_footer">
+                                            <div class="last_datetime">
+                                                <span class="datetime"
+                                                    >2022.12.12</span
+                                                >
+                                                <span
+                                                    class="ivoryIcon-new"
+                                                ></span>
+                                            </div>
+                                            <div class="btn_group">
+                                                <button
+                                                    type="button"
+                                                    class="btn_heart"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-heart"
+                                                    ></span>
+                                                    <span
+                                                        class="ivoryIcon-heart_outline"
+                                                    ></span>
+                                                    <span>좋아요</span>
+                                                    <span class="heart_count"
+                                                        >5</span
+                                                    >
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_rereply"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-reply"
+                                                    ></span>
+                                                    <span>대댓글</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_more"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-more"
+                                                    ></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- reply item -->
+
+                                    <!-- reply item -->
+                                    <li class="reply_item delete_rereply">
+                                        <div class="reply_info">
+                                            <div class="writer">
+                                                <span>투표 작성자</span>
+                                                <span
+                                                    class="ivoryIcon-write"
+                                                ></span>
+                                            </div>
+                                            <div class="reply_count">
+                                                <span>대댓글</span>
+                                                <span class="num">354</span>
+                                            </div>
+                                        </div>
+                                        <div class="reply_text">
+                                            Lorem ipsum, dolor sit amet
+                                            consectetur adipisicing elit.
+                                            Dolores, at quam dolor obcaecati
+                                            exercitationem nostrum.
+                                        </div>
+                                        <div class="reply_footer">
+                                            <div class="last_datetime is_new">
+                                                <span class="datetime"
+                                                    >12:30</span
+                                                >
+                                                <span
+                                                    class="ivoryIcon-new"
+                                                ></span>
+                                            </div>
+                                            <div class="btn_group">
+                                                <button
+                                                    type="button"
+                                                    class="btn_heart clicked"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-heart"
+                                                    ></span>
+                                                    <span
+                                                        class="ivoryIcon-heart_outline"
+                                                    ></span>
+                                                    <span>좋아요</span>
+                                                    <span class="heart_count"
+                                                        >5</span
+                                                    >
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_rereply"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-reply"
+                                                    ></span>
+                                                    <span>대댓글</span>
+                                                </button>
+                                                <button
+                                                    type="button"
+                                                    class="btn_more"
+                                                >
+                                                    <span
+                                                        class="ivoryIcon-more"
+                                                    ></span>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- reply item -->
+                                </ul>
+                            </div>
+                            <!-- 대댓글 -->
+                        </li>
+                        <!-- 댓글 아이템 -->
+
+                        <!-- 댓글 아이템 -->
+                        <li class="reply_container">
+                            <!-- reply item -->
+                            <div class="reply_item is_writer">
+                                <div class="reply_info">
+                                    <div class="writer">
+                                        <span>투표 작성자</span>
+                                        <span class="ivoryIcon-write"></span>
+                                    </div>
+                                    <div class="reply_count">
+                                        <span>댓글</span>
+                                        <span class="num">477</span>
+                                    </div>
+                                </div>
+                                <div class="reply_text">
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Dolores, at quam dolor
+                                    obcaecati exercitationem nostrum.
+                                </div>
+                                <div class="reply_footer">
+                                    <div class="last_datetime is_new">
+                                        <span class="datetime">12:30</span>
+                                        <span class="ivoryIcon-new"></span>
+                                    </div>
+                                    <div class="btn_group">
+                                        <button
+                                            type="button"
+                                            class="btn_heart clicked"
+                                        >
+                                            <span
+                                                class="ivoryIcon-heart"
+                                            ></span>
+                                            <span
+                                                class="ivoryIcon-heart_outline"
+                                            ></span>
+                                            <span>좋아요</span>
+                                            <span class="heart_count">5</span>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_rereply"
+                                        >
+                                            <span
+                                                class="ivoryIcon-reply"
+                                            ></span>
+                                            <span>대댓글</span>
+                                        </button>
+                                        <button type="button" class="btn_more">
+                                            <span class="ivoryIcon-more"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- reply item -->
+                        </li>
+                        <!-- 댓글 아이템 -->
+
+                        <!-- 댓글 아이템 -->
+                        <li class="reply_container delete_reply">
+                            <!-- reply item -->
+                            <div class="reply_item">
+                                <div class="reply_info">
+                                    <div class="writer">
+                                        <span>투표 작성자</span>
+                                        <span class="ivoryIcon-write"></span>
+                                    </div>
+                                    <div class="reply_count">
+                                        <span>댓글</span>
+                                        <span class="num">563</span>
+                                    </div>
+                                </div>
+                                <div class="reply_text">
+                                    Lorem ipsum, dolor sit amet consectetur
+                                    adipisicing elit. Dolores, at quam dolor
+                                    obcaecati exercitationem nostrum.
+                                </div>
+                                <div class="reply_footer">
+                                    <div class="last_datetime is_new">
+                                        <span class="datetime">12:30</span>
+                                        <span class="ivoryIcon-new"></span>
+                                    </div>
+                                    <div class="btn_group">
+                                        <button type="button" class="btn_heart">
+                                            <span
+                                                class="ivoryIcon-heart"
+                                            ></span>
+                                            <span
+                                                class="ivoryIcon-heart_outline"
+                                            ></span>
+                                            <span>좋아요</span>
+                                            <span class="heart_count">5</span>
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_rereply"
+                                        >
+                                            <span
+                                                class="ivoryIcon-reply"
+                                            ></span>
+                                            <span>대댓글</span>
+                                        </button>
+                                        <button type="button" class="btn_more">
+                                            <span class="ivoryIcon-more"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- reply item -->
+                        </li>
+                        <!-- 댓글 아이템 -->
+                    </ul>
+
+                    <!-- 댓글 입력 폼 -->
+                    <div class="reply_comment_input_box" id="inputReplyResult">
+                        <span
+                            class="target"
+                            contenteditable="false"
+                            style="color: #68c0b5"
+                            hidden
+                        ></span>
+                        <div class="text_input_box">
+                            <span contenteditable="true"></span>
+                        </div>
+                        <button type="button" class="btn_return_comment_text">
+                            확인
+                        </button>
+                    </div>
+                    <!-- 댓글 입력 폼 -->
+                </div>
+                <!-- 댓글 영역 -->
+            </div>
+        </div>
+        <!-- 결과 슬라이드 -->
+
+        <div class="back_bg"></div>
+
+        <!-- jquery -->
+        <script type="text/javascript" src="assets/js/jQuery.js"></script>
+
+        <!-- alert -->
+        <script type="text/javascript" src="assets/js/alert.js"></script>
+
+        <!-- swipe -->
+        <script type="text/javascript" src="assets/js/swiper.js"></script>
+
+        <!-- js -->
+        <script type="text/javascript" src="assets/js/common.js"></script>
+
+        <!-- floating button -->
+        <script
+            type="text/javascript"
+            src="assets/js/floating_button.js"
+        ></script>
+
+        <!-- regist open -->
+        <script>
+            $('#addVoteContainer').addClass('on_vs');
+            modalOn($('#btnAddVoteVS'), '#addVoteContainer');
+        </script>
+    </body>
+</html>
