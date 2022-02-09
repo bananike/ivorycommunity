@@ -282,14 +282,25 @@ body.slide_on {
         }
 
         .vote_communication {
-            margin-top: cal($e: 60);
-            padding: cal($e: 60) cal($e: 40) cal($e: 50);
-            background-color: $color_transparentprimary;
+            padding: cal($e: 60) cal($e: 40) 0;
+
+            .vote_wrapper {
+                padding: cal($e: 50) cal($e: 35) cal($e: 25);
+                border: 0.5px solid $color_black;
+                border-radius: cal($e: 30);
+
+                .medal {
+                    transform-origin: bottom;
+                    &.on_animation {
+                        animation: medal 1s 1s forwards;
+                    }
+                }
+            }
 
             .total_voter {
                 [class^='ivoryIcon-'] {
                     font-size: cal($e: 45);
-                    color: $color_secondary;
+                    color: $color_black;
                 }
                 p {
                     margin-top: cal($e: 21);
@@ -304,9 +315,11 @@ body.slide_on {
             }
 
             .reason_for_choosing_list {
-                margin-top: cal($e: 30);
+                margin-top: cal($e: 50);
 
                 li {
+                    border-top: 1px solid $color_black;
+
                     &:nth-child(1) .medal img {
                         margin-left: cal($e: -1);
                     }
@@ -334,8 +347,7 @@ body.slide_on {
                     display: flex;
                     flex-direction: row;
                     flex-wrap: nowrap;
-                    padding: cal($e: 30) 0;
-                    border-bottom: 0.5px solid $color_black;
+                    padding: cal($e: 35) 0;
 
                     .medal {
                         display: none;
@@ -343,6 +355,9 @@ body.slide_on {
 
                     .ranking {
                         width: cal($e: 40);
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
 
                         .medal {
                             position: relative;
@@ -375,16 +390,17 @@ body.slide_on {
                     }
 
                     &.my_pick .ranking .my_pick {
-                        display: block;
+                        width: cal($e: 37);
+                        height: cal($e: 37);
                         margin-top: cal($e: 10);
-                        border-top: 2px solid $color_secondary;
-                        padding-top: cal($e: 2.5);
-                        font-family: gotham;
-                        font-size: cal($e: 17);
-                        line-height: cal($e: 16);
-                        letter-spacing: cal($e: -1.02);
-                        color: $color_secondary;
-                        text-align: center;
+                        border: 2px solid $color_black;
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $color_primary;
+                        color: $color_white;
+                        font-size: cal($e: 22);
                     }
 
                     .reason_info {
@@ -407,7 +423,8 @@ body.slide_on {
                             margin-top: cal($e: 20);
 
                             .progress_box {
-                                width: cal($e: 206);
+                                width: cal($e: 120);
+                                height: cal($e: 16);
                             }
 
                             .percentage {
@@ -439,8 +456,8 @@ body.slide_on {
                             .button {
                                 width: cal($e: 206);
                                 height: cal($e: 40);
-                                background-color: $color_lightblack;
-                                color: $color_white;
+                                border-color: $color_black;
+                                color: $color_black;
                                 padding: 0;
 
                                 span {
@@ -468,6 +485,218 @@ body.slide_on {
                         img {
                             @include objectfit;
                         }
+                    }
+                }
+            }
+
+            .reason_for_chooing_card {
+                .vs_card {
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    margin-top: cal($e: 76);
+
+                    .vs_container {
+                        width: 50%;
+                        position: relative;
+                        padding-bottom: cal($e: 35);
+
+                        &:first-child {
+                            margin-right: cal($e: 10);
+                        }
+
+                        .win_box {
+                            display: none;
+                        }
+
+                        &.is_win .win_box {
+                            display: block;
+                            position: absolute;
+                            top: cal($e: -40);
+                            left: calc(50% - #{cal($e: 85 / 2)});
+                            z-index: 2;
+                            width: cal($e: 85);
+                            height: cal($e: 107);
+
+                            img {
+                                @include objectfit;
+                            }
+                        }
+
+                        .choice_count_box {
+                            display: flex;
+                            flex-wrap: nowrap;
+                            flex-direction: row;
+                            align-items: center;
+                            margin-top: cal($e: 20);
+
+                            .progress_box {
+                                width: cal($e: 120);
+                                height: cal($e: 16);
+                            }
+
+                            .percentage {
+                                display: flex;
+                                flex-direction: row;
+                                flex-wrap: nowrap;
+                                align-items: center;
+                                margin-left: cal($e: 11);
+
+                                .percent_value {
+                                    font-family: gotham;
+                                    font-weight: bold;
+                                    font-size: cal($e: 20);
+                                    letter-spacing: cal($e: -1.2);
+                                }
+
+                                .people_count {
+                                    margin-left: cal($e: 2);
+                                    font-weight: 300;
+                                    font-size: cal($e: 17);
+                                    letter-spacing: cal($e: -1.02);
+                                }
+                            }
+                        }
+
+                        .show_reasons {
+                            margin-top: cal($e: 20);
+
+                            .button {
+                                width: cal($e: 206);
+                                height: cal($e: 40);
+                                border-color: $color_black;
+                                color: $color_black;
+                                padding: 0;
+
+                                span {
+                                    color: inherit;
+                                    font-weight: 500;
+                                    font-size: cal($e: 18);
+                                    letter-spacing: cal($e: -1.08);
+
+                                    &[class^='ivoryIcon-'] {
+                                        color: inherit;
+                                        font-size: cal($e: 15);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .vs_a,
+                    .vs_b {
+                        position: relative;
+                        height: cal($e: 330);
+                        width: 100%;
+                        overflow: hidden;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        border-radius: cal($e: 30);
+                        border: 2px solid $color_black;
+                        padding: cal($e: 25) cal($e: 30) cal($e: 30);
+
+                        &.vs_a {
+                            background-color: $color_vscarda;
+                        }
+                        &.vs_b {
+                            background-color: $color_vscardb;
+                        }
+
+                        > .my_pick {
+                            display: none;
+                        }
+
+                        &.my_pick > .my_pick {
+                            display: block;
+                            position: absolute;
+                            top: cal($e: 20);
+                            right: cal($e: 20);
+                            width: cal($e: 37);
+                            height: cal($e: 37);
+                            margin-top: cal($e: 10);
+                            border: 2px solid $color_black;
+                            border-radius: 50%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background-color: $color_primary;
+                            color: $color_white;
+                            font-size: cal($e: 22);
+                        }
+
+                        .card_title {
+                            font-family: gotham;
+                            font-weight: bold;
+                            font-size: cal($e: 50);
+                            letter-spacing: cal($e: -3);
+                        }
+
+                        .img_box {
+                            position: absolute;
+                            right: cal($e: 30);
+                            bottom: cal($e: 30);
+                            width: cal($e: 75);
+                            height: cal($e: 75);
+
+                            &.is_image {
+                                border: 1px solid $color_black;
+                                overflow: hidden;
+                                border-radius: 50%;
+
+                                img {
+                                    display: block;
+                                }
+                                .category_icon {
+                                    display: none;
+                                }
+                            }
+                            img {
+                                display: none;
+                                border-radius: 50%;
+                                @include objectfit;
+                            }
+                            .category_icon {
+                                display: block;
+                                font-size: cal($e: 75);
+                                text-align: center;
+                            }
+                        }
+
+                        .text_box {
+                            flex: 1;
+
+                            p {
+                                position: relative;
+                                text-align: left;
+                                font-weight: 500;
+                                margin-top: cal($e: 20);
+                                font-size: cal($e: 25);
+                                line-height: cal($e: 35);
+                                letter-spacing: cal($e: -1.5);
+                                @include multi_ellipsis($line: 3);
+                            }
+                        }
+                    }
+
+                    .icon_vs {
+                        position: absolute;
+                        width: cal($e: 66);
+                        height: cal($e: 66);
+                        background-color: $color_black;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-family: gotham;
+                        font-weight: bold;
+                        font-size: cal($e: 27);
+                        letter-spacing: cal($e: -1.62);
+                        color: $color_white;
+                        border-radius: 50%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
                     }
                 }
             }
@@ -603,7 +832,7 @@ body.slide_on {
                             margin-top: cal($e: 5);
 
                             .foreground {
-                                min-width: cal($e: 16);
+                                // min-width: cal($e: 16);
                             }
                         }
                     }
@@ -659,7 +888,7 @@ body.slide_on {
                     left: cal($e: 20);
 
                     .foreground {
-                        min-width: cal($e: 40);
+                        // min-width: cal($e: 40);
                     }
                 }
 
@@ -934,8 +1163,12 @@ body.slide_on {
             }
 
             .vote_communication {
-                margin-top: 60px;
-                padding: 60px 40px 50px;
+                padding: 60px 40px 0px;
+
+                .vote_wrapper {
+                    padding: 50px 35px 25px;
+                    border-radius: 30px;
+                }
 
                 .total_voter {
                     [class^='ivoryIcon-'] {
@@ -949,7 +1182,7 @@ body.slide_on {
                 }
 
                 .reason_for_choosing_list {
-                    margin-top: 30px;
+                    margin-top: 50px;
 
                     li {
                         &:nth-child(1) .medal img {
@@ -964,7 +1197,7 @@ body.slide_on {
                     }
 
                     .list_item {
-                        padding: 30px 0;
+                        padding: 35px 0;
 
                         .ranking {
                             width: 40px;
@@ -983,11 +1216,10 @@ body.slide_on {
                         }
 
                         &.my_pick .ranking .my_pick {
+                            width: 37px;
+                            height: 37px;
                             margin-top: 10px;
-                            padding-top: 2.5px;
-                            font-size: 17px;
-                            line-height: 16px;
-                            letter-spacing: -1.02px;
+                            font-size: 22px;
                         }
 
                         .reason_info {
@@ -1004,7 +1236,8 @@ body.slide_on {
                                 margin-top: 20px;
 
                                 .progress_box {
-                                    width: 206px;
+                                    width: 120px;
+                                    height: 16px;
                                 }
 
                                 .percentage {
@@ -1047,6 +1280,117 @@ body.slide_on {
                             height: 120px;
                             border-radius: 30px;
                             margin-left: 30px;
+                        }
+                    }
+                }
+
+                .reason_for_chooing_card {
+                    .vs_card {
+                        margin-top: 76px;
+
+                        .vs_container {
+                            padding-bottom: 35px;
+
+                            &:first-child {
+                                margin-right: 10px;
+                            }
+
+                            &.is_win .win_box {
+                                top: -40px;
+                                left: calc(50% - calc(85px / 2));
+                                width: 85px;
+                                height: 107px;
+                            }
+
+                            .choice_count_box {
+                                margin-top: 20px;
+
+                                .progress_box {
+                                    width: 120px;
+                                    height: 16px;
+                                }
+
+                                .percentage {
+                                    margin-left: 11px;
+
+                                    .percent_value {
+                                        font-size: 20px;
+                                        letter-spacing: -1.2px;
+                                    }
+
+                                    .people_count {
+                                        margin-left: 2px;
+                                        font-size: 17px;
+                                        letter-spacing: -1.02px;
+                                    }
+                                }
+                            }
+
+                            .show_reasons {
+                                margin-top: 20px;
+
+                                .button {
+                                    width: 206px;
+                                    height: 40px;
+
+                                    span {
+                                        font-size: 18px;
+                                        letter-spacing: -1.08px;
+
+                                        &[class^='ivoryIcon-'] {
+                                            font-size: 15px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .vs_a,
+                        .vs_b {
+                            height: 330px;
+                            border-radius: 30px;
+                            padding: 25px 30px 30px;
+
+                            &.my_pick > .my_pick {
+                                top: 20px;
+                                right: 20px;
+                                width: 37px;
+                                height: 37px;
+                                margin-top: 10px;
+                                font-size: 22px;
+                            }
+
+                            .card_title {
+                                font-size: 50px;
+                                letter-spacing: -3px;
+                            }
+
+                            .img_box {
+                                right: 30px;
+                                bottom: 30px;
+                                width: 75px;
+                                height: 75px;
+
+                                .category_icon {
+                                    font-size: 75px;
+                                }
+                            }
+
+                            .text_box {
+                                p {
+                                    margin-top: 20px;
+                                    font-size: 25px;
+                                    line-height: 35px;
+                                    letter-spacing: -1.5px;
+                                }
+                            }
+                        }
+
+                        .icon_vs {
+                            width: 66px;
+                            height: 66px;
+                            font-size: 27px;
+                            letter-spacing: -1.62px;
                         }
                     }
                 }
@@ -1133,7 +1477,7 @@ body.slide_on {
                                 margin-top: 5px;
 
                                 .foreground {
-                                    min-width: 16px;
+                                    // min-width: 16px;
                                 }
                             }
                         }
@@ -1174,7 +1518,7 @@ body.slide_on {
                         left: 20px;
 
                         .foreground {
-                            min-width: 40px;
+                            // min-width: 40px;
                         }
                     }
 

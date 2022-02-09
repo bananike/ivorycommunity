@@ -249,10 +249,6 @@
                 }
             }
 
-            &.swiper-slide-active .top_5_item {
-                overflow-y: auto;
-            }
-
             &.swiper-slide-active .top_5_item:after {
                 display: none;
             }
@@ -860,6 +856,10 @@
     .top_5_box {
         padding: 130px 40px 45px;
 
+        &:before {
+            height: 300px;
+        }
+
         .top_5_box_title {
             font-size: 30px;
             line-height: 30px;
@@ -893,7 +893,7 @@
                         padding: 15px 15px 15px 0;
 
                         .category_icon {
-                            min-width: 175;
+                            min-width: 175px;
 
                             .category_title {
                                 margin-top: 12px;

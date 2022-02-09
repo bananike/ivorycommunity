@@ -1,0 +1,744 @@
+@import 'variable';
+@import 'animation';
+
+.detail_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: cal($e: 640);
+    z-index: 10;
+
+    .btn_area {
+        height: cal($e: 135);
+        background-color: $color_white;
+        padding: 0 cal($e: 40);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .close_popup span {
+            font-size: cal($e: 28);
+        }
+
+        .btn_group {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            button:not(:last-child) {
+                margin-right: cal($e: 30);
+            }
+
+            .btn_heart {
+                .ivoryIcon-heart_outline {
+                    display: block;
+                }
+                .ivoryIcon-heart {
+                    display: none;
+                }
+                &.clicked {
+                    .ivoryIcon-heart_outline {
+                        display: none;
+                    }
+                    .ivoryIcon-heart {
+                        display: block;
+                        color: $color_red;
+                    }
+                }
+            }
+
+            [class^='ivoryIcon-'] {
+                font-size: cal($e: 40);
+            }
+        }
+    }
+}
+
+.dummy_container {
+    position: fixed;
+    padding: cal($e: 60) 0 0;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+    background-color: $color_white;
+
+    .dummy {
+        &_title {
+            margin: 0 cal($e: 40);
+            width: cal($e: 200);
+            height: cal($e: 35);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+            margin-bottom: cal($e: 25);
+        }
+        &_title_content {
+            margin: 0 cal($e: 40);
+            height: cal($e: 30);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+            &:not(:last-child) {
+                margin-bottom: cal($e: 15);
+            }
+        }
+        &_icon_wrapper {
+            margin: 0 cal($e: 40);
+            margin-top: cal($e: 75);
+            margin-bottom: cal($e: 60);
+            padding-bottom: cal($e: 30);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &_icon_box {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+        }
+        &_icon {
+            width: cal($e: 80);
+            height: cal($e: 40);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+            &:not(:last-child) {
+                margin-right: cal($e: 25);
+            }
+        }
+        &_date {
+            width: cal($e: 120);
+            height: cal($e: 40);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+        &_swipe {
+            padding: 0 0 0 cal($e: 40);
+            margin-bottom: cal($e: 50);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            overflow: hidden;
+        }
+        &_swipe_item {
+            min-width: cal($e: 351);
+            height: cal($e: 351);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+            &:not(:last-child) {
+                margin-right: cal($e: 25);
+            }
+        }
+        &_content_text {
+            margin: 0 cal($e: 40);
+            height: cal($e: 20);
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+            &:not(:last-child) {
+                margin-bottom: cal($e: 13);
+            }
+        }
+        &_last_box {
+            margin: 0 cal($e: 40);
+            height: 100vh;
+            border-radius: cal($e: 30);
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+}
+
+.detail_wrapper {
+    background-color: $color_white;
+
+    .content_box {
+        margin-top: cal($e: 135);
+        overflow: auto;
+
+        .vote_content {
+            margin-top: 0;
+
+            .category_type {
+                padding: 0 cal($e: 40);
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+
+                span {
+                    color: $color_primary;
+                    font-weight: 700;
+                    font-size: cal($e: 22);
+                    letter-spacing: cal($e: -1.32);
+
+                    &[class^='ivoryIcon-'] {
+                        font-weight: normal;
+                        font-size: cal($e: 31);
+                        margin-right: cal($e: 10);
+                    }
+                }
+            }
+
+            .category_title {
+                padding: 0 cal($e: 40);
+                margin-top: cal($e: 25);
+
+                .title {
+                    font-weight: 700;
+                    font-size: cal($e: 30);
+                    line-height: cal($e: 45);
+                    letter-spacing: cal($e: -1.8);
+                }
+            }
+
+            .regist_date {
+                padding: 0 cal($e: 40);
+                margin-top: cal($e: 25);
+                display: flex;
+                align-items: center;
+
+                span {
+                    font-weight: 700;
+                    font-size: cal($e: 22);
+                    letter-spacing: cal($e: -0.44);
+
+                    &[class^='ivoryIcon-'] {
+                        font-weight: normal;
+                        font-size: cal($e: 23);
+                        color: $color_red;
+                        margin-left: cal($e: 5);
+                        margin-top: cal($e: -4);
+                    }
+                }
+            }
+
+            .count_box {
+                margin: cal($e: 25) cal($e: 40) 0;
+                padding-bottom: cal($e: 30);
+                border-bottom: 0.5px solid $color_black;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: center;
+
+                .count_left {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    > div[class^='count_'] {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        align-items: center;
+
+                        &:not(:last-child) {
+                            margin-right: cal($e: 25);
+                        }
+
+                        span {
+                            font-weight: 700;
+                            font-size: cal($e: 18);
+                            letter-spacing: cal($e: -0.36);
+
+                            &[class^='ivoryIcon-'] {
+                                font-weight: normal;
+                                margin-right: cal($e: 5);
+                            }
+                        }
+                    }
+
+                    .count {
+                        &_vote {
+                            [class^='ivoryIcon-'] {
+                                color: $color_secondary;
+                                font-size: cal($e: 30);
+                            }
+                        }
+                        &_view {
+                            [class^='ivoryIcon-'] {
+                                color: $color_primary;
+                                font-size: cal($e: 35);
+                            }
+                        }
+                        &_heart {
+                            [class^='ivoryIcon-'] {
+                                color: $color_red;
+                                font-size: cal($e: 30);
+                            }
+                        }
+                    }
+                }
+
+                .count_right {
+                    height: cal($e: 40);
+                    border: 0.5px solid $color_black;
+                    font-size: cal($e: 20);
+                    letter-spacing: cal($e: -1.2);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: cal($e: 30);
+                    padding: 0 cal($e: 16);
+
+                    &.end {
+                        color: $color_white;
+                        border: 0;
+                        background-color: $color_red;
+                    }
+                }
+            }
+
+            .vote_img_swipe {
+                margin-top: cal($e: 60);
+                height: cal($e: 351);
+
+                .swiper {
+                    padding-left: cal($e: 40);
+                }
+
+                .swiper-slide {
+                    width: cal($e: 351);
+                    height: cal($e: 351);
+                    position: relative;
+                    border-radius: cal($e: 30);
+                    overflow: hidden;
+
+                    img {
+                        @include objectfit;
+                    }
+                }
+            }
+
+            .vote_text_box {
+                margin-top: cal($e: 50);
+                padding: 0 cal($e: 40);
+                font-weight: 300;
+                font-size: cal($e: 20);
+                line-height: cal($e: 33);
+                letter-spacing: cal($e: -1.2);
+            }
+        }
+
+        .vote_communication {
+            padding: cal($e: 60) cal($e: 40) cal($e: 60);
+
+            .vote_wrapper {
+                padding: cal($e: 50) cal($e: 35) cal($e: 25);
+                border-radius: cal($e: 30);
+                border: 0.5px solid $color_black;
+
+                .poll_wrapper {
+                    margin-bottom: cal($e: 15);
+
+                    .vote_type .type_box {
+                        background-color: $color_blue;
+                    }
+                }
+
+                .vs_wrapper {
+                    margin-bottom: cal($e: 25);
+
+                    .vote_type .type_box {
+                        background-color: $color_pink;
+                    }
+                }
+            }
+
+            .vote_type {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+
+                .type_box {
+                    width: cal($e: 160);
+                    height: cal($e: 60);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: cal($e: 30);
+                    color: $color_white;
+                    font-family: gotham;
+                    font-weight: bold;
+                    font-size: cal($e: 27);
+                    letter-spacing: cal($e: -0.54);
+                }
+
+                .type_text {
+                    font-weight: 500;
+                    font-size: cal($e: 22);
+                    letter-spacing: cal($e: -1.32);
+
+                    &.strong {
+                        display: inline-block;
+                        font-family: gotham;
+                        font-weight: bold;
+                        font-size: cal($e: 25);
+                        letter-spacing: cal($e: -0.5);
+                        color: $color_blue;
+                        margin-top: cal($e: -3);
+                        margin-left: cal($e: 12);
+                    }
+                }
+            }
+
+            .vote_poll_list {
+                margin-top: cal($e: 30);
+
+                .vote_select_item {
+                    margin-bottom: cal($e: 10);
+
+                    &.is_image .fake_checker .img {
+                        display: block;
+                    }
+
+                    .voted_reason {
+                        display: none;
+                    }
+                    .input_write_reason {
+                        display: block;
+                    }
+                    &.is_voted {
+                        .voted_reason {
+                            display: flex;
+                        }
+                        .input_write_reason {
+                            display: none;
+                        }
+                    }
+                }
+
+                .poll_checker {
+                    display: none;
+
+                    &:checked {
+                        ~ .fake_checker {
+                            background-color: $color_blue;
+                            color: $color_white;
+                            transition: background-color 0.3s, color 0.3s;
+
+                            .index {
+                                background-color: $color_white;
+                                color: $color_blue;
+                                transition: background-color 0.3s, color 0.3s;
+                            }
+                        }
+                    }
+                }
+
+                .fake_checker {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: cal($e: 10) cal($e: 10) cal($e: 10) cal($e: 25);
+                    border-radius: cal($e: 30);
+                    border: 0.5px solid #8e8e8e;
+                    background-color: $color_white;
+                    color: $color_black;
+                    transition: background-color 0.3s, color 0.3s;
+
+                    .index {
+                        min-width: cal($e: 30);
+                        height: cal($e: 30);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: $color_black;
+                        color: $color_white;
+                        font-family: gotham;
+                        font-size: cal($e: 16);
+                        letter-spacing: cal($e: -0.96);
+                        border-radius: 50%;
+                        transition: background-color 0.3s, color 0.3s;
+                    }
+
+                    .text {
+                        flex: 1;
+                        margin-left: cal($e: 15);
+                        font-weight: 500;
+                        padding: cal($e: 12) 0;
+                        font-size: cal($e: 25);
+                        line-height: cal($e: 37);
+                        letter-spacing: cal($e: -1.5);
+                        color: inherit;
+                    }
+
+                    .img {
+                        display: none;
+                        width: cal($e: 120);
+                        height: cal($e: 120);
+                        border-radius: cal($e: 30);
+                        margin-left: cal($e: 10);
+                        overflow: hidden;
+
+                        img {
+                            @include objectfit;
+                        }
+                    }
+                }
+            }
+
+            .vote_vs_card {
+                margin-top: cal($e: 30);
+                position: relative;
+                border-radius: cal($e: 30);
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow: hidden;
+
+                [class^='vs_'] {
+                    position: relative;
+                    width: 50%;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .vs_radio {
+                        display: none;
+
+                        &:checked {
+                            ~ .fake_radio {
+                                background-color: $color_pink;
+                                color: $color_white;
+                                transition: background-color 0.3s;
+                            }
+                        }
+                    }
+
+                    .fake_radio {
+                        padding: cal($e: 25) cal($e: 30) cal($e: 30);
+                        height: 100%;
+                        height: cal($e: 330);
+                        border-radius: cal($e: 30);
+                        border: 2px solid $color_black;
+                    }
+
+                    &.vs_a .fake_radio {
+                        background-color: $color_vscarda;
+                        transition: background-color 0.3s;
+                    }
+                    &.vs_b .fake_radio {
+                        background-color: $color_vscardb;
+                        transition: background-color 0.3s;
+                    }
+
+                    &.is_image {
+                        .img_box {
+                            border: 1px solid $color_black;
+                            border-radius: 50%;
+                            overflow: hidden;
+
+                            img {
+                                display: block;
+                            }
+                            .category_icon {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    &:first-child {
+                        margin-right: cal($e: 10);
+                    }
+
+                    .card_title {
+                        font-family: gotham;
+                        font-weight: bold;
+                        font-size: cal($e: 50);
+                        letter-spacing: cal($e: -3);
+                    }
+
+                    .img_box {
+                        position: absolute;
+                        right: cal($e: 30);
+                        bottom: cal($e: 30);
+                        width: cal($e: 75);
+                        height: cal($e: 75);
+
+                        img {
+                            display: none;
+                            @include objectfit;
+                        }
+                        .category_icon {
+                            display: block;
+                            font-size: cal($e: 75);
+                            text-align: center;
+                        }
+                    }
+
+                    .text_box {
+                        flex: 1;
+
+                        p {
+                            position: relative;
+                            text-align: left;
+                            font-weight: 500;
+                            margin-top: cal($e: 20);
+                            font-size: cal($e: 25);
+                            line-height: cal($e: 35);
+                            letter-spacing: cal($e: -1.5);
+                            @include multi_ellipsis($line: 3);
+                        }
+                    }
+                }
+
+                .icon_vs {
+                    position: absolute;
+                    width: cal($e: 66);
+                    height: cal($e: 66);
+                    background-color: $color_black;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-family: gotham;
+                    font-weight: bold;
+                    font-size: cal($e: 27);
+                    letter-spacing: cal($e: -1.62);
+                    color: $color_white;
+                    border-radius: 50%;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .voted_reason {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                height: 0;
+                margin-top: 0;
+                overflow: hidden;
+                transition: height 0.3s, margin 0.3s;
+
+                .icon {
+                    min-width: cal($e: 110);
+                    text-align: right;
+                    font-size: cal($e: 18);
+                    line-height: cal($e: 38);
+                    letter-spacing: cal($e: -2);
+                    margin-right: cal($e: 14);
+                }
+
+                .text_box {
+                    .text {
+                        font-weight: 300;
+                        font-size: cal($e: 20);
+                        line-height: cal($e: 35);
+                        letter-spacing: cal($e: -1.2);
+                    }
+
+                    .btn_group {
+                        margin-top: cal($e: 27);
+
+                        button {
+                            font-weight: 700;
+                            font-size: cal($e: 20);
+                            letter-spacing: cal($e: -1.2);
+
+                            &:first-child {
+                                margin-right: cal($e: 18);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .input_write_reason {
+                height: 0;
+                overflow: hidden;
+                background-color: $color_lightblack;
+                border-radius: cal($e: 30);
+                color: $color_white;
+                margin-top: 0;
+                transition: height 0.3s, margin 0.3s;
+
+                .box_header {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: cal($e: 25) cal($e: 25) 0;
+                    font-weight: 500;
+                    font-size: cal($e: 20);
+                    letter-spacing: cal($e: -1.2);
+
+                    button {
+                        font-weight: inherit;
+                        font-size: inherit;
+                        letter-spacing: inherit;
+                        color: inherit;
+                    }
+                }
+
+                .text_input_box {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: nowrap;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    margin: cal($e: 15) cal($e: 25) cal($e: 30);
+
+                    textarea {
+                        flex: 1;
+                        height: cal($e: 70);
+                        padding: cal($e: 16.5) cal($e: 30);
+                        border-radius: cal($e: 30);
+                        font-weight: 500;
+                        font-size: cal($e: 23);
+                        line-height: cal($e: 37);
+                        letter-spacing: cal($e: -1.38);
+
+                        &::placeholder {
+                            font-size: inherit;
+                            letter-spacing: inherit;
+                            color: $color_lightgray;
+                        }
+                    }
+
+                    .btn_return_reason_text {
+                        width: cal($e: 70);
+                        height: cal($e: 70);
+                        margin-left: cal($e: 10);
+                        font-weight: 500;
+                        font-size: cal($e: 20);
+                        letter-spacing: cal($e: -1.2);
+                        border-radius: cal($e: 30);
+                        background-color: $color_primary;
+                        color: inherit;
+                    }
+                }
+            }
+
+            .btn_vote {
+                position: relative;
+                width: 100%;
+                height: cal($e: 80);
+                margin-top: cal($e: 60);
+                padding: 0;
+                background-color: $color_primary;
+                color: $color_white;
+
+                span {
+                    font-size: cal($e: 30);
+                    letter-spacing: cal($e: -1.8);
+                }
+
+                [class^='ivoryIcon-'] {
+                    position: absolute;
+                    font-size: cal($e: 29);
+                    top: 50%;
+                    right: cal($e: 32);
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}

@@ -161,7 +161,7 @@ $(document).ready(function () {
     // 프로그레스 설정
     progressBar(
         $('.progress_box'),
-        $('.progress_scroller'),
+        $('.srcoll_container'),
         $('.scroll_header')
     );
 
@@ -171,10 +171,11 @@ $(document).ready(function () {
     });
 
     // 코멘트 박스 보이기
+    onSlideCommentBox($('#inputReplyDetail'), $(window), $('.detail_header'));
     onSlideCommentBox(
-        $('.reply_comment_input_box'),
-        $('.progress_scroller'),
-        $('.scroll_header')
+        $('#inputReplyResult'),
+        $('#sliderVoteResult .srcoll_container'),
+        $('#sliderVoteResult .scroll_header')
     );
 
     // 댓글입력하면 플레이스홀더 가리기
@@ -191,6 +192,29 @@ $(document).ready(function () {
     $(document).on('click', '.reply_comment_input_box .target', function () {
         onClickDeleteReplyTarget($(this));
     });
+
+    // 스크롤 모달 애니메이션 실행
+    medalAnimation($('.medal'), $('.srcoll_container'), $('.scroll_header'));
+
+    // 폴 아이템 선택 시 ui변경
+    $(document).on('change', '.poll_checker', function () {
+        checkPollItem($(this));
+    });
+
+    // 항목선택이유 건너뛰기
+    $(document).on('click', '.btn_reason_ignore', function () {
+        noInputReason($(this));
+    });
+
+    // 항목선택이유 수정
+    $(document).on('click', '.btn_modify_voted_reason', function () {
+        reasonModfiy($(this));
+    });
+
+    // vs 카드 선택
+    $(document).on('click', '[name=selectVs]', function () {
+        selectVSCard($(this));
+    });
 });
 
 // --------------------------------------------
@@ -198,10 +222,10 @@ $(document).ready(function () {
 //
 // test
 // modalOn($('#btnAddVotePOLL'), '#addVoteContainer');
-
+//
 // 결과슬라이드 더미 제거
 setTimeout(function () {
-    $('.dummy_vote_container').prop('hidden', true);
+    $('.dummy_vote_container, .dummy_container').prop('hidden', true);
 }, 1000);
 //
 //
@@ -378,13 +402,30 @@ function changeTextAreaLine(_this) {
     var borderBottom = _this.css('border-bottom-width').split('px')[0] * 1;
     var limitLine = _this.attr('data-limit-line') * 1 + 1;
 
-    if (_this.prop('scrollHeight') <= lineHeight * limitLine)
+    var isHiddenWrapper = _this.closest('.input_write_reason');
+
+    if (isHiddenWrapper.length > 0) {
+        var boxheader = isHiddenWrapper.find('.box_header');
+        var textbox = isHiddenWrapper.find('.text_input_box');
+
+        var height =
+            boxheader.height() +
+            textbox.height() +
+            boxheader.css('margin-top').split('px')[0] * 1 +
+            boxheader.css('margin-bottom').split('px')[0] * 1 +
+            textbox.css('margin-top').split('px')[0] * 1 +
+            textbox.css('margin-bottom').split('px')[0] * 1;
+        isHiddenWrapper.height(height);
+    }
+
+    if (_this.prop('scrollHeight') <= lineHeight * limitLine) {
         _this
             .height(1)
             .height(
                 _this.prop('scrollHeight') -
                     (paddingTop + paddingBottom + borderTop + borderBottom)
             );
+    }
 }
 
 // 012. 폴 옵션 삭제모드 변환
@@ -602,23 +643,26 @@ function clickHeart(_this) {
 // 026. 코멘트 박스 보임
 function onSlideCommentBox(_this, container, header) {
     $(container).scroll(function () {
-        var wrapper = $('.reply_wrapper');
-        var height = container.height();
-        var headerHeight = header.outerHeight();
-        var baseCommentItemHeight = 200;
-        var startPosition = $(document).scrollTop();
+        for (var i = 0; _this.length > i; i++) {
+            var textbox = $(_this[i]);
+            var wrapper = textbox.closest('.reply_wrapper');
+            var height = container.height();
+            var headerHeight = header.outerHeight();
+            var baseCommentItemHeight = 200;
+            var startPosition = $(document).scrollTop();
 
-        if (
-            wrapper.offset().top -
-                headerHeight -
-                startPosition +
-                _this.outerHeight() +
-                baseCommentItemHeight <
-            height
-        ) {
-            _this.addClass('on_slide');
-        } else {
-            _this.removeClass('on_slide');
+            if (
+                wrapper.offset().top -
+                    headerHeight -
+                    startPosition +
+                    textbox.outerHeight() +
+                    baseCommentItemHeight <
+                height
+            ) {
+                textbox.addClass('on_slide');
+            } else {
+                textbox.removeClass('on_slide');
+            }
         }
     });
 }
@@ -636,6 +680,7 @@ function commentPlaceholder(_this) {
 
 // 028. 대댓글 클릭
 function onClickRereply(_this) {
+    var wrapper = _this.closest('.reply_wrapper');
     var targetReply =
         '@' +
         _this
@@ -647,22 +692,127 @@ function onClickRereply(_this) {
             .find('.reply_info .reply_count .num')
             .text();
 
-    var targetContainer = $('.reply_comment_input_box > .target').clone(true);
+    var targetContainer = wrapper
+        .find('.reply_comment_input_box > .target')
+        .clone(true);
 
-    if ($('.text_input_box .target').length > 0) {
-        $('.text_input_box .target').text(targetReply);
+    if (wrapper.find('.text_input_box .target').length > 0) {
+        wrapper.find('.text_input_box .target').text(targetReply);
     } else {
         targetContainer.text(targetReply);
         targetContainer.prop('hidden', false);
 
-        $('.text_input_box').prepend(targetContainer);
+        wrapper.find('.text_input_box').prepend(targetContainer);
     }
-    $('.text_input_box').addClass('is_focus');
+    wrapper.find('.text_input_box').addClass('is_focus');
 
-    $('.text_input_box span').focus();
+    wrapper.find('.text_input_box span').focus();
 }
 
 // 029. 댓글 타겟 지우기
 function onClickDeleteReplyTarget(_this) {
     _this.remove();
+}
+
+// 030. 메달 애니메이션
+function medalAnimation(_this, container, header) {
+    var height = container.height();
+    var headerHeight = header.outerHeight();
+    var startPosition = $(document).scrollTop();
+    $(container).scroll(function () {
+        for (var i = 0; _this.length > i; i++) {
+            var medal = $(_this[i]);
+            var offset = medal.offset().top;
+
+            if (offset - headerHeight - startPosition < height) {
+                medal.addClass('on_animation');
+            } else {
+                medal.removeClass('on_animation');
+            }
+        }
+    });
+}
+
+// 031. 투표선택 poll 숨긴박스 표시
+function checkPollItem(_this) {
+    var val = _this.prop('checked');
+    var wrapper = _this.closest('.vote_select_item');
+    var target = '';
+    var margin = wrapper.css('margin-bottom').split('px')[0] * 1;
+
+    if (wrapper.hasClass('is_voted')) {
+        target = wrapper.find('.voted_reason');
+    } else {
+        target = wrapper.find('.input_write_reason');
+    }
+
+    if (val) {
+        target.css({
+            height: target.prop('scrollHeight'),
+            'margin-top': margin,
+            'margin-bottom': margin * 2.5,
+        });
+    } else {
+        target.css({ height: 0, 'margin-top': 0, 'margin-bottom': 0 });
+    }
+}
+
+// 032. 건너뛰기 버튼
+function noInputReason(_this) {
+    var box = _this.closest('.input_write_reason');
+    var textarea = box.find('textarea');
+
+    textarea.val('');
+    box.css({ height: 0, 'margin-top': 0, 'margin-bottom': 0 });
+}
+
+// 033. 수정하기 버튼
+function reasonModfiy(_this) {
+    var wrapper = _this.closest('.vote_select_item');
+    var box = _this.closest('.voted_reason');
+    var inputbox = wrapper.find('.input_write_reason');
+    var textarea = inputbox.find('textarea');
+    var val = _this.closest('.text_box').find('.text').text();
+    var margin = wrapper.css('margin-bottom').split('px')[0] * 1;
+
+    wrapper.removeClass('is_voted');
+    box.css({ height: 0, 'margin-top': 0, 'margin-bottom': 0 });
+    var replace = val.replace(/\n|\r/g, '');
+    textarea.val(replace);
+    inputbox.css({
+        height: inputbox.prop('scrollHeight'),
+        'margin-top': margin,
+        'margin-bottom': margin * 2.5,
+    });
+}
+
+// 034 vs 버튼클릭
+function selectVSCard(_this) {
+    var wrapper = _this.closest('.vs_wrapper');
+    var reasonbox = wrapper.find('.voted_reason');
+    var inputbox = wrapper.find('.input_write_reason');
+    var margin = $('.vs_a').css('margin-right').split('px')[0] * 1;
+    var target = '';
+
+    if (_this.closest('[class^=vs_]').hasClass('is_voted')) {
+        target = reasonbox;
+    } else {
+        target = inputbox;
+    }
+
+    if (target.hasClass('is_opened')) {
+        target.css({
+            height: 0,
+            'margin-top': 0,
+            'margin-bottom': 0,
+        });
+        target.removeClass('is_opened');
+    } else {
+        target.css({
+            height: target.prop('scrollHeight'),
+            'margin-top': margin,
+            'margin-bottom': margin * 2.5,
+        });
+        target.addClass('is_opened');
+    }
 }

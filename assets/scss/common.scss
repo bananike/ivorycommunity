@@ -279,13 +279,13 @@ input[type='file'] {
         opacity: 0;
         position: absolute;
         width: 0%;
-        min-width: cal($e: 24);
+        // min-width: cal($e: 16);
         height: 100%;
         top: 0;
         left: 0;
         border-radius: cal($e: 100);
-        background-color: $color_secondary;
-        transition: width 1s;
+        background-color: $color_lightpurple;
+        transition: width 2s;
     }
 
     $types: (
@@ -391,7 +391,7 @@ input[type='file'] {
         }
 
         .foreground {
-            min-width: 24px;
+            // min-width: 16px;
             border-radius: 100px;
         }
     }
