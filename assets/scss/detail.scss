@@ -340,6 +340,7 @@
                 }
 
                 .vs_wrapper {
+                    position: relative;
                     margin-bottom: cal($e: 25);
 
                     .vote_type .type_box {
@@ -651,7 +652,11 @@
             }
 
             .input_write_reason {
+                position: absolute;
+                width: cal($e: 490);
                 height: 0;
+                left: 0;
+                z-index: 2;
                 overflow: hidden;
                 background-color: $color_lightblack;
                 border-radius: cal($e: 30);
@@ -725,6 +730,10 @@
                 padding: 0;
                 background-color: $color_primary;
                 color: $color_white;
+
+                [disabled] {
+                    background-color: $color_gray;
+                }
 
                 span {
                     font-size: cal($e: 30);

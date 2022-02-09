@@ -270,31 +270,31 @@
                 display: none;
             }
 
-            &:before,
-            &:after {
-                content: '';
-                display: block;
-                position: fixed;
-                width: calc(100% - #{cal($e: 244)});
-                right: cal($e: 42);
-                height: cal($e: 23);
-            }
+            // &:before,
+            // &:after {
+            //     content: '';
+            //     display: block;
+            //     position: fixed;
+            //     width: calc(100% - #{cal($e: 244)});
+            //     right: cal($e: 42);
+            //     height: cal($e: 23);
+            // }
 
-            &:before {
-                top: cal($e: 17);
-                background: linear-gradient(
-                    rgba(255, 255, 255, 0.75),
-                    transparent
-                );
-            }
+            // &:before {
+            //     top: cal($e: 17);
+            //     background: linear-gradient(
+            //         rgba(255, 255, 255, 0.75),
+            //         transparent
+            //     );
+            // }
 
-            &:after {
-                bottom: cal($e: 17);
-                background: linear-gradient(
-                    transparent,
-                    rgba(255, 255, 255, 0.75)
-                );
-            }
+            // &:after {
+            //     bottom: cal($e: 17);
+            //     background: linear-gradient(
+            //         transparent,
+            //         rgba(255, 255, 255, 0.75)
+            //     );
+            // }
         }
 
         .item_list li {
@@ -964,20 +964,20 @@
                 border-radius: 30px;
                 padding: 23px 25px;
 
-                &:before,
-                &:after {
-                    width: calc(100% - 244px);
-                    right: 42px;
-                    height: 23px;
-                }
+                // &:before,
+                // &:after {
+                //     width: calc(100% - 244px);
+                //     right: 42px;
+                //     height: 23px;
+                // }
 
-                &:before {
-                    top: 17px;
-                }
+                // &:before {
+                //     top: 17px;
+                // }
 
-                &:after {
-                    bottom: 17px;
-                }
+                // &:after {
+                //     bottom: 17px;
+                // }
             }
 
             .item_list li {

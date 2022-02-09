@@ -67,9 +67,6 @@
 .top_5_box .top_5_swipe .swiper-slide.swiper-slide-prev .top_5_item:after, .top_5_box .top_5_swipe .swiper-slide.swiper-slide-next .top_5_item:after { background-color: rgba(0, 0, 0, 0.1); }
 .top_5_box .top_5_swipe .item_list { overflow-y: auto; border-radius: calc(100vw * (30/640)); padding: calc(100vw * (23/640)) calc(100vw * (25/640)); background-color: #fff; position: relative; }
 .top_5_box .top_5_swipe .item_list::-webkit-scrollbar { display: none; }
-.top_5_box .top_5_swipe .item_list:before, .top_5_box .top_5_swipe .item_list:after { content: ''; display: block; position: fixed; width: calc(100% - calc(100vw * (244/640))); right: calc(100vw * (42/640)); height: calc(100vw * (23/640)); }
-.top_5_box .top_5_swipe .item_list:before { top: calc(100vw * (17/640)); background: linear-gradient(rgba(255, 255, 255, 0.75), transparent); }
-.top_5_box .top_5_swipe .item_list:after { bottom: calc(100vw * (17/640)); background: linear-gradient(transparent, rgba(255, 255, 255, 0.75)); }
 .top_5_box .top_5_swipe .item_list li { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; height: calc(100vw * (58/640)); }
 .top_5_box .top_5_swipe .item_list li:not(:last-child) { margin-bottom: calc(100vw * (21/640)); }
 .top_5_box .top_5_swipe .item_list li .item_index { width: calc(100vw * (30/640)); height: calc(100vw * (30/640)); display: flex; justify-content: center; align-items: center; color: #fff; background-color: #a8a8a8; border-radius: 50%; font-family: gotham; font-weight: normal; font-size: calc(100vw * (16/640)); letter-spacing: calc(100vw * (-0.96/640)); margin-right: calc(100vw * (10/640)); }
@@ -180,9 +177,6 @@
   .top_5_box .top_5_swipe .swiper-slide .top_5_item.vs .icon_vs { width: 66px; height: 66px; font-size: 27px; letter-spacing: -1.62; }
   .top_5_box .top_5_swipe .swiper-slide .top_5_item:after { border-radius: 30px; }
   .top_5_box .top_5_swipe .item_list { border-radius: 30px; padding: 23px 25px; }
-  .top_5_box .top_5_swipe .item_list:before, .top_5_box .top_5_swipe .item_list:after { width: calc(100% - 244px); right: 42px; height: 23px; }
-  .top_5_box .top_5_swipe .item_list:before { top: 17px; }
-  .top_5_box .top_5_swipe .item_list:after { bottom: 17px; }
   .top_5_box .top_5_swipe .item_list li { height: 58px; }
   .top_5_box .top_5_swipe .item_list li:not(:last-child) { margin-bottom: 21px; }
   .top_5_box .top_5_swipe .item_list li .item_index { width: 30px; height: 30px; font-size: 16px; letter-spacing: -0.96px; margin-right: 10px; }

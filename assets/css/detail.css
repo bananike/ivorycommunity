@@ -84,7 +84,7 @@
 .detail_wrapper .content_box .vote_communication .vote_wrapper { padding: calc(100vw * (50/640)) calc(100vw * (35/640)) calc(100vw * (25/640)); border-radius: calc(100vw * (30/640)); border: 0.5px solid #000; }
 .detail_wrapper .content_box .vote_communication .vote_wrapper .poll_wrapper { margin-bottom: calc(100vw * (15/640)); }
 .detail_wrapper .content_box .vote_communication .vote_wrapper .poll_wrapper .vote_type .type_box { background-color: #07f; }
-.detail_wrapper .content_box .vote_communication .vote_wrapper .vs_wrapper { margin-bottom: calc(100vw * (25/640)); }
+.detail_wrapper .content_box .vote_communication .vote_wrapper .vs_wrapper { position: relative; margin-bottom: calc(100vw * (25/640)); }
 .detail_wrapper .content_box .vote_communication .vote_wrapper .vs_wrapper .vote_type .type_box { background-color: #f09; }
 .detail_wrapper .content_box .vote_communication .vote_type { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; }
 .detail_wrapper .content_box .vote_communication .vote_type .type_box { width: calc(100vw * (160/640)); height: calc(100vw * (60/640)); display: flex; justify-content: center; align-items: center; border-radius: calc(100vw * (30/640)); color: #fff; font-family: gotham; font-weight: bold; font-size: calc(100vw * (27/640)); letter-spacing: calc(100vw * (-0.54/640)); }
@@ -129,7 +129,7 @@
 .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group { margin-top: calc(100vw * (27/640)); }
 .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group button { font-weight: 700; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); }
 .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group button:first-child { margin-right: calc(100vw * (18/640)); }
-.detail_wrapper .content_box .vote_communication .input_write_reason { height: 0; overflow: hidden; background-color: #5a5a5a; border-radius: calc(100vw * (30/640)); color: #fff; margin-top: 0; transition: height 0.3s, margin 0.3s; }
+.detail_wrapper .content_box .vote_communication .input_write_reason { position: absolute; width: calc(100vw * (490/640)); height: 0; left: 0; z-index: 2; overflow: hidden; background-color: #5a5a5a; border-radius: calc(100vw * (30/640)); color: #fff; margin-top: 0; transition: height 0.3s, margin 0.3s; }
 .detail_wrapper .content_box .vote_communication .input_write_reason .box_header { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; margin: calc(100vw * (25/640)) calc(100vw * (25/640)) 0; font-weight: 500; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); }
 .detail_wrapper .content_box .vote_communication .input_write_reason .box_header button { font-weight: inherit; font-size: inherit; letter-spacing: inherit; color: inherit; }
 .detail_wrapper .content_box .vote_communication .input_write_reason .text_input_box { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: flex-end; margin: calc(100vw * (15/640)) calc(100vw * (25/640)) calc(100vw * (30/640)); }
@@ -137,6 +137,7 @@
 .detail_wrapper .content_box .vote_communication .input_write_reason .text_input_box textarea::placeholder { font-size: inherit; letter-spacing: inherit; color: #d2d2d2; }
 .detail_wrapper .content_box .vote_communication .input_write_reason .text_input_box .btn_return_reason_text { width: calc(100vw * (70/640)); height: calc(100vw * (70/640)); margin-left: calc(100vw * (10/640)); font-weight: 500; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); border-radius: calc(100vw * (30/640)); background-color: #68c0b5; color: inherit; }
 .detail_wrapper .content_box .vote_communication .btn_vote { position: relative; width: 100%; height: calc(100vw * (80/640)); margin-top: calc(100vw * (60/640)); padding: 0; background-color: #68c0b5; color: #fff; }
+.detail_wrapper .content_box .vote_communication .btn_vote [disabled] { background-color: #a8a8a8; }
 .detail_wrapper .content_box .vote_communication .btn_vote span { font-size: calc(100vw * (30/640)); letter-spacing: calc(100vw * (-1.8/640)); }
 .detail_wrapper .content_box .vote_communication .btn_vote [class^='ivoryIcon-'] { position: absolute; font-size: calc(100vw * (29/640)); top: 50%; right: calc(100vw * (32/640)); transform: translateY(-50%); }
 

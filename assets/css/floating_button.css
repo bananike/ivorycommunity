@@ -7,7 +7,7 @@
   70% { -webkit-transform: translateX(0px) scale(1.1); transform: translateX(0px) scale(1.1); }
   100% { -webkit-transform: translatey(0px) scale(1); transform: translatey(0px) scale(1); opacity: 1; } }
 @keyframes slide_in { 0% { width: 0; }
-  100% { width: 255px; } }
+  100% { width: calc(100vw * (255 / 640)); } }
 .floating-container { position: fixed; width: calc(100vw * (150 / 640)); height: calc(100vw * (150 / 640)); bottom: 0; right: 0; margin: calc(100vw * (35 / 640)) calc(100vw * (25 / 640)); z-index: 110; }
 .floating-container.is-opened { height: calc(100vw * (423 / 640)); }
 
@@ -44,7 +44,9 @@
 
 .is-blur .blur-bg { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 109; opacity: 0.6; background: black; }
 
-@media (min-width: 640px) { .floating-container { width: 150px; height: 150px; margin: 35px 25px; }
+@media (min-width: 640px) { @keyframes slide_in { 0% { width: 0; }
+    100% { width: 255px; } }
+  .floating-container { width: 150px; height: 150px; margin: 35px 25px; }
   .floating-container.is-opened { height: 423px; }
   .floating-container.is-opened .floating-button { box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6); }
   .floating-container .element-container a { width: 110px; height: 110px; margin: 7.5px auto; }

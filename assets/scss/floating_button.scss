@@ -45,7 +45,7 @@
         width: 0;
     }
     100% {
-        width: 255px;
+        width: calc(100vw * (255 / 640));
     }
 }
 
@@ -228,6 +228,15 @@
 }
 
 @media (min-width: 640px) {
+    @keyframes slide_in {
+        0% {
+            width: 0;
+        }
+        100% {
+            width: 255px;
+        }
+    }
+
     .floating-container {
         width: 150px;
         height: 150px;
