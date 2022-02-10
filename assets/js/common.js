@@ -59,6 +59,22 @@ $(document).ready(function () {
         }
     );
 
+    // 이유모아보기 클릭(모달)
+    $(document).on('click', '.btn_show_total_reason', function (e) {
+        e.preventDefault();
+
+        modalOn($(this), '#totalReason');
+    });
+
+    // 모달 닫기
+    $(document).on(
+        'click',
+        '.modal_back, .modal_container .close_btn',
+        function () {
+            modalOff($(this));
+        }
+    );
+
     // 이미지 업로드 프리뷰
     $(document).on('change', '.input_img_uploader', function (e) {
         onClickPreviewImageUpload($(this), e);
@@ -170,6 +186,20 @@ $(document).ready(function () {
         }
     );
 
+    // 댓글상세 호출
+    $(document).on('click', '.view_more_rereply', function () {
+        callReplySlidePopup($(this));
+    });
+
+    // 댓글 닫기
+    $(document).on(
+        'click',
+        '.reply_slide_on .back_bg, #sliderReplyDetail .close_popup',
+        function () {
+            closeReplySlidePopup($(this));
+        }
+    );
+
     // 프로그레스 설정
     progressBar(
         $('.progress_box'),
@@ -263,6 +293,24 @@ $(document).ready(function () {
     $(document).on('change', '[name=report_type]', function () {
         onChangeReportType($(this));
     });
+
+    // 리플 펑션 모달 켜기
+    $(document).on('click', '.btn_more', function () {
+        onModalReplyFn($(this));
+    });
+
+    // 리플펄셩 닫기
+    $(document).on('click', '.fn_cancel, .reply_fn_container', function () {
+        offModalReplyFn($(this));
+    });
+
+    // 선택이유 코멘트 수정
+    $(document).on('click', '.btn_comment_modify', function () {
+        onReasonCommentModify($(this));
+    });
+    $(document).on('click', '.btn_comment_cancel', function () {
+        offReasonCommentModify($(this));
+    });
 });
 
 // --------------------------------------------
@@ -321,6 +369,7 @@ function onClickVoteFilterBtn(_this) {
 
 // 004. 모달
 function modalOn(_this, container) {
+    console.log(container);
     $('body').addClass('modal_on');
     $(container).css('display', 'block');
 }
@@ -731,6 +780,11 @@ function progressBar(_this, container, header) {
                     progress.height() >
                     (progress.width() / 100) * progressdata
                 ) {
+                    console.log(
+                        progress.height(),
+                        progress.width(),
+                        progressdata
+                    );
                     foreground.css({ 'min-width': 0, 'border-radius': '50%' });
                 }
             } else {
@@ -786,6 +840,10 @@ function commentPlaceholder(_this) {
 // 028. 대댓글 클릭
 function onClickRereply(_this) {
     var wrapper = _this.closest('.reply_wrapper');
+    console.log(wrapper.length);
+    if (wrapper.length <= 0) {
+        wrapper = _this.closest('.reply_detail');
+    }
     var targetReply =
         '@' +
         _this
@@ -956,6 +1014,16 @@ function selectVSCard(_this) {
             }, 150);
             arrowbox.addClass(select);
         }
+    } else {
+        inputbox.css({
+            height: 0,
+            'margin-top': 0,
+            'margin-bottom': 0,
+        });
+        inputbox.removeClass('is_opened');
+        inputbox.removeClass('a b');
+        arrowbox.prop('hidden', true);
+        arrowbox.removeClass('a b');
     }
 }
 
@@ -1047,4 +1115,64 @@ function onChangeReportType(_this) {
     } else {
         btn.prop('disabled', true);
     }
+}
+
+// 039. 리플상세 호출
+function callReplySlidePopup(_this) {
+    var body = $('body');
+    var target = $('#sliderReplyDetail');
+
+    body.addClass('reply_slide_on');
+}
+
+// 040. 리플상세 닫기
+function closeReplySlidePopup(_this) {
+    var body = $('body');
+
+    body.removeClass('reply_slide_on');
+}
+
+// 041. 리플 펑션 모달
+function onModalReplyFn(_this) {
+    var wrapper = _this.closest('.reply_wrapper');
+    if (wrapper.length <= 0) {
+        wrapper = _this.closest('.reply_detail');
+    }
+    $('body').addClass('modal_on');
+
+    var modal = wrapper.find('.modal_reply_fn');
+    modal.css('display', 'block');
+}
+
+// 042. 리플 펑션모달 닫기
+function offModalReplyFn(_this) {
+    var wrapper = _this.closest('.modal_reply_fn');
+
+    wrapper.addClass('closing');
+
+    setTimeout(function () {
+        wrapper.css('display', 'none');
+        wrapper.removeClass('closing');
+        $('body').removeClass('modal_on');
+    }, 300);
+}
+
+// 043. 선택이유 코멘트 수정
+function onReasonCommentModify(_this) {
+    var box = _this.closest('.text_comment_input');
+    box.addClass('editing');
+    box.find('.editable_text').attr('contenteditable', true);
+    _this.prop('hidden', true);
+    _this.siblings('.btn_comment_save').prop('hidden', false);
+    _this.siblings('.btn_comment_cancel').prop('hidden', false);
+}
+
+// 044. 선택이유 코멘트 닫기
+function offReasonCommentModify(_this) {
+    var box = _this.closest('.text_comment_input');
+    box.removeClass('editing');
+    box.find('.editable_text').attr('contenteditable', false);
+    _this.prop('hidden', true);
+    _this.siblings('.btn_comment_save').prop('hidden', true);
+    _this.siblings('.btn_comment_modify').prop('hidden', false);
 }

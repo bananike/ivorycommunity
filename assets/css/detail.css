@@ -15,6 +15,8 @@
   100% { opacity: 0; } }
 @keyframes bgToneDown { 0% { background-color: rgba(0, 0, 0, 0); }
   100% { background-color: rgba(0, 0, 0, 0.6); } }
+@keyframes bgToneUp { 0% { background-color: rgba(0, 0, 0, 0.6); }
+  100% { background-color: rgba(0, 0, 0, 0); } }
 @keyframes scaleUp { 0% { transform: scale(0); }
   100% { transform: scale(1); } }
 @keyframes scaleUpdown { 0% { transform: scale(0); }
@@ -28,7 +30,11 @@
   100% { transform: translateY(0) scaleY(1); } }
 @keyframes vs_arrow { 0% { transform: scale(0); }
   100% { transform: scale(1); } }
-.detail_header { position: fixed; top: 0; left: 0; width: calc(100vw * (640/640)); z-index: 10; }
+@keyframes replyFnOn { 0% { transform: translateY(100%); }
+  100% { transform: translateY(0%); } }
+@keyframes replyFnOff { 0% { transform: translateY(0%); }
+  100% { transform: translateY(110%); } }
+.detail_header { position: fixed; top: 0; left: 50%; width: calc(100vw * (640/640)); z-index: 10; transform: translateX(-50%); }
 .detail_header .btn_area { height: calc(100vw * (135/640)); background-color: #fff; padding: 0 calc(100vw * (40/640)); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; }
 .detail_header .btn_area .close_popup span { font-size: calc(100vw * (28/640)); }
 .detail_header .btn_area .btn_group { display: flex; flex-direction: row; flex-wrap: nowrap; }
@@ -39,7 +45,7 @@
 .detail_header .btn_area .btn_group .btn_heart.clicked .ivoryIcon-heart { display: block; color: #f00; }
 .detail_header .btn_area .btn_group [class^='ivoryIcon-'] { font-size: calc(100vw * (40/640)); }
 
-.dummy_container { position: fixed; height: 100vh; width: 100%; z-index: 10; background-color: #fff; }
+.dummy_container { position: fixed; height: 100vh; max-width: 640px; width: 100%; z-index: 10; background-color: #fff; }
 .dummy_container .dummy_title { margin: 0 calc(100vw * (40/640)); width: calc(100vw * (200/640)); height: calc(100vw * (35/640)); border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); margin-bottom: calc(100vw * (25/640)); }
 .dummy_container .dummy_title_content { margin: 0 calc(100vw * (40/640)); height: calc(100vw * (30/640)); border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); }
 .dummy_container .dummy_title_content:not(:last-child) { margin-bottom: calc(100vw * (15/640)); }
@@ -141,7 +147,7 @@
 .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group { margin-top: calc(100vw * (27/640)); }
 .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group button { font-weight: 700; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); }
 .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group button:first-child { margin-right: calc(100vw * (18/640)); }
-.detail_wrapper .content_box .vote_communication .input_write_reason { margin-top: calc(100vw * (30/640)); height: 0; left: 0; top: calc(100vw * (360/640)); z-index: 2; overflow: hidden; background-color: #5a5a5a; border-radius: calc(100vw * (30/640)); color: #fff; margin-top: 0; transition: height 0.3s, margin 0.3s; }
+.detail_wrapper .content_box .vote_communication .input_write_reason { height: 0; left: 0; top: calc(100vw * (360/640)); z-index: 2; overflow: hidden; background-color: #5a5a5a; border-radius: calc(100vw * (30/640)); color: #fff; margin-top: 0; transition: height 0.3s, margin 0.3s; }
 .detail_wrapper .content_box .vote_communication .input_write_reason .box_header { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; margin: calc(100vw * (25/640)) calc(100vw * (25/640)) 0; font-weight: 500; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); }
 .detail_wrapper .content_box .vote_communication .input_write_reason .box_header button { font-weight: inherit; font-size: inherit; letter-spacing: inherit; color: inherit; }
 .detail_wrapper .content_box .vote_communication .input_write_reason .text_input_box { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: flex-end; margin: calc(100vw * (15/640)) calc(100vw * (25/640)) calc(100vw * (30/640)); }
@@ -226,7 +232,7 @@
   .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group { margin-top: 27px; }
   .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group button { font-size: 20px; letter-spacing: -1.2px; }
   .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group button:first-child { margin-right: 18px; }
-  .detail_wrapper .content_box .vote_communication .input_write_reason { margin-top: 30px; top: 360px; border-radius: 30px; }
+  .detail_wrapper .content_box .vote_communication .input_write_reason { margin-top: 0px; top: 360px; border-radius: 30px; }
   .detail_wrapper .content_box .vote_communication .input_write_reason .box_header { margin: 25px 25px 0; font-size: 20px; letter-spacing: -1.2px; }
   .detail_wrapper .content_box .vote_communication .input_write_reason .text_input_box { margin: 15px 25px 30px; }
   .detail_wrapper .content_box .vote_communication .input_write_reason .text_input_box textarea { height: 70px; padding: 16.5px 30px; border-radius: 30px; font-size: 23px; line-height: 37px; letter-spacing: -1.38px; }

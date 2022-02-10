@@ -1,4 +1,40 @@
 @charset "UTF-8";
+@keyframes add_btn_scale { 0% { transform: scale(1); }
+  25% { transform: scale(0.95); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); } }
+@keyframes add_btn_rotate { 0% { transform: rotateZ(0deg); }
+  70% { transform: rotateZ(90deg); }
+  100% { transform: rotateZ(90deg); } }
+@keyframes modal_on { 0% { left: 50%; transform: translateY(100%) translateX(-50%); }
+  100% { left: 50%; transform: translateY(0%) translateX(-50%); } }
+@keyframes modal_off { 0% { left: 50%; transform: translateY(0%) translateX(-50%); }
+  100% { left: 50%; transform: translateY(100%) translateX(-50%); } }
+@keyframes backdrop_on { 0% { opacity: 0; }
+  100% { opacity: 1; } }
+@keyframes backdrop_off { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+@keyframes bgToneDown { 0% { background-color: rgba(0, 0, 0, 0); }
+  100% { background-color: rgba(0, 0, 0, 0.6); } }
+@keyframes bgToneUp { 0% { background-color: rgba(0, 0, 0, 0.6); }
+  100% { background-color: rgba(0, 0, 0, 0); } }
+@keyframes scaleUp { 0% { transform: scale(0); }
+  100% { transform: scale(1); } }
+@keyframes scaleUpdown { 0% { transform: scale(0); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); } }
+@keyframes medal { 0% { transform: translateY(0) scaleY(1); }
+  15% { transform: translateY(0) scaleY(0.8); }
+  35% { transform: translateY(-25%) scaleY(1.1); }
+  55% { transform: translateY(0) scaleY(0.9); }
+  75% { transform: translateY(-15%) scaleY(1.05); }
+  100% { transform: translateY(0) scaleY(1); } }
+@keyframes vs_arrow { 0% { transform: scale(0); }
+  100% { transform: scale(1); } }
+@keyframes replyFnOn { 0% { transform: translateY(100%); }
+  100% { transform: translateY(0%); } }
+@keyframes replyFnOff { 0% { transform: translateY(0%); }
+  100% { transform: translateY(110%); } }
 .reply_wrapper { margin-top: calc(100vw * (60/640)); }
 
 .reply_header { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; padding: 0 calc(100vw * (40/640)); }
@@ -47,8 +83,8 @@
 .rereply_container .reply_item.delete_rereply:after { display: block; content: '삭제된 댓글입니다'; font-weight: 500; font-size: calc(100vw * (18/640)); letter-spacing: calc(100vw * (-1.08/640)); color: #a8a8a8; }
 .rereply_container .reply_item.delete_rereply > * { display: none !important; }
 
-.reply_comment_input_box { position: fixed; right: 0; bottom: 0; width: 100%; z-index: 20; transform-origin: bottom; transform: translateY(100%); padding: calc(100vw * (30/640)) calc(100vw * (40/640)); background-color: #000; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; transition: transform 0.3s; }
-.reply_comment_input_box.on_slide { transform: translateY(0%); transition: transform 0.3s; }
+.reply_comment_input_box { position: fixed; left: 50%; bottom: 0; width: 100%; z-index: 20; transform-origin: bottom; transform: translate(-50%, 100%); padding: calc(100vw * (30/640)) calc(100vw * (40/640)); background-color: #000; display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; transition: transform 0.3s; max-width: 640px; }
+.reply_comment_input_box.on_slide { transform: translate(-50%, 0%); transition: transform 0.3s; }
 .reply_comment_input_box .text_input_box { position: relative; padding: calc(100vw * (16.5/640)) calc(100vw * (30/640)); border-radius: calc(100vw * (30/640)); margin-right: calc(100vw * (10/640)); background-color: #fff; flex: 1; font-weight: 500; font-size: calc(100vw * (23/640)); line-height: calc(100vw * (37/640)); letter-spacing: calc(100vw * (-1.2/640)); }
 .reply_comment_input_box .text_input_box > span { outline: none !important; }
 .reply_comment_input_box .text_input_box.is_focus:before { display: none; }
@@ -56,7 +92,25 @@
 .reply_comment_input_box .text_input_box .target { margin-right: calc(100vw * (10/640)); }
 .reply_comment_input_box .btn_return_comment_text { width: calc(100vw * (70/640)); min-height: calc(100vw * (70/640)); font-weight: 500; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); border-radius: calc(100vw * (30/640)); background-color: #68c0b5; color: #fff; }
 
-.reply_detail { z-index: 2010; }
+body.reply_slide_on .slide_popup_reply { transform: translateX(0); transition: transform 0.3s; }
+body.reply_slide_on .back_bg { position: fixed; width: 100vw; height: 100vh; z-index: 1999; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); }
+
+.reply_detail { position: fixed; top: 0; right: 0; z-index: 2010; background-color: #fff; height: 100vh; width: 100vw; transform-origin: right; transform: translateX(100%); transition: transform 0.3s; max-width: 640px; }
+.reply_detail .header_box { padding: 0 calc(100vw * (40/640)); position: absolute; width: 100%; height: calc(100vw * (132/640)); display: flex; justify-content: center; align-items: center; background-color: #fff; z-index: 2; }
+.reply_detail .header_box .close_popup { position: absolute; top: calc(100vw * (40/640)); left: calc(100vw * (40/640)); }
+.reply_detail .header_box .close_popup [class^='ivoryIcon-'] { font-size: calc(100vw * (28/640)); color: #68c0b5; }
+.reply_detail .reply_container { padding: calc(100vw * (132/640)) calc(100vw * (40/640)) 0; border-top: 0; max-height: calc(100vh - calc(100vw * (132/640))); overflow: auto; }
+.reply_detail .reply_comment_input_box { transform: translate(-50%, 0); }
+
+.modal_reply_fn { position: fixed; display: none; z-index: 4000; width: 100%; height: 100vh; top: 0; left: 0; }
+.modal_reply_fn.closing .background { animation: bgToneUp 0.3s forwards; }
+.modal_reply_fn.closing .reply_fn_container { animation: replyFnOff 0.3s forwards; }
+.modal_reply_fn .background { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0.6; background-color: #000; animation: bgToneDown 0.3s forwards; }
+.modal_reply_fn .reply_fn_container { position: relative; width: 100%; height: 100%; max-width: 640px; margin: 0 auto; top: 0; left: 0; padding: calc(100vw * (40/640)); display: flex; justify-content: center; align-items: flex-end; transform-origin: bottom; transform: translateY(100%); animation: replyFnOn 0.3s forwards; }
+.modal_reply_fn .reply_fn_box { background-color: #fff; position: relative; width: 100%; padding: calc(100vw * (20/640)); border-radius: calc(100vw * (30/640)); }
+.modal_reply_fn .reply_fn_box ul li button { padding: calc(100vw * (50/640)); width: 100%; text-align: center; font-weight: 500; font-size: calc(100vw * (30/640)); letter-spacing: calc(100vw * (-1.8/640)); border-bottom: 1px solid #bcbcbc; }
+.modal_reply_fn .reply_fn_box ul li button.fn_report { color: #f00; }
+.modal_reply_fn .reply_fn_box .fn_cancel { width: calc(100vw * (470/640)); height: calc(100vw * (67/640)); margin: 0 auto; margin-top: calc(100vw * (60/640)); margin-bottom: calc(100vw * (20/640)); border-radius: calc(100vw * (30/640)); display: flex; justify-content: center; align-items: center; font-weight: 500; font-size: calc(100vw * (25/640)); letter-spacing: calc(100vw * (-1.5/640)); background-color: #000; color: #fff; }
 
 @media (min-width: 640px) { .reply_wrapper { margin-top: 60px; }
   .reply_header { padding: 0 40px; }
@@ -87,6 +141,14 @@
   .reply_comment_input_box .text_input_box { padding: 16.5px 30px; border-radius: 30px; margin-right: 10px; font-size: 23px; line-height: 37px; letter-spacing: -1.2px; }
   .reply_comment_input_box .text_input_box:before { top: 17px; left: 30px; }
   .reply_comment_input_box .text_input_box .target { margin-right: 10px; }
-  .reply_comment_input_box .btn_return_comment_text { width: 70px; min-height: 70px; font-size: 20px; letter-spacing: -1.2px; border-radius: 30px; } }
+  .reply_comment_input_box .btn_return_comment_text { width: 70px; min-height: 70px; font-size: 20px; letter-spacing: -1.2px; border-radius: 30px; }
+  .reply_detail .header_box { padding: 0 40px; height: 132px; }
+  .reply_detail .header_box .close_popup { top: 40px; left: 40px; }
+  .reply_detail .header_box .close_popup [class^='ivoryIcon-'] { font-size: 28px; }
+  .reply_detail .reply_container { padding: 132px 40px 0; max-height: calc(100vh -132px); }
+  .modal_reply_fn .reply_fn_container { padding: 40px; }
+  .modal_reply_fn .reply_fn_box { padding: 20px; border-radius: 30px; }
+  .modal_reply_fn .reply_fn_box ul li button { padding: 50px; font-size: 30px; letter-spacing: -1.8px; }
+  .modal_reply_fn .reply_fn_box .fn_cancel { width: 470px; height: 67px; margin-top: 60px; margin-bottom: 20px; border-radius: 30px; font-size: 25px; letter-spacing: -1.5px; } }
 
 /*# sourceMappingURL=reply.css.map */

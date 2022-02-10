@@ -173,3 +173,92 @@
         }
     }
 }
+
+@media (min-width: $media_base) {
+    .modal_report {
+        .report_container {
+            width: 560px;
+            padding: 45px;
+            border-radius: 30px;
+
+            .header_box {
+                margin-top: 10px;
+
+                h2 {
+                    span {
+                        font-size: 32px;
+                        letter-spacing: -1.92px;
+
+                        &[class^='ivoryIcon-'] {
+                            font-size: 40px;
+                            margin-top: -10px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+                .btn_close_modal {
+                    font-size: 32px;
+                }
+            }
+
+            .guide_text {
+                font-size: 20px;
+                letter-spacing: -1.2px;
+            }
+
+            .report_type_wrapper {
+                margin-top: 25px;
+
+                .report_type_box {
+                    margin-top: 25px;
+
+                    li {
+                        width: calc(50% - 5px);
+                        margin-bottom: 20px;
+
+                        &:nth-child(2n) {
+                            margin-left: 10px;
+                        }
+
+                        input[type='radio'] {
+                            + .fake_radio {
+                                height: 54px;
+                                border-radius: 30px;
+                                font-size: 20px;
+                                letter-spacing: -1.2px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .report_text_wrapper {
+                margin-top: 25px;
+
+                .textarea_report {
+                    margin-top: 15px;
+                    padding: 35px;
+                    border-radius: 30px;
+                    font-size: 20px;
+                    line-height: 33px;
+                    letter-spacing: -1.2px;
+                }
+            }
+
+            .warning_text {
+                margin-top: 20px;
+                font-size: 18px;
+                letter-spacing: -1.08px;
+            }
+
+            .btn_submit {
+                height: 67px;
+                margin-top: 30px;
+                border-radius: 30px;
+                font-size: 25px;
+                letter-spacing: -1.5px;
+            }
+        }
+    }
+}

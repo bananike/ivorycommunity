@@ -1,0 +1,406 @@
+@import 'variable';
+
+.total_reason {
+    z-index: 3000;
+}
+
+.total_reason_box {
+    background-color: $color_white;
+
+    .modal_header {
+        height: cal($e: 146);
+
+        .close_btn {
+            left: cal($e: 60);
+            top: cal($e: 60);
+        }
+
+        h2 {
+            font-weight: 700;
+            font-size: cal($e: 32);
+            letter-spacing: cal($e: -1.92);
+        }
+    }
+
+    .modal_content {
+        padding: 0;
+        padding-top: 0;
+        margin-top: cal($e: 146);
+    }
+
+    .total_info {
+        background-color: $color_transparentsecondary;
+        padding: cal($e: 40);
+        margin: 0 cal($e: 60);
+        border-radius: cal($e: 30);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+
+        p {
+            font-weight: 500;
+            font-size: cal($e: 25);
+            line-height: cal($e: 35);
+            letter-spacing: cal($e: -0.5);
+
+            &.percentage {
+                font-family: gotham;
+                font-weight: bold;
+                font-size: cal($e: 90);
+                line-height: cal($e: 100);
+                letter-spacing: cal($e: -1.8);
+                color: $color_secondary;
+                margin-top: cal($e: 10);
+                margin-bottom: cal($e: 10);
+            }
+
+            .vote_selecter {
+                color: $color_secondary;
+            }
+        }
+
+        .text {
+            margin-top: cal($e: 60);
+            font-weight: 300;
+            font-size: cal($e: 22);
+            line-height: cal($e: 38);
+            letter-spacing: cal($e: -1.32);
+        }
+    }
+
+    .progress_container {
+        margin: 0 cal($e: 60);
+        margin-top: cal($e: 60);
+
+        .flex_box {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+
+            .progress_left {
+                margin-right: cal($e: 10);
+                text-align: right;
+
+                .progress_box .text {
+                    justify-content: flex-end;
+                }
+            }
+            .progress_right {
+                text-align: left;
+
+                .progress_box .text {
+                    justify-content: flex-start;
+                }
+            }
+            .progress_left,
+            .progress_right {
+                width: 50%;
+            }
+        }
+
+        .percentage {
+            .percent_value {
+                font-family: gotham;
+                font-weight: bold;
+                font-size: cal($e: 40);
+                letter-spacing: cal($e: -2.4);
+                margin: 0 cal($e: 17) cal($e: 5);
+
+                $types: (
+                    'female': #ff97ba,
+                    'male': #80a9d8,
+                    'gen_20': #68c0b5,
+                    'gen_30': #c2a0e1,
+                    'gen_40': #f6c88c,
+                    'gen_50': #c9c496,
+                );
+                @each $key, $value in $types {
+                    &.#{$key} {
+                        color: #{$value};
+                    }
+                }
+            }
+        }
+
+        .progress_box {
+            width: cal($e: 255);
+            height: cal($e: 40);
+
+            .text {
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                top: 0;
+                left: 0;
+                margin: 0 cal($e: 16);
+                font-weight: 500;
+                font-size: cal($e: 22);
+                letter-spacing: cal($e: -1.32);
+                color: $color_white;
+            }
+        }
+
+        .text_box {
+            margin-top: cal($e: 35);
+            margin-left: cal($e: -5);
+            text-align: center;
+            white-space: nowrap;
+
+            span {
+                font-weight: 500;
+                font-size: cal($e: 25);
+                letter-spacing: cal($e: -1.5);
+
+                &[class^='ivoryIcon-quotes'] {
+                    position: relative;
+                    font-size: cal($e: 35);
+                    top: cal($e: 10);
+                    display: inline-block;
+                    width: cal($e: 30);
+                }
+
+                &[class^='strong'] {
+                    font-weight: 700;
+                    font-size: cal($e: 30);
+                }
+
+                &.strong_first {
+                    color: $color_primary;
+                }
+                &.strong_second {
+                    color: $color_female;
+                }
+            }
+        }
+    }
+
+    .total_reason_comment {
+        margin-top: cal($e: 65);
+        background-color: #f6f6f6;
+        padding: cal($e: 60);
+
+        ul li {
+            &:not(:last-child) {
+                margin-bottom: cal($e: 30);
+                padding-bottom: cal($e: 30);
+                border-bottom: 0.5px solid $color_darkgray;
+            }
+        }
+
+        .text_comment_input {
+            position: relative;
+
+            .editable_text {
+                position: relative;
+                z-index: 2;
+                font-weight: 400;
+                font-size: cal($e: 24);
+                line-height: cal($e: 35);
+                letter-spacing: cal($e: -1.44);
+            }
+
+            .btn_group {
+                position: relative;
+                z-index: 2;
+                margin-top: cal($e: 35);
+                display: none;
+                width: 100%;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            &.my_comment {
+                &:before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    z-index: 2;
+                    width: calc(100% + #{cal($e: 40)});
+                    height: calc(100% + #{cal($e: 40)});
+                    top: cal($e: -20);
+                    left: cal($e: -20);
+                    border-radius: cal($e: 30);
+                    background-color: $color_white;
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                }
+                &.editing:before {
+                    opacity: 1;
+                    transition: opacity 0.3s;
+                }
+
+                .btn_group {
+                    display: flex;
+
+                    [class^='btn_comment'] {
+                        font-weight: 700;
+                        font-size: cal($e: 22);
+                        line-height: cal($e: 25);
+                        letter-spacing: cal($e: -1.32);
+
+                        &:not(:first-child) {
+                            margin-left: cal($e: 40);
+                        }
+                    }
+
+                    .btn_comment_modify {
+                        color: $color_primary;
+                    }
+                    .btn_comment_save,
+                    .btn_comment_cancel {
+                        color: $color_secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: $media_base) {
+    .total_reason_box {
+        .modal_header {
+            height: 146px;
+
+            .close_btn {
+                left: 60px;
+                top: 60px;
+            }
+
+            h2 {
+                font-size: 32px;
+                letter-spacing: -1.92px;
+            }
+        }
+
+        .modal_content {
+            margin-top: 146px;
+        }
+
+        .total_info {
+            padding: 40px;
+            margin: 0 60px;
+            border-radius: 30px;
+
+            p {
+                font-size: 25px;
+                line-height: 35px;
+                letter-spacing: -0.5px;
+
+                &.percentage {
+                    font-size: 90px;
+                    line-height: 100px;
+                    letter-spacing: -1.8px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                }
+            }
+
+            .text {
+                margin-top: 60px;
+                font-size: 22px;
+                line-height: 38px;
+                letter-spacing: -1.32px;
+            }
+        }
+
+        .progress_container {
+            margin: 0 60px;
+            margin-top: 60px;
+
+            .flex_box {
+                .progress_left {
+                    margin-right: 10px;
+                }
+            }
+
+            .percentage {
+                .percent_value {
+                    font-size: 40px;
+                    letter-spacing: -2.4px;
+                    margin: 0 17px 5px;
+                }
+            }
+
+            .progress_box {
+                width: 255px;
+                height: 40px;
+
+                .text {
+                    margin: 0 16px;
+                    font-size: 22px;
+                    letter-spacing: -1.32px;
+                }
+            }
+
+            .text_box {
+                margin-top: 35px;
+                margin-left: -5px;
+
+                span {
+                    font-size: 25px;
+                    letter-spacing: -1.5px;
+
+                    &[class^='ivoryIcon-quotes'] {
+                        font-size: 35px;
+                        top: 10px;
+                        width: 30px;
+                    }
+
+                    &[class^='strong'] {
+                        font-size: 30px;
+                    }
+                }
+            }
+        }
+
+        .total_reason_comment {
+            margin-top: 65px;
+            padding: 60px;
+
+            ul li {
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                    padding-bottom: 30px;
+                }
+            }
+
+            .text_comment_input {
+                .editable_text {
+                    font-size: 24px;
+                    line-height: 35px;
+                    letter-spacing: -1.44px;
+                }
+
+                .btn_group {
+                    margin-top: 35px;
+                }
+
+                &.my_comment {
+                    &:before {
+                        width: calc(100% + 40px);
+                        height: calc(100% + 40px);
+                        top: -20px;
+                        left: -20px;
+                        border-radius: 30px;
+                    }
+
+                    .btn_group {
+                        [class^='btn_comment'] {
+                            font-size: 22px;
+                            line-height: 25px;
+                            letter-spacing: -1.32px;
+
+                            &:not(:first-child) {
+                                margin-left: 40px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

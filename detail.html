@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="assets/css/reply.css" />
         <link rel="stylesheet" href="assets/css/share.css" />
         <link rel="stylesheet" href="assets/css/report.css" />
+        <link rel="stylesheet" href="assets/css/total_reason.css" />
 
         <!-- alert -->
         <link rel="stylesheet" href="assets/css/alert.css" />
@@ -560,7 +561,6 @@
                         type="button"
                         id="btnVote"
                         class="button fill btn_vote"
-                        disabled
                     >
                         <span>투표하기</span>
                         <span class="ivoryIcon-check"></span>
@@ -978,6 +978,42 @@
                         </button>
                     </div>
                     <!-- 댓글 입력 폼 -->
+
+                    <!-- 댓글용 펑션메뉴 -->
+                    <div class="modal_reply_fn">
+                        <div class="background"></div>
+
+                        <div class="reply_fn_container">
+                            <div class="reply_fn_box">
+                                <ul>
+                                    <li>
+                                        <button class="fn_write" type="button">
+                                            댓글쓰기
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="fn_modify" type="button">
+                                            수정하기
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="fn_delete" type="button">
+                                            삭제하기
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="fn_report" type="button">
+                                            신고하기
+                                        </button>
+                                    </li>
+                                </ul>
+                                <button class="fn_cancel" type="button">
+                                    취소
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 댓글용 펑션메뉴 -->
                 </div>
                 <!-- 댓글 영역 -->
             </div>
@@ -985,7 +1021,10 @@
         </div>
 
         <!-- 결과 슬라이드 -->
-        <div id="sliderVoteResult" class="slide_popup vote_result_wrapper">
+        <div
+            id="sliderVoteResult"
+            class="slide_popup_result vote_result_wrapper"
+        >
             <div class="header_box scroll_header">
                 <div class="btn_area">
                     <button type="button" class="close_popup">
@@ -999,7 +1038,7 @@
                         <button type="button" class="btn_share_fadeModal">
                             <span class="ivoryIcon-share"></span>
                         </button>
-                        <button type="button">
+                        <button type="button" class="btn_report_fadeModal">
                             <span class="ivoryIcon-report"></span>
                         </button>
                         <button type="button">
@@ -1172,7 +1211,7 @@
                                         <div class="show_reasons">
                                             <button
                                                 type="button"
-                                                class="button outline"
+                                                class="button outline btn_show_total_reason"
                                             >
                                                 <span
                                                     >선택한 이유 모아보기</span
@@ -1231,7 +1270,7 @@
                                         <div class="show_reasons">
                                             <button
                                                 type="button"
-                                                class="button outline"
+                                                class="button outline btn_show_total_reason"
                                             >
                                                 <span
                                                     >선택한 이유 모아보기</span
@@ -1284,7 +1323,7 @@
                                         <div class="show_reasons">
                                             <button
                                                 type="button"
-                                                class="button outline"
+                                                class="button outline btn_show_total_reason"
                                             >
                                                 <span
                                                     >선택한 이유 모아보기</span
@@ -1350,7 +1389,7 @@
                                         <div class="show_reasons">
                                             <button
                                                 type="button"
-                                                class="button outline"
+                                                class="button outline btn_show_total_reason"
                                             >
                                                 <span
                                                     >선택한 이유 모아보기</span
@@ -1416,7 +1455,7 @@
                                     <div class="show_reasons">
                                         <button
                                             type="button"
-                                            class="button outline"
+                                            class="button outline btn_show_total_reason"
                                         >
                                             <span>선택한 이유 모아보기</span>
                                             <span
@@ -1470,7 +1509,7 @@
                                     <div class="show_reasons">
                                         <button
                                             type="button"
-                                            class="button outline"
+                                            class="button outline btn_show_total_reason"
                                         >
                                             <span>선택한 이유 모아보기</span>
                                             <span
@@ -2018,6 +2057,42 @@
                         </button>
                     </div>
                     <!-- 댓글 입력 폼 -->
+
+                    <!-- 댓글용 펑션메뉴 -->
+                    <div class="modal_reply_fn">
+                        <div class="background"></div>
+
+                        <div class="reply_fn_container">
+                            <div class="reply_fn_box">
+                                <ul>
+                                    <li>
+                                        <button class="fn_write" type="button">
+                                            댓글쓰기
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="fn_modify" type="button">
+                                            수정하기
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="fn_delete" type="button">
+                                            삭제하기
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button class="fn_report" type="button">
+                                            신고하기
+                                        </button>
+                                    </li>
+                                </ul>
+                                <button class="fn_cancel" type="button">
+                                    취소
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 댓글용 펑션메뉴 -->
                 </div>
                 <!-- 댓글 영역 -->
             </div>
@@ -2140,9 +2215,9 @@
         <!-- 신고하기 -->
 
         <!-- 댓글상세보기 -->
-        <div class="reply_detail slide_popup">
+        <div id="sliderReplyDetail" class="reply_detail slide_popup_reply">
             <div class="header_box">
-                <button type="button" class="back">
+                <button type="button" class="close_popup">
                     <span class="ivoryIcon-arrow_left"></span>
                 </button>
                 <h2>댓글 상세보기</h2>
@@ -2163,9 +2238,9 @@
                         </div>
                     </div>
                     <div class="reply_text">
-                        Lorem ipsum, dolor sit amet consectetur
-                        adipisicing elit. Dolores, at quam dolor
-                        obcaecati exercitationem nostrum.
+                        Lorem ipsum, dolor sit amet consectetur adipisicing
+                        elit. Dolores, at quam dolor obcaecati exercitationem
+                        nostrum.
                     </div>
                     <div class="reply_footer">
                         <div class="last_datetime is_new">
@@ -2173,26 +2248,14 @@
                             <span class="ivoryIcon-new"></span>
                         </div>
                         <div class="btn_group">
-                            <button
-                                type="button"
-                                class="btn_heart clicked"
-                            >
-                                <span
-                                    class="ivoryIcon-heart"
-                                ></span>
-                                <span
-                                    class="ivoryIcon-heart_outline"
-                                ></span>
+                            <button type="button" class="btn_heart clicked">
+                                <span class="ivoryIcon-heart"></span>
+                                <span class="ivoryIcon-heart_outline"></span>
                                 <span>좋아요</span>
                                 <span class="heart_count">5</span>
                             </button>
-                            <button
-                                type="button"
-                                class="btn_rereply"
-                            >
-                                <span
-                                    class="ivoryIcon-reply"
-                                ></span>
+                            <button type="button" class="btn_rereply">
+                                <span class="ivoryIcon-reply"></span>
                                 <span>대댓글</span>
                             </button>
                             <button type="button" class="btn_more">
@@ -2204,21 +2267,14 @@
                 <!-- reply item -->
 
                 <!-- 대댓글 -->
-                <div class="rereply_container has_more_reply">
-                    <button type="button" class="view_more_rereply">
-                        + 이전 대댓글
-                        <span class="count_rereply">18</span>개 더
-                        보기...
-                    </button>
+                <div class="rereply_container">
                     <ul class="rereply_list">
                         <!-- reply item -->
                         <li class="reply_item is_writer">
                             <div class="reply_info">
                                 <div class="writer">
                                     <span>투표 작성자</span>
-                                    <span
-                                        class="ivoryIcon-write"
-                                    ></span>
+                                    <span class="ivoryIcon-write"></span>
                                 </div>
                                 <div class="reply_count">
                                     <span>대댓글</span>
@@ -2226,52 +2282,33 @@
                                 </div>
                             </div>
                             <div class="reply_text">
-                                Lorem ipsum, dolor sit amet
-                                consectetur adipisicing elit.
-                                Dolores, at quam dolor obcaecati
-                                exercitationem nostrum.
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Dolores, at quam dolor
+                                obcaecati exercitationem nostrum.
                             </div>
                             <div class="reply_footer">
                                 <div class="last_datetime is_new">
-                                    <span class="datetime"
-                                        >12:30</span
-                                    >
-                                    <span
-                                        class="ivoryIcon-new"
-                                    ></span>
+                                    <span class="datetime">12:30</span>
+                                    <span class="ivoryIcon-new"></span>
                                 </div>
                                 <div class="btn_group">
                                     <button
                                         type="button"
                                         class="btn_heart clicked"
                                     >
-                                        <span
-                                            class="ivoryIcon-heart"
-                                        ></span>
+                                        <span class="ivoryIcon-heart"></span>
                                         <span
                                             class="ivoryIcon-heart_outline"
                                         ></span>
                                         <span>좋아요</span>
-                                        <span class="heart_count"
-                                            >5</span
-                                        >
+                                        <span class="heart_count">5</span>
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="btn_rereply"
-                                    >
-                                        <span
-                                            class="ivoryIcon-reply"
-                                        ></span>
+                                    <button type="button" class="btn_rereply">
+                                        <span class="ivoryIcon-reply"></span>
                                         <span>대댓글</span>
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="btn_more"
-                                    >
-                                        <span
-                                            class="ivoryIcon-more"
-                                        ></span>
+                                    <button type="button" class="btn_more">
+                                        <span class="ivoryIcon-more"></span>
                                     </button>
                                 </div>
                             </div>
@@ -2283,9 +2320,7 @@
                             <div class="reply_info">
                                 <div class="writer">
                                     <span>투표 작성자</span>
-                                    <span
-                                        class="ivoryIcon-write"
-                                    ></span>
+                                    <span class="ivoryIcon-write"></span>
                                 </div>
                                 <div class="reply_count">
                                     <span>대댓글</span>
@@ -2293,52 +2328,30 @@
                                 </div>
                             </div>
                             <div class="reply_text">
-                                Lorem ipsum, dolor sit amet
-                                consectetur adipisicing elit.
-                                Dolores, at quam dolor obcaecati
-                                exercitationem nostrum.
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Dolores, at quam dolor
+                                obcaecati exercitationem nostrum.
                             </div>
                             <div class="reply_footer">
                                 <div class="last_datetime">
-                                    <span class="datetime"
-                                        >2022.12.12</span
-                                    >
-                                    <span
-                                        class="ivoryIcon-new"
-                                    ></span>
+                                    <span class="datetime">2022.12.12</span>
+                                    <span class="ivoryIcon-new"></span>
                                 </div>
                                 <div class="btn_group">
-                                    <button
-                                        type="button"
-                                        class="btn_heart"
-                                    >
-                                        <span
-                                            class="ivoryIcon-heart"
-                                        ></span>
+                                    <button type="button" class="btn_heart">
+                                        <span class="ivoryIcon-heart"></span>
                                         <span
                                             class="ivoryIcon-heart_outline"
                                         ></span>
                                         <span>좋아요</span>
-                                        <span class="heart_count"
-                                            >5</span
-                                        >
+                                        <span class="heart_count">5</span>
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="btn_rereply"
-                                    >
-                                        <span
-                                            class="ivoryIcon-reply"
-                                        ></span>
+                                    <button type="button" class="btn_rereply">
+                                        <span class="ivoryIcon-reply"></span>
                                         <span>대댓글</span>
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="btn_more"
-                                    >
-                                        <span
-                                            class="ivoryIcon-more"
-                                        ></span>
+                                    <button type="button" class="btn_more">
+                                        <span class="ivoryIcon-more"></span>
                                     </button>
                                 </div>
                             </div>
@@ -2350,9 +2363,7 @@
                             <div class="reply_info">
                                 <div class="writer">
                                     <span>투표 작성자</span>
-                                    <span
-                                        class="ivoryIcon-write"
-                                    ></span>
+                                    <span class="ivoryIcon-write"></span>
                                 </div>
                                 <div class="reply_count">
                                     <span>대댓글</span>
@@ -2360,52 +2371,33 @@
                                 </div>
                             </div>
                             <div class="reply_text">
-                                Lorem ipsum, dolor sit amet
-                                consectetur adipisicing elit.
-                                Dolores, at quam dolor obcaecati
-                                exercitationem nostrum.
+                                Lorem ipsum, dolor sit amet consectetur
+                                adipisicing elit. Dolores, at quam dolor
+                                obcaecati exercitationem nostrum.
                             </div>
                             <div class="reply_footer">
                                 <div class="last_datetime is_new">
-                                    <span class="datetime"
-                                        >12:30</span
-                                    >
-                                    <span
-                                        class="ivoryIcon-new"
-                                    ></span>
+                                    <span class="datetime">12:30</span>
+                                    <span class="ivoryIcon-new"></span>
                                 </div>
                                 <div class="btn_group">
                                     <button
                                         type="button"
                                         class="btn_heart clicked"
                                     >
-                                        <span
-                                            class="ivoryIcon-heart"
-                                        ></span>
+                                        <span class="ivoryIcon-heart"></span>
                                         <span
                                             class="ivoryIcon-heart_outline"
                                         ></span>
                                         <span>좋아요</span>
-                                        <span class="heart_count"
-                                            >5</span
-                                        >
+                                        <span class="heart_count">5</span>
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="btn_rereply"
-                                    >
-                                        <span
-                                            class="ivoryIcon-reply"
-                                        ></span>
+                                    <button type="button" class="btn_rereply">
+                                        <span class="ivoryIcon-reply"></span>
                                         <span>대댓글</span>
                                     </button>
-                                    <button
-                                        type="button"
-                                        class="btn_more"
-                                    >
-                                        <span
-                                            class="ivoryIcon-more"
-                                        ></span>
+                                    <button type="button" class="btn_more">
+                                        <span class="ivoryIcon-more"></span>
                                     </button>
                                 </div>
                             </div>
@@ -2416,8 +2408,291 @@
                 <!-- 대댓글 -->
             </div>
             <!-- 댓글 영역 -->
+
+            <!-- 댓글 입력 폼 -->
+            <div class="reply_comment_input_box" id="inputReplyResultDetail">
+                <span
+                    class="target"
+                    contenteditable="false"
+                    style="color: #68c0b5"
+                    hidden
+                ></span>
+                <div class="text_input_box">
+                    <span contenteditable="true"></span>
+                </div>
+                <button type="button" class="btn_return_comment_text">
+                    확인
+                </button>
+            </div>
+            <!-- 댓글 입력 폼 -->
+
+            <!-- 댓글용 펑션메뉴 -->
+            <div class="modal_reply_fn">
+                <div class="background"></div>
+
+                <div class="reply_fn_container">
+                    <div class="reply_fn_box">
+                        <ul>
+                            <li>
+                                <button class="fn_write" type="button">
+                                    댓글쓰기
+                                </button>
+                            </li>
+                            <li>
+                                <button class="fn_modify" type="button">
+                                    수정하기
+                                </button>
+                            </li>
+                            <li>
+                                <button class="fn_delete" type="button">
+                                    삭제하기
+                                </button>
+                            </li>
+                            <li>
+                                <button class="fn_report" type="button">
+                                    신고하기
+                                </button>
+                            </li>
+                        </ul>
+                        <button class="fn_cancel" type="button">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 댓글용 펑션메뉴 -->
         </div>
         <!-- 댓글상세보기 -->
+
+        <!-- 이유모아보기 -->
+        <div id="totalReason" class="total_reason modal_container scroll_container">
+            <div class="modal_back"></div>
+            <div class="modal_box total_reason_box">
+                <div class="modal_header scroll_header">
+                    <button type="button" class="close_btn">
+                        <span class="ivoryIcon-arrow_left"></span>
+                    </button>
+                    <h2>선택한 이유 모아보기</h2>
+                </div>
+                <div class="modal_content">
+                    <div class="total_info">
+                        <p>총 <span class="total_voter">777</span>명 중</p>
+                        <p class="percentage">100%</p>
+                        <p>
+                            <span class="vote_selecter">666명</span>이
+                            선택했습니다.
+                        </p>
+                        <div class="text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing
+                            elit. Sequi perferendis unde ut aliquid facilis
+                            obcaecati ea quidem soluta maiores explicabo?
+                        </div>
+                    </div>
+
+                    <div class="progress_container">
+                        <div class="flex_box">
+                            <div class="progress_left">
+                                <!-- 20대:gen_20, 30대: gen_30, 40대: gen_40, 50대: gen_50 -->
+                                <div class="percentage">
+                                    <p class="percent_value gen_20">50%</p>
+                                </div>
+                                <div
+                                    class="progress_box reverse gen_20"
+                                    data-progress="88"
+                                >
+                                    <div class="background"></div>
+                                    <div class="foreground_wrapper">
+                                        <div class="foreground"></div>
+                                    </div>
+                                    <div class="text">20대</div>
+                                </div>
+                            </div>
+                            <div class="progress_right">
+                                <!-- 남자: male, 여자: female -->
+                                <div class="percentage">
+                                    <p class="percent_value female">50%</p>
+                                </div>
+                                <div
+                                    class="progress_box female"
+                                    data-progress="44"
+                                >
+                                    <div class="background"></div>
+                                    <div class="foreground_wrapper">
+                                        <div class="foreground"></div>
+                                    </div>
+                                    <div class="text">여성</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text_box">
+                            <span class="ivoryIcon-quotes_top"></span>
+                            <span>이 항목은</span>
+                            <span class="strong_first">20대</span>
+                            <span class="strong_second">여성</span>
+                            <span>이 가장 많이 선택했어요!</span>
+                            <span class="ivoryIcon-quotes_bottom"></span>
+                        </div>
+                    </div>
+
+                    <div class="total_reason_comment">
+                        <ul>
+                            <li>
+                                <div class="text_comment_input my_comment">
+                                    <p
+                                        class="editable_text"
+                                        contenteditable="false"
+                                    >
+                                        Lorem ipsum dolor sit amet.
+                                    </p>
+
+                                    <div class="btn_group">
+                                        <button
+                                            type="button"
+                                            class="btn_comment_modify"
+                                        >
+                                            수정하기
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_comment_save"
+                                            hidden
+                                        >
+                                            저장하기
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_comment_cancel"
+                                            hidden
+                                        >
+                                            취소하기
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text_comment_input">
+                                    <p
+                                        class="editable_text"
+                                        contenteditable="false"
+                                    >
+                                        Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing elit. Modi, recusandae illo!
+                                        Omnis tenetur reprehenderit aliquam
+                                        possimus unde explicabo minima expedita.
+                                    </p>
+
+                                    <div class="btn_group">
+                                        <button
+                                            type="button"
+                                            class="btn_comment_modify"
+                                        >
+                                            수정하기
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_comment_save"
+                                            hidden
+                                        >
+                                            저장하기
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_comment_cancel"
+                                            hidden
+                                        >
+                                            취소하기
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text_comment_input">
+                                    <p
+                                        class="editable_text"
+                                        contenteditable="false"
+                                    >
+                                        Lorem ipsum dolor sit amet consectetur
+                                        adipisicing elit. Earum, quaerat.
+                                    </p>
+
+                                    <div class="btn_group">
+                                        <button
+                                            type="button"
+                                            class="btn_comment_modify"
+                                        >
+                                            수정하기
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_comment_save"
+                                            hidden
+                                        >
+                                            저장하기
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_comment_cancel"
+                                            hidden
+                                        >
+                                            취소하기
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text_comment_input">
+                                    <p
+                                        class="editable_text"
+                                        contenteditable="false"
+                                    >
+                                        Lorem ipsum, dolor sit amet consectetur
+                                        adipisicing elit. Aspernatur voluptatum
+                                        iusto deserunt veniam consequuntur
+                                        nihil!
+                                    </p>
+
+                                    <div class="btn_group">
+                                        <button
+                                            type="button"
+                                            class="btn_comment_modify"
+                                        >
+                                            수정하기
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_comment_save"
+                                            hidden
+                                        >
+                                            저장하기
+                                        </button>
+                                        <button
+                                            type="button"
+                                            class="btn_comment_cancel"
+                                            hidden
+                                        >
+                                            취소하기
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 게시글 없음 -->
+                    <div class="no_content">
+                        <div class="img_box">
+                            <img
+                                src="assets/images/no_content.svg"
+                                alt="게시글 없음"
+                            />
+                        </div>
+                        <div class="text_box">
+                            <p>선택한 이유 작성글이 없습니다.</p>
+                        </div>
+                    </div>
+                    <!-- 게시글 없음 -->
+                </div>
+            </div>
+        </div>
+        <!-- 이유모아보기 -->
 
         <div class="back_bg"></div>
 
@@ -2434,6 +2709,11 @@
         <script type="text/javascript" src="assets/js/common.js"></script>
 
         <script>
+            // 결과보기 확인하기
+            $(document).on('click', '#btnVote', function () {
+                $('body').addClass('result_slide_on');
+            });
+
             // 결과슬라이드 더미 제거
             setTimeout(function () {
                 $('.dummy_vote_container, .dummy_container').prop(

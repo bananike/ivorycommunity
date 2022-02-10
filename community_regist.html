@@ -1618,7 +1618,10 @@
         <!-- 카테고리 선택 패널 -->
 
         <!-- 결과 슬라이드 -->
-        <div id="sliderVoteResult" class="slide_popup vote_result_wrapper">
+        <div
+            id="sliderVoteResult"
+            class="slide_popup_result vote_result_wrapper"
+        >
             <div class="header_box scroll_header">
                 <div class="btn_area">
                     <button type="button" class="close_popup">
@@ -2676,12 +2679,6 @@
             type="text/javascript"
             src="assets/js/floating_button.js"
         ></script>
-
-        <!-- regist open -->
-        <script>
-            $('#addVoteContainer').addClass('on_vs');
-            modalOn($('#btnAddVoteVS'), '#addVoteContainer');
-        </script>
 
         <script>
             // 결과슬라이드 더미 제거

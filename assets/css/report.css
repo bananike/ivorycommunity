@@ -15,6 +15,8 @@
   100% { opacity: 0; } }
 @keyframes bgToneDown { 0% { background-color: rgba(0, 0, 0, 0); }
   100% { background-color: rgba(0, 0, 0, 0.6); } }
+@keyframes bgToneUp { 0% { background-color: rgba(0, 0, 0, 0.6); }
+  100% { background-color: rgba(0, 0, 0, 0); } }
 @keyframes scaleUp { 0% { transform: scale(0); }
   100% { transform: scale(1); } }
 @keyframes scaleUpdown { 0% { transform: scale(0); }
@@ -28,6 +30,10 @@
   100% { transform: translateY(0) scaleY(1); } }
 @keyframes vs_arrow { 0% { transform: scale(0); }
   100% { transform: scale(1); } }
+@keyframes replyFnOn { 0% { transform: translateY(100%); }
+  100% { transform: translateY(0%); } }
+@keyframes replyFnOff { 0% { transform: translateY(0%); }
+  100% { transform: translateY(110%); } }
 .modal_report { position: fixed; z-index: 3000; width: 100vw; height: 100vh; top: 0; left: 0; display: none; justify-content: center; align-items: center; animation: backdrop_on 0.3s forwards; }
 .modal_report.closing { animation: backdrop_off 0.3s forwards; }
 .modal_report .background { position: absolute; background-color: #000; opacity: 0.6; top: 0; left: 0; width: 100%; height: 100%; }
@@ -51,5 +57,21 @@
 .modal_report .report_container .warning_text { margin-top: calc(100vw * (20/640)); font-weight: 500; font-size: calc(100vw * (18/640)); letter-spacing: calc(100vw * (-1.08/640)); color: #fb8713; }
 .modal_report .report_container .btn_submit { width: 100%; height: calc(100vw * (67/640)); margin-top: calc(100vw * (30/640)); display: flex; justify-content: center; align-items: center; background-color: #000; color: #fff; border-radius: calc(100vw * (30/640)); font-weight: 500; font-size: calc(100vw * (25/640)); letter-spacing: calc(100vw * (-1.5/640)); transition: background-color 0.3s; }
 .modal_report .report_container .btn_submit[disabled] { background-color: #a8a8a8; transition: background-color 0.3s; }
+
+@media (min-width: 640px) { .modal_report .report_container { width: 560px; padding: 45px; border-radius: 30px; }
+  .modal_report .report_container .header_box { margin-top: 10px; }
+  .modal_report .report_container .header_box h2 span { font-size: 32px; letter-spacing: -1.92px; }
+  .modal_report .report_container .header_box h2 span[class^='ivoryIcon-'] { font-size: 40px; margin-top: -10px; margin-right: 10px; }
+  .modal_report .report_container .header_box .btn_close_modal { font-size: 32px; }
+  .modal_report .report_container .guide_text { font-size: 20px; letter-spacing: -1.2px; }
+  .modal_report .report_container .report_type_wrapper { margin-top: 25px; }
+  .modal_report .report_container .report_type_wrapper .report_type_box { margin-top: 25px; }
+  .modal_report .report_container .report_type_wrapper .report_type_box li { width: calc(50% - 5px); margin-bottom: 20px; }
+  .modal_report .report_container .report_type_wrapper .report_type_box li:nth-child(2n) { margin-left: 10px; }
+  .modal_report .report_container .report_type_wrapper .report_type_box li input[type='radio'] + .fake_radio { height: 54px; border-radius: 30px; font-size: 20px; letter-spacing: -1.2px; }
+  .modal_report .report_container .report_text_wrapper { margin-top: 25px; }
+  .modal_report .report_container .report_text_wrapper .textarea_report { margin-top: 15px; padding: 35px; border-radius: 30px; font-size: 20px; line-height: 33px; letter-spacing: -1.2px; }
+  .modal_report .report_container .warning_text { margin-top: 20px; font-size: 18px; letter-spacing: -1.08px; }
+  .modal_report .report_container .btn_submit { height: 67px; margin-top: 30px; border-radius: 30px; font-size: 25px; letter-spacing: -1.5px; } }
 
 /*# sourceMappingURL=report.css.map */

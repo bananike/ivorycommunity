@@ -1,0 +1,73 @@
+.total_reason { z-index: 3000; }
+
+.total_reason_box { background-color: #fff; }
+.total_reason_box .modal_header { height: calc(100vw * (146/640)); }
+.total_reason_box .modal_header .close_btn { left: calc(100vw * (60/640)); top: calc(100vw * (60/640)); }
+.total_reason_box .modal_header h2 { font-weight: 700; font-size: calc(100vw * (32/640)); letter-spacing: calc(100vw * (-1.92/640)); }
+.total_reason_box .modal_content { padding: 0; padding-top: 0; margin-top: calc(100vw * (146/640)); }
+.total_reason_box .total_info { background-color: rgba(161, 73, 219, 0.12); padding: calc(100vw * (40/640)); margin: 0 calc(100vw * (60/640)); border-radius: calc(100vw * (30/640)); display: flex; flex-direction: column; justify-content: center; text-align: center; }
+.total_reason_box .total_info p { font-weight: 500; font-size: calc(100vw * (25/640)); line-height: calc(100vw * (35/640)); letter-spacing: calc(100vw * (-0.5/640)); }
+.total_reason_box .total_info p.percentage { font-family: gotham; font-weight: bold; font-size: calc(100vw * (90/640)); line-height: calc(100vw * (100/640)); letter-spacing: calc(100vw * (-1.8/640)); color: #a149db; margin-top: calc(100vw * (10/640)); margin-bottom: calc(100vw * (10/640)); }
+.total_reason_box .total_info p .vote_selecter { color: #a149db; }
+.total_reason_box .total_info .text { margin-top: calc(100vw * (60/640)); font-weight: 300; font-size: calc(100vw * (22/640)); line-height: calc(100vw * (38/640)); letter-spacing: calc(100vw * (-1.32/640)); }
+.total_reason_box .progress_container { margin: 0 calc(100vw * (60/640)); margin-top: calc(100vw * (60/640)); }
+.total_reason_box .progress_container .flex_box { position: relative; display: flex; flex-direction: row; flex-wrap: nowrap; }
+.total_reason_box .progress_container .flex_box .progress_left { margin-right: calc(100vw * (10/640)); text-align: right; }
+.total_reason_box .progress_container .flex_box .progress_left .progress_box .text { justify-content: flex-end; }
+.total_reason_box .progress_container .flex_box .progress_right { text-align: left; }
+.total_reason_box .progress_container .flex_box .progress_right .progress_box .text { justify-content: flex-start; }
+.total_reason_box .progress_container .flex_box .progress_left, .total_reason_box .progress_container .flex_box .progress_right { width: 50%; }
+.total_reason_box .progress_container .percentage .percent_value { font-family: gotham; font-weight: bold; font-size: calc(100vw * (40/640)); letter-spacing: calc(100vw * (-2.4/640)); margin: 0 calc(100vw * (17/640)) calc(100vw * (5/640)); }
+.total_reason_box .progress_container .percentage .percent_value.female { color: #ff97ba; }
+.total_reason_box .progress_container .percentage .percent_value.male { color: #80a9d8; }
+.total_reason_box .progress_container .percentage .percent_value.gen_20 { color: #68c0b5; }
+.total_reason_box .progress_container .percentage .percent_value.gen_30 { color: #c2a0e1; }
+.total_reason_box .progress_container .percentage .percent_value.gen_40 { color: #f6c88c; }
+.total_reason_box .progress_container .percentage .percent_value.gen_50 { color: #c9c496; }
+.total_reason_box .progress_container .progress_box { width: calc(100vw * (255/640)); height: calc(100vw * (40/640)); }
+.total_reason_box .progress_container .progress_box .text { position: absolute; height: 100%; width: 100%; display: flex; align-items: center; top: 0; left: 0; margin: 0 calc(100vw * (16/640)); font-weight: 500; font-size: calc(100vw * (22/640)); letter-spacing: calc(100vw * (-1.32/640)); color: #fff; }
+.total_reason_box .progress_container .text_box { margin-top: calc(100vw * (35/640)); margin-left: calc(100vw * (-5/640)); text-align: center; white-space: nowrap; }
+.total_reason_box .progress_container .text_box span { font-weight: 500; font-size: calc(100vw * (25/640)); letter-spacing: calc(100vw * (-1.5/640)); }
+.total_reason_box .progress_container .text_box span[class^='ivoryIcon-quotes'] { position: relative; font-size: calc(100vw * (35/640)); top: calc(100vw * (10/640)); display: inline-block; width: calc(100vw * (30/640)); }
+.total_reason_box .progress_container .text_box span[class^='strong'] { font-weight: 700; font-size: calc(100vw * (30/640)); }
+.total_reason_box .progress_container .text_box span.strong_first { color: #68c0b5; }
+.total_reason_box .progress_container .text_box span.strong_second { color: #ff97ba; }
+.total_reason_box .total_reason_comment { margin-top: calc(100vw * (65/640)); background-color: #f6f6f6; padding: calc(100vw * (60/640)); }
+.total_reason_box .total_reason_comment ul li:not(:last-child) { margin-bottom: calc(100vw * (30/640)); padding-bottom: calc(100vw * (30/640)); border-bottom: 0.5px solid #707070; }
+.total_reason_box .total_reason_comment .text_comment_input { position: relative; }
+.total_reason_box .total_reason_comment .text_comment_input .editable_text { position: relative; z-index: 2; font-weight: 400; font-size: calc(100vw * (24/640)); line-height: calc(100vw * (35/640)); letter-spacing: calc(100vw * (-1.44/640)); }
+.total_reason_box .total_reason_comment .text_comment_input .btn_group { position: relative; z-index: 2; margin-top: calc(100vw * (35/640)); display: none; width: 100%; justify-content: flex-end; align-items: center; }
+.total_reason_box .total_reason_comment .text_comment_input.my_comment:before { content: ''; display: block; position: absolute; z-index: 2; width: calc(100% + calc(100vw * (40/640))); height: calc(100% + calc(100vw * (40/640))); top: calc(100vw * (-20/640)); left: calc(100vw * (-20/640)); border-radius: calc(100vw * (30/640)); background-color: #fff; opacity: 0; transition: opacity 0.3s; }
+.total_reason_box .total_reason_comment .text_comment_input.my_comment.editing:before { opacity: 1; transition: opacity 0.3s; }
+.total_reason_box .total_reason_comment .text_comment_input.my_comment .btn_group { display: flex; }
+.total_reason_box .total_reason_comment .text_comment_input.my_comment .btn_group [class^='btn_comment'] { font-weight: 700; font-size: calc(100vw * (22/640)); line-height: calc(100vw * (25/640)); letter-spacing: calc(100vw * (-1.32/640)); }
+.total_reason_box .total_reason_comment .text_comment_input.my_comment .btn_group [class^='btn_comment']:not(:first-child) { margin-left: calc(100vw * (40/640)); }
+.total_reason_box .total_reason_comment .text_comment_input.my_comment .btn_group .btn_comment_modify { color: #68c0b5; }
+.total_reason_box .total_reason_comment .text_comment_input.my_comment .btn_group .btn_comment_save, .total_reason_box .total_reason_comment .text_comment_input.my_comment .btn_group .btn_comment_cancel { color: #a149db; }
+
+@media (min-width: 640px) { .total_reason_box .modal_header { height: 146px; }
+  .total_reason_box .modal_header .close_btn { left: 60px; top: 60px; }
+  .total_reason_box .modal_header h2 { font-size: 32px; letter-spacing: -1.92px; }
+  .total_reason_box .modal_content { margin-top: 146px; }
+  .total_reason_box .total_info { padding: 40px; margin: 0 60px; border-radius: 30px; }
+  .total_reason_box .total_info p { font-size: 25px; line-height: 35px; letter-spacing: -0.5px; }
+  .total_reason_box .total_info p.percentage { font-size: 90px; line-height: 100px; letter-spacing: -1.8px; margin-top: 10px; margin-bottom: 10px; }
+  .total_reason_box .total_info .text { margin-top: 60px; font-size: 22px; line-height: 38px; letter-spacing: -1.32px; }
+  .total_reason_box .progress_container { margin: 0 60px; margin-top: 60px; }
+  .total_reason_box .progress_container .flex_box .progress_left { margin-right: 10px; }
+  .total_reason_box .progress_container .percentage .percent_value { font-size: 40px; letter-spacing: -2.4px; margin: 0 17px 5px; }
+  .total_reason_box .progress_container .progress_box { width: 255px; height: 40px; }
+  .total_reason_box .progress_container .progress_box .text { margin: 0 16px; font-size: 22px; letter-spacing: -1.32px; }
+  .total_reason_box .progress_container .text_box { margin-top: 35px; margin-left: -5px; }
+  .total_reason_box .progress_container .text_box span { font-size: 25px; letter-spacing: -1.5px; }
+  .total_reason_box .progress_container .text_box span[class^='ivoryIcon-quotes'] { font-size: 35px; top: 10px; width: 30px; }
+  .total_reason_box .progress_container .text_box span[class^='strong'] { font-size: 30px; }
+  .total_reason_box .total_reason_comment { margin-top: 65px; padding: 60px; }
+  .total_reason_box .total_reason_comment ul li:not(:last-child) { margin-bottom: 30px; padding-bottom: 30px; }
+  .total_reason_box .total_reason_comment .text_comment_input .editable_text { font-size: 24px; line-height: 35px; letter-spacing: -1.44px; }
+  .total_reason_box .total_reason_comment .text_comment_input .btn_group { margin-top: 35px; }
+  .total_reason_box .total_reason_comment .text_comment_input.my_comment:before { width: calc(100% + 40px); height: calc(100% + 40px); top: -20px; left: -20px; border-radius: 30px; }
+  .total_reason_box .total_reason_comment .text_comment_input.my_comment .btn_group [class^='btn_comment'] { font-size: 22px; line-height: 25px; letter-spacing: -1.32px; }
+  .total_reason_box .total_reason_comment .text_comment_input.my_comment .btn_group [class^='btn_comment']:not(:first-child) { margin-left: 40px; } }
+
+/*# sourceMappingURL=total_reason.css.map */

@@ -4,9 +4,10 @@
 .detail_header {
     position: fixed;
     top: 0;
-    left: 0;
+    left: 50%;
     width: cal($e: 640);
     z-index: 10;
+    transform: translateX(-50%);
 
     .btn_area {
         height: cal($e: 135);
@@ -59,6 +60,7 @@
 .dummy_container {
     position: fixed;
     height: 100vh;
+    max-width: $media_base;
     width: 100%;
     z-index: 10;
     background-color: $color_white;
@@ -722,7 +724,7 @@
             }
 
             .input_write_reason {
-                margin-top: cal($e: 30);
+                // margin-top: cal($e: 30);
                 height: 0;
                 left: 0;
                 top: cal($e: 360);
@@ -1221,7 +1223,7 @@
                 }
 
                 .input_write_reason {
-                    margin-top: 30px;
+                    margin-top: 0px;
                     top: 360px;
                     border-radius: 30px;
 

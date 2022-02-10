@@ -1,7 +1,7 @@
-body.result_slide_on .slide_popup { transform: translateX(0); transition: transform 0.3s; }
+body.result_slide_on .slide_popup_result { transform: translateX(0); transition: transform 0.3s; }
 body.result_slide_on .back_bg { position: fixed; width: 100vw; height: 100vh; z-index: 1999; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.6); }
 
-.slide_popup { position: fixed; top: 0; right: 0; z-index: 2000; background-color: #fff; height: 100vh; width: 100vw; transform-origin: right; transform: translateX(100%); transition: transform 0.3s; max-width: 640px; }
+.slide_popup_result { position: fixed; top: 0; right: 0; z-index: 2000; background-color: #fff; height: 100vh; width: 100vw; transform-origin: right; transform: translateX(100%); transition: transform 0.3s; max-width: 640px; }
 
 .vote_result_wrapper.on_poll .is_vs { display: none !important; }
 .vote_result_wrapper.on_vs .is_poll { display: none !important; }

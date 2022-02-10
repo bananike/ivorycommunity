@@ -14,7 +14,7 @@ body {
 
     &.modal_on,
     &.alert_on,
-    &.reult_slide_on,
+    &.result_slide_on,
     &.reply_slide_on,
     &.double_modal {
         overflow: hidden;
@@ -251,11 +251,20 @@ input[type='file'] {
 .progress_box {
     position: relative;
     height: cal($e: 24);
-    margin: 1px;
 
     &.vertical {
         transform-origin: left top;
         transform: rotateZ(270deg);
+    }
+
+    &.reverse {
+        transform-origin: center;
+        transform: rotateZ(180deg);
+
+        .text {
+            transform-origin: center;
+            transform: rotateZ(180deg);
+        }
     }
 
     .background {

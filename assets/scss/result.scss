@@ -1,7 +1,7 @@
 @import 'variable';
 
 body.result_slide_on {
-    .slide_popup {
+    .slide_popup_result {
         transform: translateX(0);
         transition: transform 0.3s;
     }
@@ -17,7 +17,7 @@ body.result_slide_on {
     }
 }
 
-.slide_popup {
+.slide_popup_result {
     position: fixed;
     top: 0;
     right: 0;

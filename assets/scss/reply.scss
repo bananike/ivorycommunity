@@ -1,4 +1,5 @@
 @import 'variable';
+@import 'animation';
 
 .reply_wrapper {
     margin-top: cal($e: 60);
@@ -255,12 +256,12 @@
 
 .reply_comment_input_box {
     position: fixed;
-    right: 0;
+    left: 50%;
     bottom: 0;
     width: 100%;
     z-index: 20;
     transform-origin: bottom;
-    transform: translateY(100%);
+    transform: translate(-50%, 100%);
     padding: cal($e: 30) cal($e: 40);
     background-color: $color_black;
     display: flex;
@@ -268,9 +269,10 @@
     flex-wrap: nowrap;
     justify-content: space-between;
     transition: transform 0.3s;
+    max-width: $media_base;
 
     &.on_slide {
-        transform: translateY(0%);
+        transform: translate(-50%, 0%);
         transition: transform 0.3s;
     }
 
@@ -319,8 +321,159 @@
     }
 }
 
+body.reply_slide_on {
+    .slide_popup_reply {
+        transform: translateX(0);
+        transition: transform 0.3s;
+    }
+
+    .back_bg {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1999;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
 .reply_detail {
+    position: fixed;
+    top: 0;
+    right: 0;
     z-index: 2010;
+    background-color: $color_white;
+    height: 100vh;
+    width: 100vw;
+    transform-origin: right;
+    transform: translateX(100%);
+    transition: transform 0.3s;
+    max-width: $media_base;
+
+    .header_box {
+        padding: 0 cal($e: 40);
+        position: absolute;
+        width: 100%;
+        height: cal($e: 132);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $color_white;
+        z-index: 2;
+
+        .close_popup {
+            position: absolute;
+            top: cal($e: 40);
+            left: cal($e: 40);
+
+            [class^='ivoryIcon-'] {
+                font-size: cal($e: 28);
+                color: $color_primary;
+            }
+        }
+    }
+
+    .reply_container {
+        padding: cal($e: 132) cal($e: 40) 0;
+        border-top: 0;
+        max-height: calc(100vh - #{cal($e: 132)});
+        overflow: auto;
+    }
+
+    .reply_comment_input_box {
+        transform: translate(-50%, 0);
+    }
+}
+
+.modal_reply_fn {
+    position: fixed;
+    display: none;
+    z-index: 4000;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+
+    &.closing {
+        .background {
+            animation: bgToneUp 0.3s forwards;
+        }
+        .reply_fn_container {
+            animation: replyFnOff 0.3s forwards;
+        }
+    }
+
+    .background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.6;
+        background-color: $color_black;
+        animation: bgToneDown 0.3s forwards;
+    }
+
+    .reply_fn_container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: $media_base;
+        margin: 0 auto;
+        top: 0;
+        left: 0;
+        padding: cal($e: 40);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        transform-origin: bottom;
+        transform: translateY(100%);
+        animation: replyFnOn 0.3s forwards;
+    }
+
+    .reply_fn_box {
+        background-color: $color_white;
+        position: relative;
+        width: 100%;
+        padding: cal($e: 20);
+        border-radius: cal($e: 30);
+
+        ul {
+            li {
+                button {
+                    padding: cal($e: 50);
+                    width: 100%;
+                    text-align: center;
+                    font-weight: 500;
+                    font-size: cal($e: 30);
+                    letter-spacing: cal($e: -1.8);
+                    border-bottom: 1px solid #bcbcbc;
+
+                    &.fn_report {
+                        color: $color_red;
+                    }
+                }
+            }
+        }
+
+        .fn_cancel {
+            width: cal($e: 470);
+            height: cal($e: 67);
+            margin: 0 auto;
+            margin-top: cal($e: 60);
+            margin-bottom: cal($e: 20);
+            border-radius: cal($e: 30);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+            font-size: cal($e: 25);
+            letter-spacing: cal($e: -1.5);
+            background-color: $color_black;
+            color: $color_white;
+        }
+    }
 }
 
 @media (min-width: $media_base) {
@@ -497,6 +650,58 @@
             font-size: 20px;
             letter-spacing: -1.2px;
             border-radius: 30px;
+        }
+    }
+
+    .reply_detail {
+        .header_box {
+            padding: 0 40px;
+            height: 132px;
+
+            .close_popup {
+                top: 40px;
+                left: 40px;
+
+                [class^='ivoryIcon-'] {
+                    font-size: 28px;
+                }
+            }
+        }
+
+        .reply_container {
+            padding: 132px 40px 0;
+            max-height: calc(100vh -132px);
+        }
+    }
+
+    .modal_reply_fn {
+        .reply_fn_container {
+            padding: 40px;
+        }
+
+        .reply_fn_box {
+            padding: 20px;
+            border-radius: 30px;
+
+            ul {
+                li {
+                    button {
+                        padding: 50px;
+                        font-size: 30px;
+                        letter-spacing: -1.8px;
+                    }
+                }
+            }
+
+            .fn_cancel {
+                width: 470px;
+                height: 67px;
+                margin-top: 60px;
+                margin-bottom: 20px;
+                border-radius: 30px;
+                font-size: 25px;
+                letter-spacing: -1.5px;
+            }
         }
     }
 }
