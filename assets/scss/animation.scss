@@ -109,3 +109,11 @@
         transform: translateY(0) scaleY(1);
     }
 }
+@keyframes vs_arrow {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

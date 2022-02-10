@@ -26,6 +26,8 @@
   55% { transform: translateY(0) scaleY(0.9); }
   75% { transform: translateY(-15%) scaleY(1.05); }
   100% { transform: translateY(0) scaleY(1); } }
+@keyframes vs_arrow { 0% { transform: scale(0); }
+  100% { transform: scale(1); } }
 .detail_header { position: fixed; top: 0; left: 0; width: calc(100vw * (640/640)); z-index: 10; }
 .detail_header .btn_area { height: calc(100vw * (135/640)); background-color: #fff; padding: 0 calc(100vw * (40/640)); display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; }
 .detail_header .btn_area .close_popup span { font-size: calc(100vw * (28/640)); }
@@ -37,7 +39,7 @@
 .detail_header .btn_area .btn_group .btn_heart.clicked .ivoryIcon-heart { display: block; color: #f00; }
 .detail_header .btn_area .btn_group [class^='ivoryIcon-'] { font-size: calc(100vw * (40/640)); }
 
-.dummy_container { position: fixed; padding: calc(100vw * (60/640)) 0 0; height: 100vh; width: 100%; z-index: 10; background-color: #fff; }
+.dummy_container { position: fixed; height: 100vh; width: 100%; z-index: 10; background-color: #fff; }
 .dummy_container .dummy_title { margin: 0 calc(100vw * (40/640)); width: calc(100vw * (200/640)); height: calc(100vw * (35/640)); border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); margin-bottom: calc(100vw * (25/640)); }
 .dummy_container .dummy_title_content { margin: 0 calc(100vw * (40/640)); height: calc(100vw * (30/640)); border-radius: calc(100vw * (30/640)); background-color: rgba(0, 0, 0, 0.1); }
 .dummy_container .dummy_title_content:not(:last-child) { margin-bottom: calc(100vw * (15/640)); }
@@ -86,6 +88,8 @@
 .detail_wrapper .content_box .vote_communication .vote_wrapper .poll_wrapper .vote_type .type_box { background-color: #07f; }
 .detail_wrapper .content_box .vote_communication .vote_wrapper .vs_wrapper { position: relative; margin-bottom: calc(100vw * (25/640)); }
 .detail_wrapper .content_box .vote_communication .vote_wrapper .vs_wrapper .vote_type .type_box { background-color: #f09; }
+.detail_wrapper .content_box .vote_communication .vote_wrapper .vs_wrapper .input_write_reason { position: absolute; width: calc(100vw * (490/640)); }
+.detail_wrapper .content_box .vote_communication .vote_wrapper .vs_wrapper .voted_reason .icon { white-space: nowrap; min-width: 0; }
 .detail_wrapper .content_box .vote_communication .vote_type { display: flex; flex-direction: row; flex-wrap: nowrap; align-items: center; }
 .detail_wrapper .content_box .vote_communication .vote_type .type_box { width: calc(100vw * (160/640)); height: calc(100vw * (60/640)); display: flex; justify-content: center; align-items: center; border-radius: calc(100vw * (30/640)); color: #fff; font-family: gotham; font-weight: bold; font-size: calc(100vw * (27/640)); letter-spacing: calc(100vw * (-0.54/640)); }
 .detail_wrapper .content_box .vote_communication .vote_type .type_text { font-weight: 500; font-size: calc(100vw * (22/640)); letter-spacing: calc(100vw * (-1.32/640)); }
@@ -108,13 +112,14 @@
 .detail_wrapper .content_box .vote_communication .vote_vs_card { margin-top: calc(100vw * (30/640)); position: relative; border-radius: calc(100vw * (30/640)); display: flex; flex-direction: row; flex-wrap: nowrap; overflow: hidden; }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] { position: relative; width: 50%; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .vs_radio { display: none; }
-.detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .vs_radio:checked ~ .fake_radio { background-color: #f09; color: #fff; transition: background-color 0.3s; }
-.detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .fake_radio { padding: calc(100vw * (25/640)) calc(100vw * (30/640)) calc(100vw * (30/640)); height: 100%; height: calc(100vw * (330/640)); border-radius: calc(100vw * (30/640)); border: 2px solid #000; }
+.detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .vs_radio:checked ~ .fake_radio { border: 0; background-color: #f09; color: #fff; transition: background-color 0.3s; }
+.detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .fake_radio { position: relative; padding: calc(100vw * (25/640)) calc(100vw * (30/640)) calc(100vw * (30/640)); height: 100%; height: calc(100vw * (330/640)); border-radius: calc(100vw * (30/640)); border: 2px solid #000; }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'].vs_a .fake_radio { background-color: #73e4e8; transition: background-color 0.3s; }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'].vs_b .fake_radio { background-color: #ffa48d; transition: background-color 0.3s; }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'].is_image .img_box { border: 1px solid #000; border-radius: 50%; overflow: hidden; }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'].is_image .img_box img { display: block; }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'].is_image .img_box .category_icon { display: none; }
+.detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'].is_voted .btn_voted_reason { display: flex; }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_']:first-child { margin-right: calc(100vw * (10/640)); }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .card_title { font-family: gotham; font-weight: bold; font-size: calc(100vw * (50/640)); letter-spacing: calc(100vw * (-3/640)); }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .img_box { position: absolute; right: calc(100vw * (30/640)); bottom: calc(100vw * (30/640)); width: calc(100vw * (75/640)); height: calc(100vw * (75/640)); }
@@ -122,14 +127,21 @@
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .img_box .category_icon { display: block; font-size: calc(100vw * (75/640)); text-align: center; }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .text_box { flex: 1; }
 .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .text_box p { position: relative; text-align: left; font-weight: 500; margin-top: calc(100vw * (20/640)); font-size: calc(100vw * (25/640)); line-height: calc(100vw * (35/640)); letter-spacing: calc(100vw * (-1.5/640)); display: -webkit-box; word-wrap: break-word; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
-.detail_wrapper .content_box .vote_communication .vote_vs_card .icon_vs { position: absolute; width: calc(100vw * (66/640)); height: calc(100vw * (66/640)); background-color: #000; display: flex; justify-content: center; align-items: center; font-family: gotham; font-weight: bold; font-size: calc(100vw * (27/640)); letter-spacing: calc(100vw * (-1.62/640)); color: #fff; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.detail_wrapper .content_box .vote_communication .vote_vs_card .icon_vs { position: absolute; width: calc(100vw * (66/640)); height: calc(100vw * (66/640)); background-color: #000; display: flex; justify-content: center; align-items: center; font-family: gotham; font-weight: bold; font-size: calc(100vw * (27/640)); letter-spacing: calc(100vw * (-1.62/640)); color: #fff; border-radius: 50%; top: calc(100vw * (132/640)); left: 50%; transform: translateX(-50%); }
+.detail_wrapper .content_box .vote_communication .vote_vs_card .arrow_box { position: absolute; width: calc(100vw * (30/640)); height: calc(100vw * (30/640)); left: calc(100vw * (229/640)); top: calc(100vw * (265/640)); overflow: hidden; animation: vs_arrow 0.3s forwards; }
+.detail_wrapper .content_box .vote_communication .vote_vs_card .arrow_box:after { content: ''; display: block; position: absolute; width: 100%; height: 100%; left: 0; top: calc(100vw * (10/640)); background-color: #5a5a5a; transform-origin: center; transform: rotate(45deg); }
+.detail_wrapper .content_box .vote_communication .vote_vs_card .arrow_box.a { left: calc(100vw * (100/640)); }
+.detail_wrapper .content_box .vote_communication .vote_vs_card .arrow_box.b { left: calc(100vw * (358/640)); }
+.detail_wrapper .content_box .vote_communication .vote_vs_card .btn_voted_reason { width: calc(100vw * (174/640)); height: calc(100vw * (40/640)); display: none; justify-content: center; align-items: center; border: 0.5px solid #000; border-radius: calc(100vw * (30/640)); margin: calc(100vw * (15/640)) auto 0; }
+.detail_wrapper .content_box .vote_communication .vote_vs_card .btn_voted_reason span { font-weight: 500; font-size: calc(100vw * (18/640)); letter-spacing: calc(100vw * (-1.08/640)); }
+.detail_wrapper .content_box .vote_communication .vote_vs_card .btn_voted_reason span[class^='ivoryIcon-'] { font-size: calc(100vw * (15/640)); margin-left: calc(100vw * (6/640)); }
 .detail_wrapper .content_box .vote_communication .voted_reason { display: flex; flex-direction: row; flex-wrap: nowrap; height: 0; margin-top: 0; overflow: hidden; transition: height 0.3s, margin 0.3s; }
 .detail_wrapper .content_box .vote_communication .voted_reason .icon { min-width: calc(100vw * (110/640)); text-align: right; font-size: calc(100vw * (18/640)); line-height: calc(100vw * (38/640)); letter-spacing: calc(100vw * (-2/640)); margin-right: calc(100vw * (14/640)); }
 .detail_wrapper .content_box .vote_communication .voted_reason .text_box .text { font-weight: 300; font-size: calc(100vw * (20/640)); line-height: calc(100vw * (35/640)); letter-spacing: calc(100vw * (-1.2/640)); }
 .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group { margin-top: calc(100vw * (27/640)); }
 .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group button { font-weight: 700; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); }
 .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group button:first-child { margin-right: calc(100vw * (18/640)); }
-.detail_wrapper .content_box .vote_communication .input_write_reason { position: absolute; width: calc(100vw * (490/640)); height: 0; left: 0; z-index: 2; overflow: hidden; background-color: #5a5a5a; border-radius: calc(100vw * (30/640)); color: #fff; margin-top: 0; transition: height 0.3s, margin 0.3s; }
+.detail_wrapper .content_box .vote_communication .input_write_reason { margin-top: calc(100vw * (30/640)); height: 0; left: 0; top: calc(100vw * (360/640)); z-index: 2; overflow: hidden; background-color: #5a5a5a; border-radius: calc(100vw * (30/640)); color: #fff; margin-top: 0; transition: height 0.3s, margin 0.3s; }
 .detail_wrapper .content_box .vote_communication .input_write_reason .box_header { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: center; margin: calc(100vw * (25/640)) calc(100vw * (25/640)) 0; font-weight: 500; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); }
 .detail_wrapper .content_box .vote_communication .input_write_reason .box_header button { font-weight: inherit; font-size: inherit; letter-spacing: inherit; color: inherit; }
 .detail_wrapper .content_box .vote_communication .input_write_reason .text_input_box { display: flex; flex-direction: row; flex-wrap: nowrap; justify-content: space-between; align-items: flex-end; margin: calc(100vw * (15/640)) calc(100vw * (25/640)) calc(100vw * (30/640)); }
@@ -140,5 +152,87 @@
 .detail_wrapper .content_box .vote_communication .btn_vote [disabled] { background-color: #a8a8a8; }
 .detail_wrapper .content_box .vote_communication .btn_vote span { font-size: calc(100vw * (30/640)); letter-spacing: calc(100vw * (-1.8/640)); }
 .detail_wrapper .content_box .vote_communication .btn_vote [class^='ivoryIcon-'] { position: absolute; font-size: calc(100vw * (29/640)); top: 50%; right: calc(100vw * (32/640)); transform: translateY(-50%); }
+
+@media (min-width: 640px) { .detail_header { width: 640px; }
+  .detail_header .btn_area { height: 135px; padding: 0 40px; }
+  .detail_header .btn_area .close_popup span { font-size: 28px; }
+  .detail_header .btn_area .btn_group button:not(:last-child) { margin-right: 30px; }
+  .detail_header .btn_area .btn_group [class^='ivoryIcon-'] { font-size: 40px; }
+  .dummy_container .dummy_title { margin: 0 40px; width: 200px; height: 35px; border-radius: 30px; margin-bottom: 25px; }
+  .dummy_container .dummy_title_content { margin: 0 40px; height: 30px; border-radius: 30px; }
+  .dummy_container .dummy_title_content:not(:last-child) { margin-bottom: 15px; }
+  .dummy_container .dummy_icon_wrapper { margin: 0 40px; margin-top: 75px; margin-bottom: 60px; padding-bottom: 30px; }
+  .dummy_container .dummy_icon { width: 80px; height: 40px; border-radius: 30px; }
+  .dummy_container .dummy_icon:not(:last-child) { margin-right: 25px; }
+  .dummy_container .dummy_date { width: 120px; height: 40px; border-radius: 30px; }
+  .dummy_container .dummy_swipe { padding: 0 0 0 40px; margin-bottom: 50px; }
+  .dummy_container .dummy_swipe_item { min-width: 351px; height: 351px; border-radius: 30px; }
+  .dummy_container .dummy_swipe_item:not(:last-child) { margin-right: 25px; }
+  .dummy_container .dummy_content_text { margin: 0 40px; height: 20px; border-radius: 30px; }
+  .dummy_container .dummy_content_text:not(:last-child) { margin-bottom: 13px; }
+  .dummy_container .dummy_last_box { margin: 0 40px; border-radius: 30px; }
+  .detail_wrapper .content_box { margin-top: 135px; }
+  .detail_wrapper .content_box .vote_content .category_type { padding: 0 40px; }
+  .detail_wrapper .content_box .vote_content .category_type span { font-size: 22px; letter-spacing: -1.32px; }
+  .detail_wrapper .content_box .vote_content .category_type span[class^='ivoryIcon-'] { font-size: 31px; margin-right: 10px; }
+  .detail_wrapper .content_box .vote_content .category_title { padding: 0 40px; margin-top: 25px; }
+  .detail_wrapper .content_box .vote_content .category_title .title { font-size: 30px; line-height: 45px; letter-spacing: -1.8px; }
+  .detail_wrapper .content_box .vote_content .regist_date { padding: 0 40px; margin-top: 25px; }
+  .detail_wrapper .content_box .vote_content .regist_date span { font-size: 22px; letter-spacing: -0.44px; }
+  .detail_wrapper .content_box .vote_content .regist_date span[class^='ivoryIcon-'] { font-size: 23px; margin-left: 5px; margin-top: -4px; }
+  .detail_wrapper .content_box .vote_content .count_box { margin: 25px 40px 0; padding-bottom: 30px; }
+  .detail_wrapper .content_box .vote_content .count_box .count_left > div[class^='count_']:not(:last-child) { margin-right: 25px; }
+  .detail_wrapper .content_box .vote_content .count_box .count_left > div[class^='count_'] span { font-size: 18px; letter-spacing: -0.36px; }
+  .detail_wrapper .content_box .vote_content .count_box .count_left > div[class^='count_'] span[class^='ivoryIcon-'] { margin-right: 5px; }
+  .detail_wrapper .content_box .vote_content .count_box .count_left .count_vote [class^='ivoryIcon-'] { font-size: 30px; }
+  .detail_wrapper .content_box .vote_content .count_box .count_left .count_view [class^='ivoryIcon-'] { font-size: 35px; }
+  .detail_wrapper .content_box .vote_content .count_box .count_left .count_heart [class^='ivoryIcon-'] { font-size: 30px; }
+  .detail_wrapper .content_box .vote_content .count_box .count_right { height: 40px; font-size: 20px; letter-spacing: -1.2px; border-radius: 30px; padding: 0 16px; }
+  .detail_wrapper .content_box .vote_content .vote_img_swipe { margin-top: 60px; height: 351px; }
+  .detail_wrapper .content_box .vote_content .vote_img_swipe .swiper { padding-left: 40px; }
+  .detail_wrapper .content_box .vote_content .vote_img_swipe .swiper-slide { width: 351px; height: 351px; border-radius: 30px; }
+  .detail_wrapper .content_box .vote_content .vote_text_box { margin-top: 50px; padding: 0 40px; font-size: 20px; line-height: 33px; letter-spacing: -1.2px; }
+  .detail_wrapper .content_box .vote_communication { padding: 60px 40px 60px; }
+  .detail_wrapper .content_box .vote_communication .vote_wrapper { padding: 50px 35px 25px; border-radius: 30px; }
+  .detail_wrapper .content_box .vote_communication .vote_wrapper .poll_wrapper { margin-bottom: 15px; }
+  .detail_wrapper .content_box .vote_communication .vote_wrapper .vs_wrapper { margin-bottom: 25px; }
+  .detail_wrapper .content_box .vote_communication .vote_wrapper .vs_wrapper .input_write_reason { width: 490px; }
+  .detail_wrapper .content_box .vote_communication .vote_type .type_box { width: 160px; height: 60px; border-radius: 30px; font-size: 27px; letter-spacing: -0.54px; }
+  .detail_wrapper .content_box .vote_communication .vote_type .type_text { font-size: 22px; letter-spacing: -1.32px; }
+  .detail_wrapper .content_box .vote_communication .vote_type .type_text.strong { font-size: 25px; letter-spacing: -0.5px; margin-top: -3px; margin-left: 12px; }
+  .detail_wrapper .content_box .vote_communication .vote_poll_list { margin-top: 30px; }
+  .detail_wrapper .content_box .vote_communication .vote_poll_list .vote_select_item { margin-bottom: 10px; }
+  .detail_wrapper .content_box .vote_communication .vote_poll_list .fake_checker { padding: 10px 10px 10px 25px; border-radius: 30px; }
+  .detail_wrapper .content_box .vote_communication .vote_poll_list .fake_checker .index { min-width: 30px; height: 30px; font-size: 16px; letter-spacing: -0.96px; }
+  .detail_wrapper .content_box .vote_communication .vote_poll_list .fake_checker .text { margin-left: 15px; padding: 12px 0; font-size: 25px; line-height: 37px; letter-spacing: -1.5px; }
+  .detail_wrapper .content_box .vote_communication .vote_poll_list .fake_checker .img { width: 120px; height: 120px; border-radius: 30px; margin-left: 10px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card { margin-top: 30px; border-radius: 30px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .fake_radio { padding: 25px 30px 30px; height: 330px; border-radius: 30px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_']:first-child { margin-right: 10px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .card_title { font-size: 50px; letter-spacing: -3px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .img_box { right: 30px; bottom: 30px; width: 75px; height: 75px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .img_box .category_icon { font-size: 75px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card [class^='vs_'] .text_box p { margin-top: 20px; font-size: 25px; line-height: 35px; letter-spacing: -1.5px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card .icon_vs { width: 66px; height: 66px; font-size: 27px; letter-spacing: -1.62px; top: 132px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card .arrow_box { width: 30px; height: 30px; left: 229px; top: 265px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card .arrow_box:after { top: 10px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card .arrow_box.a { left: 100px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card .arrow_box.b { left: 358px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card .btn_voted_reason { width: 174px; height: 40px; border-radius: 30px; margin: 15px auto 0; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card .btn_voted_reason span { font-size: 18px; letter-spacing: -1.08px; }
+  .detail_wrapper .content_box .vote_communication .vote_vs_card .btn_voted_reason span[class^='ivoryIcon-'] { font-size: 15px; margin-left: 6px; }
+  .detail_wrapper .content_box .vote_communication .voted_reason .icon { min-width: 110px; font-size: 18px; line-height: 38px; letter-spacing: -2px; margin-right: 14px; }
+  .detail_wrapper .content_box .vote_communication .voted_reason .text_box .text { font-size: 20px; line-height: 35px; letter-spacing: -1.2px; }
+  .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group { margin-top: 27px; }
+  .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group button { font-size: 20px; letter-spacing: -1.2px; }
+  .detail_wrapper .content_box .vote_communication .voted_reason .text_box .btn_group button:first-child { margin-right: 18px; }
+  .detail_wrapper .content_box .vote_communication .input_write_reason { margin-top: 30px; top: 360px; border-radius: 30px; }
+  .detail_wrapper .content_box .vote_communication .input_write_reason .box_header { margin: 25px 25px 0; font-size: 20px; letter-spacing: -1.2px; }
+  .detail_wrapper .content_box .vote_communication .input_write_reason .text_input_box { margin: 15px 25px 30px; }
+  .detail_wrapper .content_box .vote_communication .input_write_reason .text_input_box textarea { height: 70px; padding: 16.5px 30px; border-radius: 30px; font-size: 23px; line-height: 37px; letter-spacing: -1.38px; }
+  .detail_wrapper .content_box .vote_communication .input_write_reason .text_input_box .btn_return_reason_text { width: 70px; height: 70px; margin-left: 10px; font-size: 20px; letter-spacing: -1.2px; border-radius: 30px; }
+  .detail_wrapper .content_box .vote_communication .btn_vote { height: 80px; margin-top: 60px; }
+  .detail_wrapper .content_box .vote_communication .btn_vote span { font-size: 30px; letter-spacing: -1.8px; }
+  .detail_wrapper .content_box .vote_communication .btn_vote [class^='ivoryIcon-'] { font-size: 29px; right: 32px; } }
 
 /*# sourceMappingURL=detail.css.map */

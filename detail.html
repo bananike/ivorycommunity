@@ -15,6 +15,8 @@
         <link rel="stylesheet" href="assets/css/detail.css" />
         <link rel="stylesheet" href="assets/css/result.css" />
         <link rel="stylesheet" href="assets/css/reply.css" />
+        <link rel="stylesheet" href="assets/css/share.css" />
+        <link rel="stylesheet" href="assets/css/report.css" />
 
         <!-- alert -->
         <link rel="stylesheet" href="assets/css/alert.css" />
@@ -38,7 +40,7 @@
                             <span class="ivoryIcon-heart_outline"></span>
                             <span class="ivoryIcon-heart"></span>
                         </button>
-                        <button type="button">
+                        <button type="button" class="btn_share_fadeModal">
                             <span class="ivoryIcon-share"></span>
                         </button>
                         <button type="button">
@@ -212,7 +214,7 @@
                                             <div class="btn_group">
                                                 <button
                                                     type="button"
-                                                    class="btn_modify_voted_reason"
+                                                    class="btn_modify_voted_reason poll"
                                                 >
                                                     수정하기
                                                 </button>
@@ -289,7 +291,7 @@
                                             <div class="btn_group">
                                                 <button
                                                     type="button"
-                                                    class="btn_modify_voted_reason"
+                                                    class="btn_modify_voted_reason poll"
                                                 >
                                                     수정하기
                                                 </button>
@@ -364,7 +366,7 @@
                                             <div class="btn_group">
                                                 <button
                                                     type="button"
-                                                    class="btn_modify_voted_reason"
+                                                    class="btn_modify_voted_reason poll"
                                                 >
                                                     수정하기
                                                 </button>
@@ -418,6 +420,7 @@
                                         name="selectVs"
                                         id="selectVs_a"
                                         class="vs_radio"
+                                        value="a"
                                     />
                                     <label class="fake_radio" for="selectVs_a">
                                         <div class="card_title">A</div>
@@ -443,6 +446,15 @@
                                                 class="ivoryIcon-pet category_icon"
                                             ></span></div
                                     ></label>
+                                    <button
+                                        type="button"
+                                        class="btn_voted_reason"
+                                    >
+                                        <span>내가 선택한 이유</span>
+                                        <span
+                                            class="ivoryIcon-arrow_down"
+                                        ></span>
+                                    </button>
                                 </div>
                                 <div class="vs_b is_voted">
                                     <input
@@ -450,6 +462,7 @@
                                         name="selectVs"
                                         id="selectVs_b"
                                         class="vs_radio"
+                                        value="b"
                                     />
                                     <label class="fake_radio" for="selectVs_b">
                                         <div class="card_title">B</div>
@@ -476,8 +489,18 @@
                                             ></span>
                                         </div>
                                     </label>
+                                    <button
+                                        type="button"
+                                        class="btn_voted_reason"
+                                    >
+                                        <span>내가 선택한 이유</span>
+                                        <span
+                                            class="ivoryIcon-arrow_down"
+                                        ></span>
+                                    </button>
                                 </div>
                                 <div class="icon_vs">vs</div>
+                                <div class="arrow_box" hidden></div>
                             </div>
 
                             <div class="voted_reason">
@@ -493,7 +516,7 @@
                                     <div class="btn_group">
                                         <button
                                             type="button"
-                                            class="btn_modify_voted_reason"
+                                            class="btn_modify_voted_reason vs"
                                         >
                                             수정하기
                                         </button>
@@ -973,7 +996,7 @@
                             <span class="ivoryIcon-heart_outline"></span>
                             <span class="ivoryIcon-heart"></span>
                         </button>
-                        <button type="button">
+                        <button type="button" class="btn_share_fadeModal">
                             <span class="ivoryIcon-share"></span>
                         </button>
                         <button type="button">
@@ -2001,6 +2024,107 @@
         </div>
         <!-- 결과 슬라이드 -->
 
+        <!-- 공유하기 -->
+        <div class="modal_share">
+            <div class="background"></div>
+            <button type="button" class="btn_close_modal">
+                <span class="ivoryIcon-close"></span>
+            </button>
+
+            <div class="share_container">
+                <div class="button_group">
+                    <button type="button" class="btn_kakao">
+                        <img
+                            src="assets/images/icon_kakao.png"
+                            alt="카카오톡"
+                        />
+                    </button>
+                    <button type="button" class="btn_copy">
+                        <p>URL</p>
+                        복사하기
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 공유하기 -->
+
+        <!-- 신고하기 -->
+        <div class="modal_report">
+            <div class="background"></div>
+            <div class="report_container">
+                <div class="header_box">
+                    <h2>
+                        <span class="ivoryIcon-report"></span>
+                        <span>신고하기</span>
+                    </h2>
+                    <button class="btn_cloase_modal"></button>
+                </div>
+                <div class="report_type_wrapper">
+                    <p class="guide_text">신고사유를 선택해주세요.(필수)</p>
+                    <ul class="report_type_box">
+                        <li>
+                            <input
+                                type="radio"
+                                name="report_type"
+                                id="reportType_01"
+                            />
+                            <label for="reportType_01" class="fake_radio"
+                                >욕설 / 인신공격</label
+                            >
+                        </li>
+                        <li>
+                            <input
+                                type="radio"
+                                name="report_type"
+                                id="reportType_01"
+                            />
+                            <label for="reportType_01" class="fake_radio"
+                                >욕설 / 인신공격</label
+                            >
+                        </li>
+                        <li>
+                            <input
+                                type="radio"
+                                name="report_type"
+                                id="reportType_01"
+                            />
+                            <label for="reportType_01" class="fake_radio"
+                                >욕설 / 인신공격</label
+                            >
+                        </li>
+                        <li>
+                            <input
+                                type="radio"
+                                name="report_type"
+                                id="reportType_01"
+                            />
+                            <label for="reportType_01" class="fake_radio"
+                                >욕설 / 인신공격</label
+                            >
+                        </li>
+                        <li>
+                            <input
+                                type="radio"
+                                name="report_type"
+                                id="reportType_01"
+                            />
+                            <label for="reportType_01" class="fake_radio"
+                                >욕설 / 인신공격</label
+                            >
+                        </li>
+                    </ul>
+                </div>
+                <div class="report_text_wrapper">
+                    <p class="guide_text">신고사유를 입력해주세요.(선택)</p>
+                </div>
+                <div class="warning_text">
+                    신고는 반대 의견을 표시하는 기능이 아닙니다.
+                </div>
+                <button type="button" class="btn_submit">신고하기</button>
+            </div>
+        </div>
+        <!-- 신고하기 -->
+
         <div class="back_bg"></div>
 
         <!-- jquery -->
@@ -2014,5 +2138,15 @@
 
         <!-- js -->
         <script type="text/javascript" src="assets/js/common.js"></script>
+
+        <script>
+            // 결과슬라이드 더미 제거
+            setTimeout(function () {
+                $('.dummy_vote_container, .dummy_container').prop(
+                    'hidden',
+                    true
+                );
+            }, 1000);
+        </script>
     </body>
 </html>

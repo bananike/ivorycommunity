@@ -2682,5 +2682,15 @@
             $('#addVoteContainer').addClass('on_vs');
             modalOn($('#btnAddVoteVS'), '#addVoteContainer');
         </script>
+
+        <script>
+            // 결과슬라이드 더미 제거
+            setTimeout(function () {
+                $('.dummy_vote_container, .dummy_container').prop(
+                    'hidden',
+                    true
+                );
+            }, 1000);
+        </script>
     </body>
 </html>

@@ -235,6 +235,20 @@ $(document).ready(function () {
     $(document).on('blur', '.vs_card_text', function () {
         focusVoteRegistVSCard($(this), 'blur');
     });
+
+    // vs 내가선택한이유
+    $(document).on('click', '.btn_voted_reason', function () {
+        onVSVotedReason($(this));
+    });
+
+    // 공유하기 모달
+    $(document).on(
+        'click',
+        '.btn_share_fadeModal, .modal_share .btn_close_modal',
+        function () {
+            fadeInModal($('.modal_share'));
+        }
+    );
 });
 
 // --------------------------------------------
@@ -243,10 +257,6 @@ $(document).ready(function () {
 // test
 // modalOn($('#btnAddVotePOLL'), '#addVoteContainer');
 //
-// 결과슬라이드 더미 제거
-setTimeout(function () {
-    $('.dummy_vote_container, .dummy_container').prop('hidden', true);
-}, 1000);
 //
 //
 //
@@ -827,6 +837,8 @@ function checkPollItem(_this) {
         target = wrapper.find('.input_write_reason');
     }
 
+    // .text_box .text 에 내용 입력 후 (내부 높이를 가져와서 열어야함)
+
     if (val) {
         target.css({
             height: target.prop('scrollHeight'),
@@ -842,14 +854,22 @@ function checkPollItem(_this) {
 function noInputReason(_this) {
     var box = _this.closest('.input_write_reason');
     var textarea = box.find('textarea');
+    var arrowbox = $('.arrow_box');
 
     textarea.val('');
+    arrowbox.prop('hidden', true);
     box.css({ height: 0, 'margin-top': 0, 'margin-bottom': 0 });
 }
 
 // 033. 수정하기 버튼
 function reasonModfiy(_this) {
-    var wrapper = _this.closest('.vote_select_item');
+    var type = _this.hasClass('poll') ? 'poll' : 'vs';
+
+    var wrapper =
+        type == 'poll'
+            ? _this.closest('.vote_select_item')
+            : _this.closest('.vs_wrapper');
+
     var box = _this.closest('.voted_reason');
     var inputbox = wrapper.find('.input_write_reason');
     var textarea = inputbox.find('textarea');
@@ -858,6 +878,7 @@ function reasonModfiy(_this) {
 
     wrapper.removeClass('is_voted');
     box.css({ height: 0, 'margin-top': 0, 'margin-bottom': 0 });
+    box.removeClass('is_opened a b');
     var replace = val.replace(/\n|\r/g, '');
     textarea.val(replace);
     inputbox.css({
@@ -869,32 +890,58 @@ function reasonModfiy(_this) {
 
 // 034. vs 버튼클릭
 function selectVSCard(_this) {
+    var select = _this.val();
     var wrapper = _this.closest('.vs_wrapper');
-    var reasonbox = wrapper.find('.voted_reason');
     var inputbox = wrapper.find('.input_write_reason');
     var margin = $('.vs_a').css('margin-right').split('px')[0] * 1;
-    var target = '';
+    var arrowbox = $('.arrow_box');
+    var isVoted = _this.closest('.is_voted').length > 0 ? true : false;
 
-    if (_this.closest('[class^=vs_]').hasClass('is_voted')) {
-        target = reasonbox;
-    } else {
-        target = inputbox;
-    }
-
-    if (target.hasClass('is_opened')) {
-        target.css({
+    if (!isVoted) {
+        var votedReason = wrapper.find('.voted_reason');
+        votedReason.css({
             height: 0,
             'margin-top': 0,
             'margin-bottom': 0,
         });
-        target.removeClass('is_opened');
-    } else {
-        target.css({
-            height: target.prop('scrollHeight'),
-            'margin-top': margin,
-            'margin-bottom': margin * 2.5,
-        });
-        target.addClass('is_opened');
+        votedReason.removeClass('is_opened a b');
+        if (inputbox.hasClass('is_opened') && !inputbox.hasClass(select)) {
+            inputbox.css({
+                height: 0,
+                'margin-top': 0,
+                'margin-bottom': 0,
+            });
+            inputbox.removeClass('is_opened');
+            inputbox.removeClass('a b');
+            arrowbox.prop('hidden', true);
+            arrowbox.removeClass('a b');
+
+            setTimeout(function () {
+                inputbox.css({
+                    height: inputbox.prop('scrollHeight'),
+                    'margin-top': margin,
+                    'margin-bottom': margin * 2.5,
+                });
+                inputbox.addClass('is_opened');
+                inputbox.addClass(select);
+                setTimeout(function () {
+                    arrowbox.prop('hidden', false);
+                }, 150);
+                arrowbox.addClass(select);
+            }, 300);
+        } else {
+            inputbox.css({
+                height: inputbox.prop('scrollHeight'),
+                'margin-top': margin,
+                'margin-bottom': margin * 2.5,
+            });
+            inputbox.addClass('is_opened');
+            inputbox.addClass(select);
+            setTimeout(function () {
+                arrowbox.prop('hidden', false);
+            }, 150);
+            arrowbox.addClass(select);
+        }
     }
 }
 
@@ -906,5 +953,72 @@ function focusVoteRegistVSCard(_this, event) {
         card.addClass('focusing');
     } else if (event == 'blur') {
         card.removeClass('focusing');
+    }
+}
+
+// 036. vs 내가선택한이유
+function onVSVotedReason(_this) {
+    var select = _this
+        .closest('[class^="vs_"]')
+        .find('input[type="radio"]')
+        .val();
+    var wrapper = _this.closest('.vs_wrapper');
+    var box = wrapper.find('.voted_reason');
+    var margin = wrapper.css('margin-bottom').split('px')[0] * 1;
+
+    // .text_box .text 에 내용 입력 후 (내부 높이를 가져와서 열어야함)
+
+    if (box.hasClass('is_opened') && !box.hasClass(select)) {
+        box.css({
+            height: 0,
+            'margin-top': 0,
+            'margin-bottom': 0,
+        });
+        box.removeClass('is_opened');
+        box.removeClass('a b');
+
+        setTimeout(function () {
+            box.css({
+                height: box.prop('scrollHeight'),
+                'margin-top': margin,
+                'margin-bottom': margin / 2.5,
+            });
+            box.addClass('is_opened');
+            box.addClass(select);
+        }, 300);
+    } else if (box.hasClass('is_opened') && box.hasClass(select)) {
+        box.css({
+            height: 0,
+            'margin-top': 0,
+            'margin-bottom': 0,
+        });
+        box.removeClass('is_opened');
+        box.removeClass('a b');
+    } else {
+        box.css({
+            height: box.prop('scrollHeight'),
+            'margin-top': margin,
+            'margin-bottom': margin / 2.5,
+        });
+        box.addClass('is_opened');
+        box.addClass(select);
+    }
+}
+
+// 037. 공유하기
+function fadeInModal(modal) {
+    if (!modal.hasClass('opened')) {
+        $('body').addClass('double_modal');
+        modal.addClass('opened');
+        modal.css('display', 'flex');
+    } else {
+        modal.addClass('closing');
+
+        setTimeout(function () {
+            $('body').removeClass('double_modal');
+            modal.removeClass('opened');
+            modal.css('display', 'none');
+            modal.removeClass('closing');
+        }, 300);
     }
 }
