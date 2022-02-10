@@ -56,6 +56,8 @@
 .reply_comment_input_box .text_input_box .target { margin-right: calc(100vw * (10/640)); }
 .reply_comment_input_box .btn_return_comment_text { width: calc(100vw * (70/640)); min-height: calc(100vw * (70/640)); font-weight: 500; font-size: calc(100vw * (20/640)); letter-spacing: calc(100vw * (-1.2/640)); border-radius: calc(100vw * (30/640)); background-color: #68c0b5; color: #fff; }
 
+.reply_detail { z-index: 2010; }
+
 @media (min-width: 640px) { .reply_wrapper { margin-top: 60px; }
   .reply_header { padding: 0 40px; }
   .reply_header .reply_count span { font-size: 25px; letter-spacing: -1.5px; }

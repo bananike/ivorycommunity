@@ -319,6 +319,10 @@
     }
 }
 
+.reply_detail {
+    z-index: 2010;
+}
+
 @media (min-width: $media_base) {
     .reply_wrapper {
         margin-top: 60px;

@@ -43,7 +43,7 @@
                         <button type="button" class="btn_share_fadeModal">
                             <span class="ivoryIcon-share"></span>
                         </button>
-                        <button type="button">
+                        <button type="button" class="btn_report_fadeModal">
                             <span class="ivoryIcon-report"></span>
                         </button>
                         <button type="button">
@@ -2057,7 +2057,9 @@
                         <span class="ivoryIcon-report"></span>
                         <span>신고하기</span>
                     </h2>
-                    <button class="btn_cloase_modal"></button>
+                    <button class="btn_close_modal">
+                        <span class="ivoryIcon-close"></span>
+                    </button>
                 </div>
                 <div class="report_type_wrapper">
                     <p class="guide_text">신고사유를 선택해주세요.(필수)</p>
@@ -2067,6 +2069,7 @@
                                 type="radio"
                                 name="report_type"
                                 id="reportType_01"
+                                value="1"
                             />
                             <label for="reportType_01" class="fake_radio"
                                 >욕설 / 인신공격</label
@@ -2076,54 +2079,345 @@
                             <input
                                 type="radio"
                                 name="report_type"
-                                id="reportType_01"
+                                id="reportType_02"
+                                value="2"
                             />
-                            <label for="reportType_01" class="fake_radio"
-                                >욕설 / 인신공격</label
+                            <label for="reportType_02" class="fake_radio"
+                                >불쾌감 조성</label
                             >
                         </li>
                         <li>
                             <input
                                 type="radio"
                                 name="report_type"
-                                id="reportType_01"
+                                id="reportType_03"
+                                value="3"
                             />
-                            <label for="reportType_01" class="fake_radio"
-                                >욕설 / 인신공격</label
+                            <label for="reportType_03" class="fake_radio"
+                                >상업적 / 홍보글</label
                             >
                         </li>
                         <li>
                             <input
                                 type="radio"
                                 name="report_type"
-                                id="reportType_01"
+                                id="reportType_04"
+                                value="4"
                             />
-                            <label for="reportType_01" class="fake_radio"
-                                >욕설 / 인신공격</label
+                            <label for="reportType_04" class="fake_radio"
+                                >같은 내용 도배</label
                             >
                         </li>
                         <li>
                             <input
                                 type="radio"
                                 name="report_type"
-                                id="reportType_01"
+                                id="reportType_05"
+                                value="5"
                             />
-                            <label for="reportType_01" class="fake_radio"
-                                >욕설 / 인신공격</label
+                            <label for="reportType_05" class="fake_radio"
+                                >기타 사유</label
                             >
                         </li>
                     </ul>
                 </div>
                 <div class="report_text_wrapper">
                     <p class="guide_text">신고사유를 입력해주세요.(선택)</p>
+                    <textarea
+                        class="textarea_report"
+                        rows="6"
+                        placeholder="내용을 입력해주세요"
+                    ></textarea>
                 </div>
                 <div class="warning_text">
                     신고는 반대 의견을 표시하는 기능이 아닙니다.
                 </div>
-                <button type="button" class="btn_submit">신고하기</button>
+                <button type="button" disabled class="btn_submit">
+                    신고하기
+                </button>
             </div>
         </div>
         <!-- 신고하기 -->
+
+        <!-- 댓글상세보기 -->
+        <div class="reply_detail slide_popup">
+            <div class="header_box">
+                <button type="button" class="back">
+                    <span class="ivoryIcon-arrow_left"></span>
+                </button>
+                <h2>댓글 상세보기</h2>
+            </div>
+
+            <!-- 댓글 영역 -->
+            <div class="reply_container has_rereply">
+                <!-- reply item -->
+                <div class="reply_item">
+                    <div class="reply_info">
+                        <div class="writer">
+                            <span>투표 작성자</span>
+                            <span class="ivoryIcon-write"></span>
+                        </div>
+                        <div class="reply_count">
+                            <span>댓글</span>
+                            <span class="num">44</span>
+                        </div>
+                    </div>
+                    <div class="reply_text">
+                        Lorem ipsum, dolor sit amet consectetur
+                        adipisicing elit. Dolores, at quam dolor
+                        obcaecati exercitationem nostrum.
+                    </div>
+                    <div class="reply_footer">
+                        <div class="last_datetime is_new">
+                            <span class="datetime">12:30</span>
+                            <span class="ivoryIcon-new"></span>
+                        </div>
+                        <div class="btn_group">
+                            <button
+                                type="button"
+                                class="btn_heart clicked"
+                            >
+                                <span
+                                    class="ivoryIcon-heart"
+                                ></span>
+                                <span
+                                    class="ivoryIcon-heart_outline"
+                                ></span>
+                                <span>좋아요</span>
+                                <span class="heart_count">5</span>
+                            </button>
+                            <button
+                                type="button"
+                                class="btn_rereply"
+                            >
+                                <span
+                                    class="ivoryIcon-reply"
+                                ></span>
+                                <span>대댓글</span>
+                            </button>
+                            <button type="button" class="btn_more">
+                                <span class="ivoryIcon-more"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- reply item -->
+
+                <!-- 대댓글 -->
+                <div class="rereply_container has_more_reply">
+                    <button type="button" class="view_more_rereply">
+                        + 이전 대댓글
+                        <span class="count_rereply">18</span>개 더
+                        보기...
+                    </button>
+                    <ul class="rereply_list">
+                        <!-- reply item -->
+                        <li class="reply_item is_writer">
+                            <div class="reply_info">
+                                <div class="writer">
+                                    <span>투표 작성자</span>
+                                    <span
+                                        class="ivoryIcon-write"
+                                    ></span>
+                                </div>
+                                <div class="reply_count">
+                                    <span>대댓글</span>
+                                    <span class="num">127</span>
+                                </div>
+                            </div>
+                            <div class="reply_text">
+                                Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit.
+                                Dolores, at quam dolor obcaecati
+                                exercitationem nostrum.
+                            </div>
+                            <div class="reply_footer">
+                                <div class="last_datetime is_new">
+                                    <span class="datetime"
+                                        >12:30</span
+                                    >
+                                    <span
+                                        class="ivoryIcon-new"
+                                    ></span>
+                                </div>
+                                <div class="btn_group">
+                                    <button
+                                        type="button"
+                                        class="btn_heart clicked"
+                                    >
+                                        <span
+                                            class="ivoryIcon-heart"
+                                        ></span>
+                                        <span
+                                            class="ivoryIcon-heart_outline"
+                                        ></span>
+                                        <span>좋아요</span>
+                                        <span class="heart_count"
+                                            >5</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn_rereply"
+                                    >
+                                        <span
+                                            class="ivoryIcon-reply"
+                                        ></span>
+                                        <span>대댓글</span>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn_more"
+                                    >
+                                        <span
+                                            class="ivoryIcon-more"
+                                        ></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- reply item -->
+
+                        <!-- reply item -->
+                        <li class="reply_item">
+                            <div class="reply_info">
+                                <div class="writer">
+                                    <span>투표 작성자</span>
+                                    <span
+                                        class="ivoryIcon-write"
+                                    ></span>
+                                </div>
+                                <div class="reply_count">
+                                    <span>대댓글</span>
+                                    <span class="num">242</span>
+                                </div>
+                            </div>
+                            <div class="reply_text">
+                                Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit.
+                                Dolores, at quam dolor obcaecati
+                                exercitationem nostrum.
+                            </div>
+                            <div class="reply_footer">
+                                <div class="last_datetime">
+                                    <span class="datetime"
+                                        >2022.12.12</span
+                                    >
+                                    <span
+                                        class="ivoryIcon-new"
+                                    ></span>
+                                </div>
+                                <div class="btn_group">
+                                    <button
+                                        type="button"
+                                        class="btn_heart"
+                                    >
+                                        <span
+                                            class="ivoryIcon-heart"
+                                        ></span>
+                                        <span
+                                            class="ivoryIcon-heart_outline"
+                                        ></span>
+                                        <span>좋아요</span>
+                                        <span class="heart_count"
+                                            >5</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn_rereply"
+                                    >
+                                        <span
+                                            class="ivoryIcon-reply"
+                                        ></span>
+                                        <span>대댓글</span>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn_more"
+                                    >
+                                        <span
+                                            class="ivoryIcon-more"
+                                        ></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- reply item -->
+
+                        <!-- reply item -->
+                        <li class="reply_item delete_rereply">
+                            <div class="reply_info">
+                                <div class="writer">
+                                    <span>투표 작성자</span>
+                                    <span
+                                        class="ivoryIcon-write"
+                                    ></span>
+                                </div>
+                                <div class="reply_count">
+                                    <span>대댓글</span>
+                                    <span class="num">354</span>
+                                </div>
+                            </div>
+                            <div class="reply_text">
+                                Lorem ipsum, dolor sit amet
+                                consectetur adipisicing elit.
+                                Dolores, at quam dolor obcaecati
+                                exercitationem nostrum.
+                            </div>
+                            <div class="reply_footer">
+                                <div class="last_datetime is_new">
+                                    <span class="datetime"
+                                        >12:30</span
+                                    >
+                                    <span
+                                        class="ivoryIcon-new"
+                                    ></span>
+                                </div>
+                                <div class="btn_group">
+                                    <button
+                                        type="button"
+                                        class="btn_heart clicked"
+                                    >
+                                        <span
+                                            class="ivoryIcon-heart"
+                                        ></span>
+                                        <span
+                                            class="ivoryIcon-heart_outline"
+                                        ></span>
+                                        <span>좋아요</span>
+                                        <span class="heart_count"
+                                            >5</span
+                                        >
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn_rereply"
+                                    >
+                                        <span
+                                            class="ivoryIcon-reply"
+                                        ></span>
+                                        <span>대댓글</span>
+                                    </button>
+                                    <button
+                                        type="button"
+                                        class="btn_more"
+                                    >
+                                        <span
+                                            class="ivoryIcon-more"
+                                        ></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- reply item -->
+                    </ul>
+                </div>
+                <!-- 대댓글 -->
+            </div>
+            <!-- 댓글 영역 -->
+        </div>
+        <!-- 댓글상세보기 -->
 
         <div class="back_bg"></div>
 

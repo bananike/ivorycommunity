@@ -1,7 +1,7 @@
 * { padding: 0; margin: 0; box-sizing: border-box; list-style: none; font-family: mgothic, sans-serif; }
 
 body { color: #000; background-color: #efefef; }
-body.modal_on, body.alert_on, body.slide_on, body.double_modal { overflow: hidden; }
+body.modal_on, body.alert_on, body.reult_slide_on, body.reply_slide_on, body.double_modal { overflow: hidden; }
 
 input, button { border: 0; outline: none; box-shadow: none; background-color: transparent; color: #000; }
 

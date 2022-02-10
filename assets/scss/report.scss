@@ -1,0 +1,175 @@
+@import 'variable';
+@import 'animation';
+
+.modal_report {
+    position: fixed;
+    z-index: 3000;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    animation: backdrop_on 0.3s forwards;
+
+    &.closing {
+        animation: backdrop_off 0.3s forwards;
+    }
+
+    .background {
+        position: absolute;
+        background-color: $color_black;
+        opacity: 0.6;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .report_container {
+        position: relative;
+        width: cal($e: 560);
+        background-color: $color_white;
+        padding: cal($e: 45);
+        border-radius: cal($e: 30);
+
+        .header_box {
+            margin-top: cal($e: 10);
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+
+            h2 {
+                display: flex;
+                align-items: center;
+
+                span {
+                    font-weight: 700;
+                    font-size: cal($e: 32);
+                    letter-spacing: cal($e: -1.92);
+
+                    &[class^='ivoryIcon-'] {
+                        font-weight: normal;
+                        font-size: cal($e: 40);
+                        color: $color_red;
+                        margin-top: cal($e: -10);
+                        margin-right: cal($e: 10);
+                    }
+                }
+            }
+
+            .btn_close_modal {
+                font-size: cal($e: 32);
+            }
+        }
+
+        .guide_text {
+            font-weight: 500;
+            font-size: cal($e: 20);
+            letter-spacing: cal($e: -1.2);
+        }
+
+        .report_type_wrapper {
+            margin-top: cal($e: 25);
+
+            .report_type_box {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-top: cal($e: 25);
+
+                li {
+                    width: calc(50% - #{cal($e: 5)});
+                    margin-bottom: cal($e: 20);
+
+                    &:nth-child(2n) {
+                        margin-left: cal($e: 10);
+                    }
+
+                    input[type='radio'] {
+                        display: none;
+
+                        + .fake_radio {
+                            height: cal($e: 54);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border: 1px solid $color_gray;
+                            border-radius: cal($e: 30);
+                            font-weight: 500;
+                            font-size: cal($e: 20);
+                            letter-spacing: cal($e: -1.2);
+                            color: $color_gray;
+                            transition: color 0.3s, background-color 0.3s;
+                        }
+
+                        &:checked {
+                            + .fake_radio {
+                                background-color: $color_primary;
+                                color: $color_white;
+                                border: 0;
+                                transition: color 0.3s, background-color 0.3s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .report_text_wrapper {
+            margin-top: cal($e: 25);
+
+            .textarea_report {
+                margin-top: cal($e: 15);
+                padding: cal($e: 35);
+                border: 1px solid $color_darkgray;
+                border-radius: cal($e: 30);
+                width: 100%;
+                font-weight: 300;
+                font-size: cal($e: 20);
+                line-height: cal($e: 33);
+                letter-spacing: cal($e: -1.2);
+                color: $color_black;
+
+                &::placeholder {
+                    color: $color_lightgray;
+                    font-weight: inherit;
+                    font-size: inherit;
+                    letter-spacing: inherit;
+                }
+            }
+        }
+
+        .warning_text {
+            margin-top: cal($e: 20);
+            font-weight: 500;
+            font-size: cal($e: 18);
+            letter-spacing: cal($e: -1.08);
+            color: $color_warning;
+        }
+
+        .btn_submit {
+            width: 100%;
+            height: cal($e: 67);
+            margin-top: cal($e: 30);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $color_black;
+            color: $color_white;
+            border-radius: cal($e: 30);
+            font-weight: 500;
+            font-size: cal($e: 25);
+            letter-spacing: cal($e: -1.5);
+            transition: background-color 0.3s;
+
+            &[disabled] {
+                background-color: $color_gray;
+                transition: background-color 0.3s;
+            }
+        }
+    }
+}

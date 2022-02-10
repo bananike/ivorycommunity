@@ -14,7 +14,8 @@ body {
 
     &.modal_on,
     &.alert_on,
-    &.slide_on,
+    &.reult_slide_on,
+    &.reply_slide_on,
     &.double_modal {
         overflow: hidden;
     }

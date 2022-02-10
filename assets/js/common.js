@@ -164,7 +164,7 @@ $(document).ready(function () {
     // 결과창 닫기
     $(document).on(
         'click',
-        '.slide_on .back_bg, #sliderVoteResult .close_popup',
+        '.result_slide_on .back_bg, #sliderVoteResult .close_popup',
         function () {
             closeResultSlidePopup($(this));
         }
@@ -249,6 +249,20 @@ $(document).ready(function () {
             fadeInModal($('.modal_share'));
         }
     );
+
+    // 신고하기 모달
+    $(document).on(
+        'click',
+        '.btn_report_fadeModal, .modal_report .btn_close_modal',
+        function () {
+            fadeInModal($('.modal_report'));
+        }
+    );
+
+    // 신고하기 버튼활성화 체크
+    $(document).on('change', '[name=report_type]', function () {
+        onChangeReportType($(this));
+    });
 });
 
 // --------------------------------------------
@@ -671,7 +685,7 @@ function callResultSlidePopup(_this) {
     var type = _this.closest('li').hasClass('type_poll') ? 'on_poll' : 'on_vs';
     var target = $('#sliderVoteResult');
 
-    body.addClass('slide_on');
+    body.addClass('result_slide_on');
     target.addClass(type);
 }
 
@@ -680,7 +694,7 @@ function closeResultSlidePopup(_this) {
     var body = $('body');
     var target = $('#sliderVoteResult');
 
-    body.removeClass('slide_on');
+    body.removeClass('result_slide_on');
     target.removeClass('on_poll on_vs');
 }
 
@@ -1005,7 +1019,7 @@ function onVSVotedReason(_this) {
     }
 }
 
-// 037. 공유하기
+// 037. 모달 페이드인
 function fadeInModal(modal) {
     if (!modal.hasClass('opened')) {
         $('body').addClass('double_modal');
@@ -1020,5 +1034,17 @@ function fadeInModal(modal) {
             modal.css('display', 'none');
             modal.removeClass('closing');
         }, 300);
+    }
+}
+
+// 038. 신고하기 버튼 활성화
+function onChangeReportType(_this) {
+    var value = $('[name=report_type]:checked').val();
+    var btn = _this.closest('.report_container').find('.btn_submit');
+
+    if (value != undefined) {
+        btn.prop('disabled', false);
+    } else {
+        btn.prop('disabled', true);
     }
 }
