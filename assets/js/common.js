@@ -311,6 +311,13 @@ $(document).ready(function () {
     $(document).on('click', '.btn_comment_cancel', function () {
         offReasonCommentModify($(this));
     });
+
+    // 커뮤니티 알림 모달
+    $(document).on('click', '#btnOnNotification', function (e) {
+        e.preventDefault();
+
+        modalOn($(this), '#notificationWrap');
+    });
 });
 
 // --------------------------------------------

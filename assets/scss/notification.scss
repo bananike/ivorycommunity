@@ -1,0 +1,154 @@
+@import 'variable';
+
+.notification_wrap {
+    .modal_box {
+        background-color: $color_white;
+    }
+
+    .modal_header {
+        height: cal($e: 146);
+
+        h2 {
+            font-weight: 700;
+            font-size: cal($e: 32);
+            letter-spacing: cal($e: -1.92);
+        }
+    }
+
+    .modal_content {
+        padding: 0 cal($e: 40);
+        padding-bottom: cal($e: 40);
+        margin-top: cal($e: 146);
+        max-height: calc(100vh - #{cal($e: 130)} - #{cal($e: 146)});
+    }
+}
+
+.notification_list {
+    li {
+        padding: cal($e: 30) cal($e: 20);
+        border-top: 0.5px solid $color_black;
+
+        &:last-child {
+            border-bottom: 0.5px solid $color_black;
+        }
+
+        @each $type in (reply, rereply, report) {
+            &.is_#{$type} {
+                .header_box {
+                    .type_#{$type} {
+                        display: block;
+                        @if ($type == report) {
+                            color: $color_red;
+                        }
+                    }
+                }
+            }
+        }
+
+        .header_box {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+
+            [class^='type_'] {
+                display: none;
+                font-weight: 700;
+                font-size: cal($e: 18);
+                letter-spacing: cal($e: -0.36);
+                color: $color_black;
+            }
+
+            .date {
+                font-weight: 300;
+                font-size: cal($e: 20);
+                letter-spacing: cal($e: -0.4);
+                color: $color_black;
+            }
+        }
+
+        .content_box {
+            margin-top: cal($e: 17);
+            font-weight: 300;
+            font-size: cal($e: 19);
+            line-height: cal($e: 30);
+            letter-spacing: cal($e: -1.14);
+            color: $color_black;
+            @include multi_ellipsis($line: 2);
+        }
+
+        .hr {
+            margin: cal($e: 14.8) 0;
+            height: 0;
+            width: cal($e: 43);
+            bottom: cal($e: 14.8);
+            left: 0;
+            border-top: 0.5px solid $color_gray;
+        }
+
+        .title {
+            font-weight: 300;
+            font-size: cal($e: 19);
+            letter-spacing: cal($e: -1.14);
+            color: $color_gray;
+            @include ellipsis;
+        }
+    }
+}
+
+@media (min-width: $media_base) {
+    .notification_wrap {
+        .modal_header {
+            height: 146px;
+
+            h2 {
+                font-size: 32px;
+                letter-spacing: -1.92px;
+            }
+        }
+
+        .modal_content {
+            padding: 0 40px;
+            padding-bottom: 40px;
+            margin-top: 146px;
+            max-height: calc(100vh - 130px - 146px);
+        }
+    }
+
+    .notification_list {
+        li {
+            padding: 30px 20px;
+
+            .header_box {
+                [class^='type_'] {
+                    font-size: 18px;
+                    letter-spacing: -0.36px;
+                }
+
+                .date {
+                    font-size: 20px;
+                    letter-spacing: -0.4px;
+                }
+            }
+
+            .content_box {
+                margin-top: 17px;
+                font-size: 19px;
+                line-height: 30px;
+                letter-spacing: -1.14px;
+            }
+
+            .hr {
+                margin: 14.8px 0;
+                width: 43px;
+                bottom: 14.8px;
+            }
+
+            .title {
+                font-size: 19px;
+                letter-spacing: -1.14px;
+            }
+        }
+    }
+}
