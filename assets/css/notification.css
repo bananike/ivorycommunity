@@ -2,6 +2,12 @@
 .notification_wrap .modal_header { height: calc(100vw * (146/640)); }
 .notification_wrap .modal_header h2 { font-weight: 700; font-size: calc(100vw * (32/640)); letter-spacing: calc(100vw * (-1.92/640)); }
 .notification_wrap .modal_content { padding: 0 calc(100vw * (40/640)); padding-bottom: calc(100vw * (40/640)); margin-top: calc(100vw * (146/640)); max-height: calc(100vh - calc(100vw * (130/640)) - calc(100vw * (146/640))); }
+.notification_wrap .dummy li { padding: calc(100vw * (30/640)) calc(100vw * (20/640)); border-top: 0.5px solid #000; }
+.notification_wrap .dummy li:last-child { border-bottom: 0.5px solid #000; }
+.notification_wrap .dummy [class^='dummy_'] { background-color: #efefef; border-radius: calc(100vw * (30/640)); width: calc(100vw * (150/640)); height: calc(100vw * (20/640)); }
+.notification_wrap .dummy .dummy_text2, .notification_wrap .dummy .dummy_text3 { width: 100%; margin-top: calc(100vw * (17/640)); }
+.notification_wrap .dummy .dummy_text2 + .dummy_text2, .notification_wrap .dummy .dummy_text3 + .dummy_text2 { margin-top: calc(100vw * (10/640)); }
+.notification_wrap .dummy .hr { margin: calc(100vw * (14.8/640)) 0; height: 0; width: calc(100vw * (43/640)); bottom: calc(100vw * (14.8/640)); left: 0; border-top: 0.5px solid #a8a8a8; }
 
 .notification_list li { padding: calc(100vw * (30/640)) calc(100vw * (20/640)); border-top: 0.5px solid #000; }
 .notification_list li:last-child { border-bottom: 0.5px solid #000; }
@@ -18,6 +24,11 @@
 @media (min-width: 640px) { .notification_wrap .modal_header { height: 146px; }
   .notification_wrap .modal_header h2 { font-size: 32px; letter-spacing: -1.92px; }
   .notification_wrap .modal_content { padding: 0 40px; padding-bottom: 40px; margin-top: 146px; max-height: calc(100vh - 130px - 146px); }
+  .notification_wrap .dummy li { padding: 30px 20px; }
+  .notification_wrap .dummy [class^='dummy_'] { border-radius: 30px; width: 150px; height: 20px; }
+  .notification_wrap .dummy .dummy_text2, .notification_wrap .dummy .dummy_text3 { width: 100%; margin-top: 17px; }
+  .notification_wrap .dummy .dummy_text2 + .dummy_text2, .notification_wrap .dummy .dummy_text3 + .dummy_text2 { margin-top: 10px; }
+  .notification_wrap .dummy .hr { margin: 14.8px 0; width: 43px; bottom: 14.8px; }
   .notification_list li { padding: 30px 20px; }
   .notification_list li .header_box [class^='type_'] { font-size: 18px; letter-spacing: -0.36px; }
   .notification_list li .header_box .date { font-size: 20px; letter-spacing: -0.4px; }

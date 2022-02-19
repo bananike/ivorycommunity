@@ -21,6 +21,43 @@
         margin-top: cal($e: 146);
         max-height: calc(100vh - #{cal($e: 130)} - #{cal($e: 146)});
     }
+
+    .dummy {
+        li {
+            padding: cal($e: 30) cal($e: 20);
+            border-top: 0.5px solid $color_black;
+
+            &:last-child {
+                border-bottom: 0.5px solid $color_black;
+            }
+        }
+
+        [class^='dummy_'] {
+            background-color: $color_whitegray;
+            border-radius: cal($e: 30);
+            width: cal($e: 150);
+            height: cal($e: 20);
+        }
+
+        .dummy_text2,
+        .dummy_text3 {
+            width: 100%;
+            margin-top: cal($e: 17);
+
+            + .dummy_text2 {
+                margin-top: cal($e: 10);
+            }
+        }
+
+        .hr {
+            margin: cal($e: 14.8) 0;
+            height: 0;
+            width: cal($e: 43);
+            bottom: cal($e: 14.8);
+            left: 0;
+            border-top: 0.5px solid $color_gray;
+        }
+    }
 }
 
 .notification_list {
@@ -113,6 +150,34 @@
             padding-bottom: 40px;
             margin-top: 146px;
             max-height: calc(100vh - 130px - 146px);
+        }
+
+        .dummy {
+            li {
+                padding: 30px 20px;
+            }
+
+            [class^='dummy_'] {
+                border-radius: 30px;
+                width: 150px;
+                height: 20px;
+            }
+
+            .dummy_text2,
+            .dummy_text3 {
+                width: 100%;
+                margin-top: 17px;
+
+                + .dummy_text2 {
+                    margin-top: 10px;
+                }
+            }
+
+            .hr {
+                margin: 14.8px 0;
+                width: 43px;
+                bottom: 14.8px;
+            }
         }
     }
 
